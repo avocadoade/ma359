@@ -1,0 +1,262 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{q}{Question}
+\newenvironment{ans}{\paragraph{Answer:}}{\hfill$\square$\vspace{10pt}}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory: Exercises (not for credit)}
+%\date{}
+
+\makeindex
+
+\begin{document}
+\maketitle
+Question 5 is important please have a go. Questions 6 and 7 are long and not super important so only do them if you are enjoying doing exercise sheets!
+
+\begin{q}
+Suppose that $f$ is a measurable function from $\mathbb{R} \rightarrow \mathbb{R}$, show that $g$ defined by $g(x) = f(x+\tau)$ is also measurable, where $\tau$ is a fixed real number.
+\end{q}
+\begin{ans}
+Suppose that $B$ is a measurable set then $g^{-1}(B) = f^{-1}(B) - \tau$. So we reduce to showing that a set is Lebesgue measurable if it is a shift of another Lebesgue measurable set. This follows from the definition of Lebesgue measurability being invariant under these kind of shifts as the measure of rectangles is invariant under these shifts.
+\end{ans}
+
+\begin{q}
+Show the restriction of measure makes sense. That is to say if $(E, \mathcal{E}, \mu)$ is a measure space and $A \in \mathcal{E}$ then show that $\mathcal{E}_A = \{ B  \in \mathcal{E} \,:\, B \subset A\}$ is a $\sigma$-algebra and $\mu_A = \mu|_{\mathcal{E}_A}$ is a measure. Show further that if $g$ is a non-negative measurable function then $\mu_A(g) = \mu(g1_A)$. 
+\end{q}
+\begin{ans}
+$\emptyset \in \mathcal{E}_A$ as is $A$. If $B \in mathcal{E}_A$ then $A \setminus B \in \mathcal{E}_A$ since $A \setminus B \in \mathcal{E}$ by the sigma algebra properties and $A \setminus B \subseteq A$. If $(A_n)_{n \geq 1}$ is a sequence of sets in $\mathcal{E}_A$ then $\bigcup_n A_n \in \mathcal{E}$ and $\bigcup_n \subseteq A$ so $\bigcup_n A_n \in \mathcal{A}$.
+
+Now showing $\mu$ restricted to $A$ is a measure is also fairly immediate. It remains positive. The countable additivity property follows from the countable additivity property on the whole of $\mathcal{E}$.
+
+If $g$ is non-negative and measurable function from $A$ to $\mathbb{R}$, if $g$ is a simple function the $g = \sum_{k=1}^n a_k 1_{A_k}$ with $A_k \subseteq A$ and $A_k \in \mathcal{E}$. So $\mu_A(g) = \sum_{k=1}^n a_k \mu_A(A_k) = \sum_{k=1}^n a_k \mu(A_k)$ then the result for general $g$ follows from monotone convergence.
+\end{ans}
+
+\begin{q}
+Show that the function $sin(x)/x$ is not Lebesgue integrable over $[1,\infty]$ but the limit as $n \rightarrow \infty$ of 
+\[ \int_1^n \sin(x)/x \mathrm{d}x \] exists.
+\end{q}
+\begin{ans}
+We can bound the function $|sin(x)/x|$ below by $\sum_n 1_{x \in [(n-1)\pi + \pi/6, (n-1)\pi + 5\pi/6]} \frac{1}{n\pi}$, the Lebesgue measure of this is $\sum_n \frac{1}{n\pi} \frac{2\pi}{3} = \infty$ so it is not Lebesgue integrable. 
+
+
+\end{ans}
+
+\begin{q}
+ Let $(E, \mathcal{E})$ and $(F, \mathcal{F})$ be measureable spaces. We call $K$ a kernel on if for each $x \in E$ the function $A \mapsto K(x, A)$ is a measure on $(F, \mathcal{F})$, and for every $A \in \mathcal{F}$ the function $x \mapsto K(x,A)$ is a measurable function on $(E, \mathcal{E})$. Suppose that $K$ is a kernel, $\mu$ is a measure on $(E, \mathcal{E})$ and $f$ is a $[0,\infty]$ valued measurable function on $(F, \mathcal{F})$. Show that
+\begin{itemize}
+\item $A \mapsto \int K(x,A) \mu(\mathrm{d}x)$ is a measure on $(F, \mathcal{F})$,
+\item $x \mapsto \int f(y) K(x, \mathrm{d}y)$ is a measurable function on $(E, \mathcal{E})$ 
+\item If $\nu$ is the measure defined by $\nu(A) = \int K(x,A) \mu(\mathrm{d}x)$ then $\nu(f) = \int \int f(y) K(x, \mathrm{d}y) \mu(\mathrm{d}x)$. 
+\end{itemize}
+\end{q}
+\begin{ans}
+For the first part we need to check that $A \mapsto \int K(x,A) \mu(\mathrm{d}x)$ satisfies all the axioms of a measure. As $A \mapsto K(x,A)$ is a measure for each $x$ then $K(x,A) \geq 0$ for every $(x,A)$ therefore $\int K(x,A) \mu(\mathrm{d}x) = 0$. We also have that $\int K(x, \emptyset) \mu(\mathrm{d}x) = \int 0 \mu(\mathrm{d}x) =0$. Now take a disjoint sequence of sets $A_1, A_2, A_3, \dots$ and then 
+\[ \int K(x, \bigcup_n A_n) \mu(\mathrm{d}x) = \int \sum_n K(x, A_n) \mu(\mathrm{d}x). \] We then apply Beppo-Levi to get
+\[ \int \sum_n K(x,A_n) \mu(\mathrm{d}x) = \sum_n \int K(x,A_n) \mu(\mathrm{d}x). \] This shows the countable additivity property.
+
+For the second part let us write let us first start with the case where $f$ is a characteristic fucntion, $f(y) = 1_A(y)$, then $\int f(y) K(x, \mathrm{d}y) = K(x,A)$ which is measurable by assumption. Now let $f$ be a simple function, then we can show that it is a linear combination of measurable functions so measurable. Now let $f$ be a non-negative function, approximate it from below by simple functions $f_n$, so that $f_n \uparrow f$, then let $g_n(x) = \int f_n(y) K(x, \mathrm{d}y)$ then $g_n$ is measurable and by monotone convergence $g(x) = \int f(y) K(x, \mathrm{d}y) = \lim_n g_n(x)$. Then as $g$ is the limit of a sequence of measurable functions it is measurable.
+
+For the last part let us start with the case where $f$ is a characteristic function, $f=1_A$ then $\nu(f) = \nu(A) = \int K(x,A) \mathrm{d}\mu = \int \int f(y) K(x,\mathrm{d}y)\mu(\mathrm{d}x)$. Now by linearity of the integral this extends to simple functions $f$. Again we approximate a general non-negative $f$ from below by $f_n$ a simple function and $\nu(f) = \lim_n \nu(f_n) = \lim_n \int \int f_n(y) K(x, \mathrm{d}y) \mu(\mathrm{d}x) = \int \lim_n \int f_n K(x,\mathrm{d}y) \mu(\mathrm{d}x) = \int \int \lim_n f_n K(x,\mathrm{d}y) \mu(\mathrm{d}x)$ where the last two equalities come from monotone convergence.
+\end{ans}
+
+\begin{q}
+Show that all monotone functions are Borel measurable.
+\end{q}
+\begin{ans}
+Suppose that $f$ is non-decreasing (the other case follows by looking at $-f$) then look at $f^{-1}((-\infty, b])$ then this is of the form $(-\infty, a]$ or $(-\infty, a)$ for some $a \in \mathbb{R}\bigcup \{+\infty\}$, all these possible sets are measurable so $f$ is measurable.
+\end{ans}
+
+\begin{q}
+Recall in the last exercise sheet we constructed the devils staircase function $f: [0,1] \rightarrow [0,1]$ which is continuous and non-decreasing and flat everywhere except the Cantor set. Define a function by
+\[ g(y) = \inf\{ x \in [0,1] \,:\, f(x) = y\}, \] such a function is well defined since as $f$ is continuous the intermediate value theorem shows there must be at least one $x$ such that $f(x) = y$. 
+\begin{itemize}
+\item Show that the range of $g$ is contained inside the Cantor set.
+\item Show that $f(g(y)) = y$ and that hence $g$ is injective. 
+\item Let $A$ be a non-Lebesgue measurable subset of $[0,1]$ (such as was constructed by Vitali) show that $B = g(A)$ is Lebesgue measurable.
+\item Show that $B$ is not Borel measurable. 
+\item Show that $h(x) = 1_B(x)$ is Riemann integrable (note this shows the existence of a function that is Riemann integrable and not Borel measurable). 
+\end{itemize}
+\end{q}
+\begin{ans}
+Last week we showed that if $x \notin C$ then $f$ is differentiable at $x$ with $f'(x)=0$ so if $x \in \{x \in [0,1]\,:\, f(x) = y\}$ and $x \notin C$ then there exists a small poisitive $\delta$ such that $x-\delta \in \{x \in [0,1]\,:\, f(x) = y\}$. This shows the range of $g$ must lie in the Cantor set. 
+
+Now we look at $f(g(y))$ we know that for any $x$ with $f(x) = y$ we have $g(y) \leq x$ and since $f$ is increasing we have $f(g(y)) \leq f(x) = y$, now for any $\epsilon>0$ there exists an $x$ with $f(x) =y$ and $|x-g(y)|<\epsilon$, now since $f$ is continuous at $g(y)$ (as $f$ is continuous everywhere) for any $\delta$ there exists an $\epsilon$ such that if $|x -g(y)| < \epsilon$ then $|f(x) - f(g(y))| < \delta$. This shows that for any $\delta$ we have $|f(g(y))-y| < \delta$, therefore $f(g(y)) = \delta$. The shows that $g$ is injective as if there were $y$ and $y'$ such that $g(y) = g(y')$ then we would have $f(g(y)) = f(g(y'))$ which would mean $y = y'$.
+
+Now we look at $B=g(A)$ since the range of $g$ is contained inside the Cantor set $B \subseteq C$, and therefore $B$ is a null set. Hence $B$ is Lebesgue measurable.
+
+Now we claim that $g$ is Borel measurable as $g$ is non-decreasing, therefore if $B$ is Borel measurable then so is $g^{-1}(B)$. Since $g$ is injective $g^{-1}(B) =A$ and we know $A$ is not Borel measurable so $B$ cannot be.
+
+Let $h(x) =1_B(x)$. Let $K_n$ be the $n^th$ itterative in constructing the Cantor set (i.e. when we have removed the middle thirds $n$ times). Then $B \subseteq K_n$. Then take any partition $p$ of $[0,1]$ we always have that $l(p,h)=0$, we also have that $u(p,h)$ will be bounded above by the number of intervals in $p$ which intersect with $K_n$. As $p$ becomes more and more refined, and its width goes to suppose that the maximum width of any interval in $p$ is $\epsilon$ then $u(h,p) \leq \lambda(K_n + (-\epsilon, \epsilon))$, so as the maximum width of the partition goes to 0, we get that $\lim_{w(p) \rightarrow 0}u(p,h) \leq \lambda(K_n) = (2/3)^n$. This works for any $n$, so the limit of the upper sums is also 0.
+\end{ans}
+
+\begin{q}
+\begin{itemize}
+\item Construct a sequence of set by $K_1 = [0,1]$ and then $K_2 = [0,1/3]\cup[2/3,1]$ then instead of removing the middle thirds as in the construction of the Cantor set to construct $K_n$ we remove the middle $\alpha_n$ proportion of every interval so that $\lambda(K_n) = (1-\alpha_n) \lambda(K_{n-1})$. Then for $\beta \in (0,1)$ choose $\alpha_n = 1- \beta^{2^{-n}}$, and show that $\bigcap_n K_n$ is a closed set with no interior points and $\lambda(\bigcup_n K_n) = \beta$.
+\item Now assume (you can prove this fairly easily but its not the point of the question) that you can find a function $f_n$ which is cotinuous and takes values in $[0,1]$ such that $f_n =0$ on $K_n$ and 1 on $K_{n-1}^c$. Show that $f_n$ is an increasing sequence of functions which converges to $1_U$ where $U = (\bigcap_n K_n)^c$. 
+\item Show that $1_U$ is not Riemann integrable.
+\end{itemize}
+\end{q}
+
+\begin{ans}
+First we can see that $\lambda(K_n) = \Pi_{k=1}^n (1-\alpha_k) = \Pi_{k=1}^n \beta^{2^{-k}} = \beta^{\sum_{k=1}^n 2^{-k}} \rightarrow \beta$. We also have that each $K_n$ is closed so $K$ will also be closed. Then since each time we remove something from the middle of every interval the maximum length of any inteval in $K_n$ is $2^{-n}$ therefore $K$ contains no intervals.
+
+The fact that $f_n$ is increasing comes from the fact that $K_n \subseteq K_{n-1}$ and then $f_n$ tends to $1$ on every point outside $K$ as it will eventually be outside $\bigcup_{k=1}^n K_k$ an $f_{n+1}$ is 0 on $\left( \bigcup_{k=1}^n K_k\right)^c$. The limit of $f_n$ is $0$ inside $K$ since $f_n$ is $0$ on $K$ for every $n$.
+
+As $K$ has no interior points there are points in $U$ in every interval so for any partition $p$ we have $u(p, 1_U) =1$. For the lower sum as the width of any partition goes to $0$ the lower sum will converge to the measure of $K^c$ which is $1-\beta$ so the upper sum and the lower sum do not converge to the same thing.
+\end{ans}
+\end{document}

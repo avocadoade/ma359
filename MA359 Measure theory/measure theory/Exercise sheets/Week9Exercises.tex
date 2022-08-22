@@ -1,0 +1,215 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{q}{Question}
+\newenvironment{ans}{\paragraph{Answer:}}{\hfill$\square$\vspace{10pt}}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory: Exercises (not for credit)}
+%\date{}
+
+\makeindex
+
+\begin{document}
+\maketitle
+
+\begin{q}
+Suppose that $(E, \mathcal{E})$ and $(F, \mathcal{F})$ are measurable spaces. Show that the set $\mathcal{A} \subseteq \mathcal{E} \times \mathcal{F}$ with $\mathcal{A} = \{ A \times B \,:\, A \in \mathcal{E}, B \in \mathcal{F}\}$ is a $\pi$-system. 
+\end{q}
+%\begin{ans}
+%We know that $\emptyset = \emptyset \times \emptyset$ so $\emptyset \in \mathcal{A}$. If we suppose that $C_1 = A_1 \times B_1$ and $C_2 = A_2 \times B_2$ then $C_1 \cap C_2 = (A_1 \cap A_2) \times (B_1 \cap B_2)$ (we can check this more precisesly and you probably should in an exam). Therefore $\mathcal{A}$ is a $\pi$-system.
+%\end{ans}
+
+\begin{q}
+Suppose that $(E, \mathcal{E})$ and $(F, \mathcal{F})$ are measurable spaces. Let $\mathcal{A}_1 \subseteq \mathcal{E}$ and $\mathcal{A}_2 \subseteq \mathcal{F}$ be such that $\sigma(\mathcal{A}_1) = \mathcal{E}$ an $\sigma(\mathcal{A}_2) = \mathcal{F}$. Show that $\mathcal{E}\times \mathcal{F} = \sigma(\mathcal{A}_1 \times \mathcal{A}_2)$.
+\end{q}
+%\begin{ans}
+%Let us define $\mathcal{C} = \{ A \times B \,:\, A \in \mathcal{A}_1, B \in \mathcal{F}\}$, then let us first show that $\mathcal{C} \in \sigma(\mathcal{A}_1 \times \mathcal{A}_2)$. Let us fix $A \in \mathcal{A}_1$ and define $\tilde{C}_A = \{ B \,:\, A \times B \in \sigma(\mathcal{A}_1 \times \mathcal{A}_2)$ then we know that $\mathcal{A}_2 \in \tilde{C}_A$ and we can show that $\tilde{C}_A$ is a $\sigma$-algebra as it inherits the properties of $\sigma(\mathcal{A}_1 \times \mathcal{A}_2)$. Therefore $\tilde{C}_A \supseteq \sigma(\mathcal{A}_2)$ so $\tilde{C}_A = \mathcal{F}$. Therefore $\mathcal{C} \subseteq   \sigma(\mathcal{A}_1 \times \mathcal{A}_2)$. Now fix $B \in \mathcal{F}$ and define $\bar{C}_B = \{ A \,:\, A \times B \in  \sigma(\mathcal{A}_1 \times \mathcal{A}_2)\}$. Now since we know that $\mathcal{C} \subseteq  \sigma(\mathcal{A}_1 \times \mathcal{A}_2)$ this means that $\mathcal{A}_1 \subseteq \bar{C}_B$ for each $B$. Then again $\bar{C}_B$ inherits the $\sigma$-algebra structure from  $\sigma(\mathcal{A}_1 \times \mathcal{A}_2)$ and hence is a $\sigma$-algebra so $\bar{C}_B = \mathcal{E}$. Hence $ \sigma(\mathcal{A}_1 \times \mathcal{A}_2) = \mathcal{E} \times \mathcal{F}$.
+%\end{ans}
+
+\begin{q}
+Let $\mathcal{M}_1$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\mathbb{R}$, and $\mathcal{M}_2$ be the $\sigma$-algebra of Lebesgue measurable subsets of $\mathbb{R}^2$. Show that $\mathcal{M}_2 \neq \mathcal{M}_1 \times \mathcal{M}_1$. 
+\end{q}
+%\begin{ans}
+%Let $A$ be a non-lebesgue measurable subset of $\mathbb{R}$. Then let $B = \{x\} \times A$, this is contained in a line in $\mathbb{R}^2$ so is a null set therefore $B \in \mathcal{M}_2$ however $B_x = A \notin \mathcal{M}_1$. If $\mathcal{M}_2$ was equal to $\mathcal{M}_1 \times \mathcal{M}_1$ then every set $C$ in $\mathcal{M}_2$ would have $C_x \in \mathcal{M}_1$ for every $x$. Therefore $\mathcal{M}_2 \neq \mathcal{M}_1 \times \mathcal{M}_1$.
+%\end{ans}
+
+\begin{q}
+Let $\mu$ be the counting measure on $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$ (the measure that counts how many elements there are in a set) and let $\lambda$ be Lebesgue measure on $\mathbb{R}$. Let $f$ be the indicator function of the set $\{(x,x) \,:\, x \in \mathbb{R}\}$. Show that
+\[ \int_\mathbb{R} \int_\mathbb{R} f(x,y) \mu(\mathrm{d}x) \lambda(\mathrm{d}y) \neq \int_\mathbb{R} \int_\mathbb{R}  f(x,y) \lambda(\mathrm{d}x) \mu(\mathrm{d}x). \] What part of the conditions of Fubini-Tonelli theorem doesn't hold to mean this can happen?
+\end{q}
+%\begin{ans}
+%In the displayed equation $LHS = \infty$ and $RHS = 0$. This is possible because $(\mathbb{R}, \mathcal{B}(\mathbb{R}), \mu)$ is not $\sigma$-finite.
+%\end{ans}
+
+\begin{q}
+Let $f(x,y) = 1_{x \geq 0}( 1_{y \in [x,x+1)} - 1_{y \in [x+1, x+2)})$ Show that
+\[ \int_\mathbb{R} \int_\mathbb{R} f(x,y) \mathrm{d}x \mathrm{d}y \neq \int_\mathbb{R} f(x,y) \mathrm{d}y \mathrm{d}x. \] What part of the conditions of Fubini-Tonelli theorem doesn't hold to allow this to happen?
+\end{q}
+%\begin{ans}
+%We can compute with a bit of work and get $LHS = 1$ and $RHS = 0$. This is possible because $|f(x,y)|$ is not integrable.
+%\end{ans}
+
+\begin{q}
+Let $A$ be a bounded Borel subset of $\mathbb{R}$ with $\lambda(A)>0$ show that the function $x \mapsto \lambda(A \cap (x+A))$ is continuous and is non-zero on some open interval containing 0. Define $diff(A) = \{ z\,:\, z=x-y, x \in A, y \in A \}$ show that if $A$ is a Borel subset of $\mathbb{R}$ with non-zero measure then $diff(A)$ contains some open interval around 0.
+\end{q}
+%\begin{ans}
+%Let $f(x) = 1_{A}(x), g(x) = 1_{A}(-x)$ then $f*g = \int_\mathbb{R} 1_{A}(y) 1_{A}(-x+y) \mathrm{d}y = \int_\mathbb{R} 1_{A}(y)1_{x+A}(y) \mathrm{d}y = \int_\mathbb{R} 1_{A \cap (x+A)}(y) \mathrm{d}y = \lambda(A \cap (x+A))$. Now for any $p, q$ we have that $f \in L^p, g \in L^q$ so by a result in lectures $f*g$ is continous. We also have $f*g(0) = \lambda(A) > 0$. So there must be some open interval $U$ containing $0$ such that if $x \in U$ then $\lambda(A \cap (x+A)) >0$. Then for each $x \in U$ there exists $y, z \in A$ such that $z = y+x$. Therefore $x \in diff(A)$ for every $x \in U$.
+%\end{ans}
+
+
+\end{document}

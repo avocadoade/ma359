@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{q}{Question}
+\newenvironment{ans}{\paragraph{Answer:}}{\hfill$\square$ \vspace{10pt}}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory: Exercises (not for credit)}
+%\date{}
+
+\makeindex
+
+\begin{document}
+\maketitle
+This is a shorter sheet because last week was longer and you have the assignment as well. I think the most useful question is 3.
+
+\begin{q}
+Let $A_n$ be a sequence of measurable sets. Show that $1_{A_n}$ converges to $0$ in measure if and only if $\mu(A_n) \rightarrow 0$. Furthermore show that $1_{A_n}$ converges almost everywhere if and only if $\mu(\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k) = 0$.
+\end{q}
+\begin{ans}
+This is mainly an exercise in understanding all the definitions. The first result is almost by definition. $1_{A_n}$ tends to $0$ in measure if for every $\epsilon>0$ the measure of $\{x \,:\, 1_{A_n} > \epsilon\}$ tends to $0$. When $\epsilon >1$ this set is empty so the result is true. When $\epsilon \leq 1$ we have $\{x \,:\, 1_{A_n} > \epsilon\} = A_n$ so convergence happens in measure iff $\mu(A_n) \rightarrow 0$.
+
+The second part is a bit more subtle. $1_{A_n}$ tends to $0$ at $x$ if $x$ does not appear in infinitel many $A_n$. The set of points which appears in infinitely many $A_n$ is $\bigcap_n \bigcup_{m \geq n} A_m$ so the $1_{A_n}$ converges in measure if and only if $\mu(\bigcap_n \bigcup_{m \geq n} A_m) = 0$.
+\end{ans}
+
+\begin{q}
+Let $(f_n)_{n \geq 1}, f, g$ be Borel measurable functions from $\mathbb{R} \rightarrow \mathbb{R}$. Suppose further that $g$ is continuous. Show that if $f_n \rightarrow f$ almost everywhere then $g\circ f_n \rightarrow g \circ f$ almost everywhere. Can the conclusion fail if $g$ is only continuous almost everywhere. 
+\end{q}
+\begin{ans}
+As $f_n$ converges to $f$ almost everywhere there is a set $A$ with $f_n(x) \rightarrow f(x)$ for every $x \in A$ and $\lambda(A^c) = 0$. Now if $x \in A$, since $g$ is continuous $g(f_n(x)) \rightarrow g(f(x))$ so $g \circ f_n \rightarrow g \circ f$ almost everywhere. 
+
+Now let $f_n(x) = x^n$ for $x \in (0,1)$ and $1$ everywhere else. Then $f_n$ converges to $0$ almost everywhere. Let $g(x) = 1$ when $x \neq 0$ but $g(0) = 0$. Then $g(f_n(x)) = 1$ for every $x \neq 0$ but $g(f(x))=0$ for every $x$ so $g \circ f_n$ does not converge to $g \circ f$ almost everywhere.
+\end{ans}
+
+\begin{q}
+Suppose that $f$ is a measurable function from $(E, \mathcal{E}, \mu)$ to $(F, \mathcal{F})$ show that the image measure defined by $\nu(A) = \mu(f^{-1}(A))$ for all $A \in \mathcal{F}$ is indeed a measure.
+\end{q}
+\begin{ans}
+We need to check that $\nu$ satisfies all the axioms to be a measure. $\nu(\emptyset) = \mu(f^{-1}(\emptyset)) = \mu(\emptyset) = 0$. We also have that $\nu \geq 0$ since $\mu \geq 0$. We now need to show that $\mu$ is countably additive. Suppose $A_n$ is a sequence of disjoint sets in $\mathcal{F}$ then $\mu(\bigcup_n A_n) = \mu(f^{-1}(\bigcup_n A_n)) = \mu ( \bigcup_n f^{-1}(A_n))$ now the fact that the $A_n$ are disjoint imples that $f^{-1}(A_n)$ are disjoint ($x$ can't end up in two disjoint sets). So by countable additivity of $\mu$ we have $\mu( \bigcup_n f^{-1}(A_n))= \sum_n \mu(f^{-1}(A_n)) = \sum_n \nu (A_n)$. Therefore $\nu$ is countably additive. We have then shown that $\nu$ is a measure.
+\end{ans}
+
+\begin{q}
+Suppose that $(E, \mathcal{E}, \mu)$ is a $\sigma$-finite measure space and $f_n$ is a sequence of real valued measurable functions on $E$. Suppose that $f_n \rightarrow f$ almost everywhere. Show that there exists a sequence of sets $A_n$ and a set $B$ such that $E = \bigcup_n A_n \cup B$ and $\mu(B) =0$ and $f_n$ converges uniformly on each $A_n$.
+\end{q}
+\begin{ans}
+I think this is a hard questions. We need to use Egoroff's theorem. First by $\sigma$-finiteness there exists a sequence of sets $E_k$ such that $\mu(E_k) < \infty$ for every $k$ and $E= \bigcup_k E_k$. Then let us fix $\epsilon$ we are going to show an intermediate claim: Given $\epsilon >0$ there exists a sequence of sets $A_{k, \epsilon}$ such that $f_n$ converges uniformly on each $A_{k,\epsilon}$ and $\mu((\bigcup_k A_{k, \epsilon})^c) < \epsilon$. In order to do this we apply Egoroff's theorem to each $E_k$ to find a set $A_k \subseteq E_k$ with $\mu(E_k \setminus A_k) < \epsilon 2^{-k}$. Then we have that $f_n$ converges uniformly on each $A_{k, \epsilon}$ and $\mu(E \setminus \bigcup_k A_{k,\epsilon}) = \mu( \bigcup_k (E_k \setminus A_{k, \epsilon}) \leq \sum_k \mu(E_k \setminus A_{k,\epsilon}) \leq \epsilon \sum_k 2^{-k} = \epsilon$. We have then proved the claim for each $\epsilon$.
+
+Now we take the sets $A_{k, 2^{-m}}$ these form a countable collection what we really need to do is reorder them but lets show the theorem in an explicit way. Let $A_{n} = \bigcup_{k, m \leq n} A_{k, 2^{-m}}$ then since $f_n$ converges uniformly on each $A_{k, 2^{-m}}$ it converges uniformly on any finite union of such sets so on each $A_n$. So then look at $\mu(E \setminus \bigcup_n A_n) \leq \mu(E \setminus \bigcup_k A_{k, 2^{-m}})$ for any $m$ by monotonicity of $\mu$. Therefore $\mu(E \setminus \bigcup_n A_n) \leq 2^{-m}$ for any $m$, hence $\mu(E \setminus \bigcup_n A_n) = 0$. Therefore set $B = E \setminus \bigcup_n A_n)$ and we have proved the result.
+\end{ans}
+\end{document}

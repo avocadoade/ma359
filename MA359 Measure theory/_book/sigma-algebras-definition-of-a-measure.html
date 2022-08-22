@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2022-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="outer-measures-and-lebesgue-measure.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>1.2</b> The most important things you will learn in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>2.1</b> Collections of subsets</a></li>
+<li class="chapter" data-level="2.2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#set-functions"><i class="fa fa-check"></i><b>2.2</b> Set functions</a></li>
+<li class="chapter" data-level="2.3" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#measure-spaces"><i class="fa fa-check"></i><b>2.3</b> Measure spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html"><i class="fa fa-check"></i><b>3</b> Outer measures and Lebesgue Measure</a>
+<ul>
+<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="integration-1.html"><a href="integration-1.html"><i class="fa fa-check"></i><b>5</b> Integration</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="integration-1.html"><a href="integration-1.html#convergence-theorems-for-integrals-of-functions"><i class="fa fa-check"></i><b>5.1</b> Convergence theorems for integrals of functions</a></li>
+<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html"><i class="fa fa-check"></i><b>8</b> Radon-Nikodym Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#signed-measures"><i class="fa fa-check"></i><b>8.1</b> Signed measures</a></li>
+<li class="chapter" data-level="8.2" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#absolute-continuity"><i class="fa fa-check"></i><b>8.2</b> Absolute Continuity</a></li>
+<li class="chapter" data-level="8.3" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#duality-in-lp-spaces"><i class="fa fa-check"></i><b>8.3</b> Duality in <span class="math inline">\(L^p\)</span> spaces</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Measure theory lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sigma-algebras-definition-of-a-measure" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure<a href="sigma-algebras-definition-of-a-measure.html#sigma-algebras-definition-of-a-measure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="collections-of-subsets" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Collections of subsets<a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We begin with some dry definitions of collections of sets and functions from collections of sets to <span class="math inline">\(\mathbb{R}\)</span>. These will give us the key formal definition of measures.</p>
+<p>These definitions are similar to the definition of a topology that you’ve hopefully seen before. In measure theory we are usually not able to work with any subset of our main set, we will have to restrict ourselves to a subcollection of all possible subsets and so we can think of these definitions as providing collections of sets which will be the objects we can measure.</p>
+<p>We begin with the most basic definition. An algebra is is collection of sets closed under finite set operations.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 2.1  (Algebra) </strong></span>A collection of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{A}\)</span>, is called and algebra if</p>
+<ul>
+<li><span class="math inline">\(\emptyset \in \mathcal{A}, \, E \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A \in \mathcal{A}\)</span> then <span class="math inline">\(A^c \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> then <span class="math inline">\(A \cup B \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> then <span class="math inline">\(A \cap B \in \mathcal{A}\)</span>.</li>
+</ul>
+</div>
+<p>We next define a <span class="math inline">\(\sigma\)</span>-algebra. This is the <em>key</em> definition of a collection of sets for measure theory. The letter <span class="math inline">\(\sigma\)</span> here denotes countability. A <span class="math inline">\(\sigma\)</span>-algebra is a collection of subsets of a space <span class="math inline">\(E\)</span>, which are closed under countable set operations.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 2.2  ($\sigma$-algebra) </strong></span>A collection of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{A}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra if</p>
+<ul>
+<li><span class="math inline">\(\emptyset \in \mathcal{A}, E \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A \in \mathcal{A}\)</span> then <span class="math inline">\(A^c \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A_1, A_2, \dots\)</span> is a countable collection of sets in <span class="math inline">\(\mathcal{A}\)</span> then $ _{n=1}^A_n $.</li>
+<li>If <span class="math inline">\(A_1, A_2, \dots\)</span> is a countable collection of sets in <span class="math inline">\(\mathcal{A}\)</span> then <span class="math inline">\(\bigcap_{n=1}^\infty A_n \in \mathcal{A}\)</span>.</li>
+</ul>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-3" class="lemma"><strong>Lemma 2.1  </strong></span>We can equivalently define a <span class="math inline">\(\sigma\)</span>-algebra as a collection of sets which is contains <span class="math inline">\(\emptyset\)</span> and is closed under taking complements and countable unions.</p>
+<p>We can think of this as a kind of <em>motto</em> for what a <span class="math inline">\(\sigma\)</span>-algebra is.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>Suppose that <span class="math inline">\(\mathcal{E}\)</span> is closed under complements and taking countable unions and contains <span class="math inline">\(\emptyset\)</span>, then it is clear that <span class="math inline">\(E \in \mathcal{E}\)</span>. We need to show that if <span class="math inline">\((A_n)_n\)</span> is a sequence in <span class="math inline">\(\mathcal{E}\)</span> then <span class="math inline">\(\bigcap A_n \in \mathcal{E}\)</span>. We know that <span class="math inline">\(\bigcap A_n = \left( \bigcup A_n^c \right)^c\)</span> so this gives our result.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 2.1  </strong></span>In this course we really only deal with one `concrete’, non-trivial example of a <span class="math inline">\(\sigma\)</span>-algebra. This is complicated to introduce and we will discuss below.</p>
+<p>However, in order to better understand the definition we give a few examples of things which are, and are not <span class="math inline">\(\sigma\)</span>-algebras.</p>
+<ul>
+<li>The main example is the Borel <span class="math inline">\(\sigma\)</span>-algebra which we will meet in week 2</li>
+<li>The power set (set of all subsets) of <span class="math inline">\(E\)</span> is always a <span class="math inline">\(\sigma\)</span> algebra.</li>
+<li>If <span class="math inline">\(A \subset E\)</span> then <span class="math inline">\(\{\emptyset, A, A^c, E\}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra.</li>
+<li>The set of all intervals in <span class="math inline">\(\mathbb{R}\)</span> is not a <span class="math inline">\(\sigma\)</span>-algebra as it is not closed under taking unions.</li>
+<li>The set of all finite unions of half open intervals <span class="math inline">\((a,b]\)</span> is an algebra but not a <span class="math inline">\(\sigma\)</span>-algebra as it is closed under finite unions but not countable unions.</li>
+</ul>
+</div>
+<p>We now collect some results and further definitions about <span class="math inline">\(\sigma\)</span>-algebras.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-6" class="lemma"><strong>Lemma 2.2  </strong></span>Suppose <span class="math inline">\(E\)</span> is a space and <span class="math inline">\(\mathcal{C}\)</span> is a collection of <span class="math inline">\(\sigma\)</span> algebras possibly uncountable. Then <span class="math inline">\(\bigcap_{\mathcal{A} \in \mathcal{C}} \mathcal{A}\)</span> is also a <span class="math inline">\(\sigma\)</span>-algebra.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>It is straightforward to check that every part of the definition of a <span class="math inline">\(\sigma\)</span>-algebra holds for the intersection.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-8" class="corollary"><strong>Corollary 2.1  </strong></span>For any collection of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{F}\)</span> there is a smallest <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(\mathcal{F}\)</span>. We call this <span class="math inline">\(\sigma(\mathcal{F})\)</span> or the <span class="math inline">\(\sigma\)</span>-algebra generated by <span class="math inline">\(\mathcal{F}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span>There exists at least one <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(\mathcal{F}\)</span> since the set of all subsets of <span class="math inline">\(E\)</span> is a <span class="math inline">\(\sigma\)</span> algebra. Then we can consider the non-empty intersection <span class="math inline">\(\bigcap_{\mathcal{A} \in \mathcal{C}} \mathcal{A}\)</span> where <span class="math inline">\(\mathcal{C}\)</span> is the collection of all <span class="math inline">\(\sigma\)</span>-algebras which contain <span class="math inline">\(\mathcal{F}\)</span>. We call this resulting <span class="math inline">\(\sigma\)</span>- algebra the <span class="math inline">\(\sigma\)</span>-<em>algebra generated by</em> <span class="math inline">\(\mathcal{F}\)</span>.</p>
+</div>
+<p>Let us now move on to one of the most important types of <span class="math inline">\(\sigma\)</span>-algebra that we will consider. This is the <em>important</em> <span class="math inline">\(\sigma\)</span>-algebra mentioned above.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 2.2  (Key example: Borel $\sigma$-algebra) </strong></span>If <span class="math inline">\(E\)</span> is a topological space and <span class="math inline">\(\mathcal{O}\)</span> the family of open sets in <span class="math inline">\(E\)</span>, then we write <span class="math inline">\(\mathcal{B}(E)\)</span> to be the <span class="math inline">\(\sigma\)</span>-algebra generated by <span class="math inline">\(\mathcal{O}\)</span>. This is called the Borel <span class="math inline">\(\sigma\)</span>-algebra.</p>
+</div>
+<p>We are most interested in <span class="math inline">\(\mathcal{B}(\mathbb{R}^d)\)</span>. We have the following result</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-11" class="lemma"><strong>Lemma 2.3  </strong></span><span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> is generated (recall this means the smallest <span class="math inline">\(\sigma\)</span>-algebra containing this collection of subsets) by the following collections of subsets.</p>
+<ul>
+<li>The collection of closed sets in <span class="math inline">\(\mathbb{R}\)</span>.</li>
+<li>The collection of intervals of the form <span class="math inline">\((-\infty, b]\)</span>.</li>
+<li>The collection of intervals of the form <span class="math inline">\((a,b]\)</span>.</li>
+</ul>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span>Let us call <span class="math inline">\(\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3\)</span> to be the <span class="math inline">\(\sigma\)</span>-algebras generated by the sets above. We then want to show that <span class="math inline">\(\mathcal{B}(\mathbb{R}) \supseteq \mathcal{B}_1 \supseteq \mathcal{B}_2 \supseteq \mathcal{B}_3\)</span>.</p>
+<p>As <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> contains all the open sets, it also contains all the closed sets (whose complements are open). Therefore, it also contains <span class="math inline">\(\mathcal{B}_1\)</span>.</p>
+<p>As <span class="math inline">\(\mathcal{B}_1\)</span> contains all the closed sets, and all the intervals <span class="math inline">\((-\infty, b]\)</span> are closed then <span class="math inline">\(\mathcal{B}_1\)</span> contains the <span class="math inline">\(\sigma\)</span>-algebra generated by these sets, namely <span class="math inline">\(\mathcal{B}_2\)</span>.</p>
+<p>As <span class="math inline">\(\mathcal{B}_2\)</span> contains <span class="math inline">\((-\infty, b]\)</span> and <span class="math inline">\((-\infty, a]\)</span> and is closed under complements it also contains, <span class="math inline">\((-\infty, b]\)</span> and <span class="math inline">\((a, \infty)\)</span>. As <span class="math inline">\(\mathcal{B}_2\)</span> is closed under intersection, this means it also contains <span class="math inline">\((a,b]\)</span>. This is true for all <span class="math inline">\(a&lt;b\)</span> so <span class="math inline">\(\mathcal{B}_2\)</span> contains all sets of this form. Consequently, it contains <span class="math inline">\(\mathcal{B}_3\)</span>.</p>
+<p>Now we want to show that <span class="math inline">\(\mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}_3\)</span>. This will conclude the proof. First we note, that we can make an open interval <span class="math inline">\((a,b) = \bigcup_n (a, b-1/n]\)</span> where the union is taken over all <span class="math inline">\(n &gt; (b-a)^{-1}\)</span>. Now we need to show that any open set in <span class="math inline">\(\mathbb{R}\)</span> is a countable union of open intervals. Let <span class="math inline">\(U\)</span> be such an open set then let
+<span class="math display">\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \]</span> Then since <span class="math inline">\(O\)</span> is a union of subsets of <span class="math inline">\(U\)</span> then <span class="math inline">\(O \subseteq U\)</span>. Suppose that <span class="math inline">\(x \in U\)</span> then there exists some <span class="math inline">\(\rho\)</span> such that <span class="math inline">\((x-\rho, x+\rho) \subseteq U\)</span>. There is some rationals <span class="math inline">\(q,r\)</span> such that <span class="math inline">\(x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)\)</span> therefore <span class="math inline">\(x \in O\)</span>. Consequently <span class="math inline">\(U= O\)</span>.</p>
+</div>
+<p>We have two further defnitions of collections of sets which will be useful. These separate the two parts of the defnition of a <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<p>Rather than thinking of these as a collection of subsets that we can measure or pay attention to these definitions will typically appear inside proofs.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 2.3  ($\pi$-system) </strong></span>A collection of subsets of <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{A}\)</span> is a <span class="math inline">\(\pi\)</span>-system if</p>
+<ul>
+<li><span class="math inline">\(\emptyset \in \mathcal{A}\)</span></li>
+<li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> then <span class="math inline">\(A \cap B \in \mathcal{A}\)</span>.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-14" class="definition"><strong>Definition 2.4  ($D$-system) </strong></span>A collection of subsets of <span class="math inline">\(E, \mathcal{A}\)</span> is a <span class="math inline">\(d\)</span>-system if</p>
+<ul>
+<li><span class="math inline">\(E \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> with <span class="math inline">\(A \subset B\)</span> then <span class="math inline">\(B \setminus A \in \mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(A_1 \subset A_2 \subset A_3 \subset \dots\)</span> then $ _{n=1}^A_n $.</li>
+</ul>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-15" class="lemma"><strong>Lemma 2.4  (Dynkin's $\pi$-system lemma) </strong></span>Let <span class="math inline">\(\mathcal{A}\)</span> be a <span class="math inline">\(\pi\)</span>-system. Then any <span class="math inline">\(d\)</span>-system containing <span class="math inline">\(\mathcal{A}\)</span> also contains the <span class="math inline">\(\sigma\)</span>-algebra generated by <span class="math inline">\(\mathcal{A}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-16" class="proof"><em>Proof</em>. </span>This is an exercise.</p>
+</div>
+</div>
+<div id="set-functions" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Set functions<a href="sigma-algebras-definition-of-a-measure.html#set-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are now able to introduce the next important set of objects we will be studying in the course. These are measures. We can think of these as measuring the size of different sets.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 2.5  (Set function) </strong></span>A set function <span class="math inline">\(\phi\)</span> is a function from a family of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{A}\)</span> to <span class="math inline">\(\mathbb{R}\cup\{\infty\}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 2.6  (Measure) </strong></span>A measure is a specific type of set function which satisfies certain axioms. A set function <span class="math inline">\(\mu\)</span> defined from a <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{A}\)</span> is a measure if,</p>
+<ul>
+<li><span class="math inline">\(\mu(A) \geq 0\)</span> for every <span class="math inline">\(A \in \mathcal{A}\)</span>.</li>
+<li><span class="math inline">\(\mu(\emptyset) = 0\)</span></li>
+<li>If <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> are all pairwise disjoint and in <span class="math inline">\(\mathcal{A}\)</span> then</li>
+</ul>
+<p><span class="math display">\[\mu \left( \bigcup_n A_n \right) = \sum_n \mu(A_n).\]</span></p>
+<p>We call this last property <em>countable additivity</em>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 2.3  (Delta (function)) </strong></span>You’ve probably seen <span class="math inline">\(\delta_{x_0}(x)\)</span> used before; it is similar to the Kroeneker delta which appears in discrete spaces <span class="math inline">\(\delta_{x,y} = 1\)</span> if and only if <span class="math inline">\(x=y\)</span>. This is the `function’ defined by <span class="math inline">\(\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)\)</span>. We can define a measure on <span class="math inline">\(\mathbb{R}^d\)</span> which will have this property by</p>
+<p><span class="math display">\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 &amp; x_0 \in A \\ 0 &amp; x_0 \notin A \end{array} \right..\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.4  (Countable spaces) </strong></span>If <span class="math inline">\(E = \{ x_1, x_2, \dots\}\)</span> is a countable space and <span class="math inline">\(F: E \rightarrow \mathbb{R}_{\geq 0}\)</span> is a non-negative function then we can define a measure by <span class="math inline">\(\mu(A) = \sum_n F(x_n)1_{x_n \in A}\)</span>. In fact any measure on a countable set can be written this way by choosing <span class="math inline">\(F(x_n) = \mu(\{x_n\})\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-21" class="example"><strong>Example 2.5  (Function (informally)) </strong></span>In the course we will define this rigorously later. However we can define a measure on <span class="math inline">\(\mathbb{R}^d\)</span> by integrating a function over subsets of <span class="math inline">\(\mathbb{R}^d\)</span>. If <span class="math inline">\(f\)</span> is a non-negative function then we define <span class="math inline">\(\mu_f(A) = \int_A f(x) \mathrm{d}x\)</span>.</p>
+</div>
+<p>We also define two further possible properties of set functions</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-22" class="definition"><strong>Definition 2.7  (monotonicity) </strong></span>A set function <span class="math inline">\(\phi\)</span> is monotone if whenever <span class="math inline">\(A \subseteq B\)</span> we have <span class="math inline">\(\phi(A) \leq \phi(B)\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-23" class="definition"><strong>Definition 2.8  (Countable subadditivity) </strong></span>A set function <span class="math inline">\(\phi\)</span> is countably subadditive if for every sequence of sets <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> we have</p>
+<p><span class="math display">\[ \phi \left( \bigcup_n A_n \right) \leq \sum_n \phi(A_n). \]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-24" class="lemma"><strong>Lemma 2.5  </strong></span>If <span class="math inline">\(\mu\)</span> is a measure the <span class="math inline">\(\mu\)</span> is both monotone and countably subadditive.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-25" class="proof"><em>Proof</em>. </span>Suppose <span class="math inline">\(A \subseteq B\)</span> then <span class="math inline">\(B = A \cup (B \setminus A)\)</span> and this union is disjoint. Countable additivity then implies that <span class="math inline">\(\mu(B) = \mu(A) + \mu(B \setminus A)\)</span> and since <span class="math inline">\(\mu(B \setminus A) \geq 0\)</span> we have <span class="math inline">\(\mu(A) \leq \mu(B)\)</span>.</p>
+<p>Now take a sequence <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> and define <span class="math inline">\(B_n = A_n \setminus \left(A_n \cap \bigcup_{k=1}^{n-1}A_k \right)\)</span> then the <span class="math inline">\(B_n\)</span> form a disjoint sequence with <span class="math inline">\(\bigcup_n A_n = \bigcup_n B_n\)</span>. We also have, for every <span class="math inline">\(n\)</span>, that <span class="math inline">\(B_n \subseteq A_n\)</span> so by monotonicity <span class="math inline">\(\mu(B_n) \leq \mu(A_n)\)</span>. Then using countable additivity on the union of the <span class="math inline">\(B_n\)</span> we have
+<span class="math display">\[ \mu(\bigcup_n A_n) = \mu(\bigcup_n B_n) = \sum_n \mu(B_n) \leq \sum_n \mu(A_n). \]</span></p>
+</div>
+</div>
+<div id="measure-spaces" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Measure spaces<a href="sigma-algebras-definition-of-a-measure.html#measure-spaces" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have seen that in order to define a measure you need to start with a <span class="math inline">\(\sigma\)</span>-algebra. Normally we consider the base space, <span class="math inline">\(\sigma\)</span>-algebra, and measure all coming together. This forms the fundamental object we study in the first half of the course. You can compare the idea of a measure space to that of a topological space.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 2.9  (Measurable space) </strong></span>We call a pair <span class="math inline">\((E, \mathcal{A})\)</span> of a space and a <span class="math inline">\(\sigma\)</span>-algebra, a <em>measureable space</em>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-27" class="definition"><strong>Definition 2.10  (Measure space) </strong></span>We call a triple <span class="math inline">\((E, \mathcal{A}, \mu)\)</span> of a space, a <span class="math inline">\(\sigma\)</span>-algebra and a measure a <em>measure space</em>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 2.11  (Finite measure space) </strong></span>We call a measure space <span class="math inline">\((E, \mathcal{A}, \mu)\)</span> <em>finite</em> if <span class="math inline">\(\mu(E) &lt; \infty\)</span>.</p>
+</div>
+<p>Again we have some further definitions for specific properties measure spaces can have. You can explore these definitions a bit more with the exercises.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 2.12  ($\sigma$-finite measure space) </strong></span>We call a measure space, <span class="math inline">\((E, \mathcal{A}, \mu)\)</span>, <span class="math inline">\(\sigma\)</span>-<em>finite</em> if there exists a countable collection <span class="math inline">\(E_1, E_2, \dots \in \mathcal{A}\)</span> such that
+<span class="math display">\[ E = \bigcup_n E_n, \]</span>
+and</p>
+<p><span class="math display">\[ \mu(E_i) &lt; \infty, \, \forall i. \]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 2.13  (Borel measures and Radon measures) </strong></span>A measure <span class="math inline">\(\mu\)</span> on a subset of a topological space <span class="math inline">\(E\)</span> is called a if it is a measure with respect to the Borel <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<p>A Borel measure is called a if for every compact set <span class="math inline">\(K \in \mathcal{B}(E)\)</span> we have that <span class="math inline">\(\mu(K) &lt; \infty\)</span>.</p>
+</div>
+<p>We can now prove the first theorem in our course. This is known as continuity of measure and it shows that we can approximate the measure of a set by finding a sequence of sets that approach that set.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-31" class="theorem"><strong>Theorem 2.1  (Continuity of measure) </strong></span>Let <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> be a measure space. Suppose that <span class="math inline">\((A_n)_n\)</span> is a sequence of measurable sets with <span class="math inline">\(A_1 \subseteq A_2 \subseteq \dots\)</span> and <span class="math inline">\((B_n)_n\)</span> is a sequence of measurable sets with <span class="math inline">\(B_1 \supseteq B_2 \supseteq \dots\)</span>, and <span class="math inline">\(\mu(B_1)&lt; \infty\)</span> then we have</p>
+<p><span class="math display">\[ \mu\left( \bigcup_n A_n\right) = \lim_n \mu(A_n) \]</span>
+and</p>
+<p><span class="math display">\[ \mu\left( \bigcap_n B_n \right) = \lim_n \mu(B_n). \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-32" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(\tilde{A}_n = A_n \setminus A_{n-1}\)</span>. We have that <span class="math inline">\(\bigcup_n A_n = \bigcup_n \tilde{A}_n\)</span>. Furthermore, countable additivity gives us that
+<span class="math display">\[ \mu\left( \bigcup_n \tilde{A}_n \right) = \sum_n \mu(\tilde{A}_n). \]</span> Therefore, we have <span class="math inline">\(\sum_{n=1}^m \mu(\tilde{A}_n) \rightarrow \mu \left( \bigcup_n A_n \right)\)</span>. We also have <span class="math inline">\(\sum_{n=1}^m \mu(\tilde{A}_n) = \mu \left( \bigcup_{n=1}^m \tilde{A}_n \right) = \mu (A_m)\)</span>.</p>
+<p>Now we move onto the <span class="math inline">\(B_n\)</span>, let <span class="math inline">\(C_n = B_1 \setminus B_n\)</span> then the <span class="math inline">\(C_n\)</span> are an increasing sequence of measurable sets with <span class="math inline">\(C_n \uparrow B_1 \setminus \bigcap_n B_n\)</span>. So by the first part we have <span class="math inline">\(\mu\left(B_1 \setminus \bigcap_n B_n \right) = \lim_n \mu(C_n)\)</span>. Therefore
+<span class="math display">\[ \mu(B_1) - \mu\left( \bigcap_n B_n \right) = \mu(B_1) - \lim_n \mu(B_n). \]</span> This gives the result as long as <span class="math inline">\(\mu(B_1) &lt; \infty\)</span>. If there exist an <span class="math inline">\(m\)</span> such that <span class="math inline">\(\mu(B_m) &lt; \infty\)</span> then we can renumber starting with <span class="math inline">\(m\)</span> and repeat the argument above.</p>
+<p>N.b. the fact that <span class="math inline">\(\mu(B)&lt; \infty\)</span> implies <span class="math inline">\(\mu(A)&lt; \infty\)</span> if <span class="math inline">\(B \subset A\)</span> follows from finite additivity. <span class="math inline">\(\mu(B) = \mu(A) + \mu(B \setminus A) \geq \mu(A)\)</span>.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="outer-measures-and-lebesgue-measure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-Basicdefns.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

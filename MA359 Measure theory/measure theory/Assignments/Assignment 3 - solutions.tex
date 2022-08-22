@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{q}[thm]{Question}
+\newenvironment{ans}{\paragraph{Answer:}}{\hfill$\square$ \vspace{10pt}}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory: Assignment Three - Simple functions and Lebesgue integration}
+%\date{}
+
+\makeindex
+
+
+\begin{document}
+\maketitle
+
+
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space. Recall that we call a function $f: E \rightarrow \mathbb{R}$ simple if it is non-negative and can be written in the form $f(x) = \sum_{k=1}^n a_k1_{A_k}(x)$ where the $a_k$ are non-negative numbers and $A_k \in \mathcal{E}$ for each $k$.
+
+\begin{q}
+Show that if $f$ is a simple function then $f$ is measurable. \emph{6 marks}
+\end{q}
+\begin{ans}
+As $f$ is simple we can write it as $f(x) = \sum_{k=1}^n a_k 1_{A_k}$ then if $B$ is a Borel set in $\mathbb{R}$ we have $f^{-1}(B) = \bigcup_{k s.t. a_k \in B}A_k$ this is a finite union of measurable sets so also measurable. Therefore $f$ is measurable.
+\end{ans}
+
+\begin{q}
+Let $f: E \rightarrow \mathbb{R}\cup\{\infty\}$ be measurable and non-negative. Recall our classic approximation
+\[ f_n(x) = \left(2^{-n} \lfloor 2^n f(x) \rfloor \right)\wedge n. \] Show that the sequence $f_n(x)$ is increasing for every $x$ and has limit $f(x)$. Show that $f_n$ is a simple function for each $n$.  \emph{7 marks}
+\end{q}
+\begin{ans}
+Firstly, to show $f$ is simple, we can write it as $a_{k,n} = k2^{-n}$ for $k =1,2, \dots, n2^n$, and let $A_{k,n} = f^{-1}([a_{k,n}, a_{(k+1),n}))$ then we have that $f_n(x) = \sum_{k=0}^{n2^n} a_{k,n}1_{A_{k,n}}$, then by defintion $a_{k,n} \geq 0$ and as $f$ is measurable and $[a_{k,n}, a_{(k+1),n}) \in \mathcal{B}(\mathbb{R})$ we have that $A_{k,n} \in \mathcal{E}$.
+
+To show $f_n$ converges to $f$, we note that $f_n(x)$ is the largest number of the for $k2^{-n}$ which is smaller than $f(x)$ therefore $|f_n(x)-f(x)| \leq 2^{-n}$ which shows that $f_n(x) \rightarrow f(x)$ (and also that it converges uniformly but that isn't part of the questions). 
+
+To show that $f_n(x)$ is an increasing sequence, suppose that $f_n(x) = k2^{-n}$ then this means that $f(x) \in [k2^{-n}, (k+1)2^{-n})$. Now we know that $f_{n+1}(x)$ is the smallest number of the form $j2^{-n-1}$ with $j \in \mathbb{N}$ that is less than or equal to $f(x)$ so as $f(x) \in [k2^{-n}, (k+1)2^{-n})$, we have that $f_{n+1}(x)$ is either $(2k)2^{-n-1}$ or $(2k+1)2^{-n-1}$ both of which are greater than or equal to $k2^{-n} = f_n(x)$ so $f_{n+1}(x) \geq f_n(x)$.
+\end{ans}
+
+\begin{q}
+Suppose $f: E \rightarrow \mathbb{R}\cup\{\infty\}\cup\{-\infty\}$ is either non-negative or integrable. Let $N$ be a null set. Define the function $g$ by $g(x) = f(x)1_N(x)$. Show that $\mu(g) = 0$. We say two function $f_1$ and $f_2$ are equal almost everywhere if $\mu\{x\,:\, f_1(x) \neq f_2(x)\} = 0$. Show that this implies $\int f_1(x) \mu(\mathrm{d}x) = \int f_2(x) \mu(\mathrm{d}x)$. \emph{12 marks}
+\end{q}
+\begin{ans}
+First let us work in the case that $f \geq 0$. Then we use the fact that if $f_n$ is an increasing sequence of measurable functions then $\mu(f) = \lim_n \mu(f_n)$. We can construct such a sequence as in the previous questions. Now let $g_n = f_n1_N$, then we will have that $g_n \uparrow g$. If $f_n = \sum_{k=1}^{N_n} a_{k,n} 1_{A_{k,n}}$ then we can express $g_n$ by $g_n = \sum_{k=1}^{N_n} a_{k,n}1_{A_{k,n} \cap N}$ and we have that $\mu(g_n) = \sum_{k=1}^{N_n} a_{k,n} \mu(A_{k,n} \cap N)$. As $\mu(N) = 0$ by monotonicity we have that $\mu(A_{k,n} \cap N) = 0$, so $\mu(g_n) = 0$. Therefore $\mu(g) = \lim_n \mu(g_n) = 0$. 
+
+Now in the case that $f$ is integrable, we have that $g = f_+1_N - f_- 1_N$ and so we have $\mu(g) = \mu(f_+1_N) - \mu(f_- 1_N)$ and using the result for positive $f$ we have that $\mu(g) = 0$.
+
+Now suppose that $f_1 = f_2$ almost everywhere, let us define $N = \{ x \,:\, f_1(x) \neq f_2(x)\}$ then we have that $\mu(N) = 0$. We have that $\mu(f_1) = \mu(f_1 1_N) + \mu(f_1 1_{N^c}) = \mu(f_1 1_N) + \mu(f_2 1_{N^c} = \mu(f_21_{N^c})$ as $f_1 = f_2$ on $N^c$ and using the first part of the questions $\mu(f_1 1_N) = 0$. We also have that $\mu(f_1 1_N) = 0$ so $\mu(f_2) = \mu(f_21_N) + \mu(f_2 1_{N^c}) = \mu(f_2 1_{N^c})$ therefore $\mu(f_1) = \mu(f_2)$. 
+\end{ans}
+
+
+\end{document}

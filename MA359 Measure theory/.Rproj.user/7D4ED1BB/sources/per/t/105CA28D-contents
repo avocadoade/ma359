@@ -1,0 +1,453 @@
+# Norms and inequalities
+
+Let us remember what a normed space is with an emphasis on how this fits in with functions spaces.
+
+::: {.definition name="Normed space"}
+
+A normed space is a vector space $\mathcal{V}$ equipped with a norm, $\|\cdot\|$, which should satisfy
+
+- $\| v\| \in \mathbb{R}_+$
+- $\| \lambda v\| = |\lambda\| \|v\|$
+- $\|v+u\| \leq \|v\| + \|u\|$
+- $\|v\|=0$ if and only if $v=0$.
+
+:::
+
+We are interested in normed spaces of functions, where the norms come from integrating quantites. 
+
+::: {.definition name="$L^p(E)$"}
+
+Suppose that $(E, \mathcal{E}, \mu)$ is a measure space, and $p \geq 1$, then we have the associated $L^p$ space, which is the space of measurable functions equipped with the norm
+
+$$ \| f\|_p = \left( \mu(|f|^p)\right)^{1/p}. $$
+
+When we are working on $\Omega \subseteq \mathbb{R}^d$ with Lebesgue measure we often write the space $L^p(\Omega)$ to be the set of functions with $ \int_\Omega |f|^p \mathrm{d}x < \infty$. We then often write the norm $\| \cdot\|_{L^p(\Omega)}$ if we have not previously specified which space we are working in. If we are working with the measure $\gamma(x) \mathrm{d}x$ for some positive function $\gamma$ on $\mathbb{R}^d$ then we write $L^p(\gamma), \| \cdot\|_{L^p(\gamma)}$.  We also call $L^p(E)$ or $L^p(\Omega)$ or $L^p(\gamma)$ the space of measurable functions where the associated norm is finite.
+
+:::
+
+
+We also have the supremum norm.
+
+::: {.definition}
+Suppose $(E, \mathcal{E}, \mu)$ is a measure space. We have the following norm on measurable functions
+
+$$ \|f\|_\infty = \inf \{ c \,:\, |f| \leq c \, \mbox{almost everywhere}\}. $$
+
+We also call the space $L^\infty(E)$ the space of all measurable functions on $E$ with $\|f\|_\infty < \infty$.
+
+:::
+
+
+::: {.remark}
+
+Strictly speaking the norms defined above are seminorms. This is because all these norms will vanish for a function $f$, where $f$ is non-zero but is equal to zero almost everywhere. When working in $L^p$ spaces we consider two functions the same if they are equal almost everywhere. 
+
+Strictly speaking we no longer consider functions $f$ when we work in $L^p$ spaces we instead consider equivalence classes of functions with the equivalence relation $f \sim g$ if $f=g$ almost everywhere. When working in this setting we write $\mathcal{L}^p$ for the space of measurable function equipped with the $p$-seminorm and $L^p$ for the space of equivalence classes of functions equipped with the $p$-norm. Most of the time we wont really think about an element of $L^p$ as an equivalence class and *hopefully* it quickly becomes natural to think about functions as defined up to alteration on a null set.
+
+:::
+
+
+::: {.theorem}
+
+For $p \in [1,\infty]$ the space $L^p(E)$ is indeed a vector space. 
+
+:::
+
+::: {.proof}
+
+We need to show $f \in L^p(E)$ implies that $\alpha f \in L^p(E)$ for $\alpha \in \mathbb{R}$ (or $\mathbb{C}$) and $f, g \in L^p(E)$ implies that $f+g \in L^p(E)$, specifically we need to show that $\| \alpha f \|_p < \infty$ and $\|f+g\|_p < \infty$. 
+
+For $p < \infty$, the first point we can use the linearity of the integral to get
+
+$$ \mu \left( |\alpha|^p |f|^p \right) = |\alpha|^p \mu(|f|^p) < \infty.$$
+
+Now, in a slightly more complex way we have
+
+$$ \int |f(x) + g(x)|^p \mu(\mathrm{d}x) \leq \int \left( 2 \max\{|f(x)|, |g(x)|\}\right)^p \mu(\mathrm{d}x) \leq \int 2^p\left(|f(x)|^p + |g(x)|^p \right) \mu(\mathrm{d}x) \leq 2^p \left( \|f\|_p^p + \|g\|_p^p \right) < \infty. $$
+
+
+For $p=\infty$ for the first point it follows immediately from the definition that $\|\alpha f\|_\infty  = |\alpha| \|f\|_\infty < \infty$. For the second point since the union of two null sets is null we have that $f+g$ is equivalent to a function which is uniformly bounded. Therefore it is clear that $\|f+g\|_\infty \leq \|f\|_\infty + \|g\|_\infty$. 
+
+:::
+
+## Inequalities
+
+In order to progress further with normed spaces of functions we need to be able to prove the triangle inequality for the $p$-norms. This inequality is called *Minkowski's inequality*. In the next section we prove it as well as several other inequalities which are very useful when working with function spaces. 
+
+
+
+For our first couple of inequalities let us just look at some useful inequalities between real numbers.
+
+::: {.lemma name="Young's inequality (watch out there are at least two things with this name)"}
+
+Let $x$ and $y$ be two positive real numbers and $p \in [1, \infty)$ with $1/p +1/q = 1$ then we have
+
+$$ xy \leq \frac{x^p}{p} + \frac{y^q}{q}. $$
+
+:::
+
+::: {.proof}
+
+We can see the inequality holds when either $x$ or $y$ are zero so we neglect this case and define $u = x^p$ and $v = y^q$. Therefore we want to show that
+
+$$ u^{1/p}v^{1/q} \leq \frac{u}{p} + \frac{v}{q}. $$
+
+As everything is strictly positive we can divide both sides by $v$, and use the relationship between $p$ and $q$, to get
+
+$$ u^{1/p}v^{-1/p} \leq \frac{u/v}{p} + \frac{1}{q}. $$
+
+Now let us define $t = u/v$, so our orriginal inequality will be true if we can show
+
+$$ t^{1/p} \leq \frac{t}{p} + \frac{1}{q}, $$
+
+or equivalently 
+
+$$ \frac{t}{p} + \frac{1}{q} - t^{1/p} \geq 0. $$
+
+We can differentiate this function in $t$ and get
+
+$$ \frac{\mathrm{d}}{\mathrm{d}t} \left(  \frac{t}{p} + \frac{1}{q} - t^{1/p}\right) = \frac{1}{p}(1- t^{-1/q}) $$
+
+and differentiate a second time to get
+
+$$  \frac{\mathrm{d}^2}{\mathrm{d}t^2} \left(  \frac{t}{p} + \frac{1}{q} - t^{1/p}\right)  =\frac{1}{pq} t^{-1-1/q} >0.$$
+
+So this function achieves a minimum when $t^{-1/q} = 1$, that is when $t=1$, and it achieves the minimum value 0. Therefore it is always positive and the inequality holds. 
+
+:::
+
+We also have the very simple corollary which is often useful (especially in Analysis of PDE)
+
+::: {.corollary}
+
+Suppose that $x,y$ are positive then for every $\eta >0$ we have
+
+$$ xy \leq \frac{x^p \eta^p}{p} + \frac{y^q}{\eta^q q} $$
+
+:::
+
+::: {.proof}
+
+Just write $xy = (\eta x)(y/\eta)$.
+
+:::
+
+
+Using Young's inequality we can prove an inequality about functions.
+
+::: {.proposition name="Hölder's Inequality"}
+
+Suppose that $(E, \mathcal{E}, \mu)$ is a measure space and $f \in L^p(E), g \in L^q(E)$ with $1/p+1/q =1$ then $fg \in L^1(E)$ and we have the following inequality
+
+$$ \|fg\|_1 \leq  \|f\|_p \|g\|_q $$
+
+:::
+
+::: {.proof}
+
+First let us look at the case where $f \in L^1(E)$ and $g \in L^\infty(E)$ without loss of generality let $g$ be bounded everywhere by $\|g\|_\infty$ then we have
+
+$$ |f(x)g(x)| \leq |f(x)| \|g\|_\infty $$
+
+and integrating this inequality (using monotonicity) gives the result.
+
+The more complicated case is where $p \in (1, \infty)$  then we have for each $\eta >0$ that
+
+$$ |f(x)g(x)| \leq \frac{\eta^p |f(x)|^p}{p} + \frac{|g(x)|^q}{\eta^q q}. $$
+
+Integrating this gives
+
+$$ \|fg\|_1 \leq \frac{\eta^p}{p} \|f\|_p^p + \frac{1}{\eta^q q} \|g\|_q^q. $$
+
+We can then choose $\eta$ however we want so we choose it to make the right hand side as small as possible. We can find out how best to choose $\eta$ by differentiating in $\eta$.
+
+$$ \frac{\mathrm{d}}{\mathrm{d}\eta} \left(\frac{\eta^p}{p} \|f\|_p^p + \frac{1}{\eta^q q} \|g\|_q^q\right) = \eta^{p-1} \|f\|_p^p - \eta^{-q-1} \|g\|_q^q, $$
+
+and
+
+$$ \frac{\mathrm{d}^2}{\mathrm{d}\eta^2} \left(\frac{\eta^p}{p} \|f\|_p^p + \frac{1}{\eta^q q} \|g\|_q^q\right) = (p-1) \eta^{p-2} \|f\|_p^p + (q-1) \eta^{-q-2} \|g\|_q^q>0.$$
+
+So the right hand side of the inequality is smalles when
+
+$$ \eta^{p-1} \|f\|_p^p = \eta^{-q-1} \|g\|_q^q.  $$
+
+Which is when
+
+$$ \eta = \|g\|_q^{q/(p+q)} \|f\|_p^{-p/(p+q)}. $$
+
+Substituting this value of $\eta$ in gives
+
+$$ \|fg\|_1 \leq \frac{1}{p} \|f\|_p^{p-p^2/(p+q)} \|g\|^{pq/(p+q)} + \frac{1}{q} \|f\|^{pq/(p+q)}_p \|g\|_q^{q-q^2/(p+q)} = \left(\|f\|_p \|g\|_q \right)^{pq/(p+q)},$$
+
+and
+
+$$ pq/(p+q) = \left( (p+q)/pq \right)^{-1} = \left( 1/q + 1/p \right)^{-1} = 1. $$
+
+:::
+
+::: {.proof name="Second proof of Holder's inequality"}
+
+This is the more standard proof suppose first that $\|f\|_p =1, \|g\|_q = 1$ then using Young's inequality $|f(x)g(x)| \leq |f(x)|^p/p + |g(x)|^q/q$. So integrating this gives $\|fg\|_1 = \|f\|^p_p/p + \|g\|^p_q/q = 1/p + 1/q = 1$. Then we have for general $f,g$ that $\|f/\|f\|_p\|_p = 1$ and $\|g/\|g\|_q\|_q = 1$ so
+
+$$ \| fg/ \|f\|_p \|g\|_q\|_1 \leq 1,  $$
+
+and multiplying through gives
+
+$$ \|fg\|_1 = \|f\|_p \|g\|_q.$$
+
+:::
+
+::: {.remark name="Cauchy-Schwartz Inequality"}
+
+The important case of this inequality when $p=q=2$ is generally known as the Cauchy-Schwartz inequality.
+
+:::
+
+
+We also have Minkowski's inequality which as we discussed is necessary to make sure $L^p$ is a normed space.
+
+::: {.proposition name="Minkowski's Inequality"}
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space and suppose that $f,g$ are in $L^p$ then 
+
+$$ \|f+g\|_p \leq \|f\|_p + \|g \|_p. $$
+
+:::
+
+::: {.proof}
+
+We have already shown this when $p=\infty$, the case where $p=1$ is also straightforward. We have
+
+$$ |f(x) + g(x)| \leq |f(x)| + |g(x)| $$
+
+and integrating this gives the required inequality.
+
+We now move on to $p \in (1, \infty)$. We choose $q$ so that $1/p + 1/q  = 1$ and observe that $|f + g|^{p-1} \in L^q(E)$ as
+
+$$ |f+g|^{q(p-1)}= |f+g|^p. $$
+
+We also have that $|f|,|g| \in L^p(E)$. Therefore we have
+
+\begin{align*}\|f+g\|_p^p = \mu(|f+g|^p) &= \mu(|f+g| |f+g|^{p-1}) \\
+& \leq \mu(|f| |f+g|^{p-1}) + \mu (|g| |f+g|^{p-1} \\
+\mbox{using Hölder's ineq} \quad & \leq \left( \|f\|_p + \|g\|_p\right) \| |f+g|^{p-1}\|_q \\
+&= \left( \|f\|_p + \|g\|_p \right) \|f+g\|_p^{p/q}.
+\end{align*}
+
+Rearranging this gives
+
+$$ \|f+g\|^{p(1-1/q)} \leq \|f\|_p + \|g\|_p, $$
+
+and we recall that $p(1-1/q) = 1$.
+
+:::
+
+Now we move onto some more probabilistically focussed inequalities which do not directly relate to $L^p$ spaces
+
+::: {.proposition name="Markov's Inequality/ Chebychev's inequality"}
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space and $f$ a non-negative measurable function and $\lambda>0$. Then we have
+
+$$ \mu(\{ x\,:\, f(x) > \lambda\}) \leq \frac{1}{\lambda} \mu(f). $$
+
+:::
+
+::: {.proof}
+
+We have the following inequality 
+
+$$ \lambda 1_{\{ f(x) > \lambda\}} \leq f. $$
+
+We then integrate this and use the monotonicity of the integral to get
+
+$$ \lambda \mu(\{ f(x) > \lambda\}) \leq \mu(f). $$
+
+:::
+
+
+::: {.remark name="Tail estimates"}
+
+On of the powerful consequences of Markov's inequality is that is allows us to estimate how the function will behave at large values. For example suppose that $f \in L^p(\mathbb{R})$ then we know that
+
+$$ \lambda(\{ x\, :\, |f(x)| > t \} = \lambda (\{ x\,:\, |f(x)|^p > t^p\}) \leq t^{-p} \|f\|_p^p.$$
+
+This is particularly relevant in probability where we are interested in estimating how often extreme events happen and we get inequalities of the form
+
+$$ \mathbb{P}(X > x) \leq x^{-p}\mathbb{E}(X^p). $$
+
+:::
+
+
+::: {.remark name="Tchernoff bounds"}
+
+Another common use of Markov's inequality is when we know how $\mu( \exp( \alpha f(x)))$ behaves as we vary $\alpha$. For example, in a probabilistic setting $\mathbb{E}(e^{\alpha X})$ is the moment generating function which is often known for distributions. We can then use Markov's inequality via
+
+$$ \mu(\{f(x)> t\}) = \mu( \{ \exp(\alpha f(x)) > e^{\alpha t} \} ) \leq \mu(\exp(\alpha f)) e^{-\alpha t}. $$
+
+Since the left hand side does not depend on $\alpha$ one can then optimise over $\alpha$ which will often give a superior bound. An example of this is in the probabilistic setting if $X$ is a normal random variable on $\mathbb{R}$ with mean 0 and varaince $\sigma^2$ then we have
+
+$$ \mathbb{E}\left( e^{\alpha X}\right) = e^{\alpha^2 \sigma^2/2}. $$
+
+This leads to
+
+$$ \mathbb{P}(X> t) \leq e^{\alpha^2 \sigma^2/2-\alpha t}. $$
+
+We can then see that
+
+$$ \alpha^2 \sigma^2/2 - \alpha t = \frac{1}{2}\left(\alpha \sigma - \frac{t}{ \sigma} \right)^2 - \frac{t^2}{2 \sigma^2}, $$
+
+so we can choose $t= \sigma^2 \alpha$ to get
+
+$$ \mathbb{P}(X > t) \leq e^{-t^2/2\sigma^2}.  $$
+
+:::
+
+
+Our last big inequality is Jensen's inequality which involves convexity. We briefly recall the definition of convexity and prove a useful lemma before moving onto the inequality. 
+
+::: {.definition name="Convexity"}
+
+Let $I$ be an interval and let $\phi: I \rightarrow \mathbb{R}$ then we call $\phi$ \emph{convex} if for every $t \in [0,1]$, and $x,y \in I$, we have
+
+$$\phi(tx +(1-t)y) \leq t\phi(x) + (1-t)\phi(y).$$
+
+:::
+
+
+::: {.lemma}
+
+Let $\phi: I \rightarrow \mathbb{R}$ be convex and let $m$ be a point in the interior of $I$ then there exists $a,b$ such that $ax+b \leq \phi(x)$ for every $x \in I$ and $am+b = \phi(m)$.
+
+:::
+
+::: {.proof}
+
+Take $x<m<y$ then by convexity
+
+$$ \phi(m) \leq \frac{y-m}{y-x} \phi(x) + \frac{m-x}{y-x} \phi(y). $$
+
+We can rearrange this to
+
+$$ (y-m + m-x) \phi(m) \leq (y-m) \phi(x) + (m-x) \phi(y), $$
+
+then to
+
+$$ (y-m)(\phi(m)-\phi(x)) \leq (m-x)(\phi(y)-\phi(m)), $$
+
+then to
+
+$$ \frac{\phi(m)-\phi(x)}{m-x} \leq \frac{\phi(y)-\phi(m)}{y-m}. $$
+
+This is true for any $x,y$ surrounding $m$ so there exists $a$ such that
+
+$$  \frac{\phi(m)-\phi(x)}{m-x} \leq a \leq \frac{\phi(y)-\phi(m)}{y-m}, $$
+
+for every such $x,y$. From this we get that $\phi(x) \geq a(x-m) + \phi(m)$.
+
+:::
+
+
+::: {.proposition name="Jensen's inequality"}
+
+Suppose that $(E, \mathcal{E}, \mu)$ is a measure space with $\mu(E) = 1$ and let $\phi$ be a convex function from $\mathbb{R}$ to $\mathbb{R}$ and $f$ is an integrable function then $\phi(f)$ is well defined and 
+
+$$ \mu(\phi(f)) \geq \phi(\mu(f)). $$
+
+:::
+
+::: {.remark}
+
+This is another inequality where I sometimes have trouble remembering which way the inequality sign goes. My key example to check on is 
+
+$$\frac{1}{4} = \left( \int_0^1 x \mathrm{d}x \right)^2 \leq \int_0^1 x^2 \mathrm{d}x = \frac{1}{3}. $$
+
+:::
+
+::: {.proof}
+
+As $\mu(E)=1$ we can consider $\mu(f)$ as the average value that $f$ takes over $E$. Using our lemma we have that there exists $a,b$ such that
+
+$$ ax+b \leq \phi(x), $$
+
+and
+
+$$a\mu(f)+b = \phi(\mu(f)).$$
+
+By the monotonicity of the integral
+
+$$ \mu(af + b) \leq \mu(\phi(f)) $$
+
+and the left hand side is $a \mu(f) +b \mu(E)= a \mu(f) +b$ by linearity which by construction is equal to $\phi(\mu(f))$.
+
+:::
+
+
+## Back to $L^p$ spaces
+
+ Now we are armed with our inequalities, we want to discuss some properties of $L^p$ spaces. First let us define convergence in $L^p$.
+
+::: {.definition}
+
+We say a sequence of functions $f_n$ converges to another function $f$ in $L^p$ if $\|f_n -f\|_p \rightarrow 0$ as $n \rightarrow \infty$.
+
+:::
+
+
+::: {.theorem name="$L^p(E)$ is complete"}
+
+This is for the case $p<\infty$.
+Suppose that $f_n$ is a sequence in $L^p$ with $\|f_n - f_m\|_p \rightarrow 0$ as $n,m \rightarrow 0$ then there exists an $f$ in $L^p$ such that $\|f_n -f\|_p \rightarrow 0$ as $n \rightarrow \infty$
+
+:::
+
+::: {.proof}
+
+Let $n_1 = 1$ and then we can find $n_k$ recursively such that $\|f_{n_k}-f_{n_{k-1}}\|_p \leq 2^{-k}$. Then we have that 
+
+$$ \sum_k \|f_{n_k}-f_{n_{k-1}}\|_p \leq 1. $$
+
+Choose $K$ arbirtrary, then by Minkowski's inequality we have
+
+$$ \| \sum_{k=1}^K |f_{n_k}-f_{n_{k-1}}| \|_p \leq  \sum_{k=1}^K \|f_{n_k}- f_{n_{k-1}}\|_p \leq 1.$$
+
+By Monotone convergence we can let $K \rightarrow \infty$ to get
+
+$$ \| \sum_{k=1}^\infty |f_{n_k} - f_{n_{k-1}}| \|_p \leq 1. $$
+
+Therefore,
+
+$$ \sum_{k=1}^\infty |f_{n_k}(x) -f_{n_{k-1}}(x)| < \infty $$
+
+almost everywhere. This implies that $f_{n_k}(x)$ is a Cauchy sequence for almost every $x$. Since we know that $\mathbb{R}$ is complete, there exists a set $E'$ with $\mu(E\setminus E')=0$ such that for every $x \in E'$ the sequence $f_{n_k}(x)$. Define
+
+$$ f(x) = \left\{ \begin{array}{ll} \lim_k f_{n_k}(x) & x \in E' \\ 0 & x \notin E' \end{array}\right. $$
+
+Now we have a candidate for our limit, we want to show $f_n \rightarrow f$ in $L^p(E)$. Given $\epsilon >0$ there exists $N$ such that if $n, m \geq N$ then $\|f_n -f_m\|_p \leq \epsilon$. Therefore, for $k$ sufficiently large and $n \geq N$ we have $\|f_n - f_{n_k}\|_p \leq \epsilon$. Now, using Fatou's lemma
+
+$$ \|f_n -f\|_p = \|f_n - \lim_k f_{n_k}\|_p \leq \liminf_k \|f_n - f_{n_k}\|_p \leq \epsilon. $$
+
+Therefore $\|f_n - f\|_p \rightarrow 0.$
+
+:::
+
+
+::: {.proposition}
+
+Linear combinations of simple functions, step functions (functions of the form $\phi(x) = \sum_{k=1}^n a_k 1_{(c_k,d_k]}$), and continuous functions are all dense in the space $L^p(\mathbb{R}), p \in [1,\infty)$ that is to say for any $\epsilon > 0$ and any $f$ in $L^p(\mathbb{R})$ there is a function $g$ which is a simple function/step function/ continuous function such that $\|f-g\|_p \leq \epsilon$.
+
+:::
+
+::: {.proof}
+
+The proof for simple functions and step functions is in the fourth assignment. In order to show that it works for continuous functions we notice that the result is true for step functions so for any $f \in L^p(\mathbb{R})$ and any $\epsilon >0$ there exists a step function $\phi$ such that $\| f-\phi\|_p \leq \epsilon/2$, if we can find a continuous function $g$ such that $\|\phi-g\|_p \leq \epsilon/2$ then by Minkowski's inquality $\|f-g\|_p \leq \|f-\phi\|_p + \|\phi - g\|_p \leq \epsilon/2 + \epsilon/2$.
+
+Now if we look at the indicator function $1_{(c,d]}(x)$ then let us take 
+
+$$ g_{\epsilon, c,d}(x) = \left\{ \begin{array}{ll} 0 & x \notin (c-\epsilon, d+\epsilon) \\ (x-c+ \epsilon)/\epsilon & x \in [c-\epsilon, c) \\ 1 & x \in [c,d) \\ -(x-d -\epsilon)/\epsilon & x \in [d, d+\epsilon) \end{array} \right. $$
+
+Then $\|g_{c,d,\epsilon}-1_{(c,d]}\|_p \leq 2\epsilon$. Now let $\phi(x) = \sum_{k=1}^n a_k 1_{(c_k,d_k]}$ and let $g = \sum_{k=1}^n a_k g_{c_k, d_k, \epsilon/2|a_k| n}$ then
+
+$$ \| \phi - g\|_p \leq \sum_{k=1}^n \| a_k (1_{(c_k, d_k]} - g_{c_k, d_k, \epsilon/2|a_k|n})\|_p \leq \sum_{k=1}^n |a_k| \epsilon/|a_k| n \leq \epsilon.  $$
+
+:::
+

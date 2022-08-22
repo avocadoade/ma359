@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{q}[thm]{Question}
+\newenvironment{ans}{\paragraph{Answer:}}{\hfill$\square$}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory: Assignment One - Lebesgue measure in $\mathbb{R}^d$}
+%\date{}
+
+\makeindex
+
+\begin{document}
+	\section{Assignment One - Lebesgue measure in $\mathbb{R}^d$}
+This assignment is about defining Lebesgue measure on $\mathbb{R}^d$ as opposed to $\mathbb{R}$. Later in the course we will also see product $\sigma$-algebras and product measures which give another way of doing this. We begin by defining Lebesgue outer measure, $\lambda^*$ on $\mathbb{R}^d$ by first defining the measure of the rectangle $(a_1,b_1] \times (a_2, b_2] \times \dots \times (a_d, b_d]$. We define
+\[ \lambda \left( (a_1,b_1] \times (a_2, b_2] \times \dots \times (a_d, b_d]\right)  = (b_1-a_1)(b_2-a_2)\dots(b_d-a_d).\] Then for any subset of $\mathbb{R}^d$, $A$, we define
+\[ \lambda^*(A) = \inf\{ \Pi_{n=1}^\infty \lambda(R) \,:\, \mbox{$R_k$ are rectangles}, A \subseteq \bigcup_{n=1}^\infty R_n \}.  \]
+\begin{q}
+Show that $\lambda^*$ is indeed an outer measure.
+\end{q}
+\begin{ans}
+We've got to check that $\lambda^*$ gives measure 0 to the empty set, is monotone and countably subadditive. Firstly since $\emptyset \subseteq \emptyset$ and the $\emptyset$ is an (empty) union of intervals we have $\lambda^*(\emptyset) \leq 0$ and since $\lambda^*$ is positive this gives $\lambda^*(\emptyset) = 0$.
+
+Suppose $A \subseteq B$ then given $\epsilon >0$ there exixt $R$ a union of rectangles, such that $B \subseteq R$ and $\lambda(R) \leq \lambda^*(B) + \epsilon$. Then $A \subseteq I$ so $\lambda^*(A) \leq \lambda(I) \leq \lambda^*(B)+ \epsilon$. As $\epsilon$ is arbitrary this gives $\lambda^*(A) \leq \lambda^*(B)$.
+
+Let $A_1, A_2, \dots$ be a sequence of sets. Fixing $\epsilon>0$ we can find $R_n$ unions of rectangles, such that $\lambda(R_n) \leq \lambda^*(A_n) + 2^{-n}\epsilon$ and $A_n \subseteq R_n$. Therfore we have $A= \bigcup_n A_n \subseteq \bigcup_n(R_n)$ and $\lambda(\bigcup_n R_n) \leq \sum_n \lambda(R_n) \leq \sum_n \lambda^*(A_n) + \epsilon$. Therfore as $\epsilon$ is arbirtrary $\lambda(A) \leq \sum_n \lambda(A_n)$. This only works if $\lambda*(A_n)<\infty$ for each $n$ but the other case is kind of obviously true.
+
+%\emph{One mark for each part. This is exactly the same as the one dimensional case so can basically be copied from the notes}
+\end{ans}
+
+\begin{q}
+Show that if $R$ is a rectangle then $\lambda(R) = \lambda^*(R)$.
+\end{q}
+\begin{ans}
+There are two possible proofs, both of which use compactness arguments and you can mix and match between them to some extent: 
+
+First via a compactness argument. As $R$ is a rectangle this immediately gives $\lambda^*(R) \leq \lambda(R)$ so we want to prove the inequality in the other direction. Now suppose we have a sequence of rectangles $R_1, R_2, \dots $ such that $R \subseteq \bigcup_n R_n$ then there exists some $M$ such that $R \subseteq (-M, M]^d$. Then without loss of generality we can assume $R_i \subseteq (-M-1, M+1]^d$ as we can just shrink the rectangles and still have a cover of $R$, and only loose mass (by monotonicity of $\lambda$). Now we can write $R= (a_1, b_1] \times (a_2, b_2] \times \dots \times (a_d, b_d]$ then for any $\epsilon >0$ and small enough we can define $R_\epsilon = [a_1+\epsilon, b_1-\epsilon] \times \dots \times [a_d + \epsilon, b_d - \epsilon]$. We can also write $R_k = (c_{1,k}, d_{1,k}] \times \dots (c_{d,k}, d_{d,k}]$ and define $R_{k,\delta} = (c_{1,k}-\delta2^{-k}, d_{1,k}+\delta 2^{-k}) \times \dots (c_{d,k} - delta 2^{-k}, d_{d,k} + \delta 2^{-k})$. Now we have $R_\epsilon \subseteq \bigcup_n R_{n, \delta}$. Then we can use compactness to find some $N$ such that $R_{\epsilon} \subseteq \bigcup_{n=1}^N R_{n, \delta}$. We can now compare the $d$-dimensional volume in the normal way to get.
+\[ vol(R_{\epsilon}) \leq \sum_{n=1}^N vol(R_{k,\delta}) \] and we can bound the extra bits added to or taken away from the rectangles to get for $\delta <1$ 
+\[ vol(R) - 2M^{d-1}\epsilon \leq \sum_{n=1}^N (vol(R_{n})+(M+2)^{d-1}\delta 2^{-n}) \leq \sum_{n=1}^\infty vol(R_n) + 2 \delta (M+2)^{d-1}. \] We can now let both $\delta$ and $\epsilon$ tend to $0$ to get,
+\[ vol(R) \leq \sum_{n=1}^\infty vol(R_n). \] Therefore taking the infimum over all possible sequences we get
+\[ vol(R) \leq \lambda^*(R). \] Therefore as $\lambda(R) = vol(R)$ we have $\lambda(R) = \lambda^*(R)$.
+
+Second proof via the Carath\'eodory extension theorem part of the notes. Let us take $R$ a rectangle and a sequence of rectangles $(R_n)_{n \geq 1}$ such that $R \subseteq R_n$. Then $\tilde{R}_n = R_n \cap R$ is also a rectangle and $R= \bigcup_n \tilde{R_n}$. We also have that $\lambda$ is fairly clearly monotone on earch rectangle (remember its just normal $d$-dimensional volume in this case) so $\lambda(\tilde{R}_n) \leq \lambda(R_n)$. So we would like to show that $\lambda(R) \leq \sum_n \lambda( \tilde{R}_n)$ (i.e. a particular case of the fact that $\lambda$ is countably subadditive on rectangles). We can write $R = \bigcup_{n=1}^N \tilde{R}_n \cup \left( \bigcup_{n=N+1}^\infty \tilde{R}_n \setminus \bigcup_{n=1}^N \tilde{R}_n \right)$. Let us write $B_n = \bigcup_{n=N+1}^\infty \tilde{R}_n \setminus \bigcup_{n=1}^N \tilde{R}_n $. We can see that $B_n \downarrow \emptyset$. As $B_n$ is formed by taking away finitely many rectangles from a larger rectangle $B_n$ can be written as a finite sequence of disjoint half open rectangles. We can therefore define $\lambda(B_n)$ to be the sum of the volumes of these rectangles and in the rest of this answer we consider $\lambda$ to be well defined on disjoint unions of rectangles. We need to show $\lambda(B_n) \downarrow 0$. Let us argue by contradiction, suppose there exists some $\epsilon >0$ so that $\lambda(B_n) \geq \epsilon$ for every $n$ then by shrinking the rectangles making up $B_n$ slightly we can find some $C_n$ a disjoint sequence of rectangles with $\bar{C}_n \subseteq B_n$ and $\lambda(B_n \setminus C_n) \leq \epsilon 2^{-n-1}$. Then we have $\lambda(B_1 \setminus (C_1 \cap \dots \cap C_n)) \leq \lambda((B_1 \setminus C_1) \cup \dots \cup (B_n \setminus C_n)) \leq \sum_n \epsilon 2^{-n-1} = \epsilon /2$. Then we have that $\lambda$ is additive on finite disjoint unions of rectangles so $\lambda((C_1 \cap \dots \cap C_n)) = \lambda(B_n) - \lambda(B_n \setminus (C_1 \cap \dots \cap C_n)) \geq \epsilon/2$. Now $K_n = \bar{C_1} \cap \dots \bar{C}_n$ is non-empty and $K_n$ is a decreasing sequence of bounded non-empty closed sets in $\mathbb{R}^d$ so $\bigcap_n K_n \neq \emptyset$ and $\bigcap_n K_n \subseteq \bigcap_n B_n$ which is a contradiction.
+
+%\emph{ 3 marks for an answer which is correct except for wrong compactness arguments or missing compactness arguments, 4 marks for mostly correct compactness arguments, 5 marks for everything correct}
+\end{ans}
+
+We now recall that a set, $A$, will be $\lambda^*$- measureable if for every set $B$
+\[ \lambda^*(B) = \lambda^*(B \cap A) + \lambda^*(B \cap A^c). \] As for the one dimensional case we write $\mathcal{M}$ for the set of Lebesgue measurable sets. We know from the proof of Carath\'eodory's extension theorem that $\mathcal{M}$ is a $\sigma$-algebra
+
+\begin{q}
+Explain why if $\lambda^*(A) =0$ then $\lambda^*(B \cap A)$ will also be zero. Therefore show that if $\lambda^*(A) =0$ or $\lambda^*(A^c) =0$ then $A$ is $\lambda^*$-measureable. 
+\end{q}
+\begin{ans}
+$\lambda^*$ is monotone and $B \cap A \subseteq A$ so $\lambda^*(B \cap A) \leq \lambda^*(A) = 0$. The measurablility condition is $A$ is measurable if for every $B$
+\[ \lambda^*(B) = \lambda^*(B \cap A) + \lambda^*(B \cap A^c). \] We know that $\lambda^*(B) \leq \lambda^*(B\cap A) + \lambda^*(B \cap A^c)$ by countable subadditivity. Furthermore by monotonicity $\lambda^*(B \cap A^c) \leq \lambda^*(B)$, therefore if $\lambda^*(A) = 0$ then $\lambda^*(A\cap B) = 0$ so $\lambda^*(B \cap A) + \lambda^*(B \cap A^c) \leq \lambda^*(B) \leq \lambda^*(B \cap A) + \lambda^*(B \cap A^c)$. Therefore we have equality in all the inequalities and $A$ is measureable.
+
+\emph{5 marks}
+\end{ans}
+
+\begin{q}
+In this question we will prove that every Borel subset of $\mathbb{R}^d$ is Lebesgue measurable.
+\begin{itemize}
+	\item Show that every half space of the form $H_{j,b} = \{ (x_1, \dots, x_d) \,:\, x_j \leq b \}$ is Lebesgue measurebale.
+	\item Show that every rectangle $R$ is Lebesgue measurable.
+	\item Show that every open set in $\mathbb{R}^d$ is a countable union of rectangles.
+	\item Show that every Borel set is Lebesgue measureable.
+\end{itemize}
+\end{q}
+
+\begin{ans}
+We want to show that for every set $B$ we have
+\[ \lambda^*(B) = \lambda^*(H_{j,b}\cap B) + \lambda^*(H_{j,b}^c \cap B). \] Let us take some sequence of rectangles $R_1, R_2, \dots$ such that $B \subseteq \bigcup_n R_n$. Then we can construct the new rectangles $R^l_i = R_i \cap H_{j,b}$ and $R^r_i = R_i \cap H_{j,b}^c$. This produces another sequence of rectangles with $B \cup H_{j,b} \subseteq \bigcup_n R^l_n$ and $B \cup H_{j,b}^c \subseteq \bigcup_n R^r_n$. We also have $\sum_n \lambda(R^l_n) + \sum_n \lambda(R^r_n) = \sum_n \lambda(R_n)$. Therefore we have
+\[ \lambda^*(H_{j,b}\cap B) + \lambda^*(H_{j,b}^c \cap B) \leq \sum_n \lambda(R^l_n) + \sum_n \lambda(R^r_n) = \sum_n(R_n). \] We can do this with any collection of rectangles containing $B$ so taking the infimum gives
+\[ \lambda^*(H_{j,b} \cap B) + \lambda^*(H_{j,b}^c \cap B) \leq \lambda^(B). \]
+By countable subadditivity we have
+\[ \lambda^*(B) \leq \lambda^*(H_{j,b}\cap B) _ \lambda^*(H_{j,b}^c \cap B). \] \emph{5 marks}
+
+Now for the second point, we know that the set of Lebesgue measurable sets is a $\sigma$-algebra. Therefore we know that $H^c_{j,a}$ is also Lebesgue measurable. Then the rectangle $(a_1, b_1] \times (a_2, b_2] \times \dots \times (a_d, b_d] = (H^c_{1,a_1}\cap H_{1,b_1})\cap \dots \cap (H^c_{d,a_d} \cap H_{d, a_d})$. Therefore this rectangle is measurable. \emph{2 marks}
+
+We can fit a small $d$-dimensional cube, with a rational side length, into $B(x,r)$ with centre at the same place. Let us write $Q(q,r)$ for the $d$-cube centred at $q \in \mathbb{R}^d$ with side length $r$. Therefore, given an open set $U$ let 
+\[ O = \bigcup_{q \in \mathbb{Q}^d \cap U} \bigcup_{r \in \mathbb{Q} \,\mbox{s.t.} Q(q,r) \subseteq U}Q(q,r). \] Then we have $O \subseteq U$ as it is the union of subsets of $U$. We also have that every point in $U$ will be contained in a small ball inside $U$ with a rational centre and therfore also one of the $Q(q,r)$ therefore $O = U$. \emph{3 marks}
+
+Every open set is the countable union of cubes. Therefore as the cubes are Lebesgue measurable and the collection of Lebesgue measurable sets is a $\sigma$-algebra all the open sets are Lebesgue measurable. Therefore the collection of Lebesgue measurable sets is a $\sigma$-algebra containing all the open sets it must contain the $\sigma$-algebra generated by the open sets which is the Borel $\sigma$-algebra. \emph{2 marks}
+\end{ans}
+Again we define Lebesgue measure on $\mathbb{R}^d$ to be the restriction $\lambda^*$ to $\mathcal{M}$.
+
+%\begin{q}
+%Use the uniqueness of extension theorem from the notes to show that Lebesgue measure is translation invariant. That is to say if we define the set $A+x = \{z \in \mathbb{R}^d\,:\, z=x+y, y \in A \}$. Show also that Lebesgue measure in $\mathbb{R}^d$ is rotationally invariant. That is to say if $M$ is a rotation matrix in $\mathbb{R}^d$ then $\lambda(A) = \lambda(M^{-1}(A))$ where we understand $M$ here to represent the map $x \mapsto Mx$.
+%\end{q}
+%
+%\begin{q}
+%Let $\lambda$ be Lebesgue measure on $\mathbb{R}^d$ let $L = \{ (x,y)\,:\, y=mx+c \}$ for some $m, c \in \mathbb{R}$. Show that $\lambda{L}=0$.
+%\end{q}
+%
+%\begin{q}
+%Let $f$ be the map on $\mathbb{R}^d$ given by $f(x) = 3x$. Write down an expression for $\lambda(f^{-1}(A))$ and prove that it is correct. 
+%\end{q}
+
+
+\end{document}

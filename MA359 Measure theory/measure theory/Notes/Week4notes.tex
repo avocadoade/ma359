@@ -1,0 +1,300 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory}
+%\date{}
+
+\makeindex
+
+\begin{document}
+\section{Measurable function cont.}
+\subsection{Convergence of measurable functions}
+\begin{dfn}[Almost everywhere / Almost surely]
+We use the short hand \emph{almost everywhere} (or \emph{almost surely} in a probability space) to discuss properties that are true everywhere except a measure zero set. 
+\end{dfn}
+
+\begin{dfn}[Convergence almost everywhere] Let $(E, \mathcal{E}, \mu)$ be a measureable space. A sequence of measureable functions, $(f_n)_{n \geq 1}: E \rightarrow F$, \emph{converges almost everywhere} to $f$ if 
+\[ \mu \left( \{ x \in E \,:\, f_n(x) \not\to f(x) \} \right) = 0 \]
+\end{dfn}
+
+\begin{dfn}[Convergence in measure]
+Let $(E, \mathcal{E}, \mu)$ be a measureable space. A sequence of real valued measureable functions, $(f_n)_{n \geq 1}: E \rightarrow F$, \emph{converges in measure} to $f$ if for every $\epsilon > 0$
+\[ \mu \left( \{ x \, :\, |f(x) - f_n(x)| > \epsilon \} \right) \rightarrow 0, \quad \mbox{as}\, n \rightarrow \infty. \]
+\end{dfn}
+
+\begin{ex}
+The sequence of functions $f_n(x) = x^n$ converges to $0$ Lebesgue almost everywhere on $[0,1]$, and in measure, but it doesn't converge pointwise as it doesn't converge at $x=1$.
+\end{ex}
+\begin{ex}
+The- sequence of functions $f_n(x) = 1_{[n,n+1]}(x)$ converges to 0 Lebesgue almost everywhere (in fact everywhere) but not in measure.
+\end{ex}
+\begin{ex}
+Consider the sequence of functions $f_1 = 1_{[0,1/2)}, f_2 = 1_{[1/2, 1)}, f_3 = 1_{[0,1/4)}, f_4 = 1_{[1/4, 1/2)}, f_5= 1_{[1/2, 3/4)}, f_6 = 1_{[3/4,1)}, f_7 = 1_{[0,1/8)}, f_8 = 1_{[1/8, 1/4)} \dots$ then $f_n$ converges to 0 in measure, but $f_n(x)$ does not converge for any $x$. 
+\end{ex}
+
+We can prove a quasi-equivalence between these two notions of measure. Before we do this we need to introduce a very useful lemma, the Borel-Cantelli Lemma. We introduce it here as it is used to prove the following theorem but it is a useful tool to have whilst doing measure theory, particularly probability theory. First let us also introduce some more notation
+\begin{dfn}
+Let $(A_n)_n$ be a sequence of measurable sets then we have the following names
+\[ \limsup_n A_n = \bigcap_n \bigcup_{m \geq n} A_m = \{ A_n \, \mbox{infinitely often}\,\}, \] and
+\[ \liminf_n A_n = \bigcup_n \bigcap_{m \geq n} A_m = \{ A_n \, \mbox{eventually}\,\}. \] The last names are more comon when the $A_n$ are events in a probability space.
+\end{dfn}
+\begin{lem}[First Borel-Cantelli Lemma]
+Let $(E, \mathcal{E}, \mu)$ be a measure space. Then if $\sum_n \mu(A_n) < \infty$ it follows that $\mu(\limsup_n A_n) = 0)$.
+\end{lem}
+\begin{proof} For any $n$ we have
+\[ \mu(\limsup_n A_n) \leq \mu \left( \bigcup_{m \geq n} A_m\right) \leq \sum_{m \geq n} \mu(A_m). \] Then the right hand side goes to zero as $n \rightarrow \infty$, so $\mu(\limsup_n A_n) = 0$.
+\end{proof}
+
+\begin{lem}[Second Borel-Cantelli Lemma]
+Let $(E, \mathcal{E}, \mu)$ be a probability space ($\mu(E) =1$). Then suppose that $\mu(A_i \cap A_j) = \mu(A_i)\mu(A_j)$ (the events are pairwise independent) for every $i,j$ and that $\sum_n \mu(A_n) = \infty$ then it will follow that $\mu(\limsup_n A_n) =1$.
+\end{lem}
+\begin{proof}
+First we note that $\mu(A_i^c \cap A_j^c) = \mu ((A_i \cup A_j)^c) = 1 - \mu(A_i \cup A_j) = 1 - \mu(A_i) - \mu(A_j)+ \mu(A_i)\mu(A_j) = (1-\mu(A_i))(1-\mu(A_j))$.
+We use the inequality $1-a \leq e^{-a}$. Let $a_n = \mu(A_n)$ then 
+\[ \mu \left( \bigcap_{m=n}^N A_m^c \right) = \Pi_{m=n}^N (1-a_m) \leq \exp \left( - \sum_{m=n}^N a_m \right) \rightarrow 0, \quad \mbox{as}\, N \rightarrow 0. \]
+Therefore, $\mu \left( \bigcap_{m \geq n} A_m^c \right) = 0$ for every $n$. So $\mu(\limsup_n A_n ) = 1- \mu(\bigcup_n \bigcap_{m \geq n} A_m^c) = 1$. 
+\end{proof}
+
+\begin{thm}
+Let $(E, \mathcal{E}, \mu)$ be a measure space and $(f_n)_n$ be a sequence of measurable functions. Then we have the following:
+\begin{itemize}
+\item Suppose that $\mu(E) < \infty$ and that $f_n \rightarrow 0$ almost everywhere, then $f_n \rightarrow 0$ in measure.
+\item If $f_n \rightarrow 0$ in measure then there exists some subsequence $(n_k)_k$ such that $f_{n_k} \rightarrow 0$ almost everywhere.
+\end{itemize}
+\end{thm}
+\begin{proof}
+Suppose that $f_n \rightarrow 0$ almost everywhere. Then 
+\[ \mu(\{ x\,:\, |f_n(x)| \leq \epsilon \}) \geq \mu \left( \bigcap_{m \geq n} \{ x \,:\, |f_m(x)| \leq \epsilon\}\right) \uparrow \mu \left(|f_n| \leq \epsilon \, \mbox{eventually} \right) \geq \mu(\{ x \,:\, f_n(x) \rightarrow 0\}) = \mu(E), \] therefore,
+\[ \mu(\{ x\,:\, |f_n(x)|> \epsilon) = \mu(E) - \mu(\{ x\,:\, |f_n(x)| \leq \epsilon \}) \rightarrow 0. \]
+
+Now suppose that $f_n \rightarrow 0$ in measure. We can find a subsequence $n_k$ such that
+\[ \mu(\{ x \,:\, |f_{n_k}(x)| > 1/k \}) \leq 2^{-k}. \] Therefore
+\[ \sum_k \mu(\{ x \,:\, |f_{n_k}(x)| > 1/k \})<\infty.\] Therefore by the first Borel-Canteli lemma we have that
+\[ \mu \left(\{ x\,:\, |f_{n_k}(x)|>1/k \, \mbox{infinitely often}\} \right) = 0. \] Therefore $f_{n_k} \rightarrow 0$ almost everywhere.
+\end{proof}
+
+\subsection{Egoroff's Theorem and Lusin's Theorem}
+\begin{thm}[Egoroff's Theorem]
+Let $(E, \mathcal{E}, \mu)$ be a finite measure space and $(f_n)_n$ be a sequence of real valued measurable functions on $E$. If $\mu$ is finite and if $f_n$ converges $\mu$-almost everywhere to $f$ then for each positive $\epsilon$ there is a set $A$ with $\mu(A^c)< \epsilon$, such that $f_n$ converges uniformly on $A$ to $f$.
+\end{thm}
+\begin{proof}
+For each $n$ let $g_n(x) = \sup_{j \geq n}|f_j(x)-f(x)|$. Then $g_n$ is a positive function which is finite almost everywhere. The sequence $(g_n)_n$ converges to 0 almost everywhere and so in measure. Therefore, for each positive integer $k$ we can find $n_k$ such that
+\[ \mu \left( \{ x \,:\, g_{n_k} > 1/k \} \right) < \epsilon 2^{-k}.  \] Define sets $A_k = \{ x\,:\, g_{n_k}(x) \leq 1/k\}$ and let $A= \bigcap_k A_k$. The set $A$ has
+\[ \mu(A^c) = \mu \left( \bigcup_k A_k^c \right) \leq \sum_k \mu(A_k^c) \leq \sum_k \epsilon 2^{-k} = \epsilon. \] We want to show that $f_n$ converges uniformly to $f$ on $A$. For each $\delta$ there exists a $k$ such athat $1/k < \delta$, then as $A \subseteq A_k$, we have that for every $n \geq n_k$,
+\[ |f_n - f| \leq g_{n_k} \leq 1/k < \delta, \] uniformly on all $x \in A_k$ and hence in $A$.
+\end{proof}
+
+This proof motivates the following definition of convergence of functions.
+\begin{dfn}[Almost uniform convergence]
+We say a sequence of functions $(f_n)_{n \geq 1}$ converges \emph{almost uniformly} on a measure space $(E, \mathcal{E}, \mu)$ if for every $\epsilon >0$ there exists a set $A$ with $\mu(A^c)< \epsilon$ with $f_n \rightarrow f$ uniformly on $A$.
+\end{dfn}
+
+We can use Egoroff's theorem to prove a result called Lusin's theorem. First let us recall the definition of regularity
+\begin{dfn}
+Let $E$ be a topological space and $\mu$ be a measure on $(E, \mathcal{B}(E))$ then say $\mu$ is \emph{regular} if for every $A \in \mathcal{B}(E)$ we have
+\begin{itemize}
+\item $\mu(A) = \inf \{ \mu(U) \,:\, A \subseteq U, \mbox{$U$ is open}\}$,
+\item $\mu(A) = \sup \{ \mu(K) \,:\, K \subseteq A, \mbox{$K$ is compact}\}$.
+\end{itemize}
+\end{dfn}
+%We also have the following Lemma which is a particular case of Urysohm's lemma.
+%\begin{lem}
+%Suppose $K_1$ and $K_2$ are disjoint compact sets in $\mathbb{R}^d$ then there exists a continuous function $h$ such that $h(x) \in [0,1]$ for every $x$, $h(x) = 1$ on $K_1$ and $h(x) = 0$ on $K_2$.
+%\end{lem}
+%\begin{proof}
+%First look at the function $g_x(y) = \|x-y\|$. For any $x \in \mathbb{R}^d$ we can define the function $h(x) = \inf_{y \in K_2} g_x(y)$. Then $h(x)$ is the distance from $x$ to $K_2$. $h$ is continuous since if $h(x_2) \leq \|x_2-y\| \leq \|x_1-x_2\| + \|x_1 -y\|$ taking infimum over $y \in K_2$ we get $h(x_2) \leq \|x_1-x_2\| + h(x_1)$. We can also switch the roles of $x_1$ and $x_2$ to get $h(x_1) \leq \|x_1-x_2\| + h(x_2)$ and hence $|h(x_1) - h(x_2)| \leq \|x_1-x_2\|$. Since $K_1$ and $K_2$ are compact and disjoint $h(x)$ achieves a strictly positive minimum on $K_1$ (if the minimum weren't strictly positive, since its achieved because of compactness of $K_1, K_2$ it would indicate there was a point in both $K_1$ and $K_2$). Let us define $a = \min_{x \in K_1} h(x) >0$. Then let define 
+%\[ f(x) = \left\{\begin{array}{ll} h(x)/a & h(x) \leq a\\
+%1 & h(x) > a \end{array} \right. \]
+%\end{proof}
+
+\begin{thm}[Lusin's Theorem]
+Suppose that $f$ is a measurable function and $A \subseteq \mathbb{R}^d$ is a Borel set and $\lambda(A) < \infty$ then for any $\epsilon >0$ there is a compact subset $K$ of $A$ with $\lambda(A \setminus K) < \epsilon$ such that the restriction of $f$ to $K$ is continuous. 
+\end{thm}
+\begin{remark}
+This theorem can be generalised to locally compact Hausdorff spaces, see Cohn's book.
+\end{remark}
+\begin{proof}
+Suppose first that $f$ only takes countably many values, $a_1, a_2, a_3, \dots$ on $A$ the let $A_k = \{ x \in A \,:\, f(x) = a_k\}$, by measurablility of $f$ we can see that $A_k = f^{-1}(\{a_k\})$ is measurable. We know that $A = \bigcup_n A_n$ so by continuity of measure $\lambda(\bigcup_{k=1}^n A_k) \uparrow \lambda(A)$. Since $\lambda(A) < \infty$ we have that for any $\epsilon >0$ there exists $n$ such that $\lambda(A \setminus \bigcup_{k=1}^n A_k) < \epsilon/2$. By the regularity of Lebesgue measure we can find compact subsets $K_1, \dots, K_n$ such that $\lambda(A_n \setminus K_n) \leq \epsilon/2n$. Then let $K = \bigcup_{k=1}^n K_k$. This is a compact subset of $A$ and
+\[ \lambda(A \setminus K) \leq \lambda(A\setminus \bigcup_{k=1}^n A_k) + \lambda(\bigcup_{k=1}^n A_k \setminus \bigcup_{k=1}^n K_k ) < \epsilon/2 + \epsilon/2. \]  Now $f$ restricted to $K$ is continuous since the $K_i$ are disjoint and $f$ is constant on each $K_i$.
+
+Now we have proved the special case where $f$ takes countably many values we can use this to prove the theorem for general $f$. Let $f_n = 2^{-n} \lfloor 2^n f \rfloor$ then $2^{-n} \geq f(x)-f_n(x) \geq 0$ so $f_n(x) \rightarrow f(x)$. Now by Egoroff's theorem there exists $K$ with $\lambda(A \setminus K) < \epsilon/2$ such that $f_n \rightarrow f$ uniformly on $K$. Now, $f_n$ can only take countably many values, so by our special case of Lusin's theorem there exists a $K_n \subseteq K$, compact, such that $\lambda(K \setminus K_n) \leq \epsilon 2^{-n-1}$, and $f_n$ is continuous on $K_n$. Now let $K_\infty = \bigcap_n K_n$, then $K_\infty$ is compact and $\lambda(A \setminus K_\infty) = \lambda(A \setminus K) + \lambda(K \setminus K_\infty) = \lambda(A \setminus K) +  \lambda (\bigcup_n(K \setminus K_n)) \leq \epsilon/2 + \sum_n \epsilon 2^{-n-1} = \epsilon$. Now we have that $f_n$ converges uniformly to $f$ on $K_\infty$ and $f_n$ is continuous on $K_\infty$ for each $n$. As the uniform limit of continuous functions is continuous this shows that $f$ is continuous on $K$. 
+\end{proof}
+
+\section{Integration}
+We now get to the definition of the Lebesgue integral which is the second important object that we construct in this course. There are several different notations for the integral of a function $f$ with respect to a measure $\mu$. We have
+\[ \mu(f) = \int_E f \mathrm{d}\mu = \int_E f(x) \mu(\mathrm{d}x). \] When you are integrating with respect to Lebesgue measure the most common notation is
+\[ \int_E f(x)\mathrm{d}x. \]
+
+Before we start constructing the integral we'll briefly discuss the motivations for how to construct it. Firstly, you've already seen the Riemann integral. We can describe the strategy of Riemann integration - very loosly - as splitting the \emph{domain} of the function into equal sized chunks, estimating the height of the function on each chunk then adding them together. Broadly what happens with Lebesgue integration is that we split the \emph{range} of the function into equal sized chunks, estimate the size of the part of the domain which will end up in that chunk of range then sum everything up. We need the theory of measure in order to do this because the bit of the domain corresponding to chuncks of the range can be quite weird sets whose size it wouldn't be possible to measure. The first motivation for this is that whilst Riemann integration only works for functions from subsets of $\mathbb{R}^d$ to $\mathbb{R}$, Lebesgue integration allows the domain on the function to be quite weird, (as long as it is a measure space). As an example, this is helpful for taking expectations rigorously because expectations are integral of random variables and the domain of a random variable is a probability space which may not be explicit.
+
+The second big motivation for introducing a new theory of integration is the issue of convergence. It is important in many practical applications of integration theory to know when $\lim_n \int f_n(x) \mathrm{d}x = \int \lim_n f_n(x) \mathrm{d}x$ or when $\int_{E_x} \int_{E_y} f(x,y) \mathrm{d}x \mathrm{d}y = \int_{E_y} \int_{E_x} f(x,y) \mathrm{d}y \mathrm{d}x$. Lebesgue integration allows us to rigorously find conditions on $f$ under which these statements will be true. This is often not possible in a satisfactory way with the Riemann theory of integration. We will see some of these convergence theorems next week and then switching the order of integration towards the end of the course (currently planned for week 9). The most important motivation for developing good convergence theorems was the development of Fourier series. We want to know when it is possible to integrate a Fourier series term by term.
+
+The strategy for constructing the integral is to begin by defining $\mu(f)$ when $f$ belongs to a special class of measurable functions that we call \emph{simple functions}. We then define the integral to progressively larger classes of functions. 
+
+\begin{dfn}[Simple functions]
+Let $(E, \mathcal{E}, \mu)$ be a measure space. The set of simple functions on this space taking values in $\mathbb{R}$ are functions of the form
+\[ f(x) = \sum_{k=1}^n a_k 1_{A_k}(x). \] Here, the $A_k$ are disjoint sets in $\mathcal{E}$, $1_{A}$ represents the indicator function of the set, and the $a_k$ are non-negative real numbers. We note that this representation of $f$ is not unique.
+\end{dfn}
+
+\begin{dfn}[The integral of a simple function]
+Still working in the setting above, let $f(x) = \sum_{k=1}^n a_k 1_{A_k}(x)$, then we can define
+\[ \mu(f) = \sum_{k=1}^n a_k \mu(A_k). \]
+\end{dfn}
+
+\end{document}

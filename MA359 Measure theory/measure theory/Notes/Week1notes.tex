@@ -1,0 +1,386 @@
+\documentclass[11pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsmath, amsthm, amsfonts,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{esint}
+\usepackage{mathrsfs}
+\usepackage{subfig,float}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}  
+\usepackage{bbm} 
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+\def\grad{\nabla}
+\DeclareMathOperator{\dive}{div}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\essup}{ess\,sup}
+\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\sgn}{sgn}
+
+% Notation for differentials
+\def\d{\,\mathrm{d}}
+\def\dv{\d v}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddt{\frac{\mathrm{d}}{\mathrm{d}t}}
+\def \ddr{\frac{\mathrm{d}}{\mathrm{d}r}}
+\newcommand{\sign}{\text{sign}}
+\DeclareMathOperator{\hess}{Hess}
+
+% Generate a PDF with hyperlinks in references.
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+
+% Bibliography
+%-----------------------------------------------------------------
+
+% This uses a bibliography style which hyperlinks the paper titles to
+% the paper URL specified in the bibtex file. It also uses natbib,
+% which cites papers by name such as Euler (1770) instead of [17].
+\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+\usepackage{url}
+%\bibliographystyle{plainnat-linked}
+\bibliographystyle{plain}
+
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage{hyperref}
+%\usepackage{breakurl}
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage{natbib}
+%\usepackage{url}
+%\usepackage[colorlinks=blue,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks]{hyperref}
+\bibliographystyle{plain}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+% Shortcuts
+%-----------------------------------------------------------------
+
+%\newcommand{\abs}[1]{\left\mid#1\right\mid}
+%\newcommand{\ap}[1]{\left\langle#1\right\rangle}
+%\newcommand{\norm}[1]{\left\mid#1\right\mid}
+% \newcommand{\tnorm}[1]{\left\mid\!\left\mid\!\left\mid#1\right\mid\!\right\mid\!\right\mid}
+
+\definecolor{lpink}{rgb}{0.96, 0.76, 0.76}
+\definecolor{dpink}{rgb}{0.97, 0.51, 0.47}
+\definecolor{sky}{rgb}{0.53, 0.81, 0.92}
+\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\definecolor{orman}{rgb}{0.24, 0.7, 0.44}
+\definecolor{aciksari}{rgb}{0.91, 0.84, 0.42}
+\definecolor{dgrey}{rgb}{0.52, 0.52, 0.51}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\P{\mathscr{P}}
+\def\NN{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+
+\def\ird{\int_{\mathbb{R}^N}}
+\def\d{\,\mathrm{d}}
+\def\dx{\,\mathrm{d}x}
+\def\dy{\,\mathrm{d}y}
+\def\p{\,\partial}
+\newcommand{\en}{\mathcal{H}}
+\newcommand{\havva}[1]{{\textcolor{blue}{[\textbf{H:} #1]}}}
+
+% Operators
+
+\def\grad{\nabla}
+\def\weakto{\rightharpoonup}
+
+\DeclareMathOperator{\divergence}{div}
+%\newcommand{\dv}[1]{\divergence \left(#1\right)}
+%
+%\DeclareMathOperator{\supp}{supp}
+%\DeclareMathOperator{\essup}{ess\,sup}
+%\DeclareMathOperator{\Lip}{Lip}
+\DeclareMathOperator{\law}{law}
+
+\DeclareMathOperator{\Pf}{Pf.}
+\DeclareMathOperator{\Fp}{Fp.}
+\DeclareMathOperator{\pv}{pv.}
+
+\newcommand{\for}{\quad \text{ for all }}
+\newcommand{\tb}[1]{\textcolor{blue}{#1}}
+
+
+\newcommand{\OmT}{\Omega\times (0,T)}
+\let\pa\partial
+\let\na\nabla
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\cD}{\mathcal{D}}
+\let\eps\varepsilon
+\newcommand{\wen}{w^{(\varepsilon,N)}}
+\newcommand{\OmTc}{\overline{\Omega}\times [0,T]}
+\newcommand{\rrhoA}{\sqrt{\rho_A}}
+\newcommand{\rrhoB}{\sqrt{\rho_B}}
+\newcommand{\rrhoAB}{\sqrt{\rho_A\rho_B}}
+
+% Theorems
+%-----------------------------------------------------------------
+\newtheorem{thm}{Theorem}[section]
+% \newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{claim}[thm]{Claim}
+% \newtheorem{hyp}[thm]{Hypothesis}
+\newtheorem{hyp}{Hypothesis}
+\theoremstyle{definition}
+\newtheorem{dfn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+
+\hypersetup{pdftitle={Measure Theory}}
+\hypersetup{pdfauthor={Josephine Evans }}
+
+
+\author{
+Josephine Evans
+}
+\title{Measure Theory}
+%\date{}
+
+\makeindex
+
+\begin{document}
+\section{Introduction}
+Welcome to measure theory. This course introduces the modern theory of functions and integration which underpins most advanced analysis topics. In particular the theory of function spaces will be important in PDEs and the notion of measurable functions allows us to rigorously understand random variables. 
+
+The key example we will study is \emph{Lebesgue measure} in $\mathbb{R}^d$. The goal of defining Lebesgue measure is to find a way of asigning length/area/volume/whatever its called if $d \geq 4$ to a subset of $\mathbb{R}^d$. It turns out that it is not possible to do this for every possible subset of $\mathbb{R}^d$, but it is possible to do this for every subset you are likely to come accross!
+
+\subsection{Integration}
+One of the most important results of measure theory is the ability to integrate `against' the measures that we define. We want this new definition of the integral to agree with the Riemann integral on subsets of $\mathbb{R}^d$ and also allow us to integrate over sets that aren't subsets of $\mathbb{R}^d$ or with different weightings of the different parts of $\mathbb{R}^d$. This new theory of integration allows us to rigorously define expectation in probability theory and provides numerous convergence theorems which are some of the results you will use most from this course.
+
+
+\subsection{The most important things you will learn in this course}
+
+For your own knowledge of how measure and function `really' work:
+\begin{itemize}
+\item How Lebesgue measure is constructed.
+\item How the Lebesgue integral is constructed.
+\item How product measures/spaces are constructed.
+\item How $L^p$ spaces are defined.
+\end{itemize}
+
+For use in later courses:
+\begin{itemize}
+\item The fact that Lebesgue measure exists and does what you expect it to do.
+\item Why you can work with measures just by looking at how they behave on a $\pi$-system (find out what that is soon!).
+\item The different ways in which functions can converge.
+\item Equivalences between ways things converge.
+\item Convergence theorems: i.e. when convergence of functions implies convergence of their integrals.
+\item Important inequalities: H\"older/Cauchy-Schwartz, Minkowski, Jensen.
+\item When you can switch the order of integration.
+\end{itemize}
+\section{ $\sigma$-algebras, definition of a measure}
+\subsection{Collections of subsets}
+We begin with some dry definitions of collections of sets and functions from collections of sets to $\mathbb{R}$. These will give us the key formal definition of measures.
+
+We begin with the most basic defnition. An algebra is is collection of sets closed under finite set operations. 
+\begin{dfn}[Algebra]
+A collection of subsets of a space $E$, $\mathcal{A}$, is called and algebra if
+\begin{itemize}
+\item $\emptyset \in \mathcal{A}, \, E \in \mathcal{A}$.
+\item If $A \in \mathcal{A}$ then $A^c \in \mathcal{A}$.
+\item If $A, B \in \mathcal{A}$ then $A \cup B \in \mathcal{A}$.
+\item If $A, B \in \mathcal{A}$ then $A \cap B \in \mathcal{A}$.
+\end{itemize}
+\end{dfn}
+
+We next define a $\sigma$-algebra. This is the \emph{key} defnition of a collection of sets for measure theory. The letter $\sigma$ here denotes countability. A $\sigma$-algebra is a collection of subsets of a space $E$, which are closed under countable set operations.
+\begin{dfn}[$\sigma$-algebra]
+A collection of subsets of a space $E$, $\mathcal{A}$ is a $\sigma$-algebra if
+\begin{itemize}
+\item $\emptyset \in \mathcal{A}, E \in \mathcal{A}$.
+\item If $A \in \mathcal{A}$ then $A^c \in \mathcal{A}$.
+\item If $A_1, A_2, \dots$ is a countable collection of sets in $\mathcal{A}$ then $ \bigcup_{n=1}^\infty A_n \in \mathcal{A}$.
+\item If $A_1, A_2, \dots$ is a countable collection of sets in $\mathcal{A}$ then $\bigcap_{n=1}^\infty A_n \in \mathcal{A}$.
+\end{itemize}
+\end{dfn}
+\begin{lem}
+We can equivalently define a $\sigma$-algebra as a collection of sets which is contains $\emptyset$ and is closed under taking complements and countable unions.
+\end{lem}
+\begin{proof}
+Suppose that $\mathcal{E}$ is closed under complements and taking countable unions and contains $\emptyset$, then it is clear that $E \in \mathcal{E}$. We need to show that if $(A_n)_n$ is a sequence in $\mathcal{E}$ then $\bigcap A_n \in \mathcal{E}$. We know that $\bigcap A_n = \left( \bigcup A_n^c \right)^c$ so this gives our result. 
+\end{proof}
+
+
+\begin{ex}
+In this course we really only deal with one `concrete', non-trivial example of a $\sigma$-algebra. This is complicated to introduce and we will discuss bellow. However, in order to better understand the definition we give a few examples of things which are, and are not $\sigma$-algebras. 
+\begin{itemize}
+\item The main example is the Borel $\sigma$-algebra which we will meet in week 2
+\item The power set of $E$ is always a $\sigma$ algebra.
+\item If $A \subset E$ then $\{\emptyset, A, A^c, E\}$ is a $\sigma$-algebra.
+\end{itemize}
+\end{ex}
+
+We now collect some results and further definitions about $\sigma$-algebras.
+\begin{lem}
+Suppose $E$ is a space and $\mathcal{C}$ is a collection of $\sigma$ algebras possibly uncountable. Then $\bigcap_{\mathcal{A} \in \mathcal{C}} \mathcal{A}$ is also a $\sigma$-algebra.
+\end{lem}
+\begin{proof}
+It is straightforward to check that every part of the definition of a $\sigma$-algebra holds for the intersection.
+\end{proof}
+\begin{cor}
+For any collection of subsets of a space $E$, $\mathcal{F}$ there is a smallest $\sigma$-algebra containing $\mathcal{F}$. We call this $\sigma(\mathcal{F})$ or the $\sigma$-algebra generated by $\mathcal{F}$.
+\end{cor}
+\begin{proof}
+There exists at least one $\sigma$-algebra containing $\mathcal{F}$ since the set of all subsets of $E$ is a $\sigma$ algebra. Then we can consider the non-empty intersection $\bigcap_{\mathcal{A} \in \mathcal{C}} \mathcal{A}$ where $\mathcal{C}$ is the collection of all $\sigma$-algebras which contain $\mathcal{F}$. We call this resulting $\sigma$- algebra the $\sigma$-\emph{algebra generated by} $\mathcal{F}$.
+\end{proof}
+
+\begin{ex}[Key example: Borel $\sigma$-algebra]
+If $E$ is a topological space and $\mathcal{O}$ the family of open sets in $E$, then we write $\mathcal{B}(E)$ to be the $\sigma$-algebra generated by $\mathcal{O}$. This is called the Borel $\sigma$-algebra.
+\end{ex}
+
+We are most interested in $\mathcal{B}(\mathbb{R}^d)$. We have the following result
+\begin{lem}
+$\mathcal{B}(\mathbb{R})$ is generated by the following sets.
+\begin{itemize}
+\item The collection of closed sets in $\mathbb{R}$.
+\item The collection of intervals of the form $(-\infty, b]$.
+\item The collection of intervals of the form $(a,b]$.
+\end{itemize}
+\end{lem}
+\begin{proof}
+Let us call $\mathcal{B}_1, \mathcal{B}_2, \mathcal{B}_3$ to be the $\sigma$-algebras generated by the sets above. We then want to show that $\mathcal{B}(\mathbb{R}) \supseteq \mathcal{B}_1 \supseteq \mathcal{B}_2 \supseteq \mathcal{B}_3$. 
+
+As $\mathcal{B}(\mathbb{R})$ contains all the open sets, it also contains all the closed sets (whose complements are open). Therefore, it also contains $\mathcal{B}_1$. 
+
+As $\mathcal{B}_1$ contains all the closed sets, and all the intervals $(-\infty, b]$ are closed then $\mathcal{B}_1$ contains the $\sigma$-algebra generated by these sets, namely $\mathcal{B}_2$.
+
+As $\mathcal{B}_2$ contains $(-\infty, b]$ and $(-\infty, a]$ and is closed under complements it also contains, $(-\infty, b]$ and $(a, \infty)$. As $\mathcal{B}_2$ is closed under intersection, this means it also contains $(a,b]$. This is true for all $a<b$ so $\mathcal{B}_2$ contains all sets of this form. Consequently, it contains $\mathcal{B}_3$.
+
+Now we want to show that $\mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}_3$. This will conclude the proof. First we note, that we can make an open interval $(a,b) = \bigcup_n (a, b-1/n]$ where the union is taken over all $n > (b-a)^{-1}$. Now we need to show that any open set in $\mathbb{R}$ is a countable union of open intervals. Let $U$ be such an open set then let 
+\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \] Then since $O$ is a union of subsets of $U$ then $O \subseteq U$. Suppose that $x \in U$ then there exists some $\rho$ such that $(x-\rho, x+\rho) \subseteq U$. There is some rationals $q,r$ such that $x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)$ therefore $x \in O$. Consequently $U= O$. 
+\end{proof}
+
+
+We have two further defnitions of collections of sets which will be useful. These separate the two parts of the defnition of a $\sigma$-algebra.
+\begin{dfn}[$\pi$-system]
+A collection of subsets of $E$, $\mathcal{A}$ is a $\pi$-system if
+\begin{itemize}
+\item $\emptyset \in \mathcal{A}$
+\item If $A, B \in \mathcal{A}$ then $A \cap B \in \mathcal{A}$.
+\end{itemize}
+\end{dfn}
+
+\begin{dfn}[$D$-system]
+A collection of subsets of $E, \mathcal{A}$ is a $d$-system if
+\begin{itemize}
+\item $E \in \mathcal{A}$.
+\item If $A, B \in \mathcal{A}$ with $A \subset B$ then $B \setminus A \in \mathcal{A}$.
+\item If $A_1 \subset A_2 \subset A_3 \subset \dots$ then $ \bigcup_{n=1}^\infty A_n \in \mathcal{A}$.
+\end{itemize}
+\end{dfn}
+\begin{lem}[Dynkin's $\pi$-system lemma]
+Let $\mathcal{A}$ be a $\pi$-system. Then any $d$-system containing $\mathcal{A}$ also contains the $\sigma$-algebra generated by $\mathcal{A}$.
+\end{lem}
+\begin{proof} This is an exercise.
+\end{proof}
+
+\subsection{Set functions}
+
+\begin{dfn}[Set function] A set function $\phi$ is a function from a family of subsets of a space $E$, $\mathcal{A}$ to $\mathbb{R}\cup\{\infty\}$.
+\end{dfn}
+
+\begin{dfn}[Measure] A measure is a specific type of set function which satisfies certain axioms. A set function $\mu$ defined from a $\sigma$-algebra $\mathcal{A}$ is a measure if,
+\begin{itemize}
+\item $\mu(A) \geq 0$ for every $A \in \mathcal{A}$.
+\item $\mu(\emptyset) = 0$
+\item If $A_1, A_2, A_3, \dots$ are all pairwise disjoint and in $\mathcal{A}$ then 
+\[ \mu \left( \bigcup_n A_n \right) = \sum_n \mu(A_n). \]
+\end{itemize}
+We call this last property \emph{countable additivity}.
+\end{dfn}
+
+\begin{ex}[Delta (function)]
+You've probably seen $\delta_{x_0}(x)$ used before; it is similar to the Kroeneker delta which appears in discrete spaces $\delta_{x,y} = 1$ if and only if $x=y$. This is the `function' defined by $\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)$.  We can define a measure on $\mathbb{R}^d$ which will have this property by \[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right. .\]
+\end{ex}
+
+\begin{ex}[Countable space]
+If $E = \{ x_1, x_2, \dots\}$ is a countable space and $F: E \rightarrow \mathbb{R}_{\geq 0}$ is a non-negative function then we can define a measure by $\mu(A) = \sum_n F(x_n)1_{x_n \in A}$. In fact any measure on a countable set can be written this way by choosing $F(x_n) = \mu(\{x_n\})$.
+\end{ex}
+
+\begin{ex}[Function (informally)]
+In the course we will define this rigorously later. However we can define a measure on $\mathbb{R}^d$ by integrating a function over subsets of $\mathbb{R}^d$. If $f$ is a non-negative function then we define $\mu_f(A) = \int_A f(x) \mathrm{d}x$.
+\end{ex}
+
+We also define two further possible properties of set functions
+\begin{dfn}[Monotonicity]
+A set function $\phi$ is monotone if whenever $A \subseteq B$ we have $\phi(A) \leq \phi(B)$.
+\end{dfn}
+
+\begin{dfn}[Countable subadditivity]
+A set function $\phi$ is countably subadditive if for every sequence of sets $A_1, A_2, A_3, \dots$ we have 
+\[ \phi \left( \bigcup_n A_n \right) \leq \sum_n \phi(A_n). \]
+\end{dfn}
+
+\begin{lem}
+If $\mu$ is a measure the $\mu$ is both monotone and countably subadditive.
+\end{lem}
+\begin{proof}
+Suppose $A \subseteq B$ then $B = A \cup (B \setminus A)$ and this union is disjoint. Countable additivity then implies that $\mu(B) = \mu(A) + \mu(B \setminus A)$ and since $\mu(B \setminus A) \geq 0$ we have $\mu(A) \leq \mu(B)$.
+
+Now take a sequence $A_1, A_2, A_3, \dots$ and define $B_n = A_n \setminus \left(A_n \cap \bigcup_{k=1}^{n-1}A_k \right)$ then the $B_n$ form a disjoint sequence with $\bigcup_n A_n = \bigcup_n B_n$. We also have, for every $n$, that $B_n \subseteq A_n$ so by monotonicity $\mu(B_n) \leq \mu(A_n)$. Then using countable additivity on the union of the $B_n$ we have
+\[ \mu(\bigcup_n A_n) = \mu(\bigcup_n B_n) = \sum_n \mu(B_n) \leq \sum_n \mu(A_n). \]
+\end{proof}
+
+\begin{dfn}[Measureable space]
+We call a pair $(E, \mathcal{A})$ of a space and a $\sigma$-algebra, a \emph{measureable space}.
+\end{dfn}
+
+\begin{dfn}[Measure space]
+We call a triple $(E, \mathcal{A}, \mu)$ of a space, a $\sigma$-algebra and a measure a \emph{measure space}.
+\end{dfn}
+
+\begin{dfn}[Finite measure space]
+We call a measure space $(E, \mathcal{A}, \mu)$ \emph{finite} if $\mu(E) < \infty$.
+\end{dfn}
+
+\begin{dfn}[$\sigma$-finite measure space]
+We call a measure space, $(E, \mathcal{A}, \mu)$, $\sigma$-\emph{finite} if there exists a countable collection $E_1, E_2, \dots \in \mathcal{A}$ such that
+\[ E = \bigcup_n E_n, \] and
+\[ \mu(E_i) < \infty, \, \forall i. \]
+\end{dfn}
+
+\begin{dfn}[Borel measures and Radon measures]
+A measure $\mu$ on a subset of a topological space $E$ is called a \emph{Borel measure} if it is a measure with respect to the Borel $\sigma$-algebra.
+
+A Borel measure is called a \emph{Radon measure} if for every compact set $K \in \mathcal{B}(E)$ we have that $\mu(K) < \infty$.
+\end{dfn}
+
+\begin{lem}[Continuity of measure]
+Let $(E, \mathcal{E}, \mu)$ be a measure space. Suppose that $(A_n)_n$ is a sequence of measurable sets with $A_1 \subseteq A_2 \subseteq \dots$ and $(B_n)_n$ is a sequence of measurable sets with $B_1 \supseteq B_2 \supseteq \dots$, and $\mu(B_1)< \infty$ then we have
+\[ \mu\left( \bigcup_n A_n\right) = \lim_n \mu(A_n) \] and \[ \mu\left( \bigcap_n B_n \right) = \lim_n \mu(B_n). \]
+\end{lem}
+\begin{proof}
+Let $\tilde{A}_n = A_n \setminus A_{n-1}$. We have that $\bigcup_n A_n = \bigcup_n \tilde{A}_n$. Furthermore, countable additivity gives us that
+\[ \mu\left( \bigcup_n \tilde{A}_n \right) = \sum_n \mu(\tilde{A}_n). \] Therefore, we have $\sum_{n=1}^m \mu(\tilde{A}_n) \rightarrow \mu \left( \bigcup_n A_n \right)$. We also have $\sum_{n=1}^m \mu(\tilde{A}_n) = \mu \left( \bigcup_{n=1}^m \tilde{A}_n \right) = \mu (A_m)$.
+
+Now we move onto the $B_n$, let $C_n = B_1 \setminus B_n$ then the $C_n$ are an increasing sequence of measurable sets with $C_n \uparrow B_1 \setminus \bigcap_n B_n$. So by the first part we have $\mu\left(B_1 \setminus \bigcap_n B_n \right) = \lim_n \mu(C_n)$. Therefore
+\[ \mu(B_1) - \mu\left( \bigcap_n B_n \right) = \mu(B_1) - \lim_n \mu(B_n). \] This gives the result as long as $\mu(B_1) < \infty$. If there exist an $m$ such that $\mu(B_m) < \infty$ then we can renumber starting with $m$ and repeat the argument above. 
+
+N.b. the fact that $\mu(B)< \infty$ implies $\mu(A)< \infty$ if $B \subset A$ follows from finite additivity. $\mu(B) = \mu(A) + \mu(B \setminus A) \geq \mu(A)$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Outer measures and Lebesgue Measure | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 3 Outer measures and Lebesgue Measure | Measure theory lecture notes" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Outer measures and Lebesgue Measure | Measure theory lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Outer measures and Lebesgue Measure | Measure theory lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2022-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sigma-algebras-definition-of-a-measure.html"/>
+<link rel="next" href="mesurable-funtions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>1.2</b> The most important things you will learn in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>2.1</b> Collections of subsets</a></li>
+<li class="chapter" data-level="2.2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#set-functions"><i class="fa fa-check"></i><b>2.2</b> Set functions</a></li>
+<li class="chapter" data-level="2.3" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#measure-spaces"><i class="fa fa-check"></i><b>2.3</b> Measure spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html"><i class="fa fa-check"></i><b>3</b> Outer measures and Lebesgue Measure</a>
+<ul>
+<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="integration-1.html"><a href="integration-1.html"><i class="fa fa-check"></i><b>5</b> Integration</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="integration-1.html"><a href="integration-1.html#convergence-theorems-for-integrals-of-functions"><i class="fa fa-check"></i><b>5.1</b> Convergence theorems for integrals of functions</a></li>
+<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html"><i class="fa fa-check"></i><b>8</b> Radon-Nikodym Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#signed-measures"><i class="fa fa-check"></i><b>8.1</b> Signed measures</a></li>
+<li class="chapter" data-level="8.2" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#absolute-continuity"><i class="fa fa-check"></i><b>8.2</b> Absolute Continuity</a></li>
+<li class="chapter" data-level="8.3" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#duality-in-lp-spaces"><i class="fa fa-check"></i><b>8.3</b> Duality in <span class="math inline">\(L^p\)</span> spaces</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Measure theory lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="outer-measures-and-lebesgue-measure" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Outer measures and Lebesgue Measure<a href="outer-measures-and-lebesgue-measure.html#outer-measures-and-lebesgue-measure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this section we will define Lebesgue measure which is one of the most fundamental objects in this course. Lebesgue measure is the measure which generalises the notion of length/area/volume to sets where we don’t have an existing idea of their length/area/volume.</p>
+<p>In order to do this we first define something called Lebesgue outer measure. So we start by finding out what an outer measure is.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 3.1  (Outer measure) </strong></span>We write <span class="math inline">\(\mathscr{P}(E)\)</span> to be the power set of <span class="math inline">\(E\)</span>, that is to say the set of all subsets of <span class="math inline">\(E\)</span>. An outer measure is a function, <span class="math inline">\(\nu\)</span>, from <span class="math inline">\(\mathscr{P}(E) \rightarrow \mathbb{R}_+ \cup \{\infty\}\)</span> such that</p>
+<ul>
+<li><span class="math inline">\(\nu(\emptyset) =0\)</span>,</li>
+<li>If <span class="math inline">\(A \subseteq B\)</span> then <span class="math inline">\(\nu (A) \leq \nu(B)\)</span>, (this is called )</li>
+<li>If <span class="math inline">\(A_1, A_2, \dots\)</span> is a sequence of subsets then <span class="math inline">\(\nu\left( \bigcup_n A_n \right) \leq \sum_n \nu(A_n)\)</span>, (this is called <em>countable subadditivity</em>).</li>
+</ul>
+</div>
+<p>The key example of an outer measure is <em>Lebesgue outer measure</em>, defining this is our first step to defining Lebesgue measure.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 3.2  (Lebesgue measure on intervals) </strong></span>Let us write <span class="math inline">\(\mathcal{I}\)</span> to be the set of half open intervals. Then we define a set function <span class="math inline">\(\lambda\)</span> from <span class="math inline">\(\mathcal{J}\)</span> to <span class="math inline">\(\mathbb{R}\)</span> by</p>
+<p><span class="math display">\[ \lambda \left(  (a_1, b_1] \cup (a_2,b_2] \cup \dots \cup (a_n,b_n] \right) = \sum_{i=1}^n (b_i-a_i).\]</span></p>
+</div>
+<p>Using this we can define Lebesgue outer measure.
+::: {.definition name=“Lebesgue outer measure”}</p>
+<p>We define Lebesgue outer measure on <span class="math inline">\(\mathscr{P}(\mathbb{R})\)</span> by</p>
+<p><span class="math display">\[\lambda^* (A) = \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are half open intervals}\, , A \subset \bigcup_n I_n\}. \]</span></p>
+<p>:::</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Proposition 3.1  </strong></span>Lebesgue outer measure is an outer measure and agrees with <span class="math inline">\(\lambda\)</span> on any half open interval.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-36" class="proof"><em>Proof</em>. </span>We need to check each part of the definition of outer measure. First the fact that <span class="math inline">\(\lambda^*(\emptyset) = 0\)</span> follows from the fact that <span class="math inline">\(\emptyset \in \mathcal{I}\)</span> and <span class="math inline">\(\lambda(\emptyset) = 0\)</span>. Now suppose that <span class="math inline">\(A_1 \subset A_2\)</span>, then any set <span class="math inline">\(B\)</span> which is a countable union of half open intervals with <span class="math inline">\(A_2 \subseteq B\)</span> also has <span class="math inline">\(A_1 \subseteq B\)</span> so</p>
+<p><span class="math display">\[ \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are intervals}\,, A_1 \subset B = \bigcup_n I_n\} \leq \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are intervals}\,, A_2 \subset B = \bigcup_n I_n\}, \]</span></p>
+<p>as the infimum over a larger set will always be smaller. Now let us turn to the countable subadditivity. Let us take some sequence <span class="math inline">\(A_1, A_2, \dots\)</span>, if <span class="math inline">\(\sum_n \lambda^*(A_n) = \infty\)</span> then we are done. Therefore we can assume that <span class="math inline">\(\sum_n \lambda^*(A_n) &lt; \infty\)</span>. Now let us fix an arbitrary <span class="math inline">\(\epsilon&gt;0\)</span>. Now by the definition of <span class="math inline">\(\lambda^*\)</span> for each <span class="math inline">\(n\)</span> there exists some <span class="math inline">\(I_n \in \mathcal{I}\)</span> such that <span class="math inline">\(A_n \subseteq I_n\)</span> and <span class="math inline">\(I_n = \bigcup_k I_{n,k}\)</span> where the <span class="math inline">\(I_{n,k}\)</span> are half open intervals, and <span class="math inline">\(\sum_k\lambda(I_{n,k}) \leq \lambda^* (A_n) + \epsilon 2^{-n}\)</span>. Then the set <span class="math inline">\(I = \bigcup_n I_n\)</span> is in <span class="math inline">\(\mathcal{I}\)</span> and <span class="math inline">\(\sum_{n,k}\lambda(I_{n,k}) = \sum_n \sum_k\lambda(I_{n,k}) \leq \sum_n \lambda^*(A_n) + \epsilon\)</span>. Therefore <span class="math inline">\(\lambda^*(\bigcup_n A_n) \leq \sum_n \lambda^*(A_n) + \epsilon\)</span>.</p>
+<p>Lastly if <span class="math inline">\(A\)</span> is the interval <span class="math inline">\((a,b]\)</span> then <span class="math inline">\((a,b] \in \mathcal{I}\)</span> so <span class="math inline">\(\lambda^*(A) \leq b-a\)</span>.</p>
+<p>Suppose that <span class="math inline">\((a,b] \subseteq (c_1,d_1] \cup (c_2, d_2] \cup \dots\)</span>. Then we have that for any <span class="math inline">\(\epsilon, \delta\)</span> that</p>
+<p><span class="math display">\[ [a+\epsilon, b-\epsilon] \subseteq (c_1-\delta/2, d_1 + \delta/2) \cup (c_2 - \delta/4, d_2 + \delta/4) \cup \dots (c_k -2^{-k} \delta, d_k + 2^{-k} \delta) \cup \dots.  \]</span></p>
+<p>Then using compactness (which tells us any open cover of a compact set has a finite subcover) there exists some <span class="math inline">\(n\)</span> such that</p>
+<p><span class="math display">\[ [a+\epsilon, b-\epsilon] \subseteq \bigcup_{k=1}^n (c_k -2^{-k}\delta, d_k + 2^{-k} \delta). \]</span></p>
+<p>Now we know about the lengths of finite unions of intervals (Lebesgue measure doesn’t wipe out our existing knowledge of length) so we can compare the lengths of the sides to get</p>
+<p><span class="math display">\[ b-a - 2\epsilon \leq \sum_{k=1}^n (d_k - c_k + 2^{-k+1} \delta) \leq \sum_{k=1}^\infty (d_k-c_k) + 2 \delta. \] Both $\epsilon$ and $\delta$ are arbitrary so we can let them go to $0$ and get
+\[ b-a \leq \sum_k (d_k - c_k). \]</span></p>
+<p>Now ranging over all possible covering sequences gives</p>
+<p><span class="math display">\[ b-a \leq \lambda^*((a,b]). \]</span></p>
+<p>Note: When we are working in <span class="math inline">\(\mathbb{R}^d\)</span> as in the assignment the terms involving <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> will be multiplied by something involving the side lengths of rectangles. In order to run the proof you can say that wlog all the rectangles you are looking at are contained inside some fixed large rectangle. This will allow you to send <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> to zero without having to worry.</p>
+</div>
+<p>We want to turn this outer measure into a true measure. In order to do this we need to restrict <span class="math inline">\(\lambda^*\)</span> to some subset of <span class="math inline">\(\mathscr{P}(\mathbb{R})\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 3.3  (Lebesgue Measurable sets) </strong></span>We call a set <span class="math inline">\(A \in \mathscr{P}(\mathbb{R})\)</span> is <em>Lebesgue Measureable</em> if for any <span class="math inline">\(B \in \mathscr{P}(\mathbb{R})\)</span> we have</p>
+<p><span class="math display">\[ \lambda^*(B) = \lambda^*(A \cap B) + \lambda^*(A^c \cap B). \]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposition 3.2  </strong></span>The collection of Lebesgue measureable sets, <span class="math inline">\(\mathscr{M}\)</span>, is a <span class="math inline">\(\sigma\)</span> algebra.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-39" class="proof"><em>Proof</em>. </span>First let us notice that the definition of a Lebesgue measureable sets is symmetric in <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span>, so <span class="math inline">\(A \in \mathscr{M}\)</span> implies that <span class="math inline">\(A^c \in \mathscr{M}\)</span>.</p>
+<p>Secondly we can see that <span class="math inline">\(\emptyset \in \mathscr{M}\)</span> as <span class="math inline">\(\lambda^*(A\cap \emptyset) + \lambda^*(A \cap \emptyset^c) = \lambda^*(\emptyset) + \lambda^*(A \cap E) = 0+ \lambda^*(A)\)</span>. This also implies via the first point that <span class="math inline">\(E \in \mathscr{M}\)</span>.</p>
+<p>We then show that if <span class="math inline">\(A_1, A_2 \in \mathscr{M}\)</span> then <span class="math inline">\(A_1 \cup A_2 \in \mathscr{M}\)</span>. Using the fact that <span class="math inline">\(A_1 \in \mathscr{M}\)</span> we have</p>
+<p><span class="math display">\[ \lambda^*(B \cap (A_1 \cup A_2)) = \lambda^*(B \cap (A_1 \cup A_2) \cap A_1) + \lambda^*(B \cap(A_1 \cup A_2) \cap A_1^c) = \lambda^* (B \cap A_1) + \lambda^* (B \cap A_2 \cap A_1^c).  \]</span>
+We also have the identity <span class="math inline">\((A_1 \cup A_2)^c = A_1^c \cap A_2^c\)</span> therefore</p>
+<p><span class="math display">\[ \lambda^*(B \cap (A_1 \cup A_2)) + \lambda^*(B \cap (A_1 \cup A_2)^c) = \lambda^*(B \cap A_1) + \lambda^* (B \cap A_2 \cap A_1^c) + \lambda^*(B \cap A_1^c \cap A_2^c). \]</span>
+Then since <span class="math inline">\(A_2 \in \mathscr{M}\)</span> we have</p>
+<p><span class="math display">\[  \lambda^* (B \cap A_2 \cap A_1^c) + \lambda^*(B \cap A_1^c \cap A_2^c) = \lambda^*(B \cap A_1^c).\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[  \lambda^*(B \cap (A_1 \cup A_2)) + \lambda^*(B \cap (A_1 \cup A_2)^c) = \lambda^*(B \cap A_1) + \lambda^*(B \cap A_1^c). \]</span>
+Then we use again the fact that <span class="math inline">\(A_1 \in \mathscr{M}\)</span> to get</p>
+<p><span class="math display">\[  \lambda^*(B \cap (A_1 \cup A_2)) + \lambda^*(B \cap (A_1 \cup A_2)^c) =\lambda^*(B). \]</span></p>
+<p>This shows that <span class="math inline">\(A_1 \cup A_2 \in \mathscr{M}\)</span>.</p>
+<p>Now let us take an infinite sequence of disjoint sets <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> then we will show</p>
+<p><span class="math display">\[ \lambda^*(B) = \sum_{i=1}^n \lambda^* (B \cap A_i) + \lambda^*\left( B \cap \left( \bigcap_{i=1}^n A_i^c \right) \right). \]</span></p>
+<p>We can show this by induction. For the base case it just follows with <span class="math inline">\(n=1\)</span> from the fact that <span class="math inline">\(A_1 \in \mathscr{M}\)</span>. Then by induction suppose we know that</p>
+<p><span class="math display">\[ \lambda^*(B) = \sum_{i=1}^{n-1} \lambda^*(B \cap A_i) + \lambda^*\left( B \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \right).  \]</span></p>
+<p>Now since <span class="math inline">\(A_n \in \mathscr{M}\)</span> we have</p>
+<p><span class="math display">\[ \lambda^*\left( B \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \right) = \lambda^* \left(B \cap A_n \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right)  \right) + \lambda^* \left( B \cap A_n^c \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \right).\]</span></p>
+<p>Now since <span class="math inline">\(A_n\)</span> is disjoint from <span class="math inline">\(A_1, \dots, A_{n-1}\)</span> we have that <span class="math inline">\(A_n \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) = A_n\)</span> so we have
+<span class="math display">\[  \lambda^*\left( B \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \right) = \lambda^*(B \cap A_n) + \lambda^*\left( B \cap \left( \bigcap_{i=1}^{n} A_i^c \right) \right). \]</span></p>
+<p>This gives our induction step.</p>
+<p>By monotonicity of the outer measure this gives that for any <span class="math inline">\(n\)</span> we have</p>
+<p><span class="math display">\[ \lambda^*(B) \geq \sum_{i=1}^n \lambda^*(B \cap A_i) + \lambda^* \left(B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right). \]</span>
+Consequently we can let <span class="math inline">\(n\)</span> tend to infinity to get</p>
+<p><span class="math display">\[ \lambda^*(B) \geq \sum_{i=1}^\infty \lambda^*(B \cap A_i) +\lambda^* \left(B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right). \]</span>
+Now we can use the countable subadditivity of <span class="math inline">\(\lambda^*\)</span> to get</p>
+<p><span class="math display">\[ \lambda^*(B) \geq \lambda^*\left( B \cap \left( \bigcup_{i=1}^\infty A_i \right)\right) + \lambda^*\left((B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right) = \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right) \right) + \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right).\]</span></p>
+<p>Furthermore, the subadditivity of <span class="math inline">\(\lambda^*\)</span> gives</p>
+<p><span class="math display">\[ \lambda^*(B) \leq  \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right) \right) + \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right). \]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[ \lambda^*(B) =  \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right) \right) + \lambda^* \left( B \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right). \]</span></p>
+<p>We have now shown that <span class="math inline">\(\mathscr{M}\)</span> is closed under complements and taking countable unions and contains <span class="math inline">\(\emptyset\)</span> which is sufficient to show that <span class="math inline">\(\mathscr{M}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-40" class="proposition"><strong>Proposition 3.3  </strong></span>The restriction of <span class="math inline">\(\lambda^*\)</span> to <span class="math inline">\(\mathscr{M}\)</span> is a measure.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-41" class="proof"><em>Proof</em>. </span>We need to show that <span class="math inline">\(\lambda^*\)</span> is countably additive on <span class="math inline">\(\mathscr{M}\)</span> so let <span class="math inline">\(A_1, A_2, \dots\)</span> be a sequence of disjoint subsets in <span class="math inline">\(\mathscr{M}\)</span>. In the proof that <span class="math inline">\(\mathscr{M}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra we showed that</p>
+<p><span class="math display">\[ \lambda^*(B) \geq \sum_{i=1}^\infty \lambda^*(B \cap A_i) + \lambda^* \left( B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right). \]</span>
+Now let us take the particular case where <span class="math inline">\(B = \bigcup_{i=1}^\infty A_i\)</span> this gives</p>
+<p><span class="math display">\[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \geq \sum_{i=1}^n \lambda^*(A_i) + \lambda^* \left(\left( \bigcup_{i=1}^\infty A_i \right) \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right) = \sum_{i=1}^\infty \lambda^* (A_i). \]</span>
+Countable subadditivity gives</p>
+<p><span class="math display">\[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^n \lambda^*(A_i),  \]</span></p>
+<p>so consequently</p>
+<p><span class="math display">\[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) = \sum_{i=1}^n \lambda^*(A_i).  \]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-42" class="remark"><em>Remark</em>. </span>We now call the restriction of <span class="math inline">\(\lambda^*\)</span> to <span class="math inline">\(\mathscr{M}\)</span>, <span class="math inline">\(\lambda\)</span> and call it .</p>
+</div>
+<p>We now want to know that there are some Lebesgue measureable sets. In order to do this we first show that all the intervals of the form <span class="math inline">\((-\infty, b]\)</span> are Lebesgue measurable.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-43" class="lemma"><strong>Lemma 3.1  </strong></span>The intervals of the form <span class="math inline">\((-\infty, b]\)</span> are Lebesgue measureable.</p>
+</div>
+<p>::: {.proof}</p>
+<p>Let <span class="math inline">\(B\)</span> be a subset of <span class="math inline">\(\mathbb{R}\)</span> and let <span class="math inline">\(I_1, I_2, \dots\)</span> be a sequence of half open intervals such that <span class="math inline">\(B \subseteq I_1 \cup I_2 \cup \dots\)</span>. Now let us define the (often empty) intervals <span class="math inline">\(I^l_i = I_i \cap (-\infty, b]\)</span> and <span class="math inline">\(I^r_i = I_i \cap (b, \infty)\)</span>, these are also half open intervals. We have <span class="math inline">\(B \cap (-\infty,b] \subseteq \bigcup_n I^l_n\)</span> and <span class="math inline">\(B \cap (b,\infty) \subseteq \bigcup_n I^r_n\)</span>. Therefore we have</p>
+<p><span class="math display">\[ \lambda^*(B \cap (-\infty, b]) \leq \sum_n \lambda(I^l_n), \quad \lambda^*(B \cap (b,\infty)) \leq \sum_n \lambda(I^r_n). \]</span></p>
+<p>Using this we have</p>
+<p><span class="math display">\[ \lambda^*(B \cap(-\infty,b])) + \lambda^*(B \cap (b,\infty)) \leq \sum_n \lambda(I^l_n) + \sum_n \lambda(I^r_n) = \sum_n \lambda(I_n).\]</span>
+We can then take the infimum over all possible sequences of intervals covering <span class="math inline">\(B\)</span> to get</p>
+<p><span class="math display">\[ \lambda^*(B \cap(-\infty,b])) + \lambda^*(B \cap (b,\infty)) \leq \lambda^*(B). \]</span></p>
+<p>Combining this with countable subadditivity gives</p>
+<p><span class="math display">\[ \lambda^*(B) = \lambda^*(B \cap(-\infty,b])) + \lambda^*(B \cap (b,\infty)). \]</span></p>
+<p>Therefore, <span class="math inline">\((-\infty,b]\)</span> is Lebesgue measurable.</p>
+<div class="proof">
+<div class="corollary">
+<span id="unlabeled-div-90" class="proof"><em>Proof</em>. </span>
+<p><span id="cor:unlabeled-div-44" class="corollary"><strong>Corollary 3.1  </strong></span>Every set in <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> is Lebesgue measurable.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-45" class="proof"><em>Proof</em>. </span>The Borel <span class="math inline">\(\sigma\)</span> algebra is the <span class="math inline">\(\sigma\)</span> algebra generated by sets of the form <span class="math inline">\((-\infty, b]\)</span> as shown last week. Therefore, as <span class="math inline">\(\mathscr{M}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra and contains all the intervals of the form <span class="math inline">\((-\infty, b]\)</span> then it contains the Borel <span class="math inline">\(\sigma\)</span>-algebra.</p>
+</div>
+<p>The construction of Lebesgue measure via the outer measure can be generalised via Carath'eodory’s extension theorem. This theorem is not very important within the course the main objective here is to go over the ideas in the proof of the construction of Lebesgue measure again. Hopefully seeing things in a more abstract form helps draw out the key ideas.</p>
+<p>We briefly give the defintion of a ring of subsets. This is different (though a bit similar) to the definition you may have seen in group theory.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-46" class="definition"><strong>Definition 3.4  (Ring) </strong></span>A collection of subsets, <span class="math inline">\(\mathcal{A}\)</span>, of a space <span class="math inline">\(E\)</span> is called a ring if for every <span class="math inline">\(A,B \in \mathcal{A}\)</span> we have <span class="math inline">\(A \setminus B \in \mathcal{A}\)</span> and <span class="math inline">\(A \cup B \in \mathcal{A}\)</span>.</p>
+</div>
+<p>Now we introduce Carath'eodory’s Extension theorem. We can see that the proof is in many ways very similar to the construction of Lebesgue measure.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-47" class="theorem"><strong>Theorem 3.1  (Carath'eodory's Extension Theorem) </strong></span>Let <span class="math inline">\(\mathcal{A}\)</span> be a ring of subsets of <span class="math inline">\(E\)</span>, and let <span class="math inline">\(\mu: \mathcal{A} \rightarrow [0, \infty]\)</span> be a countably additive set function. Then <span class="math inline">\(\mu\)</span> extends to a measure on <span class="math inline">\(\sigma(\mathcal{A})\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-48" class="proof"><em>Proof</em>. </span>We define the outer measure <span class="math inline">\(\mu^*\)</span> on <span class="math inline">\(\mathscr{P}(E)\)</span> by</p>
+<p><span class="math display">\[ \mu^*(B) = \inf \left\{ \sum_n \mu(A_n) \,:\, A_n \in \mathcal{A} \forall n, B \subset \bigcup_n A_n \right\}.\]</span>
+We have that <span class="math inline">\(\mu^*(B) = \infty\)</span> if there is not possible sequence of <span class="math inline">\(A_n\)</span> so that <span class="math inline">\(B\)</span> is contained in their union. We can see immediately that <span class="math inline">\(\mu^*(\emptyset) =0\)</span> and <span class="math inline">\(\mu^*\)</span> is increasing.</p>
+<p>As before we define <span class="math inline">\(\mathscr{M}\)</span> to be the set of <span class="math inline">\(\mu^*\)</span> measurable sets <span class="math inline">\(A\)</span> that satisfy, for every <span class="math inline">\(B \subseteq E\)</span> that</p>
+<p><span class="math display">\[ \mu^*(B) = \mu^*(B \cap A) + \mu^*(B \cap A^c).  \]</span>
+We want to show that <span class="math inline">\(\mathscr{M}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra and that <span class="math inline">\(\mu^*\)</span> restricts to a measure on <span class="math inline">\(\mathscr{M}\)</span>.</p>
+<p>First we show that <span class="math inline">\(\mu^*\)</span> is countably subadditive. Suppose that we have a sequence <span class="math inline">\(B_n\)</span> and want to show that</p>
+<p><span class="math display">\[ \mu^*\left( \bigcup_n B_n\right) \leq \sum_n \mu^*(B_n). \]</span></p>
+<p>Let us fix some <span class="math inline">\(\epsilon &gt;0\)</span> then for each <span class="math inline">\(n\)</span> there is a sequence <span class="math inline">\(A_{n,m} \in \mathcal{A}\)</span> such that <span class="math inline">\(B_n \subset \bigcup_m A_{n,m}\)</span> and <span class="math inline">\(\sum_m \mu(A_{n,m}) \leq \mu^*(B_n) + \epsilon 2^{-n}\)</span>. Then <span class="math inline">\(\bigcup_n B_n \subset \bigcup_{n,m} A_{n,m}\)</span> and <span class="math inline">\(\sum_{n,m}\mu(A_{n,m}) \leq \sum_n \mu^*(B_n) + \epsilon\)</span>. Therefore <span class="math inline">\(\mu^* \left( \bigcup_n B_n \right) \leq \sum_n \mu(B_n) + \epsilon\)</span>. Since <span class="math inline">\(\epsilon\)</span> is arbitrary this gives the countable subadditivity.</p>
+<p>Now we show that <span class="math inline">\(\mu^*\)</span> agrees with <span class="math inline">\(\mu\)</span> on <span class="math inline">\(\mathcal{A}\)</span>. Let us take <span class="math inline">\(A \in \mathcal{A}\)</span> clearly <span class="math inline">\(A \subseteq A\)</span> so <span class="math inline">\(\mu^*(A) \leq \mu(A)\)</span>. Now suppose that there is a sequence <span class="math inline">\(A_n \in \mathcal{A}\)</span> such that <span class="math inline">\(A \subseteq \bigcup_n A_n\)</span>. Then <span class="math inline">\(A \cap A_n = A \setminus (A \setminus A_n) \in \mathcal{A}\)</span>. Therefore we use the countable subadditivity of <span class="math inline">\(\mu\)</span> on <span class="math inline">\(\mathcal{A}\)</span> to get</p>
+<p><span class="math display">\[ \mu (A) \leq  \sum_n \mu(A_n \cap A) \leq \sum_n \mu(A_n).\]</span></p>
+<p>Taking the infimum over such sequences gives <span class="math inline">\(\mu(A) \leq \mu^*(A)\)</span>. Therefore <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\mu^*\)</span> agree on <span class="math inline">\(\mathcal{A}\)</span>.</p>
+<p>Now we show that <span class="math inline">\(\mathscr{M}\)</span> contains <span class="math inline">\(\mathcal{A}\)</span>. That is to say we want to show that if <span class="math inline">\(A \in \mathcal{A}\)</span> then for every <span class="math inline">\(B\)</span></p>
+<p><span class="math display">\[ \mu^*(B) = \mu^*(B \cap A) + \mu^*(B \cap A^c). \]</span>
+Using subadditivity of <span class="math inline">\(\mu^*\)</span> we have that <span class="math inline">\(\mu^*(B) \leq \mu^*(B \cap A) + \mu^*(B \cap A^c)\)</span>. Therefore we want to show <span class="math inline">\(\mu^*(B) \geq \mu^*(B \cap A) + \mu^*(B \cap A^c)\)</span>. Let <span class="math inline">\(A_n\)</span> be a sequence in <span class="math inline">\(\mathcal{A}\)</span> such that <span class="math inline">\(\mu^*(B) \geq \sum_n \mu(A_n) - \epsilon, B \subseteq \bigcup_n A_n\)</span>, then we already know that <span class="math inline">\(A \cap A_n\)</span> will be in <span class="math inline">\(\mathcal{A}\)</span> we also have that <span class="math inline">\(A^c \cap A_n = A_n \setminus (A \cap A_n) \in \mathcal{A}\)</span>. Therefore <span class="math inline">\(\mu(B \cap A) \leq \sum_n \mu(A_n \cap A)\)</span> and <span class="math inline">\(\mu(B \cap A^c) \leq \sum_n \mu(A^c \cap A_n)\)</span> and consequently</p>
+<p><span class="math display">\[ \mu^*(B \cap A) + \mu^*(B \cap A^c) \leq \sum_n \left( \mu(A_n \cap A) + \mu(A_n \cap A^c) \right) = \sum_n \mu(A_n) \leq \mu^*(B) + \epsilon. \]</span>
+As <span class="math inline">\(\epsilon\)</span> is arbitrary this gives the required result.</p>
+<p>The next step is to show that <span class="math inline">\(\mathscr{M}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra. We start with the algebra part. <span class="math inline">\(E\)</span> and <span class="math inline">\(\emptyset\)</span> are in <span class="math inline">\(\mathscr{M}\)</span> as</p>
+<p><span class="math display">\[ \mu^*(B) = \mu^*(B \cap E) + \mu^*(B \cap \emptyset), \]</span></p>
+<p>just because <span class="math inline">\(B \cap E = B\)</span> and <span class="math inline">\(B \cap \emptyset = \emptyset\)</span> and we know <span class="math inline">\(\mu^*(\emptyset) =0\)</span>. We also can see that</p>
+<p><span class="math display">\[ \mu^*(B) = \mu^*(B \cap A) + \mu^*(B \cap A^c) \]</span></p>
+<p>is symmetric in exchanging <span class="math inline">\(A\)</span> and <span class="math inline">\(A^c\)</span> so if <span class="math inline">\(A \in \mathscr{M}\)</span> then so is <span class="math inline">\(A^c\)</span>. Now suppose <span class="math inline">\(A_1, A_2 \in \mathscr{M}\)</span>. We notice that <span class="math inline">\((A_1 \cap A_2)^c \cap A_1 = (A_1^c \cup A_2^c) \cap A_1 = (A_1^c \cap A_1) \cup (A_2^c \cap A_1) = A_2^c \cap A^1\)</span> and $ A_1^c = A_1^c (A_1 A_2)^c$. Using this and the fact that <span class="math inline">\(A_1, A_2, A_1^c, A_2^c\)</span> are in <span class="math inline">\(\mathscr{M}\)</span> we have</p>
+<p><span class="math display">\[\begin{align*}\mbox{Using that} \, A_1 \in \mathscr{M} \quad \mu^*(B) &amp;= \mu^*(B \cap A_1) + \mu^*(B \cap A_1^c)\\
+\mbox{Using that}\, A_2 \in \mathscr{M} \quad &amp;= \mu^*(B \cap (A_1 \cap A_2)) + \mu^*(B \cap A_1 \cap A_2^c) + \mu^*(B \cap A_1^c)\\
+\mbox{Using our first identity} \quad &amp;= \mu^*(B \cap (A_1 \cap A_2)) + \mu^*(B \cap (A_1 \cap A_2)^c \cap A_1) + \mu^*(B \cap A_1^c)\\
+\mbox{Using our second identiy} \quad &amp;= \mu^*(B \cap (A_1 \cap A_2)) + \mu^*(B \cap (A_1 \cap A_2)^c \cap A_1) + \mu^*(B \cap (A_1 \cap A_2)^c \cap A_1^c)\\
+\mbox{Using the fact that}\, A_1 \in \mathscr{M} \quad &amp;= \mu^*(B \cap (A_1 \cap A_2)) + \mu^*(B \cap (A_1 \cap A_2)^c).
+\end{align*}\]</span></p>
+<p>Now that we have shown that <span class="math inline">\(\mathscr{M}\)</span> contains finite unions we want to show it countains countable unions. Let <span class="math inline">\(A_n\)</span> be a sequence of disjoin sets in <span class="math inline">\(\mathscr{M}\)</span>. Let us write <span class="math inline">\(A = \bigcup_n A_n\)</span>. Then itterating our previous result we have for any <span class="math inline">\(B, n\)</span> that</p>
+<p><span class="math display">\[ \mu^*(B) = \sum_{k=1}^n \mu^*(B \cap A_k) + \mu^*( B \cap A_1^c \cap \dots \cap A_n^c). \]</span></p>
+<p>Now as <span class="math inline">\(A^c \subseteq A_1^c \cap A_2^c \dots \cap A_n^c\)</span> for each <span class="math inline">\(n\)</span> we have <span class="math inline">\(\mu^*(B \cap A^c) \leq \mu^*(B \cap A_1^c \cap \dots \cap A_n^c)\)</span>. Therefore for each <span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[ \mu^*(B) \geq \sum_{k=1}^n \mu^*(B \cap A_k) + \mu^*(B \cap A^c). \]</span></p>
+<p>Letting <span class="math inline">\(n \rightarrow \infty\)</span> we have</p>
+<p><span class="math display">\[ \mu^*(B) \geq \sum_n \mu^*(B \cap A_n) + \mu^*(B \cap A^c). \]</span></p>
+<p>Now we use the countable subadditivity of <span class="math inline">\(\mu^*\)</span> and the fact that <span class="math inline">\(B \cap A = \bigcup_n (B \cap A_n)\)</span> to get</p>
+<p><span class="math display">\[ \mu^*(B) \geq \mu^*(B \cap A) + \mu^*(B \cap A^c). \]</span></p>
+<p>As the other inequality holds by subadditivity of <span class="math inline">\(\mu^*\)</span> we have that <span class="math inline">\(\mu^*(B) = \mu^*(B \cap A) + \mu^*(B \cap A^c)\)</span> and hence <span class="math inline">\(A \in \mathscr{M}\)</span>.</p>
+<p>Lastly, we want to show that <span class="math inline">\(\mu^*\)</span> is a measure on <span class="math inline">\(\mathscr{M}\)</span>. In order to do this we need to show that <span class="math inline">\(\mu^*\)</span> is countably additive on <span class="math inline">\(\mathscr{M}\)</span>. In the last step we showed that for any <span class="math inline">\(B\)</span>, and a sequence of disjoint sets <span class="math inline">\(A_n\)</span> in <span class="math inline">\(\mathscr{M}\)</span> with <span class="math inline">\(A= \bigcup_n A_n\)</span>, that</p>
+<p><span class="math display">\[ \mu^*(B) \geq \sum_n \mu^*(A_n \cap B) + \mu^*(B \cap A^c). \]</span></p>
+<p>If we apply this identity with <span class="math inline">\(B=A\)</span> and use the fact that <span class="math inline">\(A_n \cap A = A_n\)</span> we get</p>
+<p><span class="math display">\[ \mu^*(A) \geq \sum_n \mu^*(A_n). \]</span></p>
+<p>Since we already know that <span class="math inline">\(\mu^*\)</span> is countably subadditive this is sufficient to show that <span class="math inline">\(\mu^*\)</span> is countably additive and hence a measure on <span class="math inline">\(\mathscr{M}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-49" class="theorem"><strong>Theorem 3.2  (Uniqueness of Extension) </strong></span>Let <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> be measures on <span class="math inline">\((E,\mathcal{E})\)</span> with <span class="math inline">\(\mu_1(E) = \mu_2(E) &lt; \infty\)</span>. Suppose that <span class="math inline">\(\mu_1 = \mu_2\)</span> on <span class="math inline">\(\mathcal{A}\)</span> where <span class="math inline">\(\mathcal{A}\)</span> is a <span class="math inline">\(\pi\)</span>-system generating <span class="math inline">\(\mathcal{E}\)</span>, then <span class="math inline">\(\mu_1 = \mu_2\)</span> on <span class="math inline">\(\mathcal{E}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-50" class="proof"><em>Proof</em>. </span>Let us consider <span class="math inline">\(\mathcal{D} \subseteq \mathcal{E}\)</span> defined as the measurable sets on which <span class="math inline">\(\mu_1(A) = \mu_2(A)\)</span>. By hypothesis <span class="math inline">\(E \in \mathcal{D}\)</span> and <span class="math inline">\(\mathcal{A} \subseteq \mathcal{D}\)</span>. We want to show that <span class="math inline">\(\mathcal{D}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra and therefore <span class="math inline">\(\mathcal{D} = \mathcal{E}\)</span>. Suppose that <span class="math inline">\(A, B \in \mathcal{E}\)</span> with <span class="math inline">\(A \subseteq B\)</span> then we have <span class="math inline">\(\mu_i(A) + \mu_i (B \setminus A) = \mu_i(B) &lt; \infty.\)</span> This means that if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are in <span class="math inline">\(\mathcal{D}\)</span> then so is <span class="math inline">\(A \setminus B\)</span>. Suppose that <span class="math inline">\(A_n\)</span> is a sequence of elements in <span class="math inline">\(\mathcal{D}\)</span> with <span class="math inline">\(A_1 \subseteq A_2 \subseteq A_3 \dots\)</span> then by continuity of measure <span class="math inline">\(\mu_1(\bigcup_n A_n) = \lim_n \mu_1(A_n) = \lim_n \mu_2(A_n) = \mu_2(\bigcup_n A_n)\)</span>. Therefore <span class="math inline">\(\bigcup_n A_n \in \mathcal{D}\)</span>. Therefore, <span class="math inline">\(\mathcal{D}\)</span> is a <span class="math inline">\(d\)</span>-system containing the <span class="math inline">\(\pi\)</span>-system <span class="math inline">\(\mathcal{A}\)</span> so by Dynkin’s lemma is equal to <span class="math inline">\(\mathcal{E}\)</span>.</p>
+</div>
+<div id="properties-of-lebesgue-measure" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Properties of Lebesgue measure<a href="outer-measures-and-lebesgue-measure.html#properties-of-lebesgue-measure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This collection is a section of facts about Lebesgue measure and the set of Lebesgue measurable sets. We start with looking at <span class="math inline">\(\mathscr{M}\)</span> the <span class="math inline">\(\sigma\)</span>-algebra of Lebesgue measurable sets.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-51" class="lemma"><strong>Lemma 3.2  (Null sets are all Lebesgue measurable) </strong></span>If <span class="math inline">\(A\)</span> in <span class="math inline">\(\mathscr{P}(\mathbb{R})\)</span> and <span class="math inline">\(\lambda^*(A) =0\)</span> then <span class="math inline">\(A \in \mathscr{M}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-52" class="proof"><em>Proof</em>. </span>This is on the assignment.</p>
+</div>
+<p>We can actually characterise all Lebesgue measurable sets in terms of Null sets and Borel sets both of which we have shown are measurable. We have the following propersition which we wont prove in the course. We will show a similar result in the optional exercises.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-53" class="proposition"><strong>Proposition 3.4  </strong></span>A set <span class="math inline">\(S \subseteq \mathbb{R}\)</span> is Lebesgue measurable if and only there exists a Borel set <span class="math inline">\(B\)</span> and a null set <span class="math inline">\(N\)</span> such that <span class="math inline">\(S = B \triangle N\)</span>.</p>
+</div>
+<p>The most important thing we want to prove about <span class="math inline">\(\mathscr{M}\)</span> is that there exists a non-Lebesgue measurable set. Before we do this we need to explore a few more properties of Lebesgue measure itself.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-54" class="proposition"><strong>Proposition 3.5  </strong></span>Lebesgue measure is <em>regular</em> that is to say</p>
+<ul>
+<li><span class="math inline">\(\lambda(A) = \inf \{ \lambda(U)\,:\, \mbox{\)</span>U$ is open}, A U}$,</li>
+<li><span class="math inline">\(\lambda(A) = \sup \{ \lambda(K)\,:\, \mbox{\)</span>K$ is compact}, K A}$.</li>
+</ul>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-55" class="proof"><em>Proof</em>. </span>By monotonicity we can see that <span class="math inline">\(\lambda(A) \leq \inf \{ \lambda(U)\,:\, \mbox{\)</span>U$ is open}, A U}$. Furthermore we can find a sequence of half open rectangles <span class="math inline">\(R_k\)</span> such that <span class="math inline">\(A \subseteq \bigcup_n R_n\)</span> and <span class="math inline">\(\sum_n \lambda(R_n) \leq \lambda(A) + \epsilon\)</span>. By slightly enlarging each of the half open rectangles we can produce another sequence of fully open rectangles <span class="math inline">\(\tilde{R}_n\)</span> such that <span class="math inline">\(A \subseteq \bigcup_n \tilde{R}_n\)</span> and <span class="math inline">\(\lambda(A) \geq \sum_n \lambda(\tilde{R}_n)-2\epsilon\)</span>. The set, <span class="math inline">\(\bigcup_n \tilde{R}_n\)</span> is open and <span class="math inline">\(\epsilon\)</span> can be made arbitrarily small so this shows <span class="math inline">\(\lambda(A) \geq \inf \{ \lambda(U)\,:\, \mbox{\)</span>U$ is open}, A U}$.</p>
+<p>Monotonicity shows that <span class="math inline">\(\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{\)</span>K$ is compact}, K A}$. First let us assume that <span class="math inline">\(A\)</span> is contained in some ball, <span class="math inline">\(B\)</span> around 0. Now use the first part to find some open set <span class="math inline">\(U\)</span> such that <span class="math inline">\(B \setminus A \subseteq U\)</span> and <span class="math inline">\(\lambda(U) \leq \lambda(B \setminus A) + \epsilon\)</span>. Now let <span class="math inline">\(K = B \setminus U\)</span> then we have <span class="math inline">\(K \subseteq A \subseteq B\)</span> and <span class="math inline">\(\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon\)</span> (here we use the fact that <span class="math inline">\(B, A, U, K\)</span> will all have finite measure as they are inside <span class="math inline">\(B\)</span>). As <span class="math inline">\(\epsilon\)</span> is arbitrary this concludes the proof when <span class="math inline">\(A\)</span> is contained in a ball.</p>
+<p>Now suppose that <span class="math inline">\(A\)</span> is unbounded. Then let <span class="math inline">\(A_n = A \cap B_n\)</span> where <span class="math inline">\(B_n\)</span> is the closed ball of radius <span class="math inline">\(n\)</span>. We have that <span class="math inline">\(\lambda(A_n) \rightarrow \lambda(A)\)</span>. If <span class="math inline">\(\lambda(A) = \infty\)</span> then we can find <span class="math inline">\(K_n \subseteq A_n\)</span> with <span class="math inline">\(\lambda(K_n)\)</span> arbitrarily close to <span class="math inline">\(\lambda(A_n)\)</span> therefore we can find such a sequence with <span class="math inline">\(\lambda(K_n) \rightarrow \infty\)</span>. If <span class="math inline">\(\lambda(A) \neq \infty\)</span> then, given <span class="math inline">\(\epsilon\)</span>, there exists <span class="math inline">\(N\)</span> such that <span class="math inline">\(\lambda(A_n) \geq \lambda(A)-\epsilon\)</span> for <span class="math inline">\(n \geq N\)</span>. Then we can fine <span class="math inline">\(K_N \subseteq A_N\)</span> such that <span class="math inline">\(\lambda(K_n) \geq \lambda(A_N) - \epsilon\)</span> therefore <span class="math inline">\(\lambda(K_N) \geq \lambda(A)- 2 \epsilon\)</span>. This shows we can a compact set which is contained in <span class="math inline">\(A\)</span>, with measure arbitrarily close to that of <span class="math inline">\(A\)</span>.</p>
+</div>
+<p>We now want to show that Lebesgue measure is the only which assigns each interval the correct measure.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-56" class="proposition"><strong>Proposition 3.6  </strong></span>Lebesgue measure is the only measure on <span class="math inline">\((\mathbb{R}, \mathcal{B}(\mathbb{R}))\)</span> which assigns each half open interval its length. This is equally true with half open hyper-rectangles in <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-57" class="proof"><em>Proof</em>. </span>The collection of half open intervals is a <span class="math inline">\(\pi\)</span>-system which generates the Borel <span class="math inline">\(\sigma\)</span>-algebra. Therefore, if <span class="math inline">\(\lambda(\mathbb{R})\)</span> had been finite we could use Dynkin’s uniqueness of extension Lemma to get that any other measure which agrees with Lebesgue measure on the half open intervals must agree with Lebesgue measure on the whole of the Borel <span class="math inline">\(\sigma\)</span>-algebra. Instead let <span class="math inline">\(E_n = [-n,n]^d\)</span> then, by Dynkin’s uniqueness of extension lemma we have that <span class="math inline">\(\lambda\)</span> is the only measure on <span class="math inline">\(E_n\)</span>, assigning each rectangle inside <span class="math inline">\(E_n\)</span> its measure. Since every rectangle is bounded, eventually it is inside some <span class="math inline">\(E_n\)</span> so if <span class="math inline">\(\mu\)</span> is a measure such that <span class="math inline">\(\mu(R) = \lambda(R)\)</span> for every rectangle then the restriction of <span class="math inline">\(\mu\)</span> to <span class="math inline">\(E_n\)</span> must agree with the restriction of <span class="math inline">\(\lambda\)</span> to <span class="math inline">\(E_n\)</span>. We also have that, for any <span class="math inline">\(A\)</span>, <span class="math inline">\(\mu(A) = \lim_n \mu(A \cap E_n)\)</span> by continuity of measure. So <span class="math inline">\(\mu(A) = \lim_n \mu(A\cap E_n) = \lim_n \lambda(A \cap E_n) = \lambda(A)\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-58" class="corollary"><strong>Corollary 3.2  </strong></span>Lebesgue measure is translation invariant. That is to say if we define the set <span class="math inline">\(x+A = \{ x+y, y \in A\}\)</span> then <span class="math inline">\(\lambda(x+A) = \lambda(A)\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-59" class="proof"><em>Proof</em>. </span>Define a new measure <span class="math inline">\(\lambda_x\)</span> by <span class="math inline">\(\lambda_x(A) = \lambda(x+A)\)</span> then <span class="math inline">\(\lambda_x((a,b]) = \lambda((a+x,b+x]) = b+x -(a+x) = b-a\)</span>. Therefore <span class="math inline">\(\lambda_x\)</span> agrees with <span class="math inline">\(\lambda\)</span> on the half open intervals and therefore agrees with <span class="math inline">\(\lambda\)</span> on the whole of <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span>. Again it is straightforward to extend this to <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
+</div>
+<p>Lastly, in the construction of Lebesgue measure we show that <span class="math inline">\(\mathscr{M}\)</span> is not the whole of <span class="math inline">\(\mathscr{P}(\mathbb{R})\)</span> and that there exist non-Lebesgue measureable sets.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-60" class="proposition"><strong>Proposition 3.7  </strong></span>There exists sets that are in <span class="math inline">\(\mathscr{P}(\mathbb{R})\)</span> which are not in <span class="math inline">\(\mathscr{M}\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-61" class="proof"><em>Proof</em>. </span>This proof involves the use of the axiom of choice. In fact it is known that it is necessary to use some form of the axiom of choice to prove the existence of a non-Lebesgue measurable set in <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>We use an argument by contradiction, we begin by assuming every subset of <span class="math inline">\(\mathbb{R}\)</span> is Lebesgue measurable. We define an equivalence relation on <span class="math inline">\([0,1)\)</span> by saying <span class="math inline">\(x \sim y\)</span> exactly when <span class="math inline">\(x-y \in \mathbb{Q}\)</span>. Using the axiom of choice we find a subset <span class="math inline">\(S\)</span> of <span class="math inline">\([0,1)\)</span> which contains exactly one representative of each equivalence class. Next we define the set <span class="math inline">\(S+q = \{ s+q \, (\mbox{mod}\,1) \, : \, s \in S \}\)</span> for each <span class="math inline">\(q \in \mathbb{Q} \cap [0,1)\)</span>. Then by our choice of <span class="math inline">\(S\)</span> we have that</p>
+<p><span class="math display">\[ [0,1) = \bigcup_{q \in \mathbb{Q} \cap [0,1)} (S+q), \]</span>
+where this union is disjoint. We can also see by translation invariance of <span class="math inline">\(\lambda\)</span> that if <span class="math inline">\(S\)</span> were Lebesgue measurable then we would have</p>
+<p><span class="math display">\[ \lambda(S) = \lambda(S+q) \]</span>
+for every <span class="math inline">\(q\)</span>. Therefore, by countable additivity we would have</p>
+<p><span class="math display">\[ \lambda([0,1)) = \sum_{q \in \mathbb{Q} \cap [0,1)} \lambda (S+q) = \sum_{q \in \mathbb{Q} \cap [0,1)} \lambda(S) = \infty. \]</span></p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sigma-algebras-definition-of-a-measure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="mesurable-funtions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Lebesguemeasure.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

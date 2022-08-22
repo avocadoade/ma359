@@ -1,0 +1,233 @@
+# Radon-Nikodym Theorem 
+
+## Signed measures
+
+We introduce the notion of signed measures which will be useful in the proof of the Radon-Nikodym theorem.
+
+::: {.definition name="Finite signed measure"}
+
+A function $\mu$ from a $\sigma$-algebra $\mathcal{E}$ to $\mathbb{R}$ is a *finite signed measure* if
+
+- $\mu(\emptyset) = 0$,
+- If $(A_n)_{n \geq 1}$ is a sequence of disjoint sets then $\mu (\bigcup_n A_n) = \sum_n \mu(A_n)$
+
+:::
+
+::: {.example}
+
+If $(E, \mathcal{E}, \mu)$ is a measure space and $f \in L^1(E)$ then $\nu$ defined by $\nu(A) = \mu(f1_A)$ is a signed measure.
+
+:::
+
+
+We want to show two decomposition theorems which basically allow us to reduce the situation back to measures. First we need some more definitions and a useful Lemma.
+
+::: {.definition}
+
+If $(E, \mathcal{E})$ is a measurable space and $\nu$ is a finite signed measure then we call $A$ a *positive set* if for every $B \in \mathcal{E}$ with $B \subseteq A$ then $\nu(B) \geq 0$. The *negative sets* are defined analogously.
+
+:::
+
+::: {.lemma}
+
+Suppose that $\nu$ is a finite signed measure on $(E, \mathcal{E})$ and suppose $A \in \mathcal{E}$ with $\nu(A) <0$ then there exists a negative set $B$ with $B \subseteq A$ and $\nu(B) \leq \nu(A)$. 
+
+:::
+
+::: {.proof}
+
+We will produce this set $A$ by an itterative process, define
+
+$$ \delta_1 = \sup \{ \nu(C) \,:\, C \subseteq A\}, $$
+
+then since $\emptyset \subseteq A$ we have that $\delta_1 \geq 0$. If $\delta_1 = 0$ then we have a negative set so are done. If not we can find a set $C_1 \subseteq A$ with 
+
+$$ \nu(C_1) \geq \min\{\delta_1/2 ,1\}. $$
+
+(We take the minimum here because we don't know that $\delta_1$ is finite.) Now we will define a sequence of $\delta_n$ and $C_n$ by setting
+
+$$ \delta_n = \sup\{ \nu(C) \,:\, C \subseteq (A \setminus \bigcup_{i=1}^{n-1}C_i)\} $$
+
+and $C_n$ a set so that 
+
+$$ \nu(C_n) \geq \min\{ \delta_n /2 ,1\}. $$
+
+Now let $C_\infty = \bigcup_n C_n$ and $B = A \setminus C_\infty$. We now need to check that $B$ has the required properties,
+
+$$ \nu(A) = \nu(C_\infty) + \nu(B) \geq \nu(B), $$
+
+as $\nu(C_\infty) \geq 0$ by construction.
+As $\nu$ is a finite measure we must have $\nu(C_\infty) < \infty$ and as the $C_n$ are constructed to be disjoint this means we must have $\lim_n \nu(C_n) = 0$. Therefore $\lim_n \delta_n = 0$. If $D \subseteq B$ then we must have that $\nu(D) \leq \delta_n$ for every $n$, therefore $\nu(D) \leq 0$.
+
+:::
+
+
+Now we are able to state and prove our two decomposition theorems.
+
+::: {.theorem name="Hahn Decomposition theorem"}
+
+Let $(E, \mathcal{E})$ be a measure space and $\nu$ a finite signed measure. Then there exists a positive set $P$ and a negative set $N$ for $\nu$ such that $E = P \cup N$.
+
+:::
+
+::: {.proof}
+
+Let $L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$ then $L$ is finite as otherwise we could construct a set with measure $-\infty$. Then let $A_n$ be a negative set with $\nu(A_n) \leq L+1/n$ then let $N = \bigcup_n A_n$.
+
+ We can check that $N$ is a negative set and that $\nu(N) = L$. If $A \subseteq N$ then let $B_n = A_n \setminus \bigcup_{k=1}^{n-1}A_k$ then  $A = \bigcup_n (A \cap B_n)$ and $A \cap B_n \subseteq A_n$ so $\nu(A \cap B_n) \leq 0$ and $\nu(A) = \sum_n \nu(A \cap B_n) \leq 0$.  Now since $N$ is a negative set $\nu(N \setminus A_n) \leq 0$, therefore $\nu(N) = \nu(N \setminus A_n) + \nu(A_n) \leq \nu(A_n) \leq L +1/n$. This is true for any $n$ so $\nu(N) \leq L$ and since $L$ is defined to be the infinmum over $\nu(A)$ for all negative sets $A$, we will have $\nu(N) \geq L$, therefore $\nu(N) = L$.
+
+Let $P = N^c$ we want to check that $P$ is a positive set. Suppose there exists a set $A \subseteq P$ with $\nu(A) < 0$, then by our lemma there exists a negative set $B \subseteq A$ with $\nu(B) \leq \nu(A)<0$. Then $N \cup B$ is a negative set and $N$ and $B$ are disjoint so $\nu(N \cup B) = \nu(N) + \nu(B) < \nu(N)$ which contradicts the fact that $\nu(N) = L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$ so we are done.
+
+:::
+
+
+::: {.theorem name="Jordan decompostion theorem"}
+
+Every finite signed measure is the difference of two positive measures. Precisely, if $(E, \mathcal{E})$ is a measure space and $\nu$ is a signed measure then there exist measures $\nu_+$ and $\nu_-$ such that for every $A \in \mathcal{E}$ we have $\nu(A) = \nu_+(A)- \nu_-(A)$.
+
+:::
+
+::: {.proof}
+
+Take some Hahn decomposition $(P, N)$ then let $\nu_+(A) = \nu(A \cap P)$, as $A \cap P \subseteq P$ then $\nu(A \cap P) \geq 0$. Similarly let $\nu_-(A) = -\nu(A \cap N)$. By additivity of $\nu$ we have that $\nu(A) = \nu_+(A) - \nu_-(A)$. Countable additivity of $\nu_+$ and $\nu_-$ follow immediately from countable additivity of $\nu$.
+
+Now we notice that if $B \subseteq A$ then
+
+$$ \nu(B) = \nu_+(B) - \nu_-(B) \leq \nu_+(B) \leq \nu_+(A) $$
+
+and $\nu_+(A) = \nu(A \cap P)$ therefore we have that
+
+$$ \nu_+(A)  = \sup\{\nu(B) \,:\, B \subseteq A, B \in \mathcal{E}\} $$
+
+in the same way
+
+$$ \nu_-(A) = \sup\{ - \nu(B) \,:\, B \subseteq A, B \in \mathcal{E}\}. $$
+
+This shows that the values of $\nu_+, \nu_-$ do not depend on the particular choice of Hahn decomposition.
+
+:::
+
+## Absolute Continuity
+
+We now move on to the main focus of this section, the Radon-Nikodym theorem. In order to understand the theorem we need a definition.
+
+::: {.definition}
+
+Let $(E, \mathcal{E})$ be a measurable space and $\mu$ and $\nu$ be two measures then we say that $\nu$ is absolutely continuous with respect to $\mu$ of $\nu \ll \mu$ if for every $A \in \mathcal{E}$ with $\mu(A) = 0$ we also have $\nu(A) = 0$.
+
+:::
+
+We can characterise absolute continuity
+
+::: {.lemma}
+
+Suppose that $(E, \mathcal{E})$ is a measurable space and $\mu$ a measure, $\nu$ a finite measure then $\nu \ll \mu$ if and only if for earch $\epsilon >0$ there exists a $\delta>0$ such that $\mu(A) < \delta$ implies that $\nu(A) < \epsilon$. 
+
+:::
+
+::: {.proof}
+
+First let us suppose there exists such at $\delta$ for each $\epsilon$, then if $\mu(A) = 0$ we have that $\mu(A)< \delta$ for every $\delta$ so we must have $\nu(A) < \epsilon$ for every $\epsilon$ so $\nu(A) =0$.
+
+Now let us suppose that $\nu \ll \mu$. We prove the result by contradiction. Suppose there exists an $\epsilon$ such that for every $\delta$ there exists a set $A$ with $\mu(A)< \delta$ but $\nu(A) >\epsilon$. Then we can find a sequence of sets $A_k$ such that $\mu(A_k) < 2^{-k}$ but $\nu(A_k) \geq \epsilon$. By the first Borel-Cantelli lemma we have that
+
+$$ \mu \left( \bigcap_n \bigcup_{m \geq n} A_m \right) = 0. $$
+
+We also have that $\nu(\bigcup_{m \geq n} A_m) \geq \nu(A_n) \geq \epsilon$ and
+
+$$\nu \left( \bigcap_n \bigcup_{m \geq n} A_m\right) = \lim_n \nu \left( \bigcup_{m \geq n} A_m \right) \geq \epsilon. $$
+
+This show gives us a set with $\mu(B) = 0$ but $\nu(B) > 0$ which contradicts $\nu \ll \mu$.
+
+:::
+
+
+Now we can prove the main theorem for this section.
+
+::: {.theorem name="Radon-Nikodym Theorem"}
+
+Let $(E, \mathcal{E})$ be a measure space and let $\mu, \nu$ be two finite measures with $\nu \ll \mu$. Then there exists a measurable function $g: E \rightarrow [0, \infty)$ such that $\nu(A) = \mu(g1_A)$. The function $g$ is unique up to identifying almost everywhere equal functions. We write $g = \mathrm{d}\nu/\mathrm{d}\mu$ and call it the Radon-Nikodym derivative of $\nu$ with respect to $\mu$.
+
+:::
+
+::: {.proof}
+
+Let us define the set $\mathcal{F}$ which is the set of all measurable functions, $f$, with $\mu(f1_A) \leq \nu(A)$ for every $A \in \mathcal{E}$. The idea is that $\mathcal{F}$ contains a function $g$ which achieves $\mu(g) = \sup_{f \in \mathcal{F}} \mu(f)$.
+
+As a first step we show that $f_1 \vee f_2 = \max\{ f_1, f_2\} \in \mathcal{F}$ when $f_1, f_2 \in \mathcal{F}$. Let us take any $A \in \mathcal{E}$ then let $A_1 = A \cap \{ f_1 \geq f_2\}$ and $A_2 = A \cap \{ f_1 < f_2\}$. Then 
+
+$$ \mu(f_1 \vee f_2 1_A) = \mu(f_1 \vee f_2 1_{A_1}) + \mu(f_1 \vee f_2 1_{A_2}) = \mu(f_1 1_{A_1}) + \mu(f_2 1_{A_2}) \leq \nu(A_1) + \nu(A_2) = \nu(A).  $$
+
+Therefore $f_1 \vee f_2 \in \mathcal{F}$.
+
+Now take a sequence $f_n$ such that $\mu(f_n) \geq \sup_{f \in \mathcal{F}} \mu(f) - 1/n$. Then let $g_n = f_1 \vee f_2 \vee \dots \vee f_n$, so that the sequence of function $g_n$ is increasing and $\mu(g_n) \geq \sup_{f \in \mathcal{F}} \mu(f) - 1/n$.  Then as $g_n$ is increasing it has a limit $g$ and the monotone convergence theorem shows that 
+
+$$ \mu(g1_A) = \lim_n \mu(g_n1_A) \leq \nu(A). $$
+
+So $g \in \mathcal{F}$. 
+
+Now we can define another positive measure $\nu_0(A) = \nu(A) - \mu(g1_A)$. We want to show that $\nu_0 =0$ and will do this by contradiction. Suppose that there exists $A \in \mathcal{E}$ such that $\nu_0(A)>0$ then by monotonicity we will have $\nu_0(E) >0$ and since $\mu$ is a finite measure there exists a number $\epsilon >0$ such that $\nu_0(E) > \epsilon \mu(E)$. Now $\nu_0 - \epsilon \mu$ is a finite signed measure. Let $(P, N)$ be a Hahn decomposition for this signed measure. Then $(\nu_0 - \epsilon \mu)(A \cap P) \geq 0$ so $\nu_0(A\cap P) \geq \epsilon \mu(A \cap P)$. Hence we have
+
+\begin{align*}
+\nu(A) &= \mu(g1_A) + \nu_0(A) \geq \mu(g1_A) + \nu_0(A \cap P) \\
+& \geq \mu(g1_A) + \epsilon \mu(A \cap P) = \mu(1_A(g +\epsilon 1_{P})).
+\end{align*}
+
+We also have that $\mu(P) >0$ as if $\mu(P) = 0$ then we would have $\nu_0(P)=0$ as $\nu_0 \ll \nu \ll \mu$, and this would mean 
+
+$$ (\nu_0 - \epsilon \mu)(E) = (\nu_0 - \epsilon \mu)(N) \leq 0, $$
+
+which would contradict $\nu_0(E) > \epsilon \mu(E)$. Therefore, $g+ \epsilon 1_P$ belongs to $\mathcal{F}$ but $\mu(g+1_P) > \mu(g)$ which contradicts the fact that $g$ achieves $\mu(g) = \sup_{f \in \mathcal{F}} \mu(f)$. Hence $\nu(A) = \mu(g1_A)$. 
+
+Now we turn to uniqueness suppose that we have two positive functions $g,h$ such that $\nu(A) = \mu(g1_A) = \mu(h1_A)$ for every $A$, then as $\nu$ is finite $g$ and $h$ are integrable so $g-h$ is integrable and $\mu((g-h)1_A) = 0$ for every $A$. As $g-h$ is measurable then $\{x \in E\,:\, g-h \geq 0\}$ is a measurable set so $\mu((g-h)1_{\{x \in E\,:\, g-h \geq 0\}}) = 0$. This shows that $(g-h)1_{\{x \in E\,:\, g-h \geq 0\}} = 0$ almost everywhere. In the same way $(g-h)1_{\{ x \in E\,:\, g-h \leq 0\}} =0$ almost everywhere. Therefore $g=h$ $\mu$-almost everywhere.
+
+:::
+
+
+## Duality in $L^p$ spaces
+
+The goal of this section is to prove that if $1/p+1/q =1$ then the dual space of $L^p(E)$ is isomorphic to the space $L^q(E)$. First let us define a dual space.
+
+::: {.definition}
+
+Let $\mathcal{V}$ be a Banach space (a complete, normed vector space) then the dual space of $\mathcal{V}$ is written $\mathcal{V}'$ and is the space of all bounded linear operators from $\mathcal{V}$ to $\mathbb{R}$. We recall that we call an operator $K$ on $\mathcal{V}$ bounded if $|K(v)| \leq C\|v\|$ for all $v \in \mathcal{V}$. We can define a norm on $\mathcal{V}'$ by $\|K\| = sup_{\|v\| =1}|K(v)|$. 
+
+:::
+
+
+The first thing to note is that if $g \in L^q(E)$ then we can define a bounded linear operator on $L^p(E)$ by $K_g(f) = \mu(fg)$. This is bounded by Hölder's inequality $|\mu(fg)| \leq \mu(|fg|) = \|fg\|_1 \leq \|f\|_p \|g\|_p$. It is also linear thanks to the linearity of the integral. Therfore we can produce a map from $L^q(E) \rightarrow (L^p(E))'$ by $g \mapsto K_g$.
+
+::: {.theorem}
+
+Let $(E, \mathcal{E}, \mu)$ be a finite measure space and $p \in (1, \infty)$. The dual space of $L^p(E)$ is $L^q(E)$ where $1/p +1/q = 1$. Furthermore the map defined by $g \mapsto K_g$ is an isometry.
+
+:::
+
+::: {.remark}
+
+This result also holds for arbitrary measure spaces (without the finite assumption). Extending to $\sigma$-finite measure spaces is relatively straightforward and then to any measure space is more complicated.
+
+:::
+
+::: {.proof}
+
+Remark: This result is similar in spirit to the Riesz representation result that was a non-examinable topic in week 6. 
+
+First we note that the map $g \mapsto K_g$ is linear and $\|K_g\|_{(L^p)'} \leq \|g\|_q$. Therefore the map is injective we want to show that $\|K_g\| = \|g\|$ and that it is surjective. 
+
+First for the fact that $\|K_g\| = \|g\|$ we look at the function $f(x) = \sgn(g)|g(x)|^{q-1}$ then $\mu(|f|^p) = \mu(|g|^q) < \infty$. Therfore we can look at the action of $K_g$ on $f$ and we have $K_g(f) = \mu(|g|^q)$ so we know that $\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q$. Therefore $g \mapsto K_g$ preserves norms.
+
+Now we want to show that this map is surgective, let us begin with the case where $\mu(E)<\infty$. Let us take $K$ an arbirary  element of $(L^p(E))'$. In this case $1_A \in L^p(E)$ for every $A \in \mathcal{E}$ so we can define a function on $\mathcal{E}$ by $k(A)=K(1_A)$. We want to show that $k$ is a signed measure. $k(\emptyset)=K(0)=0$ and let $A_1,A_2,\dots$ be a sequece of disjoint measurable sets. Then $1_{\bigcup_{j=1}^n A_j} = \sum_{j=1}^n 1_{A_j}$ then $k(\bigcup_{j=1}^n A_j) = K(1_{\bigcup_{j=1}^n A_j}) = K( \sum_{j=1}^n 1_{A_j}) = \sum_{j=1}^n K(1_{A_j}) = \sum_{j=1}^n k(A_j)$. We also have that $\| 1_{\bigcup_j A_j} - 1_{\bigcup_{j=1}^n A_j} \|_p \rightarrow 0$ as $n \rightarrow 0$. Therefore, as $K$ is a continous map on $L^p$ we have $K(1_{\bigcup_n A_n}) = \sum_n K(1_{A_n})$, so $k(\bigcup_n A_n) = \sum_n k(A_n)$ Therefore $k$ is indeed a signed measure. By the Hahn decomposition and the Jordan decomposition we can write $k = k_+ - k_-$ and there exists $P \cup N$ a Hahn decomposition with $k$ being positive on $P$ and negative on $N$.
+
+Next we want to show that $k_+ \ll \mu$ and $k_- \ll \mu$. If $A \in \mathcal{E}$ is such that $\mu(A) = 0$ then $\mu(A \cap P)=0$ and $\mu(A \cap N) = 0$ and $K(1_{A \cap P}) = K(0) = 0$ and $K(1_{A \cap N}) = K(0) = 0$. Therefore $k_+(A) = 0$ and $k_-(A) = 0$.
+
+Then by the Radon-Nikodym theorem there exists functions $g_+$ and $g_-$ such that $k_+(A) = \mu(g_+1_A)$ and $k_-(A) = - \mu(g_- 1_A)$. Now let $g = g_+ - g_-$ we want to show that $g \in L^q$ and that $K = K_g$. This is complicated.
+
+Let us define $E_n$ by $E_n = \{ x \,:\, |g(x)| \leq n\}$ then $g1_{E_n}$ is bounded and so in $L^q$ as $\mu$ is finite. Then define a linear functional on $L^p$ by $K_n(f) = \mu(fg1_{E_n})$ and another by $\tilde{K}_n (f) = K(f1_{E_n})$. Then if $A$ is a measurable set we have $K_n (1_A) = \tilde{K}_n (1_A)$, by linearity if $h$ is a simple function then $K_n(h) = \tilde{K}_n(h)$.
+
+We showed in Assignment 4 that given a function $f \in L^p, \epsilon >0$ there exists a simple function $h$ with $\|f-h\|_p \leq \epsilon$. Then we have that 
+\[ |K_n(f) - \tilde{K}_n(f)| \leq |K_n(f) - K_n(h)| + |\tilde{K}_n(f) - \tilde{K}_n (h)| \leq \|K\| \|f-h\|_p + \|g1_{E_n}\|_q \|f-h\|_p \leq (\|K\| + \|g\|_q) \epsilon.\] Since $\epsilon$ is arbitrary this shows that $K_n(f) = \tilde{K}_n(f)$. $\tilde{K}_n(f) = K_{g1_{E_n}}(f)$ so by our isometry we have $\|\tilde{K}_n\| = \|g1_{E_n}\|_q$. We also have that $\|\tilde{K}_n\| \leq \|K\|$ as
+$\| \tilde{K}_n\| = \sup_{\|f\|_p =1} K_n(f) = \sup_{\|f\|_p = 1} K(f1_{E_n}) \leq \sup_{\|f\|_p=1} K(f) = \|K\|$. Therefore $\|g1_{E_n}\|_q \leq \|K\|$ therefore $\|g1_{E_n}\|_p^p = \int |g|^p 1_{E_n} \mu(\mathrm{d}x)$ and then by monotone convergence we get that $\|g\|_q = \lim_n \|g 1_{E_n}\|_q \leq \|K\|$. Therefore, $g \in L^q$. Then by exactly the same argument with which we showed $K_n = \tilde{K}_n$ we have that $K = K_g$. This concludes the proof int he finite case.
+
+
+:::

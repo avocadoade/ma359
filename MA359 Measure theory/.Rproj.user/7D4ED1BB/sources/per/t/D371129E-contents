@@ -1,0 +1,642 @@
+# Integration
+
+We now get to the definition of the Lebesgue integral which is the second important object that we construct in this course. There are several different notations for the integral of a function $f$ with respect to a measure $\mu$. We have
+
+$$ \mu(f) = \int_E f \mathrm{d}\mu = \int_E f(x) \mu(\mathrm{d}x). $$
+
+When you are integrating with respect to Lebesgue measure the most common notation is
+
+$$ \int_E f(x)\mathrm{d}x. $$
+
+
+Before we start constructing the integral we'll briefly discuss the motivations for how to construct it. Firstly, you've already seen the Riemann integral. We can describe the strategy of Riemann integration - very loosly - as splitting the *domain* of the function into equal sized chunks, estimating the height of the function on each chunk then adding them together. Broadly what happens with Lebesgue integration is that we split the *range* of the function into equal sized chunks, estimate the size of the part of the domain which will end up in that chunk of range then sum everything up. We need the theory of measure in order to do this because the bit of the domain corresponding to chuncks of the range can be quite weird sets whose size it wouldn't be possible to measure. The first motivation for this is that whilst Riemann integration only works for functions from subsets of $\mathbb{R}^d$ to $\mathbb{R}$, Lebesgue integration allows the domain on the function to be quite weird, (as long as it is a measure space). As an example, this is helpful for taking expectations rigorously because expectations are integral of random variables and the domain of a random variable is a probability space which may not be explicit.
+
+The second big motivation for introducing a new theory of integration is the issue of convergence. It is important in many practical applications of integration theory to know when $\lim_n \int f_n(x) \mathrm{d}x = \int \lim_n f_n(x) \mathrm{d}x$ or when $\int_{E_x} \int_{E_y} f(x,y) \mathrm{d}x \mathrm{d}y = \int_{E_y} \int_{E_x} f(x,y) \mathrm{d}y \mathrm{d}x$. Lebesgue integration allows us to rigorously find conditions on $f$ under which these statements will be true. This is often not possible in a satisfactory way with the Riemann theory of integration. We will see some of these convergence theorems next week and then switching the order of integration towards the end of the course (currently planned for week 9). The most important motivation for developing good convergence theorems was the development of Fourier series. We want to know when it is possible to integrate a Fourier series term by term.
+
+The strategy for constructing the integral is to begin by defining $\mu(f)$ when $f$ belongs to a special class of measurable functions that we call *simple functions*. We then define the integral to progressively larger classes of functions. 
+
+::: {.definition name="Simple functions"}
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space. The set of simple functions on this space taking values in $\mathbb{R}$ are functions of the form
+
+$$ f(x) = \sum_{k=1}^n a_k 1_{A_k}(x). $$
+
+Here, the $A_k$ are disjoint sets in $\mathcal{E}$, $1_{A}$ represents the indicator function of the set, and the $a_k$ are non-negative real numbers. We note that this representation of $f$ is not unique.
+
+:::
+
+
+::: {.definition name="The integral of a simple function"}
+
+Still working in the setting above, let $f(x) = \sum_{k=1}^n a_k 1_{A_k}(x)$, then we can define
+
+$$ \mu(f) = \sum_{k=1}^n a_k \mu(A_k). $$
+
+:::
+
+
+::: {.lemma}
+
+The integral of a simple function is well defined (it doesn't depend on the choice of representation of the simple function) and satisfies the following properties.
+
+- For $\alpha >0$ we have $\mu(\alpha f) = \alpha \mu(f)$
+- $\mu(f+g) = \mu(f) + \mu(g)$.
+- If $f(x) \leq g(x)$ for every $x \in E$ then $\mu(f) \leq \mu(g)$.
+- $f=0$ $\mu$-almost everywhere if and only if $\mu(f)=0$
+
+:::
+
+::: {.proof}
+
+Let us first look at the well definedness, without loss of generality lets assume the $a_k, b_j$ are strictly positive and the sets $A_k$ are disjoint and similar for the $B_j$. Let us suppose that $f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}$ which are both simple function representations. Then we can see that $\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k$ and that $a_i =b_j$ if $A_i \cap B_j \neq \emptyset$. Using this we can write
+
+\begin{align*} 
+\mu(f) &= \sum_{k=1}^n a_k \mu(A_k)\\
+\left(\mbox{as}\, A_k = \bigcup_j (A_k \cap B_j)\, \mbox{as}\, \bigcup_{k=1}^nA_k = \bigcup_{j=1}^m B_j\right) \quad \quad &= \sum_{k=1}^n \sum_{j=1}^m a_k \mu(A_k \cap B_j) \\
+\left(\mbox{as}\, a_k = b_j\, \mbox{if}\, A_k \cap B_j \neq \emptyset\, \mbox{so}\, a_k=b_j\, \mbox{or}\, \mu(A_k\cap B_j) = 0\right) \quad \quad & = \sum_{k=1}^n \sum_{j=1}^m b_j \mu(A_k \cap B_j) = \sum_{j=1}^m b_j \sum_{k=1}^n \mu(A_k \cap B_j) \\
+&= \sum_{j=1}^m b_j \mu(B_j).
+\end{align*}
+
+Now we move on to the linearity properties. These come naturally from the defintion,
+
+\begin{align*}
+\mu(\alpha f) = \sum_{k=1}^n \alpha a_k \mu(A_k) = \alpha \sum_{k=1}^n a_k \mu(A_k) = \alpha \mu(A_k).
+\end{align*}
+
+When we are dealing with two simple functions simultaneously it is useful to write them both in a representation where the measurable sets appearing are the same for both functions. If we let $g = \sum_{j=1}^m c_j 1_{C_j}$ then let us write $A_0 = E \setminus \bigcup_{k=1}^n A_k, a_0 =0$ and define $C_0, c_0$ similarly then we can write $f+g$ as a simple function via
+
+$$f(x) + g(x) = \sum_{k=0}^n \sum_{j=0}^m (a_k + c_j) 1_{A_k \cap C_j}$$
+
+and we have
+
+$$ \mu(f+g) = \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j). $$
+
+We note that $\bigcup_{k=0}^n A_k = \bigcup_{j=0}^m C_j = E$ and the $A_k$ are mutually disjont, and the $C_j$ are mutually disjoint. Therefore
+
+\begin{align*}
+\mu(f+g) &= \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j)\\
+&= \sum_{k=0}^n a_k \sum_{j=0}^m \mu(A_k \cap C_j) + \sum_{j=0}^m c_j \sum_{k=0}^n \mu(A_k \cap C_j) \\
+\mbox{as the unions of the $A_k$ or $C_j$ fill the space} \quad & = \sum_{k=0}^n a_k \mu(A_k) + \sum_{j=0}^m c_j \mu(C_j)\\
+\mbox{as}\, a_0 = c_0 =0 \quad & = \sum_{k=1}^n a_k \mu(A_k) + \sum_{j=1}^m c_j \mu(C_j) \\
+& = \mu(f) + \mu(g).
+\end{align*}
+
+Now we move onto the monotonicity of the integral. Let us express $f$ and $g$ as before, again the goal is to represent the two functions using the same measurable sets. We can rewrite as
+
+$$ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap C_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap C_j},$$
+
+where $a_{k,j} = a_k 1_{A_k \cap C_j \neq \emptyset}$. Here again we are using the fact that $\bigcup_{j=0}^m C_j$ fill the space. In the same way we can write
+
+$$ g = \sum_{k=1}^n \sum_{j=1}^m c_{k,j}1_{A_k \cap C_j}, $$
+
+where $c_{k,j} = c_j 1_{A_k \cap C_j \neq \emptyset}$. Then if $f(x) \leq g(x)$ for every $x$ we know that this means $a_{k,j} \leq c_{k,j}$ for every $k,j$. Then by the well definedness of the integral we have
+
+$$ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap C_j) \leq \sum_{k=1}^n \sum_{j=1}^m c_{k,j} \mu(A_k \cap C_j) = \mu(g).$$
+
+
+Lastly, we look at when $\mu(f)=0$. First if $f=0$ $\mu$-almost everywhere then $a_k=0$ or $\mu(A_k)=0$ for each $k$, therefore $\mu(f)=0$. If $\mu(f) =0$ then since all the terms $a_k \mu(A_k) \geq 0$ we have that $a_k=0$ or $\mu(A_k) =0$ for each $k$.
+
+:::
+
+
+We are now going to extend the definition of the integral to a larger class of functions.
+
+::: {.definition name="Lebesgue integral for positive functions"}
+
+Let $f$ be a positive, measurable function, we define
+
+$$ \mu(f) = \sup \{ \mu(g)\, :\, g \, \mbox{is a simple function}, g \leq f\} $$
+
+:::
+
+::: {.lemma}
+
+The above definition of Lebesgue integral for positive functions is consistent with the defintion for simple functions. That is to say that if $f = \sum_{k=1}^n a_k 1_{A_k}$ where $a_k \geq 0$ and the $A_k$ are disjoint measurable sets then 
+
+$$ \sum_{k=1}^n a_k \mu(A_k) = \sup \{ \mu(g)\, :\, g \, \mbox{is a simple function}, g \leq f\}.  $$
+
+:::
+
+::: {.proof}
+
+This is on the exercise sheet.
+
+:::
+
+
+::: {.definition name="Final definition of Lebesgue integral"}
+
+Suppose that $f$ is a measurable function which is not necessarily positive. Then we call $f$, $\mu$-*integrable* or *Lebesgue integrable* if $\mu(|f|)< \infty$. In this case we can write $f = f_+ - f_{-}$ where $f_+$ and $f_-$ are both positive and measurable ($f_+ = \max\{f,  0\}$). We then define the integral of $f$ by
+
+$$ \mu(f) = \mu(f_+) - \mu(f_-). $$
+
+:::
+
+::: {.remark}
+
+Notice that we haven't yet proved that these definitions of the integral behave the way we hope (e.g. are linear, monotone, etc). In order to do this we need to prove some convergence results.
+
+:::
+
+
+## Convergence theorems for integrals of functions
+
+This is one of the most useful parts of the course. In follow on courses in PDE and probability you will use these theorems again and again.
+
+::: {.lemma}
+
+If $f$ and $g$ are non-negative, measurable, real valued functions on $(E, \mathcal{E}, \mu)$ and $f \leq g$ then $\mu(f) \leq \mu(g)$.
+
+:::
+
+::: {.proof}
+
+If $f \leq g$ then we recall that by definition 
+
+$$\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}y.$$
+
+ So if $h$ is a simple function with $h \leq f$ then we also have that $h \leq g$. Therefore, we can write
+
+\begin{align*} \mu(g) &= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}
+
+:::
+
+::: {.theorem name="Monotone Convergence Theorem"}
+
+Let $f$ be a non-negative, measurable real-valued function and let $f_n$ be a sequence of such functions. Then if $f_n \uparrow f$ we will have that $\mu(f_n) \uparrow \mu(f)$.
+
+:::
+
+::: {.proof}
+
+We will break this proof down into progressively more complicated cases. First we note that by monotonicity $\lim_n \mu(f_n) \leq \mu(f)$ and therefore it is sufficient to prove $\mu(f) \leq \lim_n \mu(f_n)$.
+
+First let us look at the case where $f_n = 1_{A_n}$ and $f=1_{A}$, then the assumptions imply that $A_1 \subseteq A_2 \subseteq A_3 \subseteq \dots$ and $A= \bigcup_n A_n$. Then this result is the same as the continuity of a measure as proved before.
+
+Now let us keep $f=1_{A}$ and let $f_n$ be a sequence of simple functions. Pick $\epsilon \in (0,1)$ arbitrary. Then let $A_n = \{ x\,:\, f_n(x)>1-\epsilon\}$ then we have that $A_n \uparrow A$, and $(1-\epsilon)1_{A_n} \leq f_n$. Therefore by the first case we have that $\lim_n \mu(f_n) \geq \lim_n \mu((1-\epsilon)1_{A_n}) = \lim_n (1-\epsilon) \mu(1_{A_n}) = (1-\epsilon) \mu(f)$. Since $\epsilon$ is arbitrary this gives the result.
+
+Now we look at the case where both $f$ and $f_n$ are simple functions. We can write $f = \sum_{k=1}^n a_k 1_{A_k}$, where wlog each $a_k$ is strictly positive, then we have that $a_k^{-1} f_n 1_{A_k} \uparrow 1_{A_k}$ so we can apply the previous case to each part of $f$. Specifically
+
+$$ \mu(f_n) = \mu(\sum_{k=1}^n  1_{A_k}f_n) = \sum_{k=1}^n a_k \mu (a_k^{-1} 1_{A_k}f_n) \uparrow \sum_{k=1}^n a_k \mu(A_k) = \mu(f). $$
+
+Here the first equality follows from the fact that the support of $f_n$ must be included in the support of $f$ since $0 \leq f_n \leq f$.
+
+Our next case is when $f$ is positive and measurable and $f_n$ are all simple. Let us pick $g$ a simple function with $g \leq f$ then $g_n = f_n \wedge g = \min\{f_n, g\}$ is a sequence of simple functions increasing to $g$. Therefore, by our previous case $\mu(g_n) \uparrow \mu(g)$. Furthermore $g_n \leq f_n$ so by monotonicity 
+
+$$\mu(g) =\lim_n \mu(g_n) \leq \lim_n \mu(f_n).$$
+
+As $g$ is an arbitrary this means that $\sup\{\mu(g)\,:\, g \, \mbox{is a simple function}, g \leq f\} \leq \lim_n \mu(f_n).$
+
+The last case is the most general where both $f_n$ and $f$ are positive and measureable. In this case we introduce our favorite kind of approximation (which is very similar to what we used in Lusin's theorem)
+
+$$ g_n = \left( 2^{-n} \lfloor 2^n f_n \rfloor \right) \wedge n, $$
+
+then $g_n$ is a sequence of simple functions with $g_n \uparrow f$ and $g_n \leq f_n$, proving this is an exercise on the assignment. Therefore we have
+
+$$ \mu(f) = \lim_n \mu(g_n) \leq \lim_n \mu(f_n) \leq \mu(f). $$
+
+Hence we have the required result.
+
+:::
+
+We have a corollary of this result which can be thought of as another definition of $\mu(f)$ for non-negative, measurable $f$. This makes concrete our hand-waving definition of how Lebesgue measure works as splitting the range of $f$ up into equal chunks and using this to approximate the area under the curve. This is often a more practically useful definition of the integral of a positive function. 
+
+::: {.corollary}
+
+Let $f$ be a non-negative, measurable, real valued function on $(E, \mathcal{E}, \mu)$ and define
+
+$$ f_n = \left( 2^{-n} \lfloor 2^n f \rfloor \right) \wedge n, $$
+
+then $\mu(f) = \lim_n \mu(f_n)$.
+
+:::
+
+::: {.proof}
+
+$f_n \uparrow f$ so by monotone convergence $\lim_n \mu(f_n) = \mu(f)$. 
+
+:::
+
+We can now use this to prove that the integral of positive measurable functions has the desired properties. 
+
+::: {.proposition}
+
+Suppose $f$ and $g$ are non-negative, real valued, measurable function on a space $(E, \mathcal{E}, \mu)$ then 
+
+- For every $\alpha>0$ $\mu(\alpha f) = \alpha \mu(f)$,
+- $\mu(f+g) = \mu(f) + \mu(g)$
+- If $f \leq g$ then $\mu(f) \leq \mu(g)$
+- $\mu(f) = 0$ if and only if $f$ is $0$ almost everywhere.
+
+:::
+
+::: {.proof}
+
+Suppose that $f_n$ is a sequence of simple functions with $f_n \uparrow f$ then $\alpha f_n$ is a sequence of simple functions with $\alpha f_n \uparrow \alpha f$. Monotone convergence tells us that $\mu(\alpha f) = \lim_n \mu(\alpha f_n)$. We can use our previous results for simple functions to get that $\mu(\alpha f_n) = \alpha \mu(f_n)$. Therefore $\mu(\alpha f) = \lim_n \mu(\alpha f_n) = \lim_n \alpha \mu(f_n) = \alpha \mu(f)$.
+
+For the sum let $f_n$ and $g_n$ be sequences of simple functions with $f_n \uparrow f$ and $g_n \uparrow g$. Then we have $(f_n + g_n) \uparrow f+g$ and by monotone convergence and the results for simple functions we have $\mu(f+g) = \lim_n \mu(f_n + g_n) = \lim_n \mu(f_n) + \lim_n \mu(g_n) = \mu(f) + \mu(g)$.
+
+The third point is proved before.
+
+Now $\mu(f) = 0$ if and only if 
+
+$$\sup\{ \mu(h) \,:\, \mbox{$h$ simple},\, h \leq f\} = 0$$
+
+which is if and only if $\mu(h) = 0$ for every $h \leq f$ and $h$ simple. Now we know that if $h$ is simple $\mu(h) = 0$ if and only if $h$ is zero almost everywhere. This tells us that $\mu(f) = 0$ if and only if $h \leq f$ and $h$ simple, implies $h = 0$ almost everywhere. If we look at the set on which $f$ is positive we have $\{x\,:\, f(x)>0\} = \bigcup_n \{ x \,:\, f(x) > 1/n\}$ so by continuity of measure if $\mu( f>0)>0$ then there exists some $n$ such that $\mu(f >1/n)>0$ therefore $f$ is zero almost everywhere if and only if we can't fit any simple function underneath $f$ which is not zero almost everywhere.
+
+:::
+
+
+Using this we can give another writing of the monotone convergence theorem.
+
+::: {.proposition name="Beppo-Levi"}
+
+Suppose that $(f_n)_{n \geq 0}$ is a sequence of real-valued measurable functions. Then $\mu(\sum_n f_n) = \sum_n \mu(f_n)$.
+
+:::
+
+::: {.proof}
+
+Write $g_n = \sum_{k=1}^n f_k$ then $g_n \uparrow \sum_n f_n$
+
+$$  \sum_n \mu(f_n) = \lim_n \sum_{k=1}^n \mu(f_k),$$
+
+then by linearity
+
+$$ \lim_n \sum_{k=1}^n \mu(f_k) = \lim_n \mu(\sum_{k=1}^n f_k) = \lim_n \mu(g_n), $$
+
+then using monotone convergence we have
+
+$$ \lim_n \mu(g_n) = \mu(\sum_n f_n). $$
+
+:::
+ 
+
+We can also prove that our notion of convergence for integrable functions behaves in the way we expect. First we prove a helpful Lemma
+
+::: {.lemma}
+
+Let $f_1, f_2, g_1, g_2$ all be non-negative, integrable, real valued functions such that $f_1-f_2 = g_1-g_2$ then we have $\mu(f_1) - \mu(f_2) = \mu(g_1) - \mu(g_2)$. 
+
+:::
+
+::: {.proof}
+
+We have that $f_1+g_2 = g_1 + f_2$ so $\mu(f_1+g_2) = \mu(g_1+f_2)$, using linearity we have
+
+$$ \mu(f_1) + \mu(g_2) = \mu(g_1) + \mu(f_2) $$
+
+since all the integrals involved are finite we can rearrange this to give
+
+$$ \mu(f_1) - \mu(f_2) = \mu(g_1) - \mu(g_2). $$
+
+:::
+
+::: {.proposition}
+
+Suppose that $f$ and $g$ are integrable, real valued function on $(E, \mathcal{E}, \mu)$ then 
+
+- For every $\alpha>0$ we have $\mu(\alpha f) = \alpha \mu(f)$, we also have $\mu(-f) = -\mu(f)$
+- The function $f+g$ is integrable and $\mu(f+g) = \mu(f) + \mu(g)$
+- If $f \leq g$ then $\mu(f) \leq \mu(g)$
+
+:::
+
+::: {.proof}
+ 
+Let us write $f= f_+ - f_-$ and $g= g_+ - g_-$ where these are split into the positive and negative parts of $f$ and $g$. Then $\alpha f = \alpha f_+ - \alpha f_-$ so $\mu(\alpha f) = \mu(\alpha f_+) - \mu(\alpha f_-) = \alpha (\mu(f_+)-\mu(f_-))$. Similarly $-f=f_- - f_+$ so $\mu(-f) = \mu(f_-) - \mu(f_+) = -\mu(f)$.
+
+First we have that $|f+g| \leq |f|+|g|$ so $f+g$ is integrable. For the second point we need to use the Lemma above. We know that $(f_+ + g_+) - (f_- + g_-) = (f+g)_+ - (f+g)_-$ and all of  $(f_+ + g_+),(f_-+g_-), (f+g)_+, (f+g)_-$ are non-negative and integrable so using the lemma we have 
+
+$$ \mu(f+g) = \mu((f+g)_+) - \mu((f+g)_-) = \mu(f_+ +g_+) - \mu(f_- + g_-) = \mu(f_+) - \mu(f_-) + \mu(g_+) - \mu(g_-) = \mu(f) + \mu(g). $$
+
+For the last point if $f \leq g$ then $g-f$ is a non-negative measurable function so $\mu(g-f) \geq 0$ and $\mu(g) = \mu(f+(g-f))$. We then use the linearity from the last point to get $\mu(f + (g-f)) = \mu(f) + \mu(g-f) \geq \mu(f)$.
+
+:::
+
+
+::: {.theorem name="Fatou's Lemma"}
+
+Let $f_n$ be a sequence of non-negative measurable function then we have the following result
+
+$$ \mu \left( \liminf_n f_n \right) \leq \liminf_n \mu(f_n) $$
+
+:::
+
+::: {.remark}
+
+I always have trouble remembering which way around the inequality goes in this lemma. A helpful example is if $f_n = 1_{[n,n+1)}$ and $\mu$ is Lebesgue measure. Then $\lambda(f_n) = 1$ for every $n$ and $\liminf_n f_n = 0$. This is also an instructive example for why the limits can fail to be the same. Essentially here the mass we are trying to integrate escapes to infinity.
+
+:::
+
+::: {.proof}
+
+This is essentially a consequence of monotone convergence. Let $g_n = \inf_{k \geq n} f_k$, then $g_n$ is a non-decreasing sequence of measurable functions and $g_n \leq f_n$ for each $n$. By definition of the $g_n$ we also know that $\liminf f_n = \liminf_n g_n = \lim_n g_n$. Using Monotone convergence we then have
+
+$$ \mu(\liminf_n f_n) = \mu(\lim_n g_n) = \lim_n \mu(g_n). $$
+
+Then using monotonicity we have
+
+$$ \mu(g_n) \leq \mu(f_n) $$
+
+for each $n$, so consequently
+
+$$\lim_n \mu(g_n) =  \liminf_n \mu(g_n) \leq \liminf_n \mu(f_n). $$
+
+Putting these all together gives the result. 
+
+:::
+
+Fatou's lemma is key to proving our next important convergence theorem.
+
+::: {.theorem name="Dominated convergence theorem"}
+
+Let $f_n$ be a sequence of functions and $f$ another function such that $f_n \rightarrow f$ almost everywhere. Suppose further that there exists a positive function $g$ such that $|f| \leq g, |f_n| \leq g$ for every $n$ and $\mu(g) < \infty$, then $\lim_n \mu(f_n) = \mu(f)$. The function $g$ is called the *dominating function*.
+
+:::
+
+::: {.proof}
+
+Let us first suppose that $f_n \rightarrow f$ and the domination conditions hold everywhere. Then we have that $g+f_n$ is a sequence of non-negative measurable functions whose limit is $g+f$. Applying Fatou's lemma gives
+
+$$ \mu(g+f) \leq \liminf_n \mu(g+f_n) = \mu(g) + \liminf_n \mu(f_n), $$
+
+subtracting $\mu(g)$ from each side (which we can do as it is finite) gives
+
+$$ \mu(f) \leq \liminf_n \mu(f_n). $$
+
+Similarly $g-f_n$ is a sequence of non-negative measurable functions whose limit is $g-f$. Applying Fatou's lemma again gives
+
+$$ \mu(g) - \mu(f) \leq \mu(g) + \liminf_n (-\mu(f_n)) = \mu(g) - \limsup_n \mu(f_n). $$
+
+Rearranging this since all the quantities are finite gives
+
+$$ \limsup_n \mu(f_n) \leq \mu(f). $$
+
+Putting both parts together gives
+
+$$ \mu(f) \leq \liminf_n \mu(f_n) \leq \limsup_n \mu(f_n) \leq \mu(f). $$
+
+Therefore the limit of the sequence $\mu(f_n)$ exists and is equal to $\mu(f)$.
+
+The extension of this result to when the conditions only hold almost everywhere is due to the fact that the integrals of any function is unchanged by modifying that function on a measure zero set. This type of result will be discussed in more detail when we introduce *Lebesgue spaces*. It isn't really the point of this particular theorem, we just give the full version here so we are able to apply it. 
+
+:::
+
+
+The following is a useful criteria for when we can differentiate under the integral sign which also serves as a good example of how to use the dominated convergence theorem.
+
+::: {.theorem name="Differentiation under the integral sign"}
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space and $f: U \times E \rightarrow \mathbb{R}$ be a function such that $x \mapsto f(t,x)$ is integrable for every $t$, and $t \mapsto f(t,x)$ is differentiable for every $x$, and suppose further that there exists an integrable function $g(x)$ such that
+
+$$ \left| \frac{\partial f(t,x)}{\partial t} \right| \leq g(x), \quad \forall t \in U $$
+
+then the function $x \mapsto \partial f(t,x)/ \partial t$ is integrable and the function $F(t) = \int_E f(t,x) \mu(\mathrm{d}x)$ is differentiable with
+
+$$ \frac{\mathrm{d}F}{\mathrm{d}t} = \int_E \frac{\partial f}{\partial t}(t,x) \mu(\mathrm{d}x). $$
+
+Notice here we are using a different notation for the integral with respect to $\mu$. We do this because it is helpful to be able to emphasise that we integrate in $x$ but not $t$. 
+
+:::
+
+::: {.proof}
+
+Let $\epsilon_n$ be an arbitrary sequence which tends towards $0$. Let 
+
+$$ g_n(t,x) = \frac{f(t+\epsilon_n,x) - f(t,x)}{\epsilon_n} - \frac{\partial f}{\partial t}(t,x). $$
+
+First we notice that $g_n \rightarrow 0$ and $g_n + \partial f/\partial t$ is measurable so $\partial f/ \partial t$ is the limit of measurable functions so measurable. By the mean value theorem we have $|g_n| \leq 2g$ for each $n$. Therefore, by dominated convergence we have
+
+$$ \int g_n(t,x) \mu(\mathrm{d}x) \rightarrow 0.  $$
+
+This gives the required result.
+
+:::
+
+
+We have a couple of useful facts about integration which don't fit into a big section.
+
+::: {.definition name="Restriction of a Measure"}
+
+Suppose that $(E, \mathcal{E}, \mu)$ is a measure space and $A \in \mathcal{E}$ then the set of measurable subsets of $A$ is a $\sigma$ algebra we call $\mathcal{A}$ and the restriction of $\mu$ to $\mathcal{E}_A$ is a measure we call $\mu_A$. Furthermore we have that if $f$ is a measurable function on $E$ then $\mu(f1_A) = \mu_A(f)$.
+
+:::
+
+::: {.remark}
+
+The last part is actually a lemma whose proof is an exercise.
+
+:::
+
+
+We can use this definition to make sense of Lebesgue integrals on intervals (for example). If $I= [a,b]$ then $\int_a^b f(x) \mathrm{d}x = \lambda(f1_I)$. 
+
+We also notice that we can define a measure using a positive function $f$. 
+
+::: {.proposition}
+
+Let $(E, \mathcal{E}, \mu)$ be a measure space and let $f$ be a non-negative measurable function. Define $\nu(A) = \mu(f1_A)$ for each $A \in \mathcal{E}$. Then $\nu$ is a measure on $E$ and for all non-negative $g$ we have
+
+$$ \nu(g) = \mu(fg) $$
+
+:::
+
+::: {.proof}
+
+First we need to show that $\nu$ is indeed a measure. $f1_\emptyset = 0$ so we have $\nu(\emptyset) = 0$ as required. We will also have that $\nu(A) \geq 0$ since $f$ is non-negative. We show countable additivity, we note that if $A$ an $B$ are disjoin then $1_{A \cup B} = 1_A + 1_B$ and furthermore if $A_1, A_2, \dots $ is a sequence of disjoint sets then $1_{\bigcup_n A_n} = \sum_n 1_{A_n}$. With this reformulation $\nu(\bigcup_n A_n) = \mu( f1_{\bigcup_n A_n}) = \mu ( \sum_n f1_{A_n})$ using the Beppo-Levi reformulation of monotone convergence we have
+
+$$ \mu(\sum_n f1_{A_n} ) = \sum_n \mu(f1_{A_n}) = \sum_n \nu(A_n), $$
+
+which is our desired result. 
+
+Now we want to show that if $g \geq 0$ then $\nu(g) = \mu(fg)$. Let us begin with the case where $g=1_A$ for some measurable $A$, then $\nu(g) = \nu(A) = \mu(f1_A) = \mu(fg)$ so the result follows by definition. Then using the linearity of $\mu$ we can see that if $g$ is a simple function then $\nu(g) = \mu(fg)$. Now suppose that $g$ is not necessarilly simple, we can constuct (in our standard way) a sequence of simple functions, $g_n$, which increase to $g$ then by monotone convergence we have that $\nu(g) = \lim_n \nu(g_n) = \lim_n \mu(f g_n)$. Now $fg_n$ is a sequence of function which increases to $fg$ so using monotone convergence we have that $\lim_n \mu(f g_n) = \mu(fg)$ so we have that $\nu(g) = \mu(fg)$.
+
+:::
+
+
+There are also a few facts about Riemann integration which work in pretty much exactly the same way for Lebesgue integration. For example the fundamental theorem of calculus holds equally well in this case. We will see in general that when something is Riemann integrable it is also Lebesgue integrable which will prove all these in general.
+
+::: {.theorem name="Fundamental theorem of calculus"}
+
+Suppose that $f: [a,b] \rightarrow \mathbb{R}$ is a continuous function and set $F(t) = \int_a^t f(x) \mathrm{d}x = \lambda( 1_{[a,t]} f)$, then $F$ is differentiable with $F'(t) = f(t)$. Furthermore, let $F: [a,b] \rightarrow \mathbb{R}$ have continuous derivative $f$, then $F(b) - F(a) = \int_a^b f(x) \mathrm{d}x$. 
+
+:::
+
+::: {.proof}
+
+Given $\epsilon >0$ there exists $\delta >0$ such that $|x-t| \leq \delta$ implies that $|f(x) -f(t)| \leq \epsilon$ therefore if we take $|h| \leq \delta$ then 
+
+$$ \left| \frac{1}{h}(F(t+h) - F(t)) - f(t)\right| = \frac{1}{|h|} \left|\int_t^{t+h}(f(x) - f(t)) \mathrm{d}x\right| \leq \frac{1}{|h|} \int_{t \wedge (t+h)}^{t \vee (t+h)} |f(x) - f(t)| \mathrm{d}x. $$
+
+Now we can use the fact that inside the integral $|x-t| \leq \delta$ so we have
+
+$$ [\left| \frac{1}{h}(F(t+h) - F(t)) - f(t)\right| \leq \frac{1}{|h|} \int_{t \wedge (t+h)}^{t \vee (t+h)} \epsilon \mathrm{d}x = \epsilon. $$
+
+Therefore $\lim_{h \rightarrow 0} (F(t+h)-F(t))/h = f(t)$. 
+
+In the other direction $\mathrm{d}/\mathrm{d}t(F(t) - \int_a^t f(x) \mathrm{d}x) = 0$ so $F(t) - \int_a^t f(x) \mathrm{d}x$ is constant in $t$ (by the mean value theorem), so $F(t) = F(a) + \int_a^t f(x) \mathrm{d}x$. This gives us the result.
+
+::: {.proof}
+
+
+We can use the fundamental theorem of calculus to prove the standard result about change of variables. This time we can exploit our new machinery. 
+
+::: {.proposition}
+
+Let $\phi: [a,b] \rightarrow [\phi(a), \phi(b)]$ be continuously differentiable and strictly increasing then for all non-negative $g$ on $[\phi(a), \phi(b)]$ we have
+
+$$ \int_{\phi(a)}^{\phi(b)}g(y) \mathrm{d}y = \int_a^b g(\phi(x)) \phi'(x) \mathrm{d}x. $$
+
+:::
+
+::: {.proof}
+
+First suppose that $g$ is the indicator function of an interval $(c,d]$ then we want to prove that
+
+$$ \int_{\phi(a)}^{\phi(b)} 1_{(c,d]}(x) \mathrm{d}y = \int_a^b  1_{(c,d]}(\phi(x)) \phi'(x) \mathrm{d}x.$$
+
+Here the left hand side is equal to $[\phi(a), \phi(b)] \cap (c,d]$ and the right hand side is 
+
+$$ \int_{a \vee \phi^{-1}(c)}^{b \wedge \phi^{-1}(d)} \phi'(x) \mathrm{d}x,$$
+
+using the fundamental theorem of calculus this is
+
+$$ \phi(b \wedge \phi^{-1}(d)) - \phi(a \vee \phi^{-1}(c)) = \phi(b) \wedge d - \phi(a) \vee c = [\phi(a), \phi(b)] \cap (c,d] $$
+
+where here we used the fact that $\phi$ was increasing to commute it with min and max.
+
+Now we have shown our proposition holds when $g$ is the indicator function of a half open interval. By linearity of the integral it will hold when $g$ is the indicator function of a finite disjoint union of half open intervals. Now let $\mathcal{D}$ be the set of all  Borel sets $A$ such that $1_A$ satisfies our proposition. As the name suggests we want to show that $\mathcal{D}$ is a $d$-system. If $A \subseteq B$ and $A, B \in \mathcal{D}$ then $1_{B \setminus A} = 1_B - 1_A$ so the proposition will hold for $B \setminus A$ by linearity of the integral. Suppose that $A_1 \subseteq A_2 \subseteq A_3 \dots$ then let $g_n=1_{A_n}$ then $g_n \uparrow 1_A$ = g and $g_n \circ \phi \uparrow g \circ \phi$, as $\phi$ is increasing so if 
+
+$$ \int_{\phi(a)}^{\phi(b)}g_n(y) \mathrm{d}y = \int_a^b g_n(\phi(x)) \phi'(x) \mathrm{d}x $$
+
+for each $n$ applying monotone convergence to each side gives the result for $g = 1_A$. This shows that $\mathcal{D}$ is a $d$-system. Applying Dynkin's lemma then shows that for every $A \in \mathcal{B}(R)$ we have that the proposition holds with $g=1_A$.
+
+Linearity of the integral allows us to extend this result to any simple function $g$. We can then use monotone convergence in exactly the same way as for the last part to extend it to any non-negative measurable $g$.
+
+:::
+
+
+## Agreement with Riemann Integral
+
+We now turn our attention to the case wher $\mu$ is Lebesgue measure, $\lambda$. We want to show that our new definition of the integral will agree with the Riemann integral when they are both defined.  Let us first recall the definitions associated with the Riemann integral.
+
+::: {.definition}
+
+Let $[a,b]$ be an interval in $\mathbb{R}$ then a finite sequence of real numbers $\{a_k\}_{k=0}^n$ is called a *partition* of the interval if $a=a_0 < a_1 < \dots<a_n=b$. I usually denote a partition with a lower case $p$ or $q$. You also often see the notation $\mathscr{P}$.
+
+:::
+
+::: {.definition}
+
+If we have two partitions $p = \{a_k\}_{k=0}^n$ and $q=\{b_j\}_{j=0}^m$ then we say $q$ is a *refinement* of $p$ if every element of $p$ appears in $q$.
+
+:::
+
+
+::: {.definition}
+
+We call a sequence of partitions $(p_n)_{n \geq 1}$ *nested* if for every $n$ we have that $p_{n+1}$ is a refinement of $p_n$.
+
+:::
+
+::: {.definition}
+
+If we have a partition $p = \{a_k\}_{k=0}^n$ and a function $f$ then we can define 
+
+$$ m_k = \inf \{ f(x) \,:\, x \in [a_{k-1},a_k] \} \quad \mbox{and}\quad M_k = \sup\{ f(x)\,:\, x \in [a_{k-1},a_k]\}. $$
+
+Then we have the upper sum and lower sum associated to the partition which are defined as
+
+$$ l(f,p) = \sum_{k=1}^n m_k(a_k-a_{k-1}), \quad u(f,p) = \sum_{k=1}^n M_k (a_k-a_{k-1}). $$
+
+:::
+
+::: {.remark}
+We can check that if $q$ is a refinement of $p$ then
+
+$$ l(f,p) \leq l(f,q) \leq u(f,q) \leq u(f,p). $$
+
+:::
+
+::: {.definition}
+
+We call a function $f$, *Riemann integrable* on $[a,b]$ if $\sup_p l(f,p) = \inf_q u(f,q)$.
+
+:::
+
+::: {.lemma}
+
+A function, $f$, is Riemann integrable if and only if there exists a partition $p$ such that 
+
+$$ u(f,p) - l(f,p) < \epsilon. $$
+
+:::
+
+::: {.proof}
+
+First suppose that $f$ satisfies that for every $\epsilon$ there exists a $p$ such that $u(f,p)-l(f,p) < \epsilon$ then 
+
+$$ \inf_q u(f,q) - \sup_q l(f,q) \leq u(f,p)-l(f,p) < \epsilon. $$
+
+Since, $\epsilon$ is arbitrary this implies 
+
+$$ \inf_q u(f,q) = \sup_q l(f,q) $$
+
+and therefore $f$ is Riemann integrable.
+
+Suppose that $f$ is Riemann integrable then we know that $\inf_q u(f,q) = \sup_q l(f,q) = \int f \mathrm{d}x$. Therefore, given $\epsilon$ there exists $p_1$ and $p_2$ so that $u(f,p_1) \leq \int f \mathrm{d}x + \epsilon/2$ and $l(f,p_2) \geq \int f \mathrm{d}x - \epsilon/2$. Now let $p = p_1 \cup p_2$, that is to say the partition made up of all the point in both $p_1$ and $p_2$. In this case $p_1$ and $p_2$ are both refinements of $p$, so we have
+
+$$ \int f \mathrm{d}x - \epsilon/2 \leq l(f,p_2) \leq l(f,p) \leq u(f,p) \leq u(f,p_1) \leq \int f \mathrm{d}x + \epsilon/2, $$
+
+so
+
+$$ u(f,p)-l(f,p) < \epsilon. $$
+
+:::
+
+We need a final Lemma before we prove our theorem
+
+::: {.lemma}
+
+Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}$ is Lebesgue measurable and $g = f$ Lebesgue almost everywhere then $g$ is also Lebesgue measurable. 
+
+:::
+
+::: {.proof}
+
+Take any Lebesgue measurable set $B$ and look at $g^{-1}(B)$ we have that $g^{-1}(B) = (f^{-1}(B) \cup \{ x\,:\, g(x) \in B, f(x) \notin B\}) \setminus \{ x \, :\, g(x) \notin B, f(x) \in B\}$. Now write $N = \{ x \,:\, f(x) \neq g(x)\}$, by definition $\lambda(N) = 0$. We also have that $\{ x \,:\, g(x) \in B, f(x) \notin B\} \subseteq N$ and $\{x\,:\, g(x) \notin B, f(x) \in B\} \subseteq N$ so they are both null sets and therefore Lebesgue measurable. As $f$ is Lebesgue measurable $f^{-1}(B)$ is Lebesgue measurable. Since $\mathscr{M}$ is a $\sigma$-algebra this implies that $(f^{-1}(B) \cup \{ x\,:\, g(x) \in B, f(x) \notin B\}) \setminus \{ x \, :\, g(x) \notin B, f(x) \in B\}$ is Lebesgue measurable. Therefore $g$ is Lebesgue measurable.
+
+:::
+
+::: {.theorem}
+
+Let $[a,b]$ be an interval. Suppose that $f$ is a  function which is Riemann integrable on $[a,b]$, then it is Lebesgue integrable and the Riemann integral agrees with the Lebesgue integral.
+
+:::
+
+::: {.proof}
+
+Note first that all Riemann integrable functions are bounded. As $f$ is bounded we only need to show that it is Lebesgue measurable in order for it to be integrable.
+Using the lemma above there exists a nested sequence of partitions $p_n$ such that $u(f,p_n) - l(f,p_n) < 1/n$ for each $n$. Let us define two sequences of functions $g_n$ and $h_n$. We write $p_n = \{ a^n_k \}_{k=0}^{N_n}$, and recall the definition of $m^n_k$ and $M^n_k$ associated to the partition. Then we define
+
+$$ g_n:= \sum_{k=1}^{N_n} m^n_k 1_{[a_{k-1}^n, a_k^n)}, \quad h_n :=\sum_{k=1}^{N_n} M^n_k 1_{[a_{k-1}^n, a_k^n)}.$$
+
+Here we can see that $g_n$ and $h_n$ are both sequences of simple functions. We also have that $g_n$ is a monotonically increasing sequence and $h_n$ is a monotonically decreasing sequence. As $f$ is bounded so are the sequences $g_n(x)$ and $h_n(x)$ for each $x$ so we define $g(x) = \lim_n g_n(x)$ and $h(x) = \lim_n h_n(x)$, these are both bounded, Borel measurable functions. We also have that $g_n(x) \leq f(x) \leq h_n(x) \leq \sup_{[a,b]} f$ so consequently $g(x) \leq f(x) \leq h(x)$. We can see that $\lambda(g_n) = l(f,p_n)$ and $\lambda(h_n) = u(f,p_n)$. We can use $\sup_{[a,b]}f$ as a dominating function, so we have by dominated convergence that
+
+$$ \lambda (g) = \lim_n \lambda(g_n) = \lim_n l(f,p_n) = \lim_n u(f,p_n) = \lim_n \lambda(h_n) = \lambda(h). $$
+
+We also have that $h-g \geq 0$ and $\lambda(h-g) = 0$ so we know that $h=g$ Lebesgue almost everywhere and as $h-f \leq h-g$ we know that $f=h=g$ almost everywhere. Therefore, $f$ is almost everywhere equal to a measurable function and it is bounded so is Lebesgue integrable
+
+:::
+
+We finish this section with some examples of functions which are Lebesgue integrable but are not Riemann integrable. The most classic example of this is 
+
+::: {.example}
+
+Let $f(x) = 1_\mathbb{Q}$ then $f$ is Lebesgue integrable but not Riemann integrable on $[0,1]$ (or any other interval). In order to see that this function is not Riemann integrable we can see that for any partition $p$ as the rationals an the irrationals are dense in $[0,1]$ then $l(f,p) =0$ and $u(f,p) =1$ therefore if we take a seqence of nested partitions $p_n$ then we wont have the limits of $l(f,p_n)$ and $u(f,p_n)$ meeting.
+
+:::
+
+
+

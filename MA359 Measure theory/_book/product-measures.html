@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Product Measures | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 7 Product Measures | Measure theory lecture notes" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Product Measures | Measure theory lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Product Measures | Measure theory lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2022-08-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="norms-and-inequalities.html"/>
+<link rel="next" href="radon-nikodym-theorem.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>1.2</b> The most important things you will learn in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>2.1</b> Collections of subsets</a></li>
+<li class="chapter" data-level="2.2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#set-functions"><i class="fa fa-check"></i><b>2.2</b> Set functions</a></li>
+<li class="chapter" data-level="2.3" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#measure-spaces"><i class="fa fa-check"></i><b>2.3</b> Measure spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html"><i class="fa fa-check"></i><b>3</b> Outer measures and Lebesgue Measure</a>
+<ul>
+<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="integration-1.html"><a href="integration-1.html"><i class="fa fa-check"></i><b>5</b> Integration</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="integration-1.html"><a href="integration-1.html#convergence-theorems-for-integrals-of-functions"><i class="fa fa-check"></i><b>5.1</b> Convergence theorems for integrals of functions</a></li>
+<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html"><i class="fa fa-check"></i><b>8</b> Radon-Nikodym Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#signed-measures"><i class="fa fa-check"></i><b>8.1</b> Signed measures</a></li>
+<li class="chapter" data-level="8.2" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#absolute-continuity"><i class="fa fa-check"></i><b>8.2</b> Absolute Continuity</a></li>
+<li class="chapter" data-level="8.3" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#duality-in-lp-spaces"><i class="fa fa-check"></i><b>8.3</b> Duality in <span class="math inline">\(L^p\)</span> spaces</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Measure theory lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="product-measures" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Product Measures<a href="product-measures.html#product-measures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this section we look at taking two measure spaces <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> and <span class="math inline">\((F, \mathcal{F}, \nu)\)</span> and defining a <span class="math inline">\(\sigma\)</span> algebra and a measure on the product space <span class="math inline">\(E \times F\)</span>. This will give us another way of defining Lebesgue measure on <span class="math inline">\(\mathbb{R}^d\)</span>. First we remind ourselves of the definition of Cartesian product.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-184" class="definition"><strong>Definition 7.1  (Cartesian product) </strong></span>If <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span> are spaces then the Cartesian product <span class="math inline">\(E \times F\)</span> is the space of twoples <span class="math inline">\((x,y)\)</span> where <span class="math inline">\(x \in E\)</span> and <span class="math inline">\(y \in F\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-185" class="example"><strong>Example 7.1  </strong></span><span class="math inline">\(\mathbb{R} \times \mathbb{R} = \mathbb{R}^2\)</span>.</p>
+</div>
+<p>Now we want to consider the product <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-186" class="definition"><strong>Definition 7.2  </strong></span>The product <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(E \times F\)</span> which is generated by the collection</p>
+<p><span class="math display">\[ \mathcal{A} = \{ A \times B \,:\, A \in \mathcal{E}, B \in \mathcal{F}\}. \]</span></p>
+<p>That is to say <span class="math inline">\(\mathcal{E} \times \mathcal{F} = \sigma(\mathcal{A}).\)</span></p>
+</div>
+<p>We now take some time to look at the projection maps <span class="math inline">\(\pi_E\)</span> and <span class="math inline">\(\pi_F\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-187" class="definition"><strong>Definition 7.3  </strong></span>We define two maps <span class="math inline">\(\pi_E: E \times F \rightarrow E\)</span> and <span class="math inline">\(\pi_F: E \times F \rightarrow F\)</span> by</p>
+<p><span class="math display">\[ \pi_E (x,y) = x, \quad \pi_F(x,y) = y. \]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-188" class="lemma"><strong>Lemma 7.1  </strong></span>The maps <span class="math inline">\(\pi_E\)</span> and <span class="math inline">\(\pi_F\)</span> are both measurable. Furthermore if <span class="math inline">\(C \in \mathcal{E} \times \mathcal{F}\)</span> then the following sets are measurable</p>
+<p><span class="math display">\[ C_x = \{ y \in F \,:\, (x,y) \in C \} = \pi_F\left(\pi_E^{-1}(\{x\}) \cap C\right) \in \mathcal{F} , \quad C_y = \{ x \in E \,:\, (x,y) \in C\} = \pi_E \left( \pi_F^{-1}(\{y\}) \cap C \right). ] \]</span></p>
+<p>Furthermore if <span class="math inline">\(f: E \times F \rightarrow G\)</span> is a measurable function then <span class="math inline">\(f_x: F \rightarrow G\)</span> defined by <span class="math inline">\(f_x(y) = f(x,y)\)</span> and <span class="math inline">\(f_y: E \rightarrow G\)</span> defined by <span class="math inline">\(f_y(x) = f(x,y)\)</span> are both measurable functions.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-189" class="proof"><em>Proof</em>. </span>First let us show that the projection maps are measurable. Let <span class="math inline">\(A\)</span> be in <span class="math inline">\(\mathcal{E}\)</span> then <span class="math inline">\(\pi_E^{-1}(A) = A \times F\)</span>, as <span class="math inline">\(F \in \mathcal{F}\)</span> this is a product set so is in <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span>.</p>
+<p>Now let us look at <span class="math inline">\(C_x\)</span>. Let <span class="math inline">\(\mathcal{C}\)</span> be the collection of sets in <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> such that <span class="math inline">\(C_x \in \mathcal{F}\)</span>. Then <span class="math inline">\(\mathcal{C}\)</span> contains all the product sets. We now want to show that <span class="math inline">\(\mathcal{C}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra. <span class="math inline">\((C^c)_x = \{ y \in F \,:\, (x,y) \in C^c\} = \{ y \in F \, :\, (x,y) \notin C\} = F \setminus \{ y \in F\,:\, (x,y) \in C\} = (C_x)^c\)</span>. Therefore <span class="math inline">\(C \in \mathcal{C}\)</span> implies that <span class="math inline">\(C^c \in \mathcal{C}\)</span>. We also have that <span class="math inline">\(\left(\bigcup_n C_n \right)_x = \bigcup_n \left( (C_n)_x \right)\)</span>. Therefore, <span class="math inline">\(\mathcal{C}\)</span> is closed under complements and countable unions so is a <span class="math inline">\(\sigma\)</span>-algebra. Therefore <span class="math inline">\(\mathcal{C} \supset \mathcal{E} \times \mathcal{F}\)</span>.</p>
+<p>Now we move onto <span class="math inline">\(f_x\)</span>. If <span class="math inline">\(A \in \mathcal{F}\)</span> then <span class="math inline">\(f_x^{-1}(A) = \{ y \in F \,:\, f(x,y) \in A\} = (f^{-1}(A))_x\)</span>. Using the previous part we know that this is a measurable set. Therefore <span class="math inline">\(f_x\)</span> is measurable.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-190" class="theorem"><strong>Theorem 7.1  (Product Measure) </strong></span>Given two <span class="math inline">\(\sigma\)</span>-finite measure spaces <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> and <span class="math inline">\((F, \mathcal{F}, \nu)\)</span> there exists a unique measure, <span class="math inline">\(\mu \times \nu\)</span>, on <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> such that <span class="math inline">\((\mu \times \nu)(A \times B) = \mu(A)\nu(B)\)</span> when <span class="math inline">\(A \in \mathcal{E}\)</span> and <span class="math inline">\(B \in \mathcal{F}\)</span>. Furthermore</p>
+<p><span class="math display">\[ (\mu \times \nu)(C) = \int_E \nu( C_x) \mu(\mathrm{d}x) = \int_F \mu(C_y) \nu(\mathrm{d}y).\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-191" class="proof"><em>Proof</em>. </span>Let us begin in the case where both measure spaces are finite.
+As <span class="math inline">\(\mathcal{A} = \{ A \times B \,:\, A \in \mathcal{E}, B \in \mathcal{F}\}\)</span> is a <span class="math inline">\(\pi\)</span>-system generating <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> we can use Carath'eodory’s extension theorem to prove the first part of this theorem. However we will work directly as defining this measure is straightforward and useful for understanding it.</p>
+<p>First we check that <span class="math inline">\(x \mapsto \nu(C_x)\)</span> and <span class="math inline">\(y \mapsto \mu(C_y)\)</span> are both measurable functions so the integrals are well defined. Let us begin in the case that <span class="math inline">\(\nu\)</span> is a finite measure. Let <span class="math inline">\(\mathcal{C}\)</span> be the collection of sets for which the function <span class="math inline">\(x \mapsto \nu(C_x)\)</span> is <span class="math inline">\(\mathcal{E}\)</span> measurable. If <span class="math inline">\(C = A \times B\)</span> then <span class="math inline">\(\nu(C_x) = \nu(B)1_{x \in A}\)</span> which is measurable. Now we want to show that <span class="math inline">\(\mathcal{C}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra. If <span class="math inline">\(C^1 \subset C^2\)</span> then <span class="math inline">\(\nu((C^2 \setminus C^1)_x) = \nu(C^2_x) - \nu(C^1_x)\)</span> so <span class="math inline">\(C^2 \setminus C^1 \in \mathcal{C}\)</span>. Suppose that <span class="math inline">\(C^n\)</span> is an increasing sequence of sets in <span class="math inline">\(\mathcal{C}\)</span> then <span class="math inline">\(\nu\left( \left(\bigcup_n C^n\right)_x\right) = \lim_n \nu \left( C^n_x\right)\)</span> so <span class="math inline">\(\bigcup_n C_n\)</span> is in <span class="math inline">\(\mathcal{C}\)</span>. Therefore <span class="math inline">\(\mathcal{C}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra and consequently contains <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span>. Now the only reason that we needed <span class="math inline">\(\nu\)</span> to be finite was to ensure that <span class="math inline">\(A \times B \in \mathcal{C}\)</span> as otherwise this function might take the value infinity sometimes. You can solve this problem by putting a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\([0,\infty]\)</span> or we can work in the <span class="math inline">\(\sigma\)</span>-finite setting and let <span class="math inline">\(\{D_n\}\)</span> be a sequence of disjoint subsets with <span class="math inline">\(\nu(D_n)&lt; \infty\)</span> whose union is the whole of <span class="math inline">\(F\)</span>. By the argument above <span class="math inline">\(x \mapsto \nu((C\cap D_n)_x)\)</span> is always measurable (restricting the space to <span class="math inline">\(D_n\)</span>) and <span class="math inline">\(\nu(C_x) = \lim_n \sum_{k=1}^n \nu((C \cap D_n)_x)\)</span>.</p>
+<p>Now we move onto the main part of the proof we can define two different candidates for <span class="math inline">\((\mu \times \nu)\)</span> namely</p>
+<p><span class="math display">\[ (\mu \times \nu)_1(C) = \int_E \nu(C_x) \mu(\mathrm{d}x), \quad (\mu \times \nu)_2(C) = \int_F \mu(C_y) \nu(\mathrm{d}y). \]</span></p>
+<p>We can see that if <span class="math inline">\(C\)</span> is of the form <span class="math inline">\(A \times B\)</span> then</p>
+<p><span class="math display">\[ (\mu \times \nu)_1(A \times B) = \int_E \nu(B)1_{x \in A} \mu(\mathrm{d}x) = \mu(A) \nu(B) = \int_F \mu(A)1_{y \in B} \nu(\mathrm{d}y) = (\mu \times \nu)_2 (A \times B). \]</span></p>
+<p>Now we know that <span class="math inline">\((\mu \times \nu)_1\)</span> and <span class="math inline">\((\mu \times \nu)_2\)</span> agree on a <span class="math inline">\(\pi\)</span>-system generating <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> so Dynkin’s uniqueness of extension lemma says that they agree on all of <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span>.</p>
+<p>Now we need to extend to the <span class="math inline">\(\sigma\)</span>-finite case. There are sequences <span class="math inline">\(E_n\)</span> and <span class="math inline">\(F_n\)</span> of sets such that <span class="math inline">\(\mu(E_n)&lt;\infty, \nu(F_n)&lt; \infty\)</span> for every <span class="math inline">\(n\)</span> and <span class="math inline">\(E= \bigcup_n E_n, F = \bigcup_n F_n\)</span>. Then we know that <span class="math inline">\(x \mapsto \nu((C \cap (E_n \times F_n))_x)\)</span> is a measurable function of <span class="math inline">\(x\)</span> for every <span class="math inline">\(n\)</span>, so letting <span class="math inline">\(n\)</span> tend to infinity we have <span class="math inline">\(\nu(C_x) = \lim_n \nu((C \cap (E_n \times F_n))_x)\)</span> so <span class="math inline">\(x \mapsto \nu(C_x)\)</span> is the limit of measurable functions so measurable. Therefore in the <span class="math inline">\(\sigma\)</span> finite case we can still define our two candidate measures <span class="math inline">\((\mu \times \nu)_1\)</span> and <span class="math inline">\((\mu \times \nu)_2\)</span> and we have that <span class="math inline">\((\mu \times \nu_1(C) = \lim_n (\mu \times \nu))_1(C \cap (E_n \times F_n)) = \lim_n (\mu \times \nu)_2 ( C \cap (E_n \times F_n)) = (\mu \times \nu)_2 (C)\)</span>. So the two measures are equal.</p>
+<p>Now let <span class="math inline">\((\mu \times \nu)_3\)</span> be any other candidate measure on <span class="math inline">\(E \times F\)</span> such that <span class="math inline">\((\mu \times \nu)_3 (A \times B) = \mu(A) \nu(B)\)</span>. Dynkin’s uniqueness of extension theorem tells us that it must be equal to <span class="math inline">\((\mu \times \nu)\)</span> when restricted to <span class="math inline">\(E_n \times F_n\)</span> for any <span class="math inline">\(n\)</span>. We can then repeat exactly the same argument as above to extend it to any set in <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span>.</p>
+</div>
+<p>One of the key tools we get when using product measure is Fubini’s theorem. There are two theorems one for positive functions, one for integrable functions. The naming gets a bit wooly, but often the theorem for positive functions is called Tonelli’s theorem and that for integrable functions is called Fubini’s theorem. Sometimes the later is called the Fubini-Tonelli theorem and sometimes both are called Fubini-Tonelli or Fubini. To play it safe I’m going to call both Fubini-Tonelli Theorem.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-192" class="theorem"><strong>Theorem 7.2  (Fubini-Tonelli theorem for positive functions) </strong></span>Suppose that <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> and <span class="math inline">\((F, \mathcal{F}, \nu)\)</span> are <span class="math inline">\(\sigma\)</span>-finite measure spaces and <span class="math inline">\(f\)</span> is a non-negative <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> measurable function then the functions <span class="math inline">\(x \mapsto \int_F f(x,y) \nu(\mathrm{d}y)\)</span> and <span class="math inline">\(y \mapsto \int_E f(x,y) \mu(\mathrm{d}x)\)</span> are both measurable and</p>
+<p><span class="math display">\[(\mu \times \nu)(f) = \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) \right) \nu(\mathrm{d}x) = \int_F \left( \int_E f(x,y) \mu(\mathrm{d}x) \right) \nu(\mathrm{d}y). \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-193" class="proof"><em>Proof</em>. </span>We build up the proof gradually, beginning with the case where <span class="math inline">\(f\)</span> is the indicator function of a set <span class="math inline">\(C \in \mathcal{E} \times \mathcal{F}\)</span>. In this case the measurability of the integrals in <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> and the form for <span class="math inline">\((\mu \times \nu)(f)\)</span> are given by the construction of the product measure in the previous theorem.</p>
+<p>The linearity of the integral then imply that the Fubini-Tonelli theorem holds whenever <span class="math inline">\(f\)</span> is a non-negative simple function, we also can see that <span class="math inline">\(\int f(x,y) \nu(\mathrm{d}y)\)</span> will be measurable as the previous lemma shows that <span class="math inline">\(\int 1_{C_x}(y) \nu(\mathrm{d}y)\)</span> is measurable and this is the sum of functions of that form.. We then note that any non-negative measurable function <span class="math inline">\(f\)</span>, can be approximated from below by non-negative simple functions. Let <span class="math inline">\(f_n\)</span> be a sequence of simple functions approximating <span class="math inline">\(f\)</span>. Then</p>
+<p><span class="math display">\[ f_n = \sum_{k=1}^{N_n} c^n_k 1_{C^n_k}, \]</span></p>
+<p>where <span class="math inline">\(C^n_k \in \mathcal{E} \times \mathcal{F}\)</span>. Then we know that</p>
+<p><span class="math display">\[ (\mu \times \nu)(f_n) = \int_E \left( \int_F c^n_k 1_{C^n_k}(x,y) \nu(\mathrm{d}y) \right) \mu(\mathrm{d}x) = \int_E \left( \int_F c^n 1_{(C^n_k)_x}(y) \nu(\mathrm{d}y) \right)\mu(\mathrm{d}x). \]</span></p>
+<p>By monotone convergence as <span class="math inline">\(n \rightarrow \infty\)</span> the left hand side converges to <span class="math inline">\((\mu \times \nu)(f)\)</span>. We can also see that by monotone convergence</p>
+<p><span class="math display">\[ \int_F c^n 1_{(C^n_k)_x}(y) \nu(\mathrm{d}y) \uparrow \int_F f(x,y) \nu(\mathrm{d}y). \]</span></p>
+<p>We note that this shows that <span class="math inline">\(\int_F f(x,y) \nu(\mathrm{d}y)\)</span> is the limit of measurable functions. Consequently, we use monotone convergence again to get that the right hand side converges to</p>
+<p><span class="math display">\[ \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) \right) \mu(\mathrm{d}x). \]</span></p>
+<p>This gives the desired conclusion for positive <span class="math inline">\(f\)</span>.</p>
+</div>
+<p>\begin{thm}[Fubini-Tonelli theorem for integrable functions]
+Suppose that <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> and <span class="math inline">\((F, \mathcal{F}, \nu)\)</span> are <span class="math inline">\(\sigma\)</span>-finite measure spaces and <span class="math inline">\(f\)</span> is a <span class="math inline">\(\mathcal{E} \times \mathcal{F}\)</span> measurable function which is integrable with respect to <span class="math inline">\((\mu \times \nu)\)</span> then the functions</p>
+<p><span class="math display">\[ g(x) = \left\{ \begin{array}{ll} \int_F f(x,y) \nu(\mathrm{d}y) &amp; \int_F|f(x,y)| \nu(\mathrm{d}y) &lt; \infty \\
+0 &amp; \int_F |f(x,y)| \nu(\mathrm{d}y) = \infty  \end{array} \right. \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ h(y) = \left\{ \begin{array}{ll} \int_E f(x,y) \mu(\mathrm{d}x) &amp; \int_E |f(x,y)| \mu(\mathrm{d}x) &lt; \infty \\
+0 &amp; \int_E |f(x,y)| \mu(\mathrm{d}x) = \infty \end{array} \right. \]</span></p>
+<p>are both measurable and integrable. Furthermore,</p>
+<p><span class="math display">\[ (\mu \times \nu)(f) = \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) \right) \nu(\mathrm{d}x) = \int_F \left( \int_E f(x,y) \mu(\mathrm{d}x) \right) \nu(\mathrm{d}y). \]</span></p>
+</div>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-195" class="proof"><em>Proof</em>. </span>Now we turn to the case where <span class="math inline">\(f\)</span> is not necessarily non-negative but is <span class="math inline">\((\mu \times \nu)\)</span> integrable. By our result for non-negative functions we know that</p>
+<p><span class="math display">\[ (\mu \times \nu)(|f|) = \int_E \left( \int_F |f(x,y)| \nu(\mathrm{d}y) \right) \mu(\mathrm{d}x), \]</span></p>
+<p>which proves that the function <span class="math inline">\(x \mapsto \int_F |f(x,y)| \nu(\mathrm{d}y)\)</span> is <span class="math inline">\(\mu\)</span>-integrable, and is consequently finite almost everywhere, therefore restricting the functions <span class="math inline">\(g,h\)</span> to where they would be finite is not a problem. Let <span class="math inline">\(A\)</span> be the set on which <span class="math inline">\(x \mapsto \int_F |f(x,y)| \nu(\mathrm{d}y)\)</span> is finite. Now we write <span class="math inline">\(f = f_+ - f_-\)</span> in our usual way. Then by definition</p>
+<p><span class="math display">\[ \int f(x,y) \nu(\mathrm{d}y)1_{x \in A} =\left( \int f_+(x,y) \nu(\mathrm{d}y) - \int f_-(x,y) \nu(\mathrm{d}y)\right)1_{x \in A}.  \]</span></p>
+<p>Then using the fact that <span class="math inline">\(\mu(A^c)=0\)</span>, and our result for non-negative functions we have</p>
+<p><span class="math display">\[\begin{align*} (\mu \times \nu)(f) = (\mu \times  \nu)(f_+) - (\mu \times \nu)(f_-) &amp;= \int_E \int_F f_+(x,y) \nu(\mathrm{d}y)\mu(\mathrm{d}x) - \int_E \int_F f_-(x,y) \nu(\mathrm{d}y) \mu(\mathrm{d}x) \\
+&amp;= \int_E \left( \int_F f_+(x,y) \nu(\mathrm{d}y) - \int_F f_-(x,y) \nu(\mathrm{d}y) \right)1_{x \in A} \mu(\mathrm{d}x) \\
+&amp;= \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) 1_A\right) \mu(\mathrm{d}x)\\
+&amp;= \int_E \int_F f(x,y) \nu(\mathrm{d}y) \mu(\mathrm{d}x).
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="applications-of-product-measure-and-fubinis-theorem" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Applications of product measure and Fubini’s theorem<a href="product-measures.html#applications-of-product-measure-and-fubinis-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This section is a collection of examples and applications of product measure and Fubini’s theorem</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-196" class="example"><strong>Example 7.2  </strong></span>Suppose <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> is a measure space we look at its product with <span class="math inline">\((\mathbb{R}, \mathcal{B}(\mathbb{R}), \lambda)\)</span> and suppose that <span class="math inline">\(f:E \rightarrow \mathbb{R}\)</span> is a non-negative measurable, then the set</p>
+<p><span class="math display">\[ A = \{(x,y) \,:\, 0 \leq y \leq f(x) \} \]</span></p>
+<p>is measurable with the product <span class="math inline">\(\sigma\)</span>-algebra and its measure is the <em>area under the graph</em> of <span class="math inline">\(f\)</span>. We have that</p>
+<p><span class="math display">\[ (\mu \times \lambda)(A) = \mu( \lambda(A_x)) = \mu(f),  \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ (\mu \times \lambda)(A) = \lambda( \mu(A_y)) = \lambda (\{ x \,:\, f(x) \geq y \}) = \int_0^ \infty \mu(\{x \,:\, f(x) \geq y\}) \mathrm{d}y. \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-197" class="example"><strong>Example 7.3  (Convolutions) </strong></span>Suppose that both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are in <span class="math inline">\(L^1(\mathbb{R})\)</span> then for almost every <span class="math inline">\(x\)</span> the function $ t f(x-t) g(t)$ is also in <span class="math inline">\(L^1(\mathbb{R})\)</span>. We have that the function <span class="math inline">\(f*g\)</span> defined by</p>
+<p><span class="math display">\[ x \mapsto \left\{ \begin{array}{ll} \int_\mathbb{R} f(x-t)g(t) \mathrm{d}t &amp; \mbox{if}\, t \mapsto f(x-t)g(t)\, \mbox{is Lebesgue integrable} \\
+0 &amp; \mbox{Otherwise} \end{array}\right. \]</span></p>
+<p>is in <span class="math inline">\(L^1\)</span> and satisfies <span class="math inline">\(\|f*g\|_1 \leq \|f\|_1 \|g\|_1\)</span>.</p>
+<p>We can prove this using Fubini-Tonelli. First we want to check that <span class="math inline">\(t \mapsto f(x-t)g(t)\)</span> is measurable. Write <span class="math inline">\(h(t) = x-t\)</span> this continuous function (for fixed <span class="math inline">\(x\)</span>) and <span class="math inline">\(t \mapsto f(x-t) = f(h(t))\)</span> so it is the composition of two measurable functions so measurable. We also know that the product of two measurable functions is measurable to <span class="math inline">\(f(x-t)g(t)\)</span> is a measurable function of <span class="math inline">\(t\)</span>. Now we want to check that it is integrable</p>
+<p><span class="math display">\[ \int \left| \int f(x-t)g(t) \mathrm{d}t \right| \mathrm{d}x \leq \int \int |f(x-t)g(t)| \mathrm{d}t \mathrm{d}x \]</span></p>
+<p>as <span class="math inline">\(f(x-t)g(t) \leq |f(x-t)g(t)|\)</span> and <span class="math inline">\(-f(x-t)g(t) \leq |f(x-t)g(t)|\)</span>. Now we apply Fubini-Tonelli and get</p>
+<p><span class="math display">\[ \int \int |f(x-t)g(t)| \mathrm{d}t \mathrm{d}x = \int \left( \int |f(x-t)| \mathrm{d}x\right) |g(t)| \mathrm{d}t = \int \|f\|_1 |g(t)| \mathrm{d}t = \|f\|_1 \|g\|_1. \]</span></p>
+</div>
+<p>We can also show that convolutions of functions are continuous functions using the tools from measure theory. For this we need to show that shifts are continuous in <span class="math inline">\(L^1\)</span>.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-198" class="lemma"><strong>Lemma 7.2  </strong></span>Define the map <span class="math inline">\(T_\tau: L^p(\mathbb{R}) \rightarrow L^p(\mathbb{R})\)</span> by <span class="math inline">\((T_\tau f)(x) = f(x+ \tau)\)</span> then</p>
+<p><span class="math display">\[ \lim_{\tau \rightarrow 0}\|T_\tau f - f\|_p = 0. \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-199" class="proof"><em>Proof</em>. </span>We want to show that for any <span class="math inline">\(\epsilon\)</span> there exists <span class="math inline">\(\tau_*\)</span> such that if <span class="math inline">\(\tau \leq \tau_*\)</span> then <span class="math inline">\(\|T_\tau f-f\|_p \leq \epsilon\)</span>. First let us show the result for step functions, that is to say functions of the form</p>
+<p><span class="math display">\[ \phi(x) = \sum_{k=1}^n a_k 1_{[c_k, d_k)}.\]</span></p>
+<p>First by Minkowski’s inequality we have</p>
+<p><span class="math display">\[ \| T_\tau \phi - \phi\|_p \leq \sum_{k=1}^n |a_k| \| T_\tau 1_{[c_k, d_k)} - 1_{[c_k, d_k)}\|_p  = \sum_{k=1}^n |a_k| \lambda ([c_k + \tau, d_k + \tau) \Delta [c_k, d_k) \leq \sum_{k=1}^n |a_k| 2|\tau|.\]</span></p>
+<p>Therefore we can make <span class="math inline">\(\tau\)</span> small enough so that this is less than <span class="math inline">\(\epsilon\)</span>.</p>
+<p>Now let us look at a general <span class="math inline">\(f\)</span> we know (from Assignment 4) that there is a step function <span class="math inline">\(\phi\)</span> such that <span class="math inline">\(\|f-\phi\|_p \leq \epsilon/3\)</span>. We also can change variables <span class="math inline">\(x \leftrightarrow x+\tau\)</span> so <span class="math inline">\(\|T_\tau f - T_\tau \phi\|_p = \left( \int |f(x+\tau) - \phi(x+\tau)|^p \mathrm{d}x\right)^{1/p} = \|f-\phi\|_p\)</span> for any <span class="math inline">\(\tau\)</span>. For this <span class="math inline">\(\phi\)</span> we can find <span class="math inline">\(\tau\)</span> sufficiently small such that <span class="math inline">\(\|T_\tau \phi - \phi\|_p \leq \epsilon/3\)</span>. Hence</p>
+<p><span class="math display">\[ \|T_\tau f - f\|_p  \leq \|T_\tau f - T_\tau \phi\|_p + \| T_\tau \phi - \phi\|_p + \| \phi - f\|_p \leq \epsilon. \]</span></p>
+</div>
+<p>Now we go back to convolutions, we can show that if <span class="math inline">\(f, \in L^p(\mathbb{R})\)</span> and <span class="math inline">\(g \in L^q(\mathbb{R})\)</span> then <span class="math inline">\(f*g\)</span> is continous.</p>
+<p><span class="math display">\[ |f*g(y) - f*g(x)| = |\int_{\mathbb{R}}(f(x-t) - f(y-t)) g(t) \mathrm{d}t| \leq \int_\mathbb{R} |f(x-t)-f(y-t)||g(t)| \mathrm{d}t  \]</span></p>
+<p>we can bound this using H"older’s inequailty by</p>
+<p><span class="math display">\[ \|g\|_q \left(\int |f(x-t) - f(y-t)|^p\mathrm{d}t\right)^{1/p} = \|g\|_q \left(\int |f(t-x+y) - f(t)| \mathrm{d}t\right)^{1/p} = \|g\|_q \| T_{-x+y} f - f\|_p. \]</span></p>
+<p>So if <span class="math inline">\(|x-y|\)</span> is small enough then <span class="math inline">\(|f*g(x) - f*g(y)|\)</span> will also be small.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="norms-and-inequalities.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="radon-nikodym-theorem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-productmeasure.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
