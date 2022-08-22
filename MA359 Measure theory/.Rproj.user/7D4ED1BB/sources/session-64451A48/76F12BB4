@@ -3,7 +3,7 @@
     "path": "~/GitHub/ma359/MA359 Measure theory/_bookdown.yml",
     "project_path": "_bookdown.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "3936292466",
     "contents": "",
     "dirty": false,
     "created": 1661173038318.0,
@@ -11,14 +11,16 @@
     "relative_order": 11,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "4,22",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1660138332,
+    "lastKnownWriteTime": 1661177353,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1660138332,
+    "last_content_update": 1661177353088,
     "read_only": false,
     "read_only_alternatives": []
 }
