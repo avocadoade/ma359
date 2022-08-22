@@ -15,7 +15,7 @@ github-repo: https://github.com/avocadoade/ma359
 
 # About {-}
 
-These are the lecture notes for the Warwick maths course MA359: Measure theory. They will be updated as the course goes along. Please send me any typos or questions you find!
+These are the lecture notes for the Warwick maths course MA359: Measure theory. They will be updated as the course goes along. Please send me any typos or questions you find! My email is name.surname@warwick.ac.uk
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
