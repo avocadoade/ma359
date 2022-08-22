@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Set functions | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 4 Set functions | Measure theory lecture notes" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Set functions | Measure theory lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Set functions | Measure theory lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2022-08-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="sigma-algebras-definition-of-a-measure.html"/>
+<link rel="next" href="parts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like <span>https://bookdown.org/yihui/bookdown</span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#integration-1"><i class="fa fa-check"></i><b>2.1</b> Integration</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>2.2</b> The most important things you will learn in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>3</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>3.1</b> Collections of subsets</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="set-functions.html"><a href="set-functions.html"><i class="fa fa-check"></i><b>4</b> Set functions</a></li>
+<li class="chapter" data-level="5" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>5</b> Parts</a></li>
+<li class="chapter" data-level="6" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>6</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>6.1</b> Footnotes</a></li>
+<li class="chapter" data-level="6.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>6.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>7</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>7.1</b> Equations</a></li>
+<li class="chapter" data-level="7.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>7.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="7.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>7.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>8</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>8.1</b> Publishing</a></li>
+<li class="chapter" data-level="8.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>8.2</b> 404 pages</a></li>
+<li class="chapter" data-level="8.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>8.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Measure theory lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="set-functions" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Set functions<a href="set-functions.html#set-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="definition">
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 4.1  (Set function) </strong></span>A set function <span class="math inline">\(\phi\)</span> is a function from a family of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{A}\)</span> to <span class="math inline">\(\mathbb{R}\cup\{\infty\}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 4.2  (Measure) </strong></span>A measure is a specific type of set function which satisfies certain axioms. A set function <span class="math inline">\(\mu\)</span> defined from a <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{A}\)</span> is a measure if,</p>
+<ul>
+<li><span class="math inline">\(\mu(A) \geq 0\)</span> for every <span class="math inline">\(A \in \mathcal{A}\)</span>.</li>
+<li><span class="math inline">\(\mu(\emptyset) = 0\)</span></li>
+<li>If <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> are all pairwise disjoint and in <span class="math inline">\(\mathcal{A}\)</span> then</li>
+</ul>
+<p><span class="math display">\[\mu \left( \bigcup_n A_n \right) = \sum_n \mu(A_n).\]</span></p>
+<p>We call this last property <em>countable additivity</em>.</p>
+</div>
+<p>::: {.example name =“Delta (function)”}</p>
+<p>You’ve probably seen <span class="math inline">\(\delta_{x_0}(x)\)</span> used before; it is similar to the Kroeneker delta which appears in discrete spaces <span class="math inline">\(\delta_{x,y} = 1\)</span> if and only if <span class="math inline">\(x=y\)</span>. This is the `function’ defined by <span class="math inline">\(\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)\)</span>. We can define a measure on <span class="math inline">\(\mathbb{R}^d\)</span> which will have this property by</p>
+<p><span class="math display">\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 &amp; x_0 \in A \\ 0 &amp; x_0 \notin A \end{array} \right..\]</span>
+:::</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Example 4.1  (Countable spaces) </strong></span>If <span class="math inline">\(E = \{ x_1, x_2, \dots\}\)</span> is a countable space and <span class="math inline">\(F: E \rightarrow \mathbb{R}_{\geq 0}\)</span> is a non-negative function then we can define a measure by <span class="math inline">\(\mu(A) = \sum_n F(x_n)1_{x_n \in A}\)</span>. In fact any measure on a countable set can be written this way by choosing <span class="math inline">\(F(x_n) = \mu(\{x_n\})\)</span>.</p>
+</div>
+<p>::: {.example “Function (informally)”}</p>
+<p>In the course we will define this rigorously later. However we can define a measure on <span class="math inline">\(\mathbb{R}^d\)</span> by integrating a function over subsets of <span class="math inline">\(\mathbb{R}^d\)</span>. If <span class="math inline">\(f\)</span> is a non-negative function then we define <span class="math inline">\(\mu_f(A) = \int_A f(x) \mathrm{d}x\)</span>.</p>
+<p>:::</p>
+<p>We also define two further possible properties of set functions</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 4.3  (monotonicity) </strong></span>A set function <span class="math inline">\(\phi\)</span> is monotone if whenever <span class="math inline">\(A \subseteq B\)</span> we have <span class="math inline">\(\phi(A) \leq \phi(B)\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 4.4  (Countable subadditivity) </strong></span>A set function <span class="math inline">\(\phi\)</span> is countably subadditive if for every sequence of sets <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> we have</p>
+<p><span class="math display">\[ \phi \left( \bigcup_n A_n \right) \leq \sum_n \phi(A_n). \]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-22" class="lemma"><strong>Lemma 4.1  </strong></span>If <span class="math inline">\(\mu\)</span> is a measure the <span class="math inline">\(\mu\)</span> is both monotone and countably subadditive.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-23" class="proof"><em>Proof</em>. </span>Suppose <span class="math inline">\(A \subseteq B\)</span> then <span class="math inline">\(B = A \cup (B \setminus A)\)</span> and this union is disjoint. Countable additivity then implies that <span class="math inline">\(\mu(B) = \mu(A) + \mu(B \setminus A)\)</span> and since <span class="math inline">\(\mu(B \setminus A) \geq 0\)</span> we have <span class="math inline">\(\mu(A) \leq \mu(B)\)</span>.</p>
+<p>Now take a sequence <span class="math inline">\(A_1, A_2, A_3, \dots\)</span> and define <span class="math inline">\(B_n = A_n \setminus \left(A_n \cap \bigcup_{k=1}^{n-1}A_k \right)\)</span> then the <span class="math inline">\(B_n\)</span> form a disjoint sequence with <span class="math inline">\(\bigcup_n A_n = \bigcup_n B_n\)</span>. We also have, for every <span class="math inline">\(n\)</span>, that <span class="math inline">\(B_n \subseteq A_n\)</span> so by monotonicity <span class="math inline">\(\mu(B_n) \leq \mu(A_n)\)</span>. Then using countable additivity on the union of the <span class="math inline">\(B_n\)</span> we have
+<span class="math display">\[ \mu(\bigcup_n A_n) = \mu(\bigcup_n B_n) = \sum_n \mu(B_n) \leq \sum_n \mu(A_n). \]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 4.5  (Measurable space) </strong></span>We call a pair <span class="math inline">\((E, \mathcal{A})\)</span> of a space and a <span class="math inline">\(\sigma\)</span>-algebra, a <em>measureable space</em>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-25" class="definition"><strong>Definition 4.6  (Measure space) </strong></span>We call a triple <span class="math inline">\((E, \mathcal{A}, \mu)\)</span> of a space, a <span class="math inline">\(\sigma\)</span>-algebra and a measure a <em>measure space</em>.</p>
+</div>
+<p>::: {.definition “Finite measure space”}</p>
+<p>We call a measure space <span class="math inline">\((E, \mathcal{A}, \mu)\)</span> <em>finite</em> if <span class="math inline">\(\mu(E) &lt; \infty\)</span>.</p>
+<p>:::</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 4.7  ($\sigma$-finite measure space) </strong></span>We call a measure space, <span class="math inline">\((E, \mathcal{A}, \mu)\)</span>, <span class="math inline">\(\sigma\)</span>-<em>finite</em> if there exists a countable collection <span class="math inline">\(E_1, E_2, \dots \in \mathcal{A}\)</span> such that
+<span class="math display">\[ E = \bigcup_n E_n, \]</span>
+and</p>
+<p><span class="math display">\[ \mu(E_i) &lt; \infty, \, \forall i. \]</span></p>
+</div>
+<p>::: {.definition name =“Borel measures and Radon measures”}
+A measure <span class="math inline">\(\mu\)</span> on a subset of a topological space <span class="math inline">\(E\)</span> is called a if it is a measure with respect to the Borel <span class="math inline">\(\sigma\)</span>-algebra.</p>
+<p>A Borel measure is called a if for every compact set <span class="math inline">\(K \in \mathcal{B}(E)\)</span> we have that <span class="math inline">\(\mu(K) &lt; \infty\)</span>.</p>
+<p>:::</p>
+<p>::: {.lemma name =“Continuity of measure”}</p>
+<p>Let <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> be a measure space. Suppose that <span class="math inline">\((A_n)_n\)</span> is a sequence of measurable sets with <span class="math inline">\(A_1 \subseteq A_2 \subseteq \dots\)</span> and <span class="math inline">\((B_n)_n\)</span> is a sequence of measurable sets with <span class="math inline">\(B_1 \supseteq B_2 \supseteq \dots\)</span>, and <span class="math inline">\(\mu(B_1)&lt; \infty\)</span> then we have
+<span class="math display">\[ \mu\left( \bigcup_n A_n\right) = \lim_n \mu(A_n) \]</span>
+and</p>
+<p><span class="math display">\[ \mu\left( \bigcap_n B_n \right) = \lim_n \mu(B_n). \]</span></p>
+<p>:::</p>
+<div class="proof">
+<p><span id="unlabeled-div-27" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(\tilde{A}_n = A_n \setminus A_{n-1}\)</span>. We have that <span class="math inline">\(\bigcup_n A_n = \bigcup_n \tilde{A}_n\)</span>. Furthermore, countable additivity gives us that
+<span class="math display">\[ \mu\left( \bigcup_n \tilde{A}_n \right) = \sum_n \mu(\tilde{A}_n). \]</span> Therefore, we have <span class="math inline">\(\sum_{n=1}^m \mu(\tilde{A}_n) \rightarrow \mu \left( \bigcup_n A_n \right)\)</span>. We also have <span class="math inline">\(\sum_{n=1}^m \mu(\tilde{A}_n) = \mu \left( \bigcup_{n=1}^m \tilde{A}_n \right) = \mu (A_m)\)</span>.</p>
+<p>Now we move onto the <span class="math inline">\(B_n\)</span>, let <span class="math inline">\(C_n = B_1 \setminus B_n\)</span> then the <span class="math inline">\(C_n\)</span> are an increasing sequence of measurable sets with <span class="math inline">\(C_n \uparrow B_1 \setminus \bigcap_n B_n\)</span>. So by the first part we have <span class="math inline">\(\mu\left(B_1 \setminus \bigcap_n B_n \right) = \lim_n \mu(C_n)\)</span>. Therefore
+<span class="math display">\[ \mu(B_1) - \mu\left( \bigcap_n B_n \right) = \mu(B_1) - \lim_n \mu(B_n). \]</span> This gives the result as long as <span class="math inline">\(\mu(B_1) &lt; \infty\)</span>. If there exist an <span class="math inline">\(m\)</span> such that <span class="math inline">\(\mu(B_m) &lt; \infty\)</span> then we can renumber starting with <span class="math inline">\(m\)</span> and repeat the argument above.</p>
+<p>N.b. the fact that <span class="math inline">\(\mu(B)&lt; \infty\)</span> implies <span class="math inline">\(\mu(A)&lt; \infty\)</span> if <span class="math inline">\(B \subset A\)</span> follows from finite additivity. <span class="math inline">\(\mu(B) = \mu(A) + \mu(B \setminus A) \geq \mu(A)\)</span>.</p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="sigma-algebras-definition-of-a-measure.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-cross-refs.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

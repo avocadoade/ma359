@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Radon-Nikodym Theorem | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 8 Radon-Nikodym Theorem | Measure theory lecture notes" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Radon-Nikodym Theorem | Measure theory lecture notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/avocadoade/ma359" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Radon-Nikodym Theorem | Measure theory lecture notes" />
+  
+  
+  
+
+<meta name="author" content="Jo Evans" />
+
+
+<meta name="date" content="2022-08-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="product-measures.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>1.2</b> The most important things you will learn in this course</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>2.1</b> Collections of subsets</a></li>
+<li class="chapter" data-level="2.2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#set-functions"><i class="fa fa-check"></i><b>2.2</b> Set functions</a></li>
+<li class="chapter" data-level="2.3" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#measure-spaces"><i class="fa fa-check"></i><b>2.3</b> Measure spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html"><i class="fa fa-check"></i><b>3</b> Outer measures and Lebesgue Measure</a>
+<ul>
+<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="integration-1.html"><a href="integration-1.html"><i class="fa fa-check"></i><b>5</b> Integration</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="integration-1.html"><a href="integration-1.html#convergence-theorems-for-integrals-of-functions"><i class="fa fa-check"></i><b>5.1</b> Convergence theorems for integrals of functions</a></li>
+<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html"><i class="fa fa-check"></i><b>8</b> Radon-Nikodym Theorem</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#signed-measures"><i class="fa fa-check"></i><b>8.1</b> Signed measures</a></li>
+<li class="chapter" data-level="8.2" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#absolute-continuity"><i class="fa fa-check"></i><b>8.2</b> Absolute Continuity</a></li>
+<li class="chapter" data-level="8.3" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html#duality-in-lp-spaces"><i class="fa fa-check"></i><b>8.3</b> Duality in <span class="math inline">\(L^p\)</span> spaces</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Measure theory lecture notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="radon-nikodym-theorem" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Radon-Nikodym Theorem<a href="radon-nikodym-theorem.html#radon-nikodym-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="signed-measures" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Signed measures<a href="radon-nikodym-theorem.html#signed-measures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We introduce the notion of signed measures which will be useful in the proof of the Radon-Nikodym theorem.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-201" class="definition"><strong>Definition 8.1  (Finite signed measure) </strong></span>A function <span class="math inline">\(\mu\)</span> from a <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\mathcal{E}\)</span> to <span class="math inline">\(\mathbb{R}\)</span> is a <em>finite signed measure</em> if</p>
+<ul>
+<li><span class="math inline">\(\mu(\emptyset) = 0\)</span>,</li>
+<li>If <span class="math inline">\((A_n)_{n \geq 1}\)</span> is a sequence of disjoint sets then <span class="math inline">\(\mu (\bigcup_n A_n) = \sum_n \mu(A_n)\)</span></li>
+</ul>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-202" class="example"><strong>Example 8.1  </strong></span>If <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> is a measure space and <span class="math inline">\(f \in L^1(E)\)</span> then <span class="math inline">\(\nu\)</span> defined by <span class="math inline">\(\nu(A) = \mu(f1_A)\)</span> is a signed measure.</p>
+</div>
+<p>We want to show two decomposition theorems which basically allow us to reduce the situation back to measures. First we need some more definitions and a useful Lemma.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-203" class="definition"><strong>Definition 8.2  </strong></span>If <span class="math inline">\((E, \mathcal{E})\)</span> is a measurable space and <span class="math inline">\(\nu\)</span> is a finite signed measure then we call <span class="math inline">\(A\)</span> a <em>positive set</em> if for every <span class="math inline">\(B \in \mathcal{E}\)</span> with <span class="math inline">\(B \subseteq A\)</span> then <span class="math inline">\(\nu(B) \geq 0\)</span>. The <em>negative sets</em> are defined analogously.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-204" class="lemma"><strong>Lemma 8.1  </strong></span>Suppose that <span class="math inline">\(\nu\)</span> is a finite signed measure on <span class="math inline">\((E, \mathcal{E})\)</span> and suppose <span class="math inline">\(A \in \mathcal{E}\)</span> with <span class="math inline">\(\nu(A) &lt;0\)</span> then there exists a negative set <span class="math inline">\(B\)</span> with <span class="math inline">\(B \subseteq A\)</span> and <span class="math inline">\(\nu(B) \leq \nu(A)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-205" class="proof"><em>Proof</em>. </span>We will produce this set <span class="math inline">\(A\)</span> by an itterative process, define</p>
+<p><span class="math display">\[ \delta_1 = \sup \{ \nu(C) \,:\, C \subseteq A\}, \]</span></p>
+<p>then since <span class="math inline">\(\emptyset \subseteq A\)</span> we have that <span class="math inline">\(\delta_1 \geq 0\)</span>. If <span class="math inline">\(\delta_1 = 0\)</span> then we have a negative set so are done. If not we can find a set <span class="math inline">\(C_1 \subseteq A\)</span> with</p>
+<p><span class="math display">\[ \nu(C_1) \geq \min\{\delta_1/2 ,1\}. \]</span></p>
+<p>(We take the minimum here because we don’t know that <span class="math inline">\(\delta_1\)</span> is finite.) Now we will define a sequence of <span class="math inline">\(\delta_n\)</span> and <span class="math inline">\(C_n\)</span> by setting</p>
+<p><span class="math display">\[ \delta_n = \sup\{ \nu(C) \,:\, C \subseteq (A \setminus \bigcup_{i=1}^{n-1}C_i)\} \]</span></p>
+<p>and <span class="math inline">\(C_n\)</span> a set so that</p>
+<p><span class="math display">\[ \nu(C_n) \geq \min\{ \delta_n /2 ,1\}. \]</span></p>
+<p>Now let <span class="math inline">\(C_\infty = \bigcup_n C_n\)</span> and <span class="math inline">\(B = A \setminus C_\infty\)</span>. We now need to check that <span class="math inline">\(B\)</span> has the required properties,</p>
+<p><span class="math display">\[ \nu(A) = \nu(C_\infty) + \nu(B) \geq \nu(B), \]</span></p>
+<p>as <span class="math inline">\(\nu(C_\infty) \geq 0\)</span> by construction.
+As <span class="math inline">\(\nu\)</span> is a finite measure we must have <span class="math inline">\(\nu(C_\infty) &lt; \infty\)</span> and as the <span class="math inline">\(C_n\)</span> are constructed to be disjoint this means we must have <span class="math inline">\(\lim_n \nu(C_n) = 0\)</span>. Therefore <span class="math inline">\(\lim_n \delta_n = 0\)</span>. If <span class="math inline">\(D \subseteq B\)</span> then we must have that <span class="math inline">\(\nu(D) \leq \delta_n\)</span> for every <span class="math inline">\(n\)</span>, therefore <span class="math inline">\(\nu(D) \leq 0\)</span>.</p>
+</div>
+<p>Now we are able to state and prove our two decomposition theorems.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-206" class="theorem"><strong>Theorem 8.1  (Hahn Decomposition theorem) </strong></span>Let <span class="math inline">\((E, \mathcal{E})\)</span> be a measure space and <span class="math inline">\(\nu\)</span> a finite signed measure. Then there exists a positive set <span class="math inline">\(P\)</span> and a negative set <span class="math inline">\(N\)</span> for <span class="math inline">\(\nu\)</span> such that <span class="math inline">\(E = P \cup N\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-207" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(L = \inf\{ \nu(A)\,:\, \mbox{\)</span>A$ is a negative set for <span class="math inline">\(\nu\)</span>}}$ then <span class="math inline">\(L\)</span> is finite as otherwise we could construct a set with measure <span class="math inline">\(-\infty\)</span>. Then let <span class="math inline">\(A_n\)</span> be a negative set with <span class="math inline">\(\nu(A_n) \leq L+1/n\)</span> then let <span class="math inline">\(N = \bigcup_n A_n\)</span>.</p>
+<p>We can check that <span class="math inline">\(N\)</span> is a negative set and that <span class="math inline">\(\nu(N) = L\)</span>. If <span class="math inline">\(A \subseteq N\)</span> then let <span class="math inline">\(B_n = A_n \setminus \bigcup_{k=1}^{n-1}A_k\)</span> then <span class="math inline">\(A = \bigcup_n (A \cap B_n)\)</span> and <span class="math inline">\(A \cap B_n \subseteq A_n\)</span> so <span class="math inline">\(\nu(A \cap B_n) \leq 0\)</span> and <span class="math inline">\(\nu(A) = \sum_n \nu(A \cap B_n) \leq 0\)</span>. Now since <span class="math inline">\(N\)</span> is a negative set <span class="math inline">\(\nu(N \setminus A_n) \leq 0\)</span>, therefore <span class="math inline">\(\nu(N) = \nu(N \setminus A_n) + \nu(A_n) \leq \nu(A_n) \leq L +1/n\)</span>. This is true for any <span class="math inline">\(n\)</span> so <span class="math inline">\(\nu(N) \leq L\)</span> and since <span class="math inline">\(L\)</span> is defined to be the infinmum over <span class="math inline">\(\nu(A)\)</span> for all negative sets <span class="math inline">\(A\)</span>, we will have <span class="math inline">\(\nu(N) \geq L\)</span>, therefore <span class="math inline">\(\nu(N) = L\)</span>.</p>
+<p>Let <span class="math inline">\(P = N^c\)</span> we want to check that <span class="math inline">\(P\)</span> is a positive set. Suppose there exists a set <span class="math inline">\(A \subseteq P\)</span> with <span class="math inline">\(\nu(A) &lt; 0\)</span>, then by our lemma there exists a negative set <span class="math inline">\(B \subseteq A\)</span> with <span class="math inline">\(\nu(B) \leq \nu(A)&lt;0\)</span>. Then <span class="math inline">\(N \cup B\)</span> is a negative set and <span class="math inline">\(N\)</span> and <span class="math inline">\(B\)</span> are disjoint so <span class="math inline">\(\nu(N \cup B) = \nu(N) + \nu(B) &lt; \nu(N)\)</span> which contradicts the fact that <span class="math inline">\(\nu(N) = L = \inf\{ \nu(A)\,:\, \mbox{\)</span>A$ is a negative set for <span class="math inline">\(\nu\)</span>}}$ so we are done.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-208" class="theorem"><strong>Theorem 8.2  (Jordan decompostion theorem) </strong></span>Every finite signed measure is the difference of two positive measures. Precisely, if <span class="math inline">\((E, \mathcal{E})\)</span> is a measure space and <span class="math inline">\(\nu\)</span> is a signed measure then there exist measures <span class="math inline">\(\nu_+\)</span> and <span class="math inline">\(\nu_-\)</span> such that for every <span class="math inline">\(A \in \mathcal{E}\)</span> we have <span class="math inline">\(\nu(A) = \nu_+(A)- \nu_-(A)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-209" class="proof"><em>Proof</em>. </span>Take some Hahn decomposition <span class="math inline">\((P, N)\)</span> then let <span class="math inline">\(\nu_+(A) = \nu(A \cap P)\)</span>, as <span class="math inline">\(A \cap P \subseteq P\)</span> then <span class="math inline">\(\nu(A \cap P) \geq 0\)</span>. Similarly let <span class="math inline">\(\nu_-(A) = -\nu(A \cap N)\)</span>. By additivity of <span class="math inline">\(\nu\)</span> we have that <span class="math inline">\(\nu(A) = \nu_+(A) - \nu_-(A)\)</span>. Countable additivity of <span class="math inline">\(\nu_+\)</span> and <span class="math inline">\(\nu_-\)</span> follow immediately from countable additivity of <span class="math inline">\(\nu\)</span>.</p>
+<p>Now we notice that if <span class="math inline">\(B \subseteq A\)</span> then</p>
+<p><span class="math display">\[ \nu(B) = \nu_+(B) - \nu_-(B) \leq \nu_+(B) \leq \nu_+(A) \]</span></p>
+<p>and <span class="math inline">\(\nu_+(A) = \nu(A \cap P)\)</span> therefore we have that</p>
+<p><span class="math display">\[ \nu_+(A)  = \sup\{\nu(B) \,:\, B \subseteq A, B \in \mathcal{E}\} \]</span></p>
+<p>in the same way</p>
+<p><span class="math display">\[ \nu_-(A) = \sup\{ - \nu(B) \,:\, B \subseteq A, B \in \mathcal{E}\}. \]</span></p>
+<p>This shows that the values of <span class="math inline">\(\nu_+, \nu_-\)</span> do not depend on the particular choice of Hahn decomposition.</p>
+</div>
+</div>
+<div id="absolute-continuity" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Absolute Continuity<a href="radon-nikodym-theorem.html#absolute-continuity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We now move on to the main focus of this section, the Radon-Nikodym theorem. In order to understand the theorem we need a definition.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-210" class="definition"><strong>Definition 8.3  </strong></span>Let <span class="math inline">\((E, \mathcal{E})\)</span> be a measurable space and <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be two measures then we say that <span class="math inline">\(\nu\)</span> is absolutely continuous with respect to <span class="math inline">\(\mu\)</span> of <span class="math inline">\(\nu \ll \mu\)</span> if for every <span class="math inline">\(A \in \mathcal{E}\)</span> with <span class="math inline">\(\mu(A) = 0\)</span> we also have <span class="math inline">\(\nu(A) = 0\)</span>.</p>
+</div>
+<p>We can characterise absolute continuity</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-211" class="lemma"><strong>Lemma 8.2  </strong></span>Suppose that <span class="math inline">\((E, \mathcal{E})\)</span> is a measurable space and <span class="math inline">\(\mu\)</span> a measure, <span class="math inline">\(\nu\)</span> a finite measure then <span class="math inline">\(\nu \ll \mu\)</span> if and only if for earch <span class="math inline">\(\epsilon &gt;0\)</span> there exists a <span class="math inline">\(\delta&gt;0\)</span> such that <span class="math inline">\(\mu(A) &lt; \delta\)</span> implies that <span class="math inline">\(\nu(A) &lt; \epsilon\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-212" class="proof"><em>Proof</em>. </span>First let us suppose there exists such at <span class="math inline">\(\delta\)</span> for each <span class="math inline">\(\epsilon\)</span>, then if <span class="math inline">\(\mu(A) = 0\)</span> we have that <span class="math inline">\(\mu(A)&lt; \delta\)</span> for every <span class="math inline">\(\delta\)</span> so we must have <span class="math inline">\(\nu(A) &lt; \epsilon\)</span> for every <span class="math inline">\(\epsilon\)</span> so <span class="math inline">\(\nu(A) =0\)</span>.</p>
+<p>Now let us suppose that <span class="math inline">\(\nu \ll \mu\)</span>. We prove the result by contradiction. Suppose there exists an <span class="math inline">\(\epsilon\)</span> such that for every <span class="math inline">\(\delta\)</span> there exists a set <span class="math inline">\(A\)</span> with <span class="math inline">\(\mu(A)&lt; \delta\)</span> but <span class="math inline">\(\nu(A) &gt;\epsilon\)</span>. Then we can find a sequence of sets <span class="math inline">\(A_k\)</span> such that <span class="math inline">\(\mu(A_k) &lt; 2^{-k}\)</span> but <span class="math inline">\(\nu(A_k) \geq \epsilon\)</span>. By the first Borel-Cantelli lemma we have that</p>
+<p><span class="math display">\[ \mu \left( \bigcap_n \bigcup_{m \geq n} A_m \right) = 0. \]</span></p>
+<p>We also have that <span class="math inline">\(\nu(\bigcup_{m \geq n} A_m) \geq \nu(A_n) \geq \epsilon\)</span> and</p>
+<p><span class="math display">\[\nu \left( \bigcap_n \bigcup_{m \geq n} A_m\right) = \lim_n \nu \left( \bigcup_{m \geq n} A_m \right) \geq \epsilon. \]</span></p>
+<p>This show gives us a set with <span class="math inline">\(\mu(B) = 0\)</span> but <span class="math inline">\(\nu(B) &gt; 0\)</span> which contradicts <span class="math inline">\(\nu \ll \mu\)</span>.</p>
+</div>
+<p>Now we can prove the main theorem for this section.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-213" class="theorem"><strong>Theorem 8.3  (Radon-Nikodym Theorem) </strong></span>Let <span class="math inline">\((E, \mathcal{E})\)</span> be a measure space and let <span class="math inline">\(\mu, \nu\)</span> be two finite measures with <span class="math inline">\(\nu \ll \mu\)</span>. Then there exists a measurable function <span class="math inline">\(g: E \rightarrow [0, \infty)\)</span> such that <span class="math inline">\(\nu(A) = \mu(g1_A)\)</span>. The function <span class="math inline">\(g\)</span> is unique up to identifying almost everywhere equal functions. We write <span class="math inline">\(g = \mathrm{d}\nu/\mathrm{d}\mu\)</span> and call it the Radon-Nikodym derivative of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-214" class="proof"><em>Proof</em>. </span>Let us define the set <span class="math inline">\(\mathcal{F}\)</span> which is the set of all measurable functions, <span class="math inline">\(f\)</span>, with <span class="math inline">\(\mu(f1_A) \leq \nu(A)\)</span> for every <span class="math inline">\(A \in \mathcal{E}\)</span>. The idea is that <span class="math inline">\(\mathcal{F}\)</span> contains a function <span class="math inline">\(g\)</span> which achieves <span class="math inline">\(\mu(g) = \sup_{f \in \mathcal{F}} \mu(f)\)</span>.</p>
+<p>As a first step we show that <span class="math inline">\(f_1 \vee f_2 = \max\{ f_1, f_2\} \in \mathcal{F}\)</span> when <span class="math inline">\(f_1, f_2 \in \mathcal{F}\)</span>. Let us take any <span class="math inline">\(A \in \mathcal{E}\)</span> then let <span class="math inline">\(A_1 = A \cap \{ f_1 \geq f_2\}\)</span> and <span class="math inline">\(A_2 = A \cap \{ f_1 &lt; f_2\}\)</span>. Then</p>
+<p><span class="math display">\[ \mu(f_1 \vee f_2 1_A) = \mu(f_1 \vee f_2 1_{A_1}) + \mu(f_1 \vee f_2 1_{A_2}) = \mu(f_1 1_{A_1}) + \mu(f_2 1_{A_2}) \leq \nu(A_1) + \nu(A_2) = \nu(A).  \]</span></p>
+<p>Therefore <span class="math inline">\(f_1 \vee f_2 \in \mathcal{F}\)</span>.</p>
+<p>Now take a sequence <span class="math inline">\(f_n\)</span> such that <span class="math inline">\(\mu(f_n) \geq \sup_{f \in \mathcal{F}} \mu(f) - 1/n\)</span>. Then let <span class="math inline">\(g_n = f_1 \vee f_2 \vee \dots \vee f_n\)</span>, so that the sequence of function <span class="math inline">\(g_n\)</span> is increasing and <span class="math inline">\(\mu(g_n) \geq \sup_{f \in \mathcal{F}} \mu(f) - 1/n\)</span>. Then as <span class="math inline">\(g_n\)</span> is increasing it has a limit <span class="math inline">\(g\)</span> and the monotone convergence theorem shows that</p>
+<p><span class="math display">\[ \mu(g1_A) = \lim_n \mu(g_n1_A) \leq \nu(A). \]</span></p>
+<p>So <span class="math inline">\(g \in \mathcal{F}\)</span>.</p>
+<p>Now we can define another positive measure <span class="math inline">\(\nu_0(A) = \nu(A) - \mu(g1_A)\)</span>. We want to show that <span class="math inline">\(\nu_0 =0\)</span> and will do this by contradiction. Suppose that there exists <span class="math inline">\(A \in \mathcal{E}\)</span> such that <span class="math inline">\(\nu_0(A)&gt;0\)</span> then by monotonicity we will have <span class="math inline">\(\nu_0(E) &gt;0\)</span> and since <span class="math inline">\(\mu\)</span> is a finite measure there exists a number <span class="math inline">\(\epsilon &gt;0\)</span> such that <span class="math inline">\(\nu_0(E) &gt; \epsilon \mu(E)\)</span>. Now <span class="math inline">\(\nu_0 - \epsilon \mu\)</span> is a finite signed measure. Let <span class="math inline">\((P, N)\)</span> be a Hahn decomposition for this signed measure. Then <span class="math inline">\((\nu_0 - \epsilon \mu)(A \cap P) \geq 0\)</span> so <span class="math inline">\(\nu_0(A\cap P) \geq \epsilon \mu(A \cap P)\)</span>. Hence we have</p>
+<p><span class="math display">\[\begin{align*}
+\nu(A) &amp;= \mu(g1_A) + \nu_0(A) \geq \mu(g1_A) + \nu_0(A \cap P) \\
+&amp; \geq \mu(g1_A) + \epsilon \mu(A \cap P) = \mu(1_A(g +\epsilon 1_{P})).
+\end{align*}\]</span></p>
+<p>We also have that <span class="math inline">\(\mu(P) &gt;0\)</span> as if <span class="math inline">\(\mu(P) = 0\)</span> then we would have <span class="math inline">\(\nu_0(P)=0\)</span> as <span class="math inline">\(\nu_0 \ll \nu \ll \mu\)</span>, and this would mean</p>
+<p><span class="math display">\[ (\nu_0 - \epsilon \mu)(E) = (\nu_0 - \epsilon \mu)(N) \leq 0, \]</span></p>
+<p>which would contradict <span class="math inline">\(\nu_0(E) &gt; \epsilon \mu(E)\)</span>. Therefore, <span class="math inline">\(g+ \epsilon 1_P\)</span> belongs to <span class="math inline">\(\mathcal{F}\)</span> but <span class="math inline">\(\mu(g+1_P) &gt; \mu(g)\)</span> which contradicts the fact that <span class="math inline">\(g\)</span> achieves <span class="math inline">\(\mu(g) = \sup_{f \in \mathcal{F}} \mu(f)\)</span>. Hence <span class="math inline">\(\nu(A) = \mu(g1_A)\)</span>.</p>
+<p>Now we turn to uniqueness suppose that we have two positive functions <span class="math inline">\(g,h\)</span> such that <span class="math inline">\(\nu(A) = \mu(g1_A) = \mu(h1_A)\)</span> for every <span class="math inline">\(A\)</span>, then as <span class="math inline">\(\nu\)</span> is finite <span class="math inline">\(g\)</span> and <span class="math inline">\(h\)</span> are integrable so <span class="math inline">\(g-h\)</span> is integrable and <span class="math inline">\(\mu((g-h)1_A) = 0\)</span> for every <span class="math inline">\(A\)</span>. As <span class="math inline">\(g-h\)</span> is measurable then <span class="math inline">\(\{x \in E\,:\, g-h \geq 0\}\)</span> is a measurable set so <span class="math inline">\(\mu((g-h)1_{\{x \in E\,:\, g-h \geq 0\}}) = 0\)</span>. This shows that <span class="math inline">\((g-h)1_{\{x \in E\,:\, g-h \geq 0\}} = 0\)</span> almost everywhere. In the same way <span class="math inline">\((g-h)1_{\{ x \in E\,:\, g-h \leq 0\}} =0\)</span> almost everywhere. Therefore <span class="math inline">\(g=h\)</span> <span class="math inline">\(\mu\)</span>-almost everywhere.</p>
+</div>
+</div>
+<div id="duality-in-lp-spaces" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Duality in <span class="math inline">\(L^p\)</span> spaces<a href="radon-nikodym-theorem.html#duality-in-lp-spaces" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The goal of this section is to prove that if <span class="math inline">\(1/p+1/q =1\)</span> then the dual space of <span class="math inline">\(L^p(E)\)</span> is isomorphic to the space <span class="math inline">\(L^q(E)\)</span>. First let us define a dual space.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-215" class="definition"><strong>Definition 8.4  </strong></span>Let <span class="math inline">\(\mathcal{V}\)</span> be a Banach space (a complete, normed vector space) then the dual space of <span class="math inline">\(\mathcal{V}\)</span> is written <span class="math inline">\(\mathcal{V}&#39;\)</span> and is the space of all bounded linear operators from <span class="math inline">\(\mathcal{V}\)</span> to <span class="math inline">\(\mathbb{R}\)</span>. We recall that we call an operator <span class="math inline">\(K\)</span> on <span class="math inline">\(\mathcal{V}\)</span> bounded if <span class="math inline">\(|K(v)| \leq C\|v\|\)</span> for all <span class="math inline">\(v \in \mathcal{V}\)</span>. We can define a norm on <span class="math inline">\(\mathcal{V}&#39;\)</span> by <span class="math inline">\(\|K\| = sup_{\|v\| =1}|K(v)|\)</span>.</p>
+</div>
+<p>The first thing to note is that if <span class="math inline">\(g \in L^q(E)\)</span> then we can define a bounded linear operator on <span class="math inline">\(L^p(E)\)</span> by <span class="math inline">\(K_g(f) = \mu(fg)\)</span>. This is bounded by Hölder’s inequality <span class="math inline">\(|\mu(fg)| \leq \mu(|fg|) = \|fg\|_1 \leq \|f\|_p \|g\|_p\)</span>. It is also linear thanks to the linearity of the integral. Therfore we can produce a map from <span class="math inline">\(L^q(E) \rightarrow (L^p(E))&#39;\)</span> by <span class="math inline">\(g \mapsto K_g\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-216" class="theorem"><strong>Theorem 8.4  </strong></span>Let <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> be a finite measure space and <span class="math inline">\(p \in (1, \infty)\)</span>. The dual space of <span class="math inline">\(L^p(E)\)</span> is <span class="math inline">\(L^q(E)\)</span> where <span class="math inline">\(1/p +1/q = 1\)</span>. Furthermore the map defined by <span class="math inline">\(g \mapsto K_g\)</span> is an isometry.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-217" class="remark"><em>Remark</em>. </span>This result also holds for arbitrary measure spaces (without the finite assumption). Extending to <span class="math inline">\(\sigma\)</span>-finite measure spaces is relatively straightforward and then to any measure space is more complicated.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-218" class="proof"><em>Proof</em>. </span>Remark: This result is similar in spirit to the Riesz representation result that was a non-examinable topic in week 6.</p>
+<p>First we note that the map <span class="math inline">\(g \mapsto K_g\)</span> is linear and <span class="math inline">\(\|K_g\|_{(L^p)&#39;} \leq \|g\|_q\)</span>. Therefore the map is injective we want to show that <span class="math inline">\(\|K_g\| = \|g\|\)</span> and that it is surjective.</p>
+<p>First for the fact that <span class="math inline">\(\|K_g\| = \|g\|\)</span> we look at the function <span class="math inline">\(f(x) = \sgn(g)|g(x)|^{q-1}\)</span> then <span class="math inline">\(\mu(|f|^p) = \mu(|g|^q) &lt; \infty\)</span>. Therfore we can look at the action of <span class="math inline">\(K_g\)</span> on <span class="math inline">\(f\)</span> and we have <span class="math inline">\(K_g(f) = \mu(|g|^q)\)</span> so we know that <span class="math inline">\(\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q\)</span>. Therefore <span class="math inline">\(g \mapsto K_g\)</span> preserves norms.</p>
+<p>Now we want to show that this map is surgective, let us begin with the case where <span class="math inline">\(\mu(E)&lt;\infty\)</span>. Let us take <span class="math inline">\(K\)</span> an arbirary element of <span class="math inline">\((L^p(E))&#39;\)</span>. In this case <span class="math inline">\(1_A \in L^p(E)\)</span> for every <span class="math inline">\(A \in \mathcal{E}\)</span> so we can define a function on <span class="math inline">\(\mathcal{E}\)</span> by <span class="math inline">\(k(A)=K(1_A)\)</span>. We want to show that <span class="math inline">\(k\)</span> is a signed measure. <span class="math inline">\(k(\emptyset)=K(0)=0\)</span> and let <span class="math inline">\(A_1,A_2,\dots\)</span> be a sequece of disjoint measurable sets. Then <span class="math inline">\(1_{\bigcup_{j=1}^n A_j} = \sum_{j=1}^n 1_{A_j}\)</span> then <span class="math inline">\(k(\bigcup_{j=1}^n A_j) = K(1_{\bigcup_{j=1}^n A_j}) = K( \sum_{j=1}^n 1_{A_j}) = \sum_{j=1}^n K(1_{A_j}) = \sum_{j=1}^n k(A_j)\)</span>. We also have that <span class="math inline">\(\| 1_{\bigcup_j A_j} - 1_{\bigcup_{j=1}^n A_j} \|_p \rightarrow 0\)</span> as <span class="math inline">\(n \rightarrow 0\)</span>. Therefore, as <span class="math inline">\(K\)</span> is a continous map on <span class="math inline">\(L^p\)</span> we have <span class="math inline">\(K(1_{\bigcup_n A_n}) = \sum_n K(1_{A_n})\)</span>, so <span class="math inline">\(k(\bigcup_n A_n) = \sum_n k(A_n)\)</span> Therefore <span class="math inline">\(k\)</span> is indeed a signed measure. By the Hahn decomposition and the Jordan decomposition we can write <span class="math inline">\(k = k_+ - k_-\)</span> and there exists <span class="math inline">\(P \cup N\)</span> a Hahn decomposition with <span class="math inline">\(k\)</span> being positive on <span class="math inline">\(P\)</span> and negative on <span class="math inline">\(N\)</span>.</p>
+<p>Next we want to show that <span class="math inline">\(k_+ \ll \mu\)</span> and <span class="math inline">\(k_- \ll \mu\)</span>. If <span class="math inline">\(A \in \mathcal{E}\)</span> is such that <span class="math inline">\(\mu(A) = 0\)</span> then <span class="math inline">\(\mu(A \cap P)=0\)</span> and <span class="math inline">\(\mu(A \cap N) = 0\)</span> and <span class="math inline">\(K(1_{A \cap P}) = K(0) = 0\)</span> and <span class="math inline">\(K(1_{A \cap N}) = K(0) = 0\)</span>. Therefore <span class="math inline">\(k_+(A) = 0\)</span> and <span class="math inline">\(k_-(A) = 0\)</span>.</p>
+<p>Then by the Radon-Nikodym theorem there exists functions <span class="math inline">\(g_+\)</span> and <span class="math inline">\(g_-\)</span> such that <span class="math inline">\(k_+(A) = \mu(g_+1_A)\)</span> and <span class="math inline">\(k_-(A) = - \mu(g_- 1_A)\)</span>. Now let <span class="math inline">\(g = g_+ - g_-\)</span> we want to show that <span class="math inline">\(g \in L^q\)</span> and that <span class="math inline">\(K = K_g\)</span>. This is complicated.</p>
+<p>Let us define <span class="math inline">\(E_n\)</span> by <span class="math inline">\(E_n = \{ x \,:\, |g(x)| \leq n\}\)</span> then <span class="math inline">\(g1_{E_n}\)</span> is bounded and so in <span class="math inline">\(L^q\)</span> as <span class="math inline">\(\mu\)</span> is finite. Then define a linear functional on <span class="math inline">\(L^p\)</span> by <span class="math inline">\(K_n(f) = \mu(fg1_{E_n})\)</span> and another by <span class="math inline">\(\tilde{K}_n (f) = K(f1_{E_n})\)</span>. Then if <span class="math inline">\(A\)</span> is a measurable set we have <span class="math inline">\(K_n (1_A) = \tilde{K}_n (1_A)\)</span>, by linearity if <span class="math inline">\(h\)</span> is a simple function then <span class="math inline">\(K_n(h) = \tilde{K}_n(h)\)</span>.</p>
+<p>We showed in Assignment 4 that given a function <span class="math inline">\(f \in L^p, \epsilon &gt;0\)</span> there exists a simple function <span class="math inline">\(h\)</span> with <span class="math inline">\(\|f-h\|_p \leq \epsilon\)</span>. Then we have that
+<span class="math display">\[ |K_n(f) - \tilde{K}_n(f)| \leq |K_n(f) - K_n(h)| + |\tilde{K}_n(f) - \tilde{K}_n (h)| \leq \|K\| \|f-h\|_p + \|g1_{E_n}\|_q \|f-h\|_p \leq (\|K\| + \|g\|_q) \epsilon.\]</span> Since <span class="math inline">\(\epsilon\)</span> is arbitrary this shows that <span class="math inline">\(K_n(f) = \tilde{K}_n(f)\)</span>. <span class="math inline">\(\tilde{K}_n(f) = K_{g1_{E_n}}(f)\)</span> so by our isometry we have <span class="math inline">\(\|\tilde{K}_n\| = \|g1_{E_n}\|_q\)</span>. We also have that <span class="math inline">\(\|\tilde{K}_n\| \leq \|K\|\)</span> as
+<span class="math inline">\(\| \tilde{K}_n\| = \sup_{\|f\|_p =1} K_n(f) = \sup_{\|f\|_p = 1} K(f1_{E_n}) \leq \sup_{\|f\|_p=1} K(f) = \|K\|\)</span>. Therefore <span class="math inline">\(\|g1_{E_n}\|_q \leq \|K\|\)</span> therefore <span class="math inline">\(\|g1_{E_n}\|_p^p = \int |g|^p 1_{E_n} \mu(\mathrm{d}x)\)</span> and then by monotone convergence we get that <span class="math inline">\(\|g\|_q = \lim_n \|g 1_{E_n}\|_q \leq \|K\|\)</span>. Therefore, <span class="math inline">\(g \in L^q\)</span>. Then by exactly the same argument with which we showed <span class="math inline">\(K_n = \tilde{K}_n\)</span> we have that <span class="math inline">\(K = K_g\)</span>. This concludes the proof int he finite case.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="product-measures.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-RadonNikodym.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
