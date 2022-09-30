@@ -29,7 +29,7 @@ A collection of subsets of a space $E$, $\mathcal{A}$ is a $\sigma$-algebra if
 
 - $\emptyset \in \mathcal{A}, E \in \mathcal{A}$.
 - If $A \in \mathcal{A}$ then $A^c \in \mathcal{A}$.
-- If $A_1, A_2, \dots$ is a countable collection of sets in $\mathcal{A}$ then $ \bigcup_{n=1}^\infty A_n \in \mathcal{A}$.
+- If $A_1, A_2, \dots$ is a countable collection of sets in $\mathcal{A}$ then  $\bigcup_{n=1}^\infty A_n \in \mathcal{A}$.
 - If $A_1, A_2, \dots$ is a countable collection of sets in $\mathcal{A}$ then $\bigcap_{n=1}^\infty A_n \in \mathcal{A}$.
 
 :::
