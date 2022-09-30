@@ -51,7 +51,7 @@ Suppose that $\mathcal{E}$ is closed under complements and taking countable unio
 
 ::: {.example}
 
-In this course we really only deal with one `concrete', non-trivial example of a $\sigma$-algebra. This is complicated to introduce and we will discuss below. 
+In this course we really only deal with one concrete, non-trivial example of a $\sigma$-algebra. This is complicated to introduce and we will discuss below. 
 
 However, in order to better understand the definition we give a few examples of things which are, and are not $\sigma$-algebras. 
 
