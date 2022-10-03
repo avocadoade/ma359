@@ -19,9 +19,9 @@ We are interested in normed spaces of functions, where the norms come from integ
 
 Suppose that $(E, \mathcal{E}, \mu)$ is a measure space, and $p \geq 1$, then we have the associated $L^p$ space, which is the space of measurable functions equipped with the norm
 
-$$ \| f\|_p = \left( \mu(|f|^p)\right)^{1/p}. $$
+$$\| f\|_p = \left( \mu(|f|^p)\right)^{1/p}. $$
 
-When we are working on $\Omega \subseteq \mathbb{R}^d$ with Lebesgue measure we often write the space $L^p(\Omega)$ to be the set of functions with $ \int_\Omega |f|^p \mathrm{d}x < \infty$. We then often write the norm $\| \cdot\|_{L^p(\Omega)}$ if we have not previously specified which space we are working in. If we are working with the measure $\gamma(x) \mathrm{d}x$ for some positive function $\gamma$ on $\mathbb{R}^d$ then we write $L^p(\gamma), \| \cdot\|_{L^p(\gamma)}$.  We also call $L^p(E)$ or $L^p(\Omega)$ or $L^p(\gamma)$ the space of measurable functions where the associated norm is finite.
+When we are working on $\Omega \subseteq \mathbb{R}^d$ with Lebesgue measure we often write the space $L^p(\Omega)$ to be the set of functions with $\int_\Omega |f|^p \mathrm{d}x < \infty$. We then often write the norm $\| \cdot\|_{L^p(\Omega)}$ if we have not previously specified which space we are working in. If we are working with the measure $\gamma(x) \mathrm{d}x$ for some positive function $\gamma$ on $\mathbb{R}^d$ then we write $L^p(\gamma), \| \cdot\|_{L^p(\gamma)}$.  We also call $L^p(E)$ or $L^p(\Omega)$ or $L^p(\gamma)$ the space of measurable functions where the associated norm is finite.
 
 :::
 

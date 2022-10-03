@@ -72,11 +72,11 @@ Let $(E, \mathcal{E})$ be a measure space and $\nu$ a finite signed measure. The
 
 ::: {.proof}
 
-Let $L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$ then $L$ is finite as otherwise we could construct a set with measure $-\infty$. Then let $A_n$ be a negative set with $\nu(A_n) \leq L+1/n$ then let $N = \bigcup_n A_n$.
+Let $$L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$$ then $L$ is finite as otherwise we could construct a set with measure $-\infty$. Then let $A_n$ be a negative set with $\nu(A_n) \leq L+1/n$ then let $N = \bigcup_n A_n$.
 
  We can check that $N$ is a negative set and that $\nu(N) = L$. If $A \subseteq N$ then let $B_n = A_n \setminus \bigcup_{k=1}^{n-1}A_k$ then  $A = \bigcup_n (A \cap B_n)$ and $A \cap B_n \subseteq A_n$ so $\nu(A \cap B_n) \leq 0$ and $\nu(A) = \sum_n \nu(A \cap B_n) \leq 0$.  Now since $N$ is a negative set $\nu(N \setminus A_n) \leq 0$, therefore $\nu(N) = \nu(N \setminus A_n) + \nu(A_n) \leq \nu(A_n) \leq L +1/n$. This is true for any $n$ so $\nu(N) \leq L$ and since $L$ is defined to be the infinmum over $\nu(A)$ for all negative sets $A$, we will have $\nu(N) \geq L$, therefore $\nu(N) = L$.
 
-Let $P = N^c$ we want to check that $P$ is a positive set. Suppose there exists a set $A \subseteq P$ with $\nu(A) < 0$, then by our lemma there exists a negative set $B \subseteq A$ with $\nu(B) \leq \nu(A)<0$. Then $N \cup B$ is a negative set and $N$ and $B$ are disjoint so $\nu(N \cup B) = \nu(N) + \nu(B) < \nu(N)$ which contradicts the fact that $\nu(N) = L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$ so we are done.
+Let $P = N^c$ we want to check that $P$ is a positive set. Suppose there exists a set $A \subseteq P$ with $\nu(A) < 0$, then by our lemma there exists a negative set $B \subseteq A$ with $\nu(B) \leq \nu(A)<0$. Then $N \cup B$ is a negative set and $N$ and $B$ are disjoint so $\nu(N \cup B) = \nu(N) + \nu(B) < \nu(N)$ which contradicts the fact that $$\nu(N) = L = \inf\{ \nu(A)\,:\, \mbox{$A$ is a negative set for $\nu$}\}$$ so we are done.
 
 :::
 
@@ -215,7 +215,7 @@ Remark: This result is similar in spirit to the Riesz representation result that
 
 First we note that the map $g \mapsto K_g$ is linear and $\|K_g\|_{(L^p)'} \leq \|g\|_q$. Therefore the map is injective we want to show that $\|K_g\| = \|g\|$ and that it is surjective. 
 
-First for the fact that $\|K_g\| = \|g\|$ we look at the function $f(x) = \sgn(g)|g(x)|^{q-1}$ then $\mu(|f|^p) = \mu(|g|^q) < \infty$. Therfore we can look at the action of $K_g$ on $f$ and we have $K_g(f) = \mu(|g|^q)$ so we know that $\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q$. Therefore $g \mapsto K_g$ preserves norms.
+First for the fact that $\|K_g\| = \|g\|$ we look at the function $f(x) = sgn(g)|g(x)|^{q-1}$ then $\mu(|f|^p) = \mu(|g|^q) < \infty$. Therfore we can look at the action of $K_g$ on $f$ and we have $K_g(f) = \mu(|g|^q)$ so we know that $\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q$. Therefore $g \mapsto K_g$ preserves norms.
 
 Now we want to show that this map is surgective, let us begin with the case where $\mu(E)<\infty$. Let us take $K$ an arbirary  element of $(L^p(E))'$. In this case $1_A \in L^p(E)$ for every $A \in \mathcal{E}$ so we can define a function on $\mathcal{E}$ by $k(A)=K(1_A)$. We want to show that $k$ is a signed measure. $k(\emptyset)=K(0)=0$ and let $A_1,A_2,\dots$ be a sequece of disjoint measurable sets. Then $1_{\bigcup_{j=1}^n A_j} = \sum_{j=1}^n 1_{A_j}$ then $k(\bigcup_{j=1}^n A_j) = K(1_{\bigcup_{j=1}^n A_j}) = K( \sum_{j=1}^n 1_{A_j}) = \sum_{j=1}^n K(1_{A_j}) = \sum_{j=1}^n k(A_j)$. We also have that $\| 1_{\bigcup_j A_j} - 1_{\bigcup_{j=1}^n A_j} \|_p \rightarrow 0$ as $n \rightarrow 0$. Therefore, as $K$ is a continous map on $L^p$ we have $K(1_{\bigcup_n A_n}) = \sum_n K(1_{A_n})$, so $k(\bigcup_n A_n) = \sum_n k(A_n)$ Therefore $k$ is indeed a signed measure. By the Hahn decomposition and the Jordan decomposition we can write $k = k_+ - k_-$ and there exists $P \cup N$ a Hahn decomposition with $k$ being positive on $P$ and negative on $N$.
 

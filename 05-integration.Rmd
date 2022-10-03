@@ -53,7 +53,8 @@ Let us first look at the well definedness, without loss of generality lets assum
 \begin{align*} 
 \mu(f) &= \sum_{k=1}^n a_k \mu(A_k)\\
 \left(\mbox{as}\, A_k = \bigcup_j (A_k \cap B_j)\, \mbox{as}\, \bigcup_{k=1}^nA_k = \bigcup_{j=1}^m B_j\right) \quad \quad &= \sum_{k=1}^n \sum_{j=1}^m a_k \mu(A_k \cap B_j) \\
-\left(\mbox{as}\, a_k = b_j\, \mbox{if}\, A_k \cap B_j \neq \emptyset\, \mbox{so}\, a_k=b_j\, \mbox{or}\, \mu(A_k\cap B_j) = 0\right) \quad \quad & = \sum_{k=1}^n \sum_{j=1}^m b_j \mu(A_k \cap B_j) = \sum_{j=1}^m b_j \sum_{k=1}^n \mu(A_k \cap B_j) \\
+\left(\mbox{as}\, a_k = b_j\, \mbox{if}\, A_k \cap B_j \neq \emptyset\, \mbox{so}\, a_k=b_j\, \mbox{or}\, \mu(A_k\cap B_j) = 0\right) \quad \quad & = \sum_{k=1}^n \sum_{j=1}^m b_j \mu(A_k \cap B_j) \\
+&= \sum_{j=1}^m b_j \sum_{k=1}^n \mu(A_k \cap B_j) \\
 &= \sum_{j=1}^m b_j \mu(B_j).
 \end{align*}
 
@@ -634,7 +635,7 @@ We finish this section with some examples of functions which are Lebesgue integr
 
 ::: {.example}
 
-Let $f(x) = 1_\mathbb{Q}$ then $f$ is Lebesgue integrable but not Riemann integrable on $[0,1]$ (or any other interval). In order to see that this function is not Riemann integrable we can see that for any partition $p$ as the rationals an the irrationals are dense in $[0,1]$ then $l(f,p) =0$ and $u(f,p) =1$ therefore if we take a seqence of nested partitions $p_n$ then we wont have the limits of $l(f,p_n)$ and $u(f,p_n)$ meeting.
+Let $f(x) = 1_{\mathbb{Q}}$ then $f$ is Lebesgue integrable but not Riemann integrable on $[0,1]$ (or any other interval). In order to see that this function is not Riemann integrable we can see that for any partition $p$ as the rationals an the irrationals are dense in $[0,1]$ then $l(f,p) =0$ and $u(f,p) =1$ therefore if we take a seqence of nested partitions $p_n$ then we wont have the limits of $l(f,p_n)$ and $u(f,p_n)$ meeting.
 
 :::
 

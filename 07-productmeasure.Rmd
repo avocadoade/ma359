@@ -190,9 +190,9 @@ $$ (\mu \times \lambda)(A) = \lambda( \mu(A_y)) = \lambda (\{ x \,:\, f(x) \geq 
 
 ::: {.example name="Convolutions"}
 
-Suppose that both $f$ and $g$ are in $L^1(\mathbb{R})$ then for almost every $x$ the function $ t \mapsto f(x-t) g(t)$ is also in $L^1(\mathbb{R})$. We have that the function $f*g$ defined by
+Suppose that both $f$ and $g$ are in $L^1(\mathbb{R})$ then for almost every $x$ the function $t \mapsto f(x-t) g(t)$ is also in $L^1(\mathbb{R})$. We have that the function $f*g$ defined by
 
-$$ x \mapsto \left\{ \begin{array}{ll} \int_\mathbb{R} f(x-t)g(t) \mathrm{d}t & \mbox{if}\, t \mapsto f(x-t)g(t)\, \mbox{is Lebesgue integrable} \\
+$$x \mapsto \left\{ \begin{array}{ll} \int_{\mathbb{R}} f(x-t)g(t) \mathrm{d}t & \mbox{if}\, t \mapsto f(x-t)g(t)\, \mbox{is Lebesgue integrable} \\
 0 & \mbox{Otherwise} \end{array}\right. $$
 
 is in $L^1$ and satisfies $\|f*g\|_1 \leq \|f\|_1 \|g\|_1$.
@@ -238,7 +238,7 @@ $$ \|T_\tau f - f\|_p  \leq \|T_\tau f - T_\tau \phi\|_p + \| T_\tau \phi - \phi
 
 Now we go back to convolutions, we can show that if $f,  \in L^p(\mathbb{R})$ and $g \in L^q(\mathbb{R})$ then $f*g$ is continous. 
 
-$$ |f*g(y) - f*g(x)| = |\int_{\mathbb{R}}(f(x-t) - f(y-t)) g(t) \mathrm{d}t| \leq \int_\mathbb{R} |f(x-t)-f(y-t)||g(t)| \mathrm{d}t  $$
+$$ |f*g(y) - f*g(x)| = |\int_{\mathbb{R}}(f(x-t) - f(y-t)) g(t) \mathrm{d}t| \leq \int_{\mathbb{R}} |f(x-t)-f(y-t)||g(t)| \mathrm{d}t  $$
 
 we can bound this using Hölder's inequailty by
 

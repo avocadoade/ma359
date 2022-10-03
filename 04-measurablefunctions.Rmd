@@ -240,11 +240,11 @@ and
 
 $$ \liminf_n A_n = \bigcup_n \bigcap_{m \geq n} A_m = \{ A_n \, \mbox{eventually}\,\}. $$
 
-The last names are more comon when the $A_n$ are events in a probability space.
+The last names are more common when the $A_n$ are events in a probability space.
 
 :::
 
-::: {.lemma name ="First Borel-Cantelli Lemma"}
+::: {.lemma name="First Borel-Cantelli Lemma"}
 
 Let $(E, \mathcal{E}, \mu)$ be a measure space. Then if $\sum_n \mu(A_n) < \infty$ it follows that $\mu(\limsup_n A_n) = 0)$.
 

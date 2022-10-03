@@ -95,7 +95,9 @@ Secondly we can see that $\emptyset \in \mathscr{M}$ as $\lambda^*(A\cap \emptys
 
 We then show that if $A_1, A_2 \in \mathscr{M}$ then $A_1 \cup A_2 \in \mathscr{M}$. Using the fact that $A_1 \in \mathscr{M}$ we have
 
-$$ \lambda^*(B \cap (A_1 \cup A_2)) = \lambda^*(B \cap (A_1 \cup A_2) \cap A_1) + \lambda^*(B \cap(A_1 \cup A_2) \cap A_1^c) = \lambda^* (B \cap A_1) + \lambda^* (B \cap A_2 \cap A_1^c).  $$
+\begin{align*} \lambda^*(B \cap (A_1 \cup A_2)) &= \lambda^*(B \cap (A_1 \cup A_2) \cap A_1) + \lambda^*(B \cap(A_1 \cup A_2) \cap A_1^c)\\
+&= \lambda^* (B \cap A_1)  + \lambda^* (B \cap A_2 \cap A_1^c).  
+\end{align*}
 We also have the identity $(A_1 \cup A_2)^c = A_1^c \cap A_2^c$ therefore
 
 $$ \lambda^*(B \cap (A_1 \cup A_2)) + \lambda^*(B \cap (A_1 \cup A_2)^c) = \lambda^*(B \cap A_1) + \lambda^* (B \cap A_2 \cap A_1^c) + \lambda^*(B \cap A_1^c \cap A_2^c). $$
@@ -208,7 +210,7 @@ $$ \lambda^*(B) = \lambda^*(B \cap(-\infty,b])) + \lambda^*(B \cap (b,\infty)). 
 
 Therefore, $(-\infty,b]$ is Lebesgue measurable.
 
-::: {.proof}
+:::
 
 ::: {.corollary}
 
@@ -285,7 +287,7 @@ $$ \mu^*(B) = \mu^*(B \cap E) + \mu^*(B \cap \emptyset), $$
  
 $$ \mu^*(B) = \mu^*(B \cap A) + \mu^*(B \cap A^c) $$
 
-is symmetric in exchanging $A$ and $A^c$ so if $A \in \mathscr{M}$ then so is $A^c$. Now suppose $A_1, A_2 \in \mathscr{M}$. We notice that $(A_1 \cap A_2)^c \cap A_1 = (A_1^c \cup A_2^c) \cap A_1 = (A_1^c \cap A_1) \cup (A_2^c \cap A_1) = A_2^c \cap A^1$ and $ A_1^c = A_1^c \cap(A_1 \cap A_2)^c$. Using this and the fact that $A_1, A_2, A_1^c, A_2^c$ are in $\mathscr{M}$ we have
+is symmetric in exchanging $A$ and $A^c$ so if $A \in \mathscr{M}$ then so is $A^c$. Now suppose $A_1, A_2 \in \mathscr{M}$. We notice that $(A_1 \cap A_2)^c \cap A_1 = (A_1^c \cup A_2^c) \cap A_1 = (A_1^c \cap A_1) \cup (A_2^c \cap A_1) = A_2^c \cap A^1$ and $A_1^c = A_1^c \cap(A_1 \cap A_2)^c$. Using this and the fact that $A_1, A_2, A_1^c, A_2^c$ are in $\mathscr{M}$ we have
 
 \begin{align*}\mbox{Using that} \, A_1 \in \mathscr{M} \quad \mu^*(B) &= \mu^*(B \cap A_1) + \mu^*(B \cap A_1^c)\\
 \mbox{Using that}\, A_2 \in \mathscr{M} \quad &= \mu^*(B \cap (A_1 \cap A_2)) + \mu^*(B \cap A_1 \cap A_2^c) + \mu^*(B \cap A_1^c)\\
@@ -366,16 +368,17 @@ The most important thing we want to prove about $\mathscr{M}$ is that there exis
 
 Lebesgue measure is *regular* that is to say
 
-- $\lambda(A) = \inf \{ \lambda(U)\,:\, \mbox{$U$ is open}, A \subseteq U\}$,
-- $\lambda(A) = \sup \{ \lambda(K)\,:\, \mbox{$K$ is compact}, K \subseteq A\}$.
+- $$\lambda(A) = \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}$$,
+- $$\lambda(A) = \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}$$.
 
 :::
 
 ::: {.proof}
 
-By monotonicity we can see that $\lambda(A) \leq \inf \{ \lambda(U)\,:\, \mbox{$U$ is open}, A \subseteq U\}$. Furthermore we can find a sequence of half open rectangles $R_k$ such that $A \subseteq \bigcup_n R_n$ and $\sum_n \lambda(R_n) \leq \lambda(A) + \epsilon$. By slightly enlarging each of the half open rectangles we can produce another sequence of fully open rectangles $\tilde{R}_n$ such that $A \subseteq \bigcup_n \tilde{R}_n$ and $\lambda(A) \geq \sum_n \lambda(\tilde{R}_n)-2\epsilon$. The set, $\bigcup_n \tilde{R}_n$ is open and $\epsilon$ can be made arbitrarily small so this shows $\lambda(A) \geq \inf \{ \lambda(U)\,:\, \mbox{$U$ is open}, A \subseteq U\}$.
+By monotonicity we can see that $$\lambda(A) \leq \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}.$$ 
+Furthermore we can find a sequence of half open rectangles $R_k$ such that $A \subseteq \bigcup_n R_n$ and $\sum_n \lambda(R_n) \leq \lambda(A) + \epsilon$. By slightly enlarging each of the half open rectangles we can produce another sequence of fully open rectangles $\tilde{R}_n$ such that $A \subseteq \bigcup_n \tilde{R}_n$ and $\lambda(A) \geq \sum_n \lambda(\tilde{R}_n)-2\epsilon$. The set, $\bigcup_n \tilde{R}_n$ is open and $\epsilon$ can be made arbitrarily small so this shows $$\lambda(A) \geq \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}$$.
 
-Monotonicity shows that $\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{$K$ is compact}, K \subseteq A\}$. First let us assume that $A$ is contained in some ball, $B$ around 0. Now use the first part to find some open set $U$ such that $B \setminus A \subseteq U$ and $\lambda(U) \leq \lambda(B \setminus A) + \epsilon$. Now let $K = B \setminus U$ then we have $K \subseteq A \subseteq B$ and $\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon$ (here we use the fact that $B, A, U, K$ will all have finite measure as they are inside $B$). As $\epsilon$ is arbitrary this concludes the proof when $A$ is contained in a ball. 
+Monotonicity shows that $$\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}$$. First let us assume that $A$ is contained in some ball, $B$ around 0. Now use the first part to find some open set $U$ such that $B \setminus A \subseteq U$ and $\lambda(U) \leq \lambda(B \setminus A) + \epsilon$. Now let $K = B \setminus U$ then we have $K \subseteq A \subseteq B$ and $\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon$ (here we use the fact that $B, A, U, K$ will all have finite measure as they are inside $B$). As $\epsilon$ is arbitrary this concludes the proof when $A$ is contained in a ball. 
 
 Now suppose that $A$ is unbounded. Then let $A_n = A \cap B_n$ where $B_n$ is the closed ball of radius $n$. We have that $\lambda(A_n) \rightarrow \lambda(A)$. If $\lambda(A) = \infty$ then we can find $K_n \subseteq A_n$ with $\lambda(K_n)$ arbitrarily close to $\lambda(A_n)$ therefore we can find such a sequence with $\lambda(K_n) \rightarrow \infty$. If $\lambda(A) \neq \infty$ then, given $\epsilon$, there exists $N$ such that $\lambda(A_n) \geq \lambda(A)-\epsilon$ for $n \geq N$. Then we can fine $K_N \subseteq A_N$ such that $\lambda(K_n) \geq \lambda(A_N) - \epsilon$ therefore $\lambda(K_N) \geq \lambda(A)- 2 \epsilon$. This shows we can a compact set which is contained in $A$, with measure arbitrarily close to that of $A$. 
 
