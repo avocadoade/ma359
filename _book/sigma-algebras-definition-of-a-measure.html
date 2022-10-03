@@ -23,7 +23,7 @@
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2022-09-30" />
+<meta name="date" content="2022-10-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -86,12 +86,27 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html"><i class="fa fa-check"></i><b>3</b> Outer measures and Lebesgue Measure</a>
 <ul>
-<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
+<li class="chapter" data-level="3.1" data-path="outer-measures-and-lebesgue-measure.html"><a href="outer-measures-and-lebesgue-measure.html#properties-of-lebesgue-measure"><i class="fa fa-check"></i><b>3.1</b> Properties of Lebesgue measure</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html"><i class="fa fa-check"></i><b>4</b> Mesurable funtions</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html#random-variables-and-the-measure-theoretic-formulation-of-probability---in-brief"><i class="fa fa-check"></i><b>4.0.1</b> Random variables and the measure theoretic formulation of probability - in brief</a></li>
+<li class="chapter" data-level="4.1" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html#convergence-of-measurable-functions"><i class="fa fa-check"></i><b>4.1</b> Convergence of measurable functions</a></li>
+<li class="chapter" data-level="4.2" data-path="mesurable-funtions.html"><a href="mesurable-funtions.html#egoroffs-theorem-and-lusins-theorem"><i class="fa fa-check"></i><b>4.2</b> Egoroff’s Theorem and Lusin’s Theorem</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="integration-1.html"><a href="integration-1.html"><i class="fa fa-check"></i><b>5</b> Integration</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="integration-1.html"><a href="integration-1.html#convergence-theorems-for-integrals-of-functions"><i class="fa fa-check"></i><b>5.1</b> Convergence theorems for integrals of functions</a></li>
-<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
+<li class="chapter" data-level="5.2" data-path="integration-1.html"><a href="integration-1.html#agreement-with-riemann-integral"><i class="fa fa-check"></i><b>5.2</b> Agreement with Riemann Integral</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="norms-and-inequalities.html"><a href="norms-and-inequalities.html"><i class="fa fa-check"></i><b>6</b> Norms and inequalities</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="norms-and-inequalities.html"><a href="norms-and-inequalities.html#inequalities"><i class="fa fa-check"></i><b>6.1</b> Inequalities</a></li>
+<li class="chapter" data-level="6.2" data-path="norms-and-inequalities.html"><a href="norms-and-inequalities.html#back-to-lp-spaces"><i class="fa fa-check"></i><b>6.2</b> Back to <span class="math inline">\(L^p\)</span> spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="product-measures.html"><a href="product-measures.html"><i class="fa fa-check"></i><b>7</b> Product Measures</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="product-measures.html"><a href="product-measures.html#applications-of-product-measure-and-fubinis-theorem"><i class="fa fa-check"></i><b>7.1</b> Applications of product measure and Fubini’s theorem</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="radon-nikodym-theorem.html"><a href="radon-nikodym-theorem.html"><i class="fa fa-check"></i><b>8</b> Radon-Nikodym Theorem</a>
 <ul>
@@ -161,7 +176,8 @@
 <li>The power set (set of all subsets) of <span class="math inline">\(E\)</span> is always a <span class="math inline">\(\sigma\)</span> algebra.</li>
 <li>If <span class="math inline">\(A \subset E\)</span> then <span class="math inline">\(\{\emptyset, A, A^c, E\}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra.</li>
 <li>The set of all intervals in <span class="math inline">\(\mathbb{R}\)</span> is not a <span class="math inline">\(\sigma\)</span>-algebra as it is not closed under taking unions.</li>
-<li>The set of all finite unions of half open intervals <span class="math inline">\((a,b]\)</span> is an algebra but not a <span class="math inline">\(\sigma\)</span>-algebra as it is closed under finite unions but not countable unions.</li>
+<li>The set of all finite unions of half open intervals of the form<span class="math inline">\((a,b], a \in \mathbb{R}\cup\{-\infty\}, b \in \mathbb{R}\)</span> or <span class="math inline">\((a, \infty), a \in \mathbb{R}\cup\{-\infty\}\)</span> is an algebra but not a <span class="math inline">\(\sigma\)</span>-algebra as it is closed under finite unions but not countable unions (work out why!).</li>
+<li>If <span class="math inline">\(A, B \neq \phi, E\)</span> and <span class="math inline">\(A \neq B, B^c\)</span> then any <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> must contain <span class="math inline">\(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c\)</span>. This is the smallest <span class="math inline">\(\sigma\)</span>-algebra that contains <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</li>
 </ul>
 </div>
 <p>We now collect some results and further definitions about <span class="math inline">\(\sigma\)</span>-algebras. The most important is the idea of a <span class="math inline">\(\sigma\)</span>-algebra being generated by a smaller set.</p>
@@ -169,7 +185,7 @@
 <p><span id="lem:unlabeled-div-6" class="lemma"><strong>Lemma 2.2  </strong></span>Suppose <span class="math inline">\(E\)</span> is a space and <span class="math inline">\(\mathcal{C}\)</span> is a collection of <span class="math inline">\(\sigma\)</span> algebras possibly uncountable. Then <span class="math inline">\(\bigcap_{\mathcal{A} \in \mathcal{C}} \mathcal{A}\)</span> is also a <span class="math inline">\(\sigma\)</span>-algebra.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>It is straightforward to check that every part of the definition of a <span class="math inline">\(\sigma\)</span>-algebra holds for the intersection.</p>
+<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>It is straightforward to check that every part of the definition of a <span class="math inline">\(\sigma\)</span>-algebra holds for the intersection. Just start writing down what the definition would mean.</p>
 </div>
 <div class="corollary">
 <p><span id="cor:unlabeled-div-8" class="corollary"><strong>Corollary 2.1  </strong></span>For any collection of subsets of a space <span class="math inline">\(E\)</span>, <span class="math inline">\(\mathcal{F}\)</span> there is a smallest <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(\mathcal{F}\)</span>. We call this <span class="math inline">\(\sigma(\mathcal{F})\)</span> or the <span class="math inline">\(\sigma\)</span>-algebra generated by <span class="math inline">\(\mathcal{F}\)</span>.</p>
@@ -215,7 +231,7 @@
 <ul>
 <li><span class="math inline">\(E \in \mathcal{A}\)</span>.</li>
 <li>If <span class="math inline">\(A, B \in \mathcal{A}\)</span> with <span class="math inline">\(A \subset B\)</span> then <span class="math inline">\(B \setminus A \in \mathcal{A}\)</span>.</li>
-<li>If <span class="math inline">\(A_1 \subset A_2 \subset A_3 \subset \dots\)</span> then $ _{n=1}^A_n $.</li>
+<li>If <span class="math inline">\(A_1 \subset A_2 \subset A_3 \subset \dots\)</span> then <span class="math inline">\(\bigcup_{n=1}^\infty A_n \in \mathcal{A}\)</span>.</li>
 </ul>
 </div>
 <div class="lemma">
