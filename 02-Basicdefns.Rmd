@@ -275,9 +275,9 @@ $$ \mu(E_i) < \infty, \, \forall i. $$
 :::
 
 ::: {.definition name="Borel measures and Radon measures"}
-A measure $\mu$ on a subset of a topological space $E$ is called a \emph{Borel measure} if it is a measure with respect to the Borel $\sigma$-algebra.
+A measure $\mu$ on a subset of a topological space $E$ is called a *Borel measure* if it is a measure with respect to the Borel $\sigma$-algebra.
 
-A Borel measure is called a \emph{Radon measure} if for every compact set $K \in \mathcal{B}(E)$ we have that $\mu(K) < \infty$.
+A Borel measure is called a *Radon measure* if for every compact set $K \in \mathcal{B}(E)$ we have that $\mu(K) < \infty$.
 
 :::
 
