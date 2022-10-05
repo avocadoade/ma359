@@ -12,7 +12,7 @@ We begin with the most basic definition. An algebra is is collection of sets clo
 
 ::: {.definition name="Algebra"}
 
-A collection of subsets of a space $E$, $\mathcal{A}$, is called and algebra if
+A collection of subsets of a space $E$, $\mathcal{A}$, is called an algebra if
 
 - $\emptyset \in \mathcal{A}, \, E \in \mathcal{A}$.
 - If $A \in \mathcal{A}$ then $A^c \in \mathcal{A}$.
