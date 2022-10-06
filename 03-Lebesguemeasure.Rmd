@@ -14,18 +14,21 @@ We write $\mathscr{P}(E)$ to be the power set of $E$, that is to say the set of 
 
 :::
 
-The key example of an outer measure is *Lebesgue outer measure*, defining this is our first step to defining Lebesgue measure.
+The key example of an outer measure is *Lebesgue outer measure*, defining this is our first step to defining Lebesgue measure. 
+
+WARNING: Throughout this section $\lambda$ is going to be redefined a few times. Eventually it will be Lebesgue measure. I'll only call something $\lambda$ if it is consistent with Lebesgue measure and defined on a smaller collection of sets that $\mathcal{B}(\mathbb{R})$.
 
 ::: {.definition name="Lebesgue measure on intervals"}
 
-Let us write $\mathcal{I}$ to be the set of half open intervals. Then we define a set function $\lambda$ from $\mathcal{J}$ to $\mathbb{R}$ by
+Let us write $\mathcal{I}$ to be the set of half open intervals. Then we define a set function $\lambda$ from $\mathcal{I}$ to $\mathbb{R}$ by
 
-$$ \lambda \left(  (a_1, b_1] \cup (a_2,b_2] \cup \dots \cup (a_n,b_n] \right) = \sum_{i=1}^n (b_i-a_i).$$
+$$ \lambda \left( (a,b] \right) = b-a.$$
 
 :::
 
 
 Using this we can define Lebesgue outer measure.
+
 ::: {.definition name="Lebesgue outer measure"}
 
 We define Lebesgue outer measure on $\mathscr{P}(\mathbb{R})$ by 

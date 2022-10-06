@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-10-05}
+\date{2022-10-06}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -498,20 +498,21 @@ We write \(\mathscr{P}(E)\) to be the power set of \(E\), that is to say the set
 
 The key example of an outer measure is \emph{Lebesgue outer measure}, defining this is our first step to defining Lebesgue measure.
 
-\begin{definition}[Lebesgue measure on intervals]
-Let us write \(\mathcal{I}\) to be the set of half open intervals. Then we define a set function \(\lambda\) from \(\mathcal{J}\) to \(\mathbb{R}\) by
+WARNING: Throughout this section \(\lambda\) is going to be redefined a few times. Eventually it will be Lebesgue measure. I'll only call something \(\lambda\) if it is consistent with Lebesgue measure and defined on a smaller collection of sets that \(\mathcal{B}(\mathbb{R})\).
 
-\[ \lambda \left(  (a_1, b_1] \cup (a_2,b_2] \cup \dots \cup (a_n,b_n] \right) = \sum_{i=1}^n (b_i-a_i).\]
+\begin{definition}[Lebesgue measure on intervals]
+Let us write \(\mathcal{I}\) to be the set of half open intervals. Then we define a set function \(\lambda\) from \(\mathcal{I}\) to \(\mathbb{R}\) by
+
+\[ \lambda \left( (a,b] \right) = b-a.\]
 \end{definition}
 
 Using this we can define Lebesgue outer measure.
-::: \{.definition name=``Lebesgue outer measure''\}
 
+\begin{definition}[Lebesgue outer measure]
 We define Lebesgue outer measure on \(\mathscr{P}(\mathbb{R})\) by
 
 \[\lambda^* (A) = \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are half open intervals}\, , A \subset \bigcup_n I_n\}. \]
-
-:::
+\end{definition}
 
 \begin{proposition}
 Lebesgue outer measure is an outer measure and agrees with \(\lambda\) on any half open interval.
