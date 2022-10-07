@@ -196,7 +196,8 @@ We call this last property *countable additivity*. Note that the domain of a mea
 
 You've probably seen $\delta_{x_0}(x)$ used before; it is similar to the Kroeneker delta which appears in discrete spaces $\delta_{x,y} = 1$ if and only if $x=y$. This is the `function' defined by $\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)$.  We can define a measure on $\mathbb{R}^d$ which will have this property by 
 
-$$\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right..$$
+$$\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.$$
+
 :::
 
 ::: {.example name="Countable spaces"}

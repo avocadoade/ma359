@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-10-06}
+\date{2022-10-07}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -385,7 +385,7 @@ We call this last property \emph{countable additivity}. Note that the domain of 
 \begin{example}[Delta (function)]
 You've probably seen \(\delta_{x_0}(x)\) used before; it is similar to the Kroeneker delta which appears in discrete spaces \(\delta_{x,y} = 1\) if and only if \(x=y\). This is the `function' defined by \(\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)\). We can define a measure on \(\mathbb{R}^d\) which will have this property by
 
-\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right..\]
+\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.\]
 \end{example}
 
 \begin{example}[Countable spaces]
@@ -523,7 +523,7 @@ We need to check each part of the definition of outer measure. First the fact th
 
 \[ \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are intervals}\,, A_1 \subset B = \bigcup_n I_n\} \leq \inf \{ \sum_n\lambda (I_n) \, : \, \mbox{$I_n$ are intervals}\,, A_2 \subset B = \bigcup_n I_n\}, \]
 
-as the infimum over a larger set will always be smaller. Now let us turn to the countable subadditivity. Let us take some sequence \(A_1, A_2, \dots\), if \(\sum_n \lambda^*(A_n) = \infty\) then we are done. Therefore we can assume that \(\sum_n \lambda^*(A_n) < \infty\). Now let us fix an arbitrary \(\epsilon>0\). Now by the definition of \(\lambda^*\) for each \(n\) there exists some \(I_n \in \mathcal{I}\) such that \(A_n \subseteq I_n\) and \(I_n = \bigcup_k I_{n,k}\) where the \(I_{n,k}\) are half open intervals, and \(\sum_k\lambda(I_{n,k}) \leq \lambda^* (A_n) + \epsilon 2^{-n}\). Then the set \(I = \bigcup_n I_n\) is in \(\mathcal{I}\) and \(\sum_{n,k}\lambda(I_{n,k}) = \sum_n \sum_k\lambda(I_{n,k}) \leq \sum_n \lambda^*(A_n) + \epsilon\). Therefore \(\lambda^*(\bigcup_n A_n) \leq \sum_n \lambda^*(A_n) + \epsilon\).
+as the infimum over a larger set will always be smaller. Now let us turn to the countable subadditivity. Let us take some sequence \(A_1, A_2, \dots\), if \(\sum_n \lambda^*(A_n) = \infty\) then we are done. Therefore we can assume that \(\sum_n \lambda^*(A_n) < \infty\). Now let us fix an arbitrary \(\epsilon>0\). Now by the definition of \(\lambda^*\) for each \(n\) there exists some \(B_n\) such that \(A_n \subseteq B_n\) and \(B_n = \bigcup_k I_{n,k}\) where the \(I_{n,k}\) are half open intervals, and \(\sum_k\lambda(I_{n,k}) \leq \lambda^* (A_n) + \epsilon 2^{-n}\). Then the set \(I = \bigcup_n B_n\) is a countable union of half open intervals and \(\sum_{n,k}\lambda(I_{n,k}) = \sum_n \sum_k\lambda(I_{n,k}) \leq \sum_n \lambda^*(A_n) + \epsilon\). Therefore \(\lambda^*(\bigcup_n A_n) \leq \sum_n \lambda^*(A_n) + \epsilon\).
 
 Lastly if \(A\) is the interval \((a,b]\) then \((a,b] \in \mathcal{I}\) so \(\lambda^*(A) \leq b-a\).
 
@@ -537,7 +537,10 @@ Then using compactness (which tells us any open cover of a compact set has a fin
 
 Now we know about the lengths of finite unions of intervals (Lebesgue measure doesn't wipe out our existing knowledge of length) so we can compare the lengths of the sides to get
 
-\[ b-a - 2\epsilon \leq \sum_{k=1}^n (d_k - c_k + 2^{-k+1} \delta) \leq \sum_{k=1}^\infty (d_k-c_k) + 2 \delta. \] Both $\epsilon$ and $\delta$ are arbitrary so we can let them go to $0$ and get
+\[ b-a - 2\epsilon \leq \sum_{k=1}^n (d_k - c_k + 2^{-k+1} \delta) \leq \sum_{k=1}^\infty (d_k-c_k) + 2 \delta. \]
+
+Both \(\epsilon\) and \(\delta\) are arbitrary so we can let them go to \(0\) and get
+
 \[ b-a \leq \sum_k (d_k - c_k). \]
 
 Now ranging over all possible covering sequences gives
