@@ -24,7 +24,7 @@ and
 
 $$ f^{-1}(B \setminus A) = f^{-1}(B) \setminus f^{-1}(A). $$
 
-Now if we consider $\{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{E}\}$ then this is a $\sigma$-algebra, as $\mathcal{E}$ is a $\sigma$-algebra and $f^{-1}$ preserves set operations. Therefore, $\{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{E}\}$ is a $\sigma$-algebra containing $\mathcal{A}$ therefore $\mathcal{F} \subseteq  \{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{F}\}$ so $f$ is measurable.
+Now if we consider $\{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{E}\}$ then this is a $\sigma$-algebra, as $\mathcal{E}$ is a $\sigma$-algebra and $f^{-1}$ preserves set operations. Therefore, $\{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{E}\}$ is a $\sigma$-algebra containing $\mathcal{A}$ therefore $\mathcal{F} \subseteq  \{ A \in \mathcal{F} \, :\, f^{-1}(A) \in \mathcal{E}\}$ so $f$ is measurable.
 
 :::
 

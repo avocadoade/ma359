@@ -359,7 +359,7 @@ Lebesgue measure is the only measure on $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$ 
 
 ::: {.proof}
 
-The collection of half open intervals is a $\pi$-system which generates the Borel $\sigma$-algebra. Therefore, if $\lambda(\mathbb{R})$ had been finite we could use Dynkin's uniqueness of extension Lemma to get that any other measure which agrees with Lebesgue measure on the half open intervals must agree with Lebesgue measure on the whole of the Borel $\sigma$-algebra. Instead let $E_n = [-n,n]^d$ then, by Dynkin's uniqueness of extension lemma we have that $\lambda$ is the only measure on $E_n$, assigning each rectangle inside $E_n$ its measure. Since every rectangle is bounded, eventually it is inside some $E_n$ so if $\mu$ is a measure such that $\mu(R) = \lambda(R)$ for every rectangle then the restriction of $\mu$ to $E_n$ must agree with the restriction of $\lambda$ to $E_n$. We also have that, for any $A$, $\mu(A) = \lim_n \mu(A \cap E_n)$ by continuity of measure. So $\mu(A) = \lim_n \mu(A\cap E_n) = \lim_n \lambda(A \cap E_n) = \lambda(A)$.
+The collection of half open intervals is a $\pi$-system which generates the Borel $\sigma$-algebra. Therefore, if $\lambda(\mathbb{R})$ had been finite we could use Dynkin's uniqueness of extension Lemma to get that any other measure which agrees with Lebesgue measure on the half open intervals must agree with Lebesgue measure on the whole of the Borel $\sigma$-algebra. Instead let $E_n = (-n,n]^d$ then, by Dynkin's uniqueness of extension lemma we have that $\lambda$ is the only measure on $E_n$, assigning each rectangle inside $E_n$ its measure. Since every rectangle is bounded, eventually it is inside some $E_n$ so if $\mu$ is a measure such that $\mu(R) = \lambda(R)$ for every rectangle then the restriction of $\mu$ to $E_n$ must agree with the restriction of $\lambda$ to $E_n$. We also have that, for any $A$, $\mu(A) = \lim_n \mu(A \cap E_n)$ by continuity of measure. So $\mu(A) = \lim_n \mu(A\cap E_n) = \lim_n \lambda(A \cap E_n) = \lambda(A)$.
 
 :::
 
@@ -393,17 +393,17 @@ The most important thing we want to prove about $\mathscr{M}$ is that there exis
 
 Lebesgue measure is *regular* that is to say
 
-- $$\lambda(A) = \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}$$,
-- $$\lambda(A) = \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}$$.
+- $$\lambda(A) = \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\},$$
+- $$\lambda(A) = \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}.$$
 
 :::
 
 ::: {.proof}
 
 By monotonicity we can see that $$\lambda(A) \leq \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}.$$ 
-Furthermore we can find a sequence of half open rectangles $R_k$ such that $A \subseteq \bigcup_n R_n$ and $\sum_n \lambda(R_n) \leq \lambda(A) + \epsilon$. By slightly enlarging each of the half open rectangles we can produce another sequence of fully open rectangles $\tilde{R}_n$ such that $A \subseteq \bigcup_n \tilde{R}_n$ and $\lambda(A) \geq \sum_n \lambda(\tilde{R}_n)-2\epsilon$. The set, $\bigcup_n \tilde{R}_n$ is open and $\epsilon$ can be made arbitrarily small so this shows $$\lambda(A) \geq \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}$$.
+Furthermore we can find a sequence of half open rectangles $R_k$ such that $A \subseteq \bigcup_n R_n$ and $\sum_n \lambda(R_n) \leq \lambda(A) + \epsilon$. By slightly enlarging each of the half open rectangles we can produce another sequence of fully open rectangles $\tilde{R}_n$ such that $A \subseteq \bigcup_n \tilde{R}_n$ and $\lambda(A) \geq \sum_n \lambda(\tilde{R}_n)-2\epsilon$. The set, $\bigcup_n \tilde{R}_n$ is open and $\epsilon$ can be made arbitrarily small so this shows $$\lambda(A) \geq \inf \{ \lambda(U)\,:\, \mbox{U is open}, A \subseteq U\}.$$
 
-Monotonicity shows that $$\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}$$. First let us assume that $A$ is contained in some ball, $B$ around 0. Now use the first part to find some open set $U$ such that $B \setminus A \subseteq U$ and $\lambda(U) \leq \lambda(B \setminus A) + \epsilon$. Now let $K = B \setminus U$ then we have $K \subseteq A \subseteq B$ and $\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon$ (here we use the fact that $B, A, U, K$ will all have finite measure as they are inside $B$). As $\epsilon$ is arbitrary this concludes the proof when $A$ is contained in a ball. 
+Monotonicity shows that $$\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}.$$ First let us assume that $A$ is contained in some ball, $B$ around 0. Now use the first part to find some open set $U$ such that $B \setminus A \subseteq U$ and $\lambda(U) \leq \lambda(B \setminus A) + \epsilon$. Now let $K = B \setminus U$ then we have $K \subseteq A \subseteq B$ and $\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon$ (here we use the fact that $B, A, U, K$ will all have finite measure as they are inside $B$). As $\epsilon$ is arbitrary this concludes the proof when $A$ is contained in a ball. 
 
 Now suppose that $A$ is unbounded. Then let $A_n = A \cap B_n$ where $B_n$ is the closed ball of radius $n$. We have that $\lambda(A_n) \rightarrow \lambda(A)$. If $\lambda(A) = \infty$ then we can find $K_n \subseteq A_n$ with $\lambda(K_n)$ arbitrarily close to $\lambda(A_n)$ therefore we can find such a sequence with $\lambda(K_n) \rightarrow \infty$. If $\lambda(A) \neq \infty$ then, given $\epsilon$, there exists $N$ such that $\lambda(A_n) \geq \lambda(A)-\epsilon$ for $n \geq N$. Then we can fine $K_N \subseteq A_N$ such that $\lambda(K_n) \geq \lambda(A_N) - \epsilon$ therefore $\lambda(K_N) \geq \lambda(A)- 2 \epsilon$. This shows we can a compact set which is contained in $A$, with measure arbitrarily close to that of $A$. 
 
@@ -427,7 +427,7 @@ Lastly, in the construction of Lebesgue measure we show that $\mathscr{M}$ is no
 
 ::: {.proposition}
 
-There exists sets that are in $\mathscr{P}(\mathbb{R})$ which are not in $\mathscr{M}$.
+There exists sets that are in $\mathscr{P}(\mathbb{R})$ which are not in $\mathscr{M}$. This result is due to Vitali and the set we construct is often called the *Vitali set*
 
 :::
 
