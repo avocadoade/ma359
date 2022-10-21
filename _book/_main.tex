@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-10-18}
+\date{2022-10-21}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -791,13 +791,15 @@ Lebesgue measure is the only measure on \((\mathbb{R}, \mathcal{B}(\mathbb{R}))\
 \end{proposition}
 
 \begin{proof}
-The collection of half open intervals is a \(\pi\)-system which generates the Borel \(\sigma\)-algebra. Therefore, if \(\lambda(\mathbb{R})\) had been finite we could use Dynkin's uniqueness of extension Lemma to get that any other measure which agrees with Lebesgue measure on the half open intervals must agree with Lebesgue measure on the whole of the Borel \(\sigma\)-algebra. Instead let \(E_n = (-n,n]^d\) then, by Dynkin's uniqueness of extension lemma we have that \(\lambda\) is the only measure on \(E_n\), assigning each rectangle inside \(E_n\) its measure. Since every rectangle is bounded, eventually it is inside some \(E_n\) so if \(\mu\) is a measure such that \(\mu(R) = \lambda(R)\) for every rectangle then the restriction of \(\mu\) to \(E_n\) must agree with the restriction of \(\lambda\) to \(E_n\). We also have that, for any \(A\), \(\mu(A) = \lim_n \mu(A \cap E_n)\) by continuity of measure. So \(\mu(A) = \lim_n \mu(A\cap E_n) = \lim_n \lambda(A \cap E_n) = \lambda(A)\).
+The collection of half open intervals is a \(\pi\)-system which generates the Borel \(\sigma\)-algebra. Therefore, if \(\lambda(\mathbb{R})\) had been finite we could use Dynkin's uniqueness of extension Lemma to get that any other measure which agrees with Lebesgue measure on the half open intervals must agree with Lebesgue measure on the whole of the Borel \(\sigma\)-algebra. Instead let \(E_n = (-n,n]^d\) then, by Dynkin's uniqueness of extension lemma we have that \(\lambda\) is the only measure on \(E_n\), assigning each rectangle inside \(E_n\) its measure. That is to say if \(\mu\) is another measure on \(\mathbb{R}^d\) which agrees with Lebesgue measure on rectangles then it agrees with Lebesgue measure on every Borel set which is a subset of \(E_n\).
+
+We also have that, for any \(A \in \mathcal{B}(\mathbb{R})\), \(\mu(A) = \lim_n \mu(A \cap E_n)\) by continuity of measure. By the argument above \(\mu(A_n) = \lambda(A_n)\) for each \(n\) as \(A_n \subset E_n\) and is Borel. So \(\mu(A) = \lim_n \mu(A\cap E_n) = \lim_n \lambda(A \cap E_n) = \lambda(A)\).
 \end{proof}
 
 \hypertarget{properties-of-lebesgue-measure}{%
 \section{Properties of Lebesgue measure}\label{properties-of-lebesgue-measure}}
 
-This collection is a section of facts about Lebesgue measure and the set of Lebesgue measurable sets. We start with looking at \(\mathscr{M}\) the \(\sigma\)-algebra of Lebesgue measurable sets.
+This collection is a section of facts about Lebesgue measure and the set of Lebesgue measurable sets. We start with looking at \(\mathscr{M}\) the \(\sigma\)-algebra of Lebesgue measurable sets. We call sets with \(\lambda*(A)=0\) null sets.
 
 \begin{lemma}[Null sets are all Lebesgue measurable]
 If \(A\) in \(\mathscr{P}(\mathbb{R})\) and \(\lambda^*(A) =0\) then \(A \in \mathscr{M}\).
@@ -806,12 +808,6 @@ If \(A\) in \(\mathscr{P}(\mathbb{R})\) and \(\lambda^*(A) =0\) then \(A \in \ma
 \begin{proof}
 This is on the week 2 exercise sheet.
 \end{proof}
-
-We can actually characterise all Lebesgue measurable sets in terms of Null sets and Borel sets both of which we have shown are measurable. We have the following propersition which we wont prove in the course. We will show a similar result in the optional exercises.
-
-\begin{proposition}
-A set \(S \subseteq \mathbb{R}\) is Lebesgue measurable if and only there exists a Borel set \(B\) and a null set \(N\) such that \(S = B \triangle N\).
-\end{proposition}
 
 The most important thing we want to prove about \(\mathscr{M}\) is that there exists a non-Lebesgue measurable set. Before we do this we need to explore a few more properties of Lebesgue measure itself.
 
@@ -841,11 +837,48 @@ Now suppose that \(A\) is unbounded. Then let \(A_n = A \cap B_n\) where \(B_n\)
 We now want to recall that Lebesgue measure is the unique measure which assigns half open intervals (rectangles\ldots) the correct length.
 
 \begin{corollary}
-Lebesgue measure is translation invariant. That is to say if we define the set \(x+A = \{ x+y, y \in A\}\) then \(\lambda(x+A) = \lambda(A)\)
+Lebesgue measure is translation invariant on \(\mathbb{R}\). That is to say if we define the set \(x+A = \{ x+y, y \in A\}\) then \(\lambda(x+A) = \lambda(A)\)
 \end{corollary}
 
 \begin{proof}
 Define a new measure \(\lambda_x\) by \(\lambda_x(A) = \lambda(x+A)\) then \(\lambda_x((a,b]) = \lambda((a+x,b+x]) = b+x -(a+x) = b-a\). Therefore \(\lambda_x\) agrees with \(\lambda\) on the half open intervals and therefore agrees with \(\lambda\) on the whole of \(\mathcal{B}(\mathbb{R})\). Again it is straightforward to extend this to \(\mathbb{R}^d\).
+\end{proof}
+
+Now we can use regularity of Lebesgue measure in order to characterise the sets in \(\mathscr{M}\) (we can also do this in other ways as seen on the exercise sheet).
+
+\begin{proposition}
+If \(A\) is in \(\mathscr{M}\) then there exists \(B \in \mathcal{B}(\mathbb{R})\) and \(N\) a null set such that \(A= B \cup N\) and this is a disjoint union.
+\end{proposition}
+
+\begin{proof}
+Suppose first that \(\lambda(A)< \infty\) by the second part of the regularity of Lebesgue measure result we have that
+\[\lambda(A) = \sup\{ \lambda(K) \,:\, \mbox{K compact}, K \subseteq A\}. \]
+Therfore for each \(n\) we can find \(K_n\) such that \(K_n \subseteq A\), \(K_n\) is compact and \(\lambda(K_n) \geq \lambda(A)-1/n\). Then let \(B = \bigcup_n K_n\).
+
+Then as each \(K_n\) is compact it is a Borel set and so \(B\) is a countable union of Borel sets so also a Borel set. We also have \(B \subseteq A\) so \(\lambda(B) \leq \lambda(A)\) and \(K_n \subseteq B\) so \(\lambda(B)\geq \lambda(K_n) \geq \lambda(A)-1/n\) for each \(n\). Therefore \(\lambda(B) = \lambda(A)\). Now let \(N= A \setminus B\) then \(\lambda(N) = \lambda(A) - \lambda(B)=0\) so \(N\) is a null set. This gives our result for \(\lambda(A) < \infty\).
+
+If \(\lambda(A) = \infty\) then split \(\mathbb{R}\) into a countable union of sets with finite Lebesgue measure \(E_n\) for example \(E_n = [n, n+1)\cup [-n-1,-n)\). Then set \(A_n = A \cap E_n\). Then \(\lambda(A_n) < \infty\) so there exists a Borel set \(B_n\) and a null set \(N_n\) such that \(A_n = B_n \cup N_n\) and these sets are disjoint. Now set \(B = \bigcup_n B_n\) and \(N = \bigcup_n N_n\). \(B\) is a Borel set as it's the countable union of Borel sets. \(\lambda(N) = \sum_n \lambda(N_n) = 0\) so \(N\) is a null set. Lastly \(B\) and \(N\) are disjoint as all the \(E_n\) are disjoint so we can't have that \(B_n\) has points in common with \(N_{n'}\) for \(n \neq n'\) as they will be in different \(E_n\). Therefore we can write \(A\) as \(B \cup N\) with this being a disjoint union.
+\end{proof}
+
+We can use this to show that \(\lambda\) is translation invariant on \(\mathscr{M}\) not just on \(\mathcal{B}(\mathbb{R}^d)\) to do this we need to show that the translation of a null set is also null.
+
+\begin{lemma}
+If \(N\) is a null set then \(x+N = \{ x+y \,:\, y \in N\}\) is also null
+\end{lemma}
+
+\begin{proof}
+We know that \(0 = \lambda(N) = \inf_{(I_n)_n \in \mathcal{C}(N)}\sum_n \lambda(I_n)\) so for a given \(\epsilon > 0\) we can find a sequence \((I_n)_n\) such that \(N \subseteq \bigcup_n I_n\) and \(\sum_n \lambda(I_n) \leq \epsilon\). Now if we shift everything we can see that \(x+ I_n\) is still a half open interval for each \(n\) and \(x+N \subseteq \bigcup_n (x+I_n)\) so \(\lambda^*(x+N) \leq \sum_n \lambda(x+I_n)\) and \(\lambda(x+ I_n) = \lambda(I_n)\) for each \(n\) so \(\lambda^*(x+N) \leq \sum_n \lambda (I_n) \leq \epsilon\). Therefore the Lebesgue outer measure of \(x+N\) can be made arbitrarily small so it must be 0.
+\end{proof}
+
+Now we can prove translation invariance
+
+\begin{proposition}
+If \(A \in \mathscr{M}\) then \(x+A \in \mathscr{M}\) and \(\lambda(x+A)=\lambda(A)\).
+\end{proposition}
+
+\begin{proof}
+We've shown that \(A\) can be expressed as a disjoint union of a Borel set and a null set. So \(A = B \cup N\). This means that \(x+A = (x+B) \cup (x+N)\) then \((x+B)\) is a Borel set and \((x+N)\) is a null set so \(x+A\) is the union of two sets in \(\mathscr{M}\) so also in \(\mathscr{M}\). Furthermore \(\lambda(x+A) = \lambda(x+B) + \lambda(x+N)\). We know that Lebesgue measure is translation invariant on the Borel sets and that the translation of a null set is null so this gives
+\[ \lambda(x+A) = \lambda(x+B)+\lambda(x+N)= \lambda(B) = \lambda(B\cup N)= \lambda(A).  \]
 \end{proof}
 
 Lastly, in the construction of Lebesgue measure we show that \(\mathscr{M}\) is not the whole of \(\mathscr{P}(\mathbb{R})\) and that there exist non-Lebesgue measureable sets.
@@ -860,7 +893,9 @@ This proof involves the use of the axiom of choice. In fact it is known that it 
 We use an argument by contradiction, we begin by assuming every subset of \(\mathbb{R}\) is Lebesgue measurable. We define an equivalence relation on \([0,1)\) by saying \(x \sim y\) exactly when \(x-y \in \mathbb{Q}\). Using the axiom of choice we find a subset \(S\) of \([0,1)\) which contains exactly one representative of each equivalence class. Next we define the set \(S+q = \{ s+q \, (\mbox{mod}\,1) \, : \, s \in S \}\) for each \(q \in \mathbb{Q} \cap [0,1)\). Then by our choice of \(S\) we have that
 
 \[ [0,1) = \bigcup_{q \in \mathbb{Q} \cap [0,1)} (S+q), \]
-where this union is disjoint. We can also see by translation invariance of \(\lambda\) that if \(S\) were Lebesgue measurable then we would have
+where this union is disjoint. We can check see that \(S_q \cap S_{q'} = \emptyset\) for \(q \neq q'\) as if \(x\) was in both then there exists \(y, y' \in S\) such that \(x = y +q \,(mod 1)\) and \(x= y' + q' (mod 1)\) this means \(y - y' \in \mathbb{Q}\setminus\{0\}\) which is a contradiction to the fact that \(S\) contains exactly one member of each equivalence class. Also we can see that this union contains every element of \([0,1)\) since if \(x \in [0,1)\) there exists some \(y\) which is in the same equivalence class of \(x\) with \(y \in S\). Therefore \(x = y + q \,(mod 1)\) for some \(q \in \mathbb{Q}\cap [0,1)\) so \(x \in S_q\) for this \(q\).
+
+We can also see by translation invariance of \(\lambda\) that if \(S\) were Lebesgue measurable then we would have
 
 \[ \lambda(S) = \lambda(S+q) \]
 for every \(q\). Therefore, by countable additivity we would have
