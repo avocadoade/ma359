@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-10-21}
+\date{2022-10-27}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1233,7 +1233,7 @@ Suppose first that \(f\) only takes countably many values, \(a_1, a_2, a_3, \dot
 
 Now \(f\) restricted to \(K\) is continuous since the \(K_i\) are disjoint and \(f\) is constant on each \(K_i\).
 
-Now we have proved the special case where \(f\) takes countably many values we can use this to prove the theorem for general \(f\). Let \(f_n = 2^{-n} \lfloor 2^n f \rfloor\) then \(2^{-n} \geq f(x)-f_n(x) \geq 0\) so \(f_n(x) \rightarrow f(x)\), uniformly. Now, \(f_n\) can only take countably many values, so by our special case of Lusin's theorem there exists a \(K_n \subseteq K\), compact, such that \(\lambda(A \setminus K_n) \leq \epsilon 2^{-n-1}\), and \(f_n\) is continuous on \(K_n\). Now let \(K_\infty = \bigcap_n K_n\), then \(K_\infty\) is compact and \(\lambda(A \setminus K_\infty) = \lambda(A \setminus K_\infty) = \lambda (\bigcup_n(A \setminus K_n)) \leq \epsilon/2 + \sum_n \epsilon 2^{-n-1} = \epsilon\). Now we have that \(f_n\) converges uniformly to \(f\) on \(K_\infty\) and \(f_n\) is continuous on \(K_\infty\) for each \(n\). As the uniform limit of continuous functions is continuous this shows that \(f\) is continuous on \(K\).
+Now we have proved the special case where \(f\) takes countably many values we can use this to prove the theorem for general \(f\). Let \(f_n = 2^{-n} \lfloor 2^n f \rfloor\) then \(2^{-n} \geq f(x)-f_n(x) \geq 0\) so \(f_n(x) \rightarrow f(x)\), uniformly. Now, \(f_n\) can only take countably many values, so by our special case of Lusin's theorem there exists a \(K_n \subseteq K\), compact, such that \(\lambda(A \setminus K_n) \leq \epsilon 2^{-n}\), and \(f_n\) is continuous on \(K_n\). Now let \(K_\infty = \bigcap_n K_n\), then \(K_\infty\) is compact and \(\lambda(A \setminus K_\infty) = \lambda (\bigcup_n(A \setminus K_n)) \leq \sum_n \epsilon 2^{-n} = \epsilon\). Now we have that \(f_n\) converges uniformly to \(f\) on \(K_\infty\) and \(f_n\) is continuous on \(K_\infty\) for each \(n\). As the uniform limit of continuous functions is continuous this shows that \(f\) is continuous on \(K\).
 \end{proof}
 
 \hypertarget{integration-1}{%
