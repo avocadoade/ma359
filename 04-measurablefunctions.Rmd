@@ -115,7 +115,7 @@ We can use the notion of image measure to construct further measures from Lebesg
 
 Suppose $g: \mathbb{R} \rightarrow \mathbb{R}$ and that $g$ is non-constant, right-continuous and non-decreasing. Let us define $g(-\infty) = \lim_{x \rightarrow -\infty} g(x)$ and $g(\infty) = \lim_{x \rightarrow \infty} g(x)$ and let us call the interval $I:= (g(-\infty),g(\infty))$ (this might be the whole of $\mathbb{R}$. Define a partial inverse to $g$ by $f: I \rightarrow \mathbb{R}$ by
 
-$$ f(x) = \inf_y \{ x \leq g(y)\}. $$
+$$ f(x) = \inf \{y \,:\, x \leq g(y)\}. $$
 
 Then $f$ is left-continuous and non-decreasing and $f(x) \leq y$ if and only if $x \leq g(y)$. 
 

@@ -23,7 +23,7 @@
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2022-10-27" />
+<meta name="date" content="2022-11-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,7 +137,7 @@
 <div class="definition">
 <p><span id="def:unlabeled-div-111" class="definition"><strong>Definition 5.1  (Simple functions) </strong></span>Let <span class="math inline">\((E, \mathcal{E}, \mu)\)</span> be a measure space. The set of simple functions on this space taking values in <span class="math inline">\(\mathbb{R}\)</span> are functions of the form</p>
 <p><span class="math display">\[ f(x) = \sum_{k=1}^n a_k 1_{A_k}(x). \]</span></p>
-<p>Here, the <span class="math inline">\(A_k\)</span> are disjoint sets in <span class="math inline">\(\mathcal{E}\)</span>, <span class="math inline">\(1_{A}\)</span> represents the indicator function of the set, and the <span class="math inline">\(a_k\)</span> are non-negative real numbers. We note that this representation of <span class="math inline">\(f\)</span> is not unique.</p>
+<p>Here, the <span class="math inline">\(A_k\)</span> are sets in <span class="math inline">\(\mathcal{E}\)</span>, <span class="math inline">\(1_{A}\)</span> represents the indicator function of the set, and the <span class="math inline">\(a_k\)</span> are non-negative real numbers. We note that this representation of <span class="math inline">\(f\)</span> is not unique.</p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-112" class="definition"><strong>Definition 5.2  (The integral of a simple function) </strong></span>Still working in the setting above, let <span class="math inline">\(f(x) = \sum_{k=1}^n a_k 1_{A_k}(x)\)</span>, then we can define</p>
@@ -153,7 +153,8 @@
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-114" class="proof"><em>Proof</em>. </span>Let us first look at the well definedness, without loss of generality lets assume the <span class="math inline">\(a_k, b_j\)</span> are strictly positive and the sets <span class="math inline">\(A_k\)</span> are disjoint and similar for the <span class="math inline">\(B_j\)</span>. Let us suppose that <span class="math inline">\(f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}\)</span> which are both simple function representations. Then we can see that <span class="math inline">\(\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k\)</span> and that <span class="math inline">\(a_i =b_j\)</span> if <span class="math inline">\(A_i \cap B_j \neq \emptyset\)</span>. Using this we can write</p>
+<p><span id="unlabeled-div-114" class="proof"><em>Proof</em>. </span>Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are <span class="math inline">\(a_1, \dots, a_n\)</span> and we can write it as <span class="math inline">\(f(x) = \sum_{k=1}^n a_k f^{-1}(\{a_k\})\)</span>. Any other representation will just split up the sets <span class="math inline">\(f^{-1}(\{a_k\})\)</span>, overlap them or add <span class="math inline">\(0*1_{B}\)</span> for some set <span class="math inline">\(B\)</span>. We can prove it slowly as in the next paragraph but you don’t need to be able to repeat this.</p>
+<p>without loss of generality lets assume the <span class="math inline">\(a_k, b_j\)</span> are strictly positive and the sets <span class="math inline">\(A_k\)</span> are disjoint and similar for the <span class="math inline">\(B_j\)</span>. Let us suppose that <span class="math inline">\(f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}\)</span> which are both simple function representations. Then we can see that <span class="math inline">\(\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k\)</span> and that <span class="math inline">\(a_i =b_j\)</span> if <span class="math inline">\(A_i \cap B_j \neq \emptyset\)</span>. Using this we can write</p>
 <p><span class="math display">\[\begin{align*}
 \mu(f) &amp;= \sum_{k=1}^n a_k \mu(A_k)\\
 \left(\mbox{as}\, A_k = \bigcup_j (A_k \cap B_j)\, \mbox{as}\, \bigcup_{k=1}^nA_k = \bigcup_{j=1}^m B_j\right) \quad \quad &amp;= \sum_{k=1}^n \sum_{j=1}^m a_k \mu(A_k \cap B_j) \\
@@ -165,24 +166,13 @@
 <p><span class="math display">\[\begin{align*}
 \mu(\alpha f) = \sum_{k=1}^n \alpha a_k \mu(A_k) = \alpha \sum_{k=1}^n a_k \mu(A_k) = \alpha \mu(A_k).
 \end{align*}\]</span></p>
-<p>When we are dealing with two simple functions simultaneously it is useful to write them both in a representation where the measurable sets appearing are the same for both functions. If we let <span class="math inline">\(g = \sum_{j=1}^m c_j 1_{C_j}\)</span> then let us write <span class="math inline">\(A_0 = E \setminus \bigcup_{k=1}^n A_k, a_0 =0\)</span> and define <span class="math inline">\(C_0, c_0\)</span> similarly then we can write <span class="math inline">\(f+g\)</span> as a simple function via</p>
-<p><span class="math display">\[f(x) + g(x) = \sum_{k=0}^n \sum_{j=0}^m (a_k + c_j) 1_{A_k \cap C_j}\]</span></p>
-<p>and we have</p>
-<p><span class="math display">\[ \mu(f+g) = \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j). \]</span></p>
-<p>We note that <span class="math inline">\(\bigcup_{k=0}^n A_k = \bigcup_{j=0}^m C_j = E\)</span> and the <span class="math inline">\(A_k\)</span> are mutually disjont, and the <span class="math inline">\(C_j\)</span> are mutually disjoint. Therefore</p>
-<p><span class="math display">\[\begin{align*}
-\mu(f+g) &amp;= \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j)\\
-&amp;= \sum_{k=0}^n a_k \sum_{j=0}^m \mu(A_k \cap C_j) + \sum_{j=0}^m c_j \sum_{k=0}^n \mu(A_k \cap C_j) \\
-\mbox{as the unions of the $A_k$ or $C_j$ fill the space} \quad &amp; = \sum_{k=0}^n a_k \mu(A_k) + \sum_{j=0}^m c_j \mu(C_j)\\
-\mbox{as}\, a_0 = c_0 =0 \quad &amp; = \sum_{k=1}^n a_k \mu(A_k) + \sum_{j=1}^m c_j \mu(C_j) \\
-&amp; = \mu(f) + \mu(g).
-\end{align*}\]</span></p>
-<p>Now we move onto the monotonicity of the integral. Let us express <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> as before, again the goal is to represent the two functions using the same measurable sets. We can rewrite as</p>
-<p><span class="math display">\[ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap C_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap C_j},\]</span></p>
-<p>where <span class="math inline">\(a_{k,j} = a_k 1_{A_k \cap C_j \neq \emptyset}\)</span>. Here again we are using the fact that <span class="math inline">\(\bigcup_{j=0}^m C_j\)</span> fill the space. In the same way we can write</p>
-<p><span class="math display">\[ g = \sum_{k=1}^n \sum_{j=1}^m c_{k,j}1_{A_k \cap C_j}, \]</span></p>
-<p>where <span class="math inline">\(c_{k,j} = c_j 1_{A_k \cap C_j \neq \emptyset}\)</span>. Then if <span class="math inline">\(f(x) \leq g(x)\)</span> for every <span class="math inline">\(x\)</span> we know that this means <span class="math inline">\(a_{k,j} \leq c_{k,j}\)</span> for every <span class="math inline">\(k,j\)</span>. Then by the well definedness of the integral we have</p>
-<p><span class="math display">\[ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap C_j) \leq \sum_{k=1}^n \sum_{j=1}^m c_{k,j} \mu(A_k \cap C_j) = \mu(g).\]</span></p>
+<p>Once we know the integral is well defined the sum part is immediate we can write <span class="math inline">\(f=\sum_{k=1}^n a_k 1_{A_k}\)</span> and <span class="math inline">\(g= \sum_{j=1}^m b_j 1_{B_j}\)</span> and then we can write <span class="math inline">\(f+g = \sum_{k=1}^n a_k 1_{A_k} + \sum_{j=1}^m b_j 1_{B_j}\)</span> from which <span class="math inline">\(\mu(f+g) = \mu(f) + \mu(g)\)</span> follows.</p>
+<p>Now we move onto the monotonicity of the integral. Let us express <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> as before, the goal is to represent the two functions using the same measurable sets. We can rewrite as</p>
+<p><span class="math display">\[ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap B_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap B_j},\]</span></p>
+<p>where <span class="math inline">\(a_{k,j} = a_k 1_{A_k \cap B_j \neq \emptyset}\)</span>. Here we are using the fact that <span class="math inline">\(\bigcup_{j=0}^m B_j\)</span> fill the space. In the same way we can write</p>
+<p><span class="math display">\[ g = \sum_{k=1}^n \sum_{j=1}^m b_{k,j}1_{A_k \cap B_j}, \]</span></p>
+<p>where <span class="math inline">\(b_{k,j} = b_j 1_{A_k \cap B_j \neq \emptyset}\)</span>. Then if <span class="math inline">\(f(x) \leq g(x)\)</span> for every <span class="math inline">\(x\)</span> we know that this means <span class="math inline">\(a_{k,j} \leq b_{k,j}\)</span> for every <span class="math inline">\(k,j\)</span>. Then by the well definedness of the integral we have</p>
+<p><span class="math display">\[ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap B_j) \leq \sum_{k=1}^n \sum_{j=1}^m b_{k,j} \mu(A_k \cap B_j) = \mu(g).\]</span></p>
 <p>Lastly, we look at when <span class="math inline">\(\mu(f)=0\)</span>. First if <span class="math inline">\(f=0\)</span> <span class="math inline">\(\mu\)</span>-almost everywhere then <span class="math inline">\(a_k=0\)</span> or <span class="math inline">\(\mu(A_k)=0\)</span> for each <span class="math inline">\(k\)</span>, therefore <span class="math inline">\(\mu(f)=0\)</span>. If <span class="math inline">\(\mu(f) =0\)</span> then since all the terms <span class="math inline">\(a_k \mu(A_k) \geq 0\)</span> we have that <span class="math inline">\(a_k=0\)</span> or <span class="math inline">\(\mu(A_k) =0\)</span> for each <span class="math inline">\(k\)</span>.</p>
 </div>
 <p>We are now going to extend the definition of the integral to a larger class of functions.</p>
@@ -212,7 +202,7 @@
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-121" class="proof"><em>Proof</em>. </span>If <span class="math inline">\(f \leq g\)</span> then we recall that by definition</p>
-<p><span class="math display">\[\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}y.\]</span></p>
+<p><span class="math display">\[\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}.\]</span></p>
 <p>So if <span class="math inline">\(h\)</span> is a simple function with <span class="math inline">\(h \leq f\)</span> then we also have that <span class="math inline">\(h \leq g\)</span>. Therefore, we can write</p>
 <p><span class="math display">\[\begin{align*} \mu(g) &amp;= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &amp;= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &amp;= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}\]</span></p>
 </div>
@@ -231,7 +221,7 @@
 <p>As <span class="math inline">\(g\)</span> is an arbitrary this means that <span class="math inline">\(\sup\{\mu(g)\,:\, g \, \mbox{is a simple function}, g \leq f\} \leq \lim_n \mu(f_n).\)</span></p>
 <p>The last case is the most general where both <span class="math inline">\(f_n\)</span> and <span class="math inline">\(f\)</span> are positive and measureable. In this case we introduce our favorite kind of approximation (which is very similar to what we used in Lusin’s theorem)</p>
 <p><span class="math display">\[ g_n = \left( 2^{-n} \lfloor 2^n f_n \rfloor \right) \wedge n, \]</span></p>
-<p>then <span class="math inline">\(g_n\)</span> is a sequence of simple functions with <span class="math inline">\(g_n \uparrow f\)</span> and <span class="math inline">\(g_n \leq f_n\)</span>, proving this is an exercise on the assignment. Therefore we have</p>
+<p>then <span class="math inline">\(g_n\)</span> is a sequence of simple functions with <span class="math inline">\(g_n \uparrow f\)</span> and <span class="math inline">\(g_n \leq f_n\)</span>. Therefore we have</p>
 <p><span class="math display">\[ \mu(f) = \lim_n \mu(g_n) \leq \lim_n \mu(f_n) \leq \mu(f). \]</span></p>
 <p>Hence we have the required result.</p>
 </div>

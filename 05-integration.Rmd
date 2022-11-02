@@ -21,7 +21,7 @@ Let $(E, \mathcal{E}, \mu)$ be a measure space. The set of simple functions on t
 
 $$ f(x) = \sum_{k=1}^n a_k 1_{A_k}(x). $$
 
-Here, the $A_k$ are disjoint sets in $\mathcal{E}$, $1_{A}$ represents the indicator function of the set, and the $a_k$ are non-negative real numbers. We note that this representation of $f$ is not unique.
+Here, the $A_k$ are sets in $\mathcal{E}$, $1_{A}$ represents the indicator function of the set, and the $a_k$ are non-negative real numbers. We note that this representation of $f$ is not unique.
 
 :::
 
@@ -48,7 +48,9 @@ The integral of a simple function is well defined (it doesn't depend on the choi
 
 ::: {.proof}
 
-Let us first look at the well definedness, without loss of generality lets assume the $a_k, b_j$ are strictly positive and the sets $A_k$ are disjoint and similar for the $B_j$. Let us suppose that $f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}$ which are both simple function representations. Then we can see that $\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k$ and that $a_i =b_j$ if $A_i \cap B_j \neq \emptyset$. Using this we can write
+Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are $a_1, \dots, a_n$ and we can write it as $f(x) = \sum_{k=1}^n a_k f^{-1}(\{a_k\})$. Any other representation will just split up the sets $f^{-1}(\{a_k\})$, overlap them or add $0*1_{B}$ for some set $B$. We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
+
+without loss of generality lets assume the $a_k, b_j$ are strictly positive and the sets $A_k$ are disjoint and similar for the $B_j$. Let us suppose that $f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}$ which are both simple function representations. Then we can see that $\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k$ and that $a_i =b_j$ if $A_i \cap B_j \neq \emptyset$. Using this we can write
 
 \begin{align*} 
 \mu(f) &= \sum_{k=1}^n a_k \mu(A_k)\\
@@ -64,35 +66,19 @@ Now we move on to the linearity properties. These come naturally from the defint
 \mu(\alpha f) = \sum_{k=1}^n \alpha a_k \mu(A_k) = \alpha \sum_{k=1}^n a_k \mu(A_k) = \alpha \mu(A_k).
 \end{align*}
 
-When we are dealing with two simple functions simultaneously it is useful to write them both in a representation where the measurable sets appearing are the same for both functions. If we let $g = \sum_{j=1}^m c_j 1_{C_j}$ then let us write $A_0 = E \setminus \bigcup_{k=1}^n A_k, a_0 =0$ and define $C_0, c_0$ similarly then we can write $f+g$ as a simple function via
+Once we know the integral is well defined the sum part is immediate we can write $f=\sum_{k=1}^n a_k 1_{A_k}$ and $g= \sum_{j=1}^m b_j 1_{B_j}$ and then we can write $f+g = \sum_{k=1}^n a_k 1_{A_k} + \sum_{j=1}^m b_j 1_{B_j}$ from which $\mu(f+g) = \mu(f) + \mu(g)$ follows.
 
-$$f(x) + g(x) = \sum_{k=0}^n \sum_{j=0}^m (a_k + c_j) 1_{A_k \cap C_j}$$
+Now we move onto the monotonicity of the integral. Let us express $f$ and $g$ as before, the goal is to represent the two functions using the same measurable sets. We can rewrite as
 
-and we have
+$$ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap B_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap B_j},$$
 
-$$ \mu(f+g) = \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j). $$
+where $a_{k,j} = a_k 1_{A_k \cap B_j \neq \emptyset}$. Here we are using the fact that $\bigcup_{j=0}^m B_j$ fill the space. In the same way we can write
 
-We note that $\bigcup_{k=0}^n A_k = \bigcup_{j=0}^m C_j = E$ and the $A_k$ are mutually disjont, and the $C_j$ are mutually disjoint. Therefore
+$$ g = \sum_{k=1}^n \sum_{j=1}^m b_{k,j}1_{A_k \cap B_j}, $$
 
-\begin{align*}
-\mu(f+g) &= \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j)\\
-&= \sum_{k=0}^n a_k \sum_{j=0}^m \mu(A_k \cap C_j) + \sum_{j=0}^m c_j \sum_{k=0}^n \mu(A_k \cap C_j) \\
-\mbox{as the unions of the $A_k$ or $C_j$ fill the space} \quad & = \sum_{k=0}^n a_k \mu(A_k) + \sum_{j=0}^m c_j \mu(C_j)\\
-\mbox{as}\, a_0 = c_0 =0 \quad & = \sum_{k=1}^n a_k \mu(A_k) + \sum_{j=1}^m c_j \mu(C_j) \\
-& = \mu(f) + \mu(g).
-\end{align*}
+where $b_{k,j} = b_j 1_{A_k \cap B_j \neq \emptyset}$. Then if $f(x) \leq g(x)$ for every $x$ we know that this means $a_{k,j} \leq b_{k,j}$ for every $k,j$. Then by the well definedness of the integral we have
 
-Now we move onto the monotonicity of the integral. Let us express $f$ and $g$ as before, again the goal is to represent the two functions using the same measurable sets. We can rewrite as
-
-$$ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap C_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap C_j},$$
-
-where $a_{k,j} = a_k 1_{A_k \cap C_j \neq \emptyset}$. Here again we are using the fact that $\bigcup_{j=0}^m C_j$ fill the space. In the same way we can write
-
-$$ g = \sum_{k=1}^n \sum_{j=1}^m c_{k,j}1_{A_k \cap C_j}, $$
-
-where $c_{k,j} = c_j 1_{A_k \cap C_j \neq \emptyset}$. Then if $f(x) \leq g(x)$ for every $x$ we know that this means $a_{k,j} \leq c_{k,j}$ for every $k,j$. Then by the well definedness of the integral we have
-
-$$ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap C_j) \leq \sum_{k=1}^n \sum_{j=1}^m c_{k,j} \mu(A_k \cap C_j) = \mu(g).$$
+$$ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap B_j) \leq \sum_{k=1}^n \sum_{j=1}^m b_{k,j} \mu(A_k \cap B_j) = \mu(g).$$
 
 
 Lastly, we look at when $\mu(f)=0$. First if $f=0$ $\mu$-almost everywhere then $a_k=0$ or $\mu(A_k)=0$ for each $k$, therefore $\mu(f)=0$. If $\mu(f) =0$ then since all the terms $a_k \mu(A_k) \geq 0$ we have that $a_k=0$ or $\mu(A_k) =0$ for each $k$.
@@ -154,7 +140,7 @@ If $f$ and $g$ are non-negative, measurable, real valued functions on $(E, \math
 
 If $f \leq g$ then we recall that by definition 
 
-$$\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}y.$$
+$$\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}.$$
 
  So if $h$ is a simple function with $h \leq f$ then we also have that $h \leq g$. Therefore, we can write
 
@@ -192,7 +178,7 @@ The last case is the most general where both $f_n$ and $f$ are positive and meas
 
 $$ g_n = \left( 2^{-n} \lfloor 2^n f_n \rfloor \right) \wedge n, $$
 
-then $g_n$ is a sequence of simple functions with $g_n \uparrow f$ and $g_n \leq f_n$, proving this is an exercise on the assignment. Therefore we have
+then $g_n$ is a sequence of simple functions with $g_n \uparrow f$ and $g_n \leq f_n$. Therefore we have
 
 $$ \mu(f) = \lim_n \mu(g_n) \leq \lim_n \mu(f_n) \leq \mu(f). $$
 

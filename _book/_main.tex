@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-10-27}
+\date{2022-11-02}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -831,7 +831,7 @@ Furthermore we can find a sequence of half open rectangles \(R_k\) such that \(A
 
 Monotonicity shows that \[\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}.\] First let us assume that \(A\) is contained in some ball, \(B\) around 0. Now use the first part to find some open set \(U\) such that \(B \setminus A \subseteq U\) and \(\lambda(U) \leq \lambda(B \setminus A) + \epsilon\). Now let \(K = B \setminus U\) then we have \(K \subseteq A \subseteq B\) and \(\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon\) (here we use the fact that \(B, A, U, K\) will all have finite measure as they are inside \(B\)). As \(\epsilon\) is arbitrary this concludes the proof when \(A\) is contained in a ball.
 
-Now suppose that \(A\) is unbounded. Then let \(A_n = A \cap B_n\) where \(B_n\) is the closed ball of radius \(n\). We have that \(\lambda(A_n) \rightarrow \lambda(A)\). If \(\lambda(A) = \infty\) then we can find \(K_n \subseteq A_n\) with \(\lambda(K_n)\) arbitrarily close to \(\lambda(A_n)\) therefore we can find such a sequence with \(\lambda(K_n) \rightarrow \infty\). If \(\lambda(A) \neq \infty\) then, given \(\epsilon\), there exists \(N\) such that \(\lambda(A_n) \geq \lambda(A)-\epsilon\) for \(n \geq N\). Then we can fine \(K_N \subseteq A_N\) such that \(\lambda(K_n) \geq \lambda(A_N) - \epsilon\) therefore \(\lambda(K_N) \geq \lambda(A)- 2 \epsilon\). This shows we can a compact set which is contained in \(A\), with measure arbitrarily close to that of \(A\).
+Now suppose that \(A\) is unbounded. Then let \(A_n = A \cap B_n\) where \(B_n\) is the closed ball of radius \(n\). We have that \(\lambda(A_n) \rightarrow \lambda(A)\). If \(\lambda(A) = \infty\) then we can find \(K_n \subseteq A_n\) with \(\lambda(K_n)\) arbitrarily close to \(\lambda(A_n)\) therefore we can find such a sequence with \(\lambda(K_n) \rightarrow \infty\). If \(\lambda(A) \neq \infty\) then, given \(\epsilon\), there exists \(N\) such that \(\lambda(A_n) \geq \lambda(A)-\epsilon\) for \(n \geq N\). Then we can find \(K_N \subseteq A_N\) such that \(\lambda(K_n) \geq \lambda(A_N) - \epsilon\) therefore \(\lambda(K_N) \geq \lambda(A)- 2 \epsilon\). This shows we can a compact set which is contained in \(A\), with measure arbitrarily close to that of \(A\).
 \end{proof}
 
 We now want to recall that Lebesgue measure is the unique measure which assigns half open intervals (rectangles\ldots) the correct length.
@@ -867,7 +867,7 @@ If \(N\) is a null set then \(x+N = \{ x+y \,:\, y \in N\}\) is also null
 \end{lemma}
 
 \begin{proof}
-We know that \(0 = \lambda(N) = \inf_{(I_n)_n \in \mathcal{C}(N)}\sum_n \lambda(I_n)\) so for a given \(\epsilon > 0\) we can find a sequence \((I_n)_n\) such that \(N \subseteq \bigcup_n I_n\) and \(\sum_n \lambda(I_n) \leq \epsilon\). Now if we shift everything we can see that \(x+ I_n\) is still a half open interval for each \(n\) and \(x+N \subseteq \bigcup_n (x+I_n)\) so \(\lambda^*(x+N) \leq \sum_n \lambda(x+I_n)\) and \(\lambda(x+ I_n) = \lambda(I_n)\) for each \(n\) so \(\lambda^*(x+N) \leq \sum_n \lambda (I_n) \leq \epsilon\). Therefore the Lebesgue outer measure of \(x+N\) can be made arbitrarily small so it must be 0.
+We know that \(0 = \lambda^*(N) = \inf_{(I_n)_n \in \mathcal{C}(N)}\sum_n \lambda(I_n)\) so for a given \(\epsilon > 0\) we can find a sequence \((I_n)_n\) such that \(N \subseteq \bigcup_n I_n\) and \(\sum_n \lambda(I_n) \leq \epsilon\). Now if we shift everything we can see that \(x+ I_n\) is still a half open interval for each \(n\) and \(x+N \subseteq \bigcup_n (x+I_n)\) so \(\lambda^*(x+N) \leq \sum_n \lambda(x+I_n)\) and \(\lambda(x+ I_n) = \lambda(I_n)\) for each \(n\) so \(\lambda^*(x+N) \leq \sum_n \lambda (I_n) \leq \epsilon\). Therefore the Lebesgue outer measure of \(x+N\) can be made arbitrarily small so it must be 0.
 \end{proof}
 
 Now we can prove translation invariance
@@ -890,9 +890,9 @@ There exists sets that are in \(\mathscr{P}(\mathbb{R})\) which are not in \(\ma
 \begin{proof}
 This proof involves the use of the axiom of choice. In fact it is known that it is necessary to use some form of the axiom of choice to prove the existence of a non-Lebesgue measurable set in \(\mathbb{R}\).
 
-We use an argument by contradiction, we begin by assuming every subset of \(\mathbb{R}\) is Lebesgue measurable. We define an equivalence relation on \([0,1)\) by saying \(x \sim y\) exactly when \(x-y \in \mathbb{Q}\). Using the axiom of choice we find a subset \(S\) of \([0,1)\) which contains exactly one representative of each equivalence class. Next we define the set \(S+q = \{ s+q \, (\mbox{mod}\,1) \, : \, s \in S \}\) for each \(q \in \mathbb{Q} \cap [0,1)\). Then by our choice of \(S\) we have that
+We use an argument by contradiction, we begin by assuming every subset of \(\mathbb{R}\) is Lebesgue measurable. We define an equivalence relation on \([0,1)\) by saying \(x \sim y\) exactly when \(x-y \in \mathbb{Q}\). Using the axiom of choice we find a subset \(S\) of \([0,1)\) which contains exactly one representative of each equivalence class. Next we define the set \(S_q = \{ s+q \, (\mbox{mod}\,1) \, : \, s \in S \}\) for each \(q \in \mathbb{Q} \cap [0,1)\). Then by our choice of \(S\) we have that
 
-\[ [0,1) = \bigcup_{q \in \mathbb{Q} \cap [0,1)} (S+q), \]
+\[ [0,1) = \bigcup_{q \in \mathbb{Q} \cap [0,1)} (S_q), \]
 where this union is disjoint. We can check see that \(S_q \cap S_{q'} = \emptyset\) for \(q \neq q'\) as if \(x\) was in both then there exists \(y, y' \in S\) such that \(x = y +q \,(mod 1)\) and \(x= y' + q' (mod 1)\) this means \(y - y' \in \mathbb{Q}\setminus\{0\}\) which is a contradiction to the fact that \(S\) contains exactly one member of each equivalence class. Also we can see that this union contains every element of \([0,1)\) since if \(x \in [0,1)\) there exists some \(y\) which is in the same equivalence class of \(x\) with \(y \in S\). Therefore \(x = y + q \,(mod 1)\) for some \(q \in \mathbb{Q}\cap [0,1)\) so \(x \in S_q\) for this \(q\).
 
 We can also see by translation invariance of \(\lambda\) that if \(S\) were Lebesgue measurable then we would have
@@ -1007,7 +1007,7 @@ We can use the notion of image measure to construct further measures from Lebesg
 \begin{lemma}
 Suppose \(g: \mathbb{R} \rightarrow \mathbb{R}\) and that \(g\) is non-constant, right-continuous and non-decreasing. Let us define \(g(-\infty) = \lim_{x \rightarrow -\infty} g(x)\) and \(g(\infty) = \lim_{x \rightarrow \infty} g(x)\) and let us call the interval \(I:= (g(-\infty),g(\infty))\) (this might be the whole of \(\mathbb{R}\). Define a partial inverse to \(g\) by \(f: I \rightarrow \mathbb{R}\) by
 
-\[ f(x) = \inf_y \{ x \leq g(y)\}. \]
+\[ f(x) = \inf \{y \,:\, x \leq g(y)\}. \]
 
 Then \(f\) is left-continuous and non-decreasing and \(f(x) \leq y\) if and only if \(x \leq g(y)\).
 \end{lemma}
@@ -1258,7 +1258,7 @@ Let \((E, \mathcal{E}, \mu)\) be a measure space. The set of simple functions on
 
 \[ f(x) = \sum_{k=1}^n a_k 1_{A_k}(x). \]
 
-Here, the \(A_k\) are disjoint sets in \(\mathcal{E}\), \(1_{A}\) represents the indicator function of the set, and the \(a_k\) are non-negative real numbers. We note that this representation of \(f\) is not unique.
+Here, the \(A_k\) are sets in \(\mathcal{E}\), \(1_{A}\) represents the indicator function of the set, and the \(a_k\) are non-negative real numbers. We note that this representation of \(f\) is not unique.
 \end{definition}
 
 \begin{definition}[The integral of a simple function]
@@ -1286,7 +1286,9 @@ The integral of a simple function is well defined (it doesn't depend on the choi
 \end{lemma}
 
 \begin{proof}
-Let us first look at the well definedness, without loss of generality lets assume the \(a_k, b_j\) are strictly positive and the sets \(A_k\) are disjoint and similar for the \(B_j\). Let us suppose that \(f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}\) which are both simple function representations. Then we can see that \(\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k\) and that \(a_i =b_j\) if \(A_i \cap B_j \neq \emptyset\). Using this we can write
+Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are \(a_1, \dots, a_n\) and we can write it as \(f(x) = \sum_{k=1}^n a_k f^{-1}(\{a_k\})\). Any other representation will just split up the sets \(f^{-1}(\{a_k\})\), overlap them or add \(0*1_{B}\) for some set \(B\). We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
+
+without loss of generality lets assume the \(a_k, b_j\) are strictly positive and the sets \(A_k\) are disjoint and similar for the \(B_j\). Let us suppose that \(f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}\) which are both simple function representations. Then we can see that \(\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k\) and that \(a_i =b_j\) if \(A_i \cap B_j \neq \emptyset\). Using this we can write
 
 \begin{align*} 
 \mu(f) &= \sum_{k=1}^n a_k \mu(A_k)\\
@@ -1302,35 +1304,19 @@ Now we move on to the linearity properties. These come naturally from the defint
 \mu(\alpha f) = \sum_{k=1}^n \alpha a_k \mu(A_k) = \alpha \sum_{k=1}^n a_k \mu(A_k) = \alpha \mu(A_k).
 \end{align*}
 
-When we are dealing with two simple functions simultaneously it is useful to write them both in a representation where the measurable sets appearing are the same for both functions. If we let \(g = \sum_{j=1}^m c_j 1_{C_j}\) then let us write \(A_0 = E \setminus \bigcup_{k=1}^n A_k, a_0 =0\) and define \(C_0, c_0\) similarly then we can write \(f+g\) as a simple function via
+Once we know the integral is well defined the sum part is immediate we can write \(f=\sum_{k=1}^n a_k 1_{A_k}\) and \(g= \sum_{j=1}^m b_j 1_{B_j}\) and then we can write \(f+g = \sum_{k=1}^n a_k 1_{A_k} + \sum_{j=1}^m b_j 1_{B_j}\) from which \(\mu(f+g) = \mu(f) + \mu(g)\) follows.
 
-\[f(x) + g(x) = \sum_{k=0}^n \sum_{j=0}^m (a_k + c_j) 1_{A_k \cap C_j}\]
+Now we move onto the monotonicity of the integral. Let us express \(f\) and \(g\) as before, the goal is to represent the two functions using the same measurable sets. We can rewrite as
 
-and we have
+\[ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap B_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap B_j},\]
 
-\[ \mu(f+g) = \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j). \]
+where \(a_{k,j} = a_k 1_{A_k \cap B_j \neq \emptyset}\). Here we are using the fact that \(\bigcup_{j=0}^m B_j\) fill the space. In the same way we can write
 
-We note that \(\bigcup_{k=0}^n A_k = \bigcup_{j=0}^m C_j = E\) and the \(A_k\) are mutually disjont, and the \(C_j\) are mutually disjoint. Therefore
+\[ g = \sum_{k=1}^n \sum_{j=1}^m b_{k,j}1_{A_k \cap B_j}, \]
 
-\begin{align*}
-\mu(f+g) &= \sum_{k=0}^n \sum_{j=0}^m (a_k +c_j) \mu(A_k \cap C_j)\\
-&= \sum_{k=0}^n a_k \sum_{j=0}^m \mu(A_k \cap C_j) + \sum_{j=0}^m c_j \sum_{k=0}^n \mu(A_k \cap C_j) \\
-\mbox{as the unions of the $A_k$ or $C_j$ fill the space} \quad & = \sum_{k=0}^n a_k \mu(A_k) + \sum_{j=0}^m c_j \mu(C_j)\\
-\mbox{as}\, a_0 = c_0 =0 \quad & = \sum_{k=1}^n a_k \mu(A_k) + \sum_{j=1}^m c_j \mu(C_j) \\
-& = \mu(f) + \mu(g).
-\end{align*}
+where \(b_{k,j} = b_j 1_{A_k \cap B_j \neq \emptyset}\). Then if \(f(x) \leq g(x)\) for every \(x\) we know that this means \(a_{k,j} \leq b_{k,j}\) for every \(k,j\). Then by the well definedness of the integral we have
 
-Now we move onto the monotonicity of the integral. Let us express \(f\) and \(g\) as before, again the goal is to represent the two functions using the same measurable sets. We can rewrite as
-
-\[ f = \sum_{k=0}^n \sum_{j=0}^m a_k 1_{A_k \cap C_j} = \sum_{k=0}^n \sum_{j=0}^m a_{k,j}1_{A_k \cap C_j},\]
-
-where \(a_{k,j} = a_k 1_{A_k \cap C_j \neq \emptyset}\). Here again we are using the fact that \(\bigcup_{j=0}^m C_j\) fill the space. In the same way we can write
-
-\[ g = \sum_{k=1}^n \sum_{j=1}^m c_{k,j}1_{A_k \cap C_j}, \]
-
-where \(c_{k,j} = c_j 1_{A_k \cap C_j \neq \emptyset}\). Then if \(f(x) \leq g(x)\) for every \(x\) we know that this means \(a_{k,j} \leq c_{k,j}\) for every \(k,j\). Then by the well definedness of the integral we have
-
-\[ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap C_j) \leq \sum_{k=1}^n \sum_{j=1}^m c_{k,j} \mu(A_k \cap C_j) = \mu(g).\]
+\[ \mu(f) = \sum_{k=1}^n \sum_{j=1}^m a_{k,j} \mu(A_k \cap B_j) \leq \sum_{k=1}^n \sum_{j=1}^m b_{k,j} \mu(A_k \cap B_j) = \mu(g).\]
 
 Lastly, we look at when \(\mu(f)=0\). First if \(f=0\) \(\mu\)-almost everywhere then \(a_k=0\) or \(\mu(A_k)=0\) for each \(k\), therefore \(\mu(f)=0\). If \(\mu(f) =0\) then since all the terms \(a_k \mu(A_k) \geq 0\) we have that \(a_k=0\) or \(\mu(A_k) =0\) for each \(k\).
 \end{proof}
@@ -1375,7 +1361,7 @@ If \(f\) and \(g\) are non-negative, measurable, real valued functions on \((E, 
 \begin{proof}
 If \(f \leq g\) then we recall that by definition
 
-\[\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}y.\]
+\[\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f} \leq f\}.\]
 
 So if \(h\) is a simple function with \(h \leq f\) then we also have that \(h \leq g\). Therefore, we can write
 
@@ -1409,7 +1395,7 @@ The last case is the most general where both \(f_n\) and \(f\) are positive and 
 
 \[ g_n = \left( 2^{-n} \lfloor 2^n f_n \rfloor \right) \wedge n, \]
 
-then \(g_n\) is a sequence of simple functions with \(g_n \uparrow f\) and \(g_n \leq f_n\), proving this is an exercise on the assignment. Therefore we have
+then \(g_n\) is a sequence of simple functions with \(g_n \uparrow f\) and \(g_n \leq f_n\). Therefore we have
 
 \[ \mu(f) = \lim_n \mu(g_n) \leq \lim_n \mu(f_n) \leq \mu(f). \]
 
