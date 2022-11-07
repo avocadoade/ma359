@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-11-02}
+\date{2022-11-07}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1340,7 +1340,7 @@ This is on the exercise sheet.
 \end{proof}
 
 \begin{definition}[Final definition of Lebesgue integral]
-Suppose that \(f\) is a measurable function which is not necessarily positive. Then we call \(f\), \(\mu\)-\emph{integrable} or \emph{Lebesgue integrable} if \(\mu(|f|)< \infty\). In this case we can write \(f = f_+ - f_{-}\) where \(f_+\) and \(f_-\) are both positive and measurable (\(f_+ = \max\{f, 0\}\)). We then define the integral of \(f\) by
+Suppose that \(f\) is a measurable function which is not necessarily positive. Then we call \(f\), \(\mu\)-\emph{integrable} or \emph{Lebesgue integrable} if \(\mu(|f|)< \infty\). In this case we can write \(f = f_+ - f_{-}\) where \(f_+\) and \(f_-\) are both positive and measurable (\(f_+ = \max\{f, 0\}, f_- = \max \{-f, 0\}\)). We then define the integral of \(f\) by
 
 \[ \mu(f) = \mu(f_+) - \mu(f_-). \]
 \end{definition}
@@ -1453,7 +1453,7 @@ which is if and only if \(\mu(h) = 0\) for every \(h \leq f\) and \(h\) simple. 
 Using this we can give another writing of the monotone convergence theorem.
 
 \begin{proposition}[Beppo-Levi]
-Suppose that \((f_n)_{n \geq 0}\) is a sequence of real-valued measurable functions. Then \(\mu(\sum_n f_n) = \sum_n \mu(f_n)\).
+Suppose that \((f_n)_{n \geq 0}\) is a sequence of non-negative real-valued measurable functions. Then \(\mu(\sum_n f_n) = \sum_n \mu(f_n)\).
 \end{proposition}
 
 \begin{proof}

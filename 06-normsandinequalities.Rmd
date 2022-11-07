@@ -307,7 +307,7 @@ Our last big inequality is Jensen's inequality which involves convexity. We brie
 
 ::: {.definition name="Convexity"}
 
-Let $I$ be an interval and let $\phi: I \rightarrow \mathbb{R}$ then we call $\phi$ \emph{convex} if for every $t \in [0,1]$, and $x,y \in I$, we have
+Let $I$ be an interval and let $\phi: I \rightarrow \mathbb{R}$ then we call $\phi$ *convex* if for every $t \in [0,1]$, and $x,y \in I$, we have
 
 $$\phi(tx +(1-t)y) \leq t\phi(x) + (1-t)\phi(y).$$
 
