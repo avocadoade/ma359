@@ -1632,8 +1632,7 @@ There are also a few facts about Riemann integration which work in pretty much e
 Suppose that \(f: [a,b] \rightarrow \mathbb{R}\) is a continuous function and set \(F(t) = \int_a^t f(x) \mathrm{d}x = \lambda( 1_{[a,t]} f)\), then \(F\) is differentiable with \(F'(t) = f(t)\). Furthermore, let \(F: [a,b] \rightarrow \mathbb{R}\) have continuous derivative \(f\), then \(F(b) - F(a) = \int_a^b f(x) \mathrm{d}x\).
 \end{theorem}
 
-::: \{.proof\}
-
+\begin{proof}
 Given \(\epsilon >0\) there exists \(\delta >0\) such that \(|x-t| \leq \delta\) implies that \(|f(x) -f(t)| \leq \epsilon\) therefore if we take \(|h| \leq \delta\) then
 
 \[ \left| \frac{1}{h}(F(t+h) - F(t)) - f(t)\right| = \frac{1}{|h|} \left|\int_t^{t+h}(f(x) - f(t)) \mathrm{d}x\right| \leq \frac{1}{|h|} \int_{t \wedge (t+h)}^{t \vee (t+h)} |f(x) - f(t)| \mathrm{d}x. \]
@@ -1645,8 +1644,8 @@ Now we can use the fact that inside the integral \(|x-t| \leq \delta\) so we hav
 Therefore \(\lim_{h \rightarrow 0} (F(t+h)-F(t))/h = f(t)\).
 
 In the other direction \(\mathrm{d}/\mathrm{d}t(F(t) - \int_a^t f(x) \mathrm{d}x) = 0\) so \(F(t) - \int_a^t f(x) \mathrm{d}x\) is constant in \(t\) (by the mean value theorem), so \(F(t) = F(a) + \int_a^t f(x) \mathrm{d}x\). This gives us the result.
+\end{proof}
 
-\begin{proof}
 We can use the fundamental theorem of calculus to prove the standard result about change of variables. This time we can exploit our new machinery.
 
 \begin{proposition}
@@ -1677,6 +1676,26 @@ Now we have shown our proposition holds when \(g\) is the indicator function of 
 for each \(n\) applying monotone convergence to each side gives the result for \(g = 1_A\). This shows that \(\mathcal{D}\) is a \(d\)-system. Applying Dynkin's lemma then shows that for every \(A \in \mathcal{B}(R)\) we have that the proposition holds with \(g=1_A\).
 
 Linearity of the integral allows us to extend this result to any simple function \(g\). We can then use monotone convergence in exactly the same way as for the last part to extend it to any non-negative measurable \(g\).
+\end{proof}
+
+The proof method for this last theorem can be generalised using something called the monotone class theorem.
+
+::: \{. theorem name=``Monotone class theorem - nonexaminable''\}
+
+Let \((E, \mathcal{E})\) be a measurable space and let \(\mathcal{A}\) be a \(\pi\)-system generating \(\mathcal{E}\). Then let \(\mathcal{V}\) be a vector space (closed under linear operations) of functions such that
+- For every \(A \in \mathcal{A}\) we have \(1_A \in \mathcal{V}\).
+- If \(f_n\) is an increasing sequence of positive functions with \(f_n \in \mathcal{V}\) for all \(n\) then \(\lim_n f_n\) is also in \(\mathcal{V}\).
+
+Then \(\mathcal{V}\) contains every bounded measurable function.
+
+:::
+
+\begin{proof}
+Let \(\mathcal{D} = \{ A \in \mathcal{E} \,:\, 1_A \in \mathcal{V}\}\) then we can show that \(\mathcal{D}\) is a d-sytem in exactly the same way as in the proof of the previous proposition. Therefore by Dynkin's lemma \(\mathcal{D} \supseteq \sigma(\mathcal{A})\) so \(\mathcal{D} = \mathcal{E}\). Hence \(1_A \in \mathcal{V}\) for every \(A \in \mathcal{A}\). By linearity this extends to all simple functions.
+
+Now for any positive function, \(f\), we can construct a sequence of measurable functions converging to \(f\). All these simple functions will be in \(\mathcal{V}\) so our second assumption ensures that \(f\) will be in \(\mathcal{V}\).
+
+Lastly, any bounded measurable function is the difference of two positive measurable functions so will be in \(\mathcal{V}\).
 \end{proof}
 
 \hypertarget{agreement-with-riemann-integral}{%
@@ -2281,7 +2300,8 @@ and
 are both measurable and integrable. Furthermore,
 
 \[ (\mu \times \nu)(f) = \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) \right) \nu(\mathrm{d}x) = \int_F \left( \int_E f(x,y) \mu(\mathrm{d}x) \right) \nu(\mathrm{d}y). \]
-\end{proof}
+
+:::
 
 \begin{proof}
 Now we turn to the case where \(f\) is not necessarily non-negative but is \((\mu \times \nu)\) integrable. By our result for non-negative functions we know that
