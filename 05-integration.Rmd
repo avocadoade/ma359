@@ -144,7 +144,7 @@ $$\mu(f) = \sup\{ \mu(\tilde{f}) \,:\, \mbox{$\tilde{f}$ is simple},\, \tilde{f}
 
  So if $h$ is a simple function with $h \leq f$ then we also have that $h \leq g$. Therefore, we can write
 
-\begin{align*} \mu(g) &= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}
+\begin{align*} \mu(g) &= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}
 
 :::
 

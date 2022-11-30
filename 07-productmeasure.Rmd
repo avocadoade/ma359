@@ -127,7 +127,7 @@ This gives the desired conclusion for positive $f$.
 :::
 
 
-\begin{thm}[Fubini-Tonelli theorem for integrable functions]
+::: {.theorem name="Fubini-Tonelli theorem for integrable functions"}
 Suppose that $(E, \mathcal{E}, \mu)$ and $(F, \mathcal{F}, \nu)$ are $\sigma$-finite measure spaces and $f$ is a $\mathcal{E} \times \mathcal{F}$ measurable function which is integrable with respect to $(\mu \times \nu)$ then the functions
 
 $$ g(x) = \left\{ \begin{array}{ll} \int_F f(x,y) \nu(\mathrm{d}y) & \int_F|f(x,y)| \nu(\mathrm{d}y) < \infty \\
