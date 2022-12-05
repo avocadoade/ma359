@@ -154,7 +154,7 @@ Then $\nu = \mathrm{d}g$ by uniqueness.
 :::
 
 
-### Random variables and the measure theoretic formulation of probability - in brief
+### Random variables and the measure theoretic formulation of probability - NONEXAMINABLE
 
 The structure of measure theory allows us to put probability theory on a firm footing. This section is mainly as an example and for those of you who are interested in probability. 
 
@@ -261,7 +261,7 @@ Then the right hand side goes to zero as $n \rightarrow \infty$, so $\mu(\limsup
 :::
 
 
-::: {.lemma name="Second Borel-Cantelli Lemma"}
+::: {.lemma name="Second Borel-Cantelli Lemma - NONEXAMINABLE"}
 
 Let $(E, \mathcal{E}, \mu)$ be a probability space ($\mu(E) =1$). Then suppose that the events are all inedepenent and that $\sum_n \mu(A_n) = \infty$ then it will follow that $\mu(\limsup_n A_n) =1$.
 

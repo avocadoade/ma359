@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-11-07}
+\date{2022-12-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -689,13 +689,13 @@ The construction of Lebesgue measure via the outer measure can be generalised vi
 
 We briefly give the defintion of a ring of subsets. This is different (though a bit similar) to the definition you may have seen in group theory.
 
-\begin{definition}[Ring]
+\begin{definition}[Ring - NONEXAMINABLE]
 A collection of subsets, \(\mathcal{A}\), of a space \(E\) is called a ring if for every \(A,B \in \mathcal{A}\) we have \(A \setminus B \in \mathcal{A}\) and \(A \cup B \in \mathcal{A}\).
 \end{definition}
 
 Now we introduce Carathéodory's Extension theorem. We can see that the proof is in many ways very similar to the construction of Lebesgue measure.
 
-\begin{theorem}[Carathéodory's Extension Theorem]
+\begin{theorem}[Carathéodory's Extension Theorem - NONEXAMINABLE]
 Let \(\mathcal{A}\) be a ring of subsets of \(E\), and let \(\mu: \mathcal{A} \rightarrow [0, \infty]\) be a countably additive set function. Then \(\mu\) extends to a measure on \(\sigma(\mathcal{A})\).
 \end{theorem}
 
@@ -1038,8 +1038,8 @@ Finally, if \(\nu\) is a Radon measure on \(\mathbb{R}\) then we can define a fu
 Then \(\nu = \mathrm{d}g\) by uniqueness.
 \end{proof}
 
-\hypertarget{random-variables-and-the-measure-theoretic-formulation-of-probability---in-brief}{%
-\subsection{Random variables and the measure theoretic formulation of probability - in brief}\label{random-variables-and-the-measure-theoretic-formulation-of-probability---in-brief}}
+\hypertarget{random-variables-and-the-measure-theoretic-formulation-of-probability---nonexaminable}{%
+\subsection{Random variables and the measure theoretic formulation of probability - NONEXAMINABLE}\label{random-variables-and-the-measure-theoretic-formulation-of-probability---nonexaminable}}
 
 The structure of measure theory allows us to put probability theory on a firm footing. This section is mainly as an example and for those of you who are interested in probability.
 
@@ -1122,7 +1122,7 @@ For any \(n\) we have
 Then the right hand side goes to zero as \(n \rightarrow \infty\), so \(\mu(\limsup_n A_n) = 0\).
 \end{proof}
 
-\begin{lemma}[Second Borel-Cantelli Lemma]
+\begin{lemma}[Second Borel-Cantelli Lemma - NONEXAMINABLE]
 Let \((E, \mathcal{E}, \mu)\) be a probability space (\(\mu(E) =1\)). Then suppose that the events are all inedepenent and that \(\sum_n \mu(A_n) = \infty\) then it will follow that \(\mu(\limsup_n A_n) =1\).
 \end{lemma}
 
@@ -1365,7 +1365,7 @@ If \(f \leq g\) then we recall that by definition
 
 So if \(h\) is a simple function with \(h \leq f\) then we also have that \(h \leq g\). Therefore, we can write
 
-\begin{align*} \mu(g) &= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}
+\begin{align*} \mu(g) &= \sup\{ \mu(h) \,:\, \mbox{$h$ is simple},\, h \leq g\} \\ &= \max\{\sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq f\}, \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ f}\} \}\\ &= \max\{ \mu(f), \sup\{ \mu(h)\, :\, \mbox{$h$ simple}, h \leq g, \mbox{$h$ is not $\leq$ g}\}\} \geq \mu(f).\end{align*}
 \end{proof}
 
 \begin{theorem}[Monotone Convergence Theorem]
@@ -1680,15 +1680,13 @@ Linearity of the integral allows us to extend this result to any simple function
 
 The proof method for this last theorem can be generalised using something called the monotone class theorem.
 
-::: \{. theorem name=``Monotone class theorem - nonexaminable''\}
-
+\begin{theorem}[Monotone class theorem - NONEXAMINABLE]
 Let \((E, \mathcal{E})\) be a measurable space and let \(\mathcal{A}\) be a \(\pi\)-system generating \(\mathcal{E}\). Then let \(\mathcal{V}\) be a vector space (closed under linear operations) of functions such that
 - For every \(A \in \mathcal{A}\) we have \(1_A \in \mathcal{V}\).
 - If \(f_n\) is an increasing sequence of positive functions with \(f_n \in \mathcal{V}\) for all \(n\) then \(\lim_n f_n\) is also in \(\mathcal{V}\).
 
 Then \(\mathcal{V}\) contains every bounded measurable function.
-
-:::
+\end{theorem}
 
 \begin{proof}
 Let \(\mathcal{D} = \{ A \in \mathcal{E} \,:\, 1_A \in \mathcal{V}\}\) then we can show that \(\mathcal{D}\) is a d-sytem in exactly the same way as in the proof of the previous proposition. Therefore by Dynkin's lemma \(\mathcal{D} \supseteq \sigma(\mathcal{A})\) so \(\mathcal{D} = \mathcal{E}\). Hence \(1_A \in \mathcal{V}\) for every \(A \in \mathcal{A}\). By linearity this extends to all simple functions.
@@ -2286,7 +2284,7 @@ We note that this shows that \(\int_F f(x,y) \nu(\mathrm{d}y)\) is the limit of 
 This gives the desired conclusion for positive \(f\).
 \end{proof}
 
-\textbackslash begin\{thm\}{[}Fubini-Tonelli theorem for integrable functions{]}
+\begin{theorem}[Fubini-Tonelli theorem for integrable functions]
 Suppose that \((E, \mathcal{E}, \mu)\) and \((F, \mathcal{F}, \nu)\) are \(\sigma\)-finite measure spaces and \(f\) is a \(\mathcal{E} \times \mathcal{F}\) measurable function which is integrable with respect to \((\mu \times \nu)\) then the functions
 
 \[ g(x) = \left\{ \begin{array}{ll} \int_F f(x,y) \nu(\mathrm{d}y) & \int_F|f(x,y)| \nu(\mathrm{d}y) < \infty \\
@@ -2300,8 +2298,7 @@ and
 are both measurable and integrable. Furthermore,
 
 \[ (\mu \times \nu)(f) = \int_E \left( \int_F f(x,y) \nu(\mathrm{d}y) \right) \nu(\mathrm{d}x) = \int_F \left( \int_E f(x,y) \mu(\mathrm{d}x) \right) \nu(\mathrm{d}y). \]
-
-:::
+\end{theorem}
 
 \begin{proof}
 Now we turn to the case where \(f\) is not necessarily non-negative but is \((\mu \times \nu)\) integrable. By our result for non-negative functions we know that
@@ -2554,8 +2551,8 @@ which would contradict \(\nu_0(E) > \epsilon \mu(E)\). Therefore, \(g+ \epsilon 
 Now we turn to uniqueness suppose that we have two positive functions \(g,h\) such that \(\nu(A) = \mu(g1_A) = \mu(h1_A)\) for every \(A\), then as \(\nu\) is finite \(g\) and \(h\) are integrable so \(g-h\) is integrable and \(\mu((g-h)1_A) = 0\) for every \(A\). As \(g-h\) is measurable then \(\{x \in E\,:\, g-h \geq 0\}\) is a measurable set so \(\mu((g-h)1_{\{x \in E\,:\, g-h \geq 0\}}) = 0\). This shows that \((g-h)1_{\{x \in E\,:\, g-h \geq 0\}} = 0\) almost everywhere. In the same way \((g-h)1_{\{ x \in E\,:\, g-h \leq 0\}} =0\) almost everywhere. Therefore \(g=h\) \(\mu\)-almost everywhere.
 \end{proof}
 
-\hypertarget{duality-in-lp-spaces}{%
-\section{\texorpdfstring{Duality in \(L^p\) spaces}{Duality in L\^{}p spaces}}\label{duality-in-lp-spaces}}
+\hypertarget{duality-in-lp-spaces---nonexaminable}{%
+\section{\texorpdfstring{Duality in \(L^p\) spaces - NONEXAMINABLE}{Duality in L\^{}p spaces - NONEXAMINABLE}}\label{duality-in-lp-spaces---nonexaminable}}
 
 The goal of this section is to prove that if \(1/p+1/q =1\) then the dual space of \(L^p(E)\) is isomorphic to the space \(L^q(E)\). First let us define a dual space.
 
@@ -2592,6 +2589,187 @@ We showed in Assignment 4 that given a function \(f \in L^p, \epsilon >0\) there
 \[ |K_n(f) - \tilde{K}_n(f)| \leq |K_n(f) - K_n(h)| + |\tilde{K}_n(f) - \tilde{K}_n (h)| \leq \|K\| \|f-h\|_p + \|g1_{E_n}\|_q \|f-h\|_p \leq (\|K\| + \|g\|_q) \epsilon.\] Since \(\epsilon\) is arbitrary this shows that \(K_n(f) = \tilde{K}_n(f)\). \(\tilde{K}_n(f) = K_{g1_{E_n}}(f)\) so by our isometry we have \(\|\tilde{K}_n\| = \|g1_{E_n}\|_q\). We also have that \(\|\tilde{K}_n\| \leq \|K\|\) as
 \(\| \tilde{K}_n\| = \sup_{\|f\|_p =1} K_n(f) = \sup_{\|f\|_p = 1} K(f1_{E_n}) \leq \sup_{\|f\|_p=1} K(f) = \|K\|\). Therefore \(\|g1_{E_n}\|_q \leq \|K\|\) therefore \(\|g1_{E_n}\|_p^p = \int |g|^p 1_{E_n} \mu(\mathrm{d}x)\) and then by monotone convergence we get that \(\|g\|_q = \lim_n \|g 1_{E_n}\|_q \leq \|K\|\). Therefore, \(g \in L^q\). Then by exactly the same argument with which we showed \(K_n = \tilde{K}_n\) we have that \(K = K_g\). This concludes the proof int he finite case.
 \end{proof}
+
+\hypertarget{summary-of-the-course-and-list-of-important-theorems}{%
+\chapter{Summary of the course and list of important theorems}\label{summary-of-the-course-and-list-of-important-theorems}}
+
+This section is primarily intended to help you prepare for the exam. Questions on the exam are split into three types (only visible on the solutions). These are bookwork, seen and unseen.
+
+Bookwork comprises material I expect you to know by heart, or be able to reproduce to look like that in the course. This includes all definitions and the statements and proofs of most named theorems in the course. I'm afraid measure theory is a naturally bookwork heavy course. I'm not expecting you to learn all of these by heart but I am hoping you will be able to reproduce the majority of any proof in the exam. Look at previous exams to get an idea of what is expected.
+
+Seen material includes everything in the lecture notes, assignments or exercise sheets which isn't bookwork. I expect you to find it easier to answer questions where you have seen the question or something almost identical before. Therefore its helpful to be familiar with all this before the exam.
+
+Unseen material will be problem based questions that are similar, but substantially different, to questions on the exercise sheets or worked examples, or theorems from the course.
+
+Below is a list of the key material from the course. Anything which is a definition should be considered bookwork, or anything where I've written +proof, should be considered bookwork. I've also recorded some results where I expect you to know the statement but not the theorem.
+
+\hypertarget{sigma-algebras-and-measures}{%
+\section{Sigma algebras and measures}\label{sigma-algebras-and-measures}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of a sigma algebra
+\item
+  What is means to say a sigma-algebra is generated by a collection of sets
+\item
+  Definition of Borel sigma-algebra
+\item
+  Examples of sets generating \(\mathcal{B}(\mathbb{R})\) + proof
+\item
+  \(\pi\)-systems and \(d\)-systems and the statement of Dynkin's lemma
+\item
+  Definition of a measure
+\item
+  Definition of countable subadditivity and monotonicity
+\item
+  Definition of a measure space
+\item
+  Definition Finite and sigma-finite measure spaces
+\item
+  Continuity of measure theorem
+\end{itemize}
+
+\hypertarget{lebesgue-measure}{%
+\section{Lebesgue measure}\label{lebesgue-measure}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of Lebesgue outer measure
+\item
+  Definition of a Lebesgue measurable set plus some knowledge of the proof they form a sigma algebra
+\item
+  Lebesgue measure restricted to the Lebesgue measurable sets is a measure
+\item
+  Borel sets are Lebesgue measurable + proof
+\item
+  Uniqueness of extension, how to apply it to sigma-finite spaces and uniqueness of Lebesgue measure in particular, some idea of the proof
+\item
+  Translation invariance of Lebesgue measure + proof
+\item
+  Null sets are Lebesgue measurable + proof
+\item
+  Characterisation of Lebesgue measurable sets as null set + Borel and some notion of the proof of this
+\item
+  Regularity of Lebesgue measure + proof
+\item
+  Existence of a non-Lebesgue measurable set (Vitali set) + proof
+\end{itemize}
+
+\hypertarget{measurable-functions}{%
+\section{Measurable functions}\label{measurable-functions}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of a measurable function plus use of generating sets to prove functions are measurable
+\item
+  Continuous functions are Borel measurable + proof
+\item
+  Monotone functions from \(\mathbb{R}\) to \(\mathbb{R}\) are Borel measurable + proof
+\item
+  Compositions of measurable function are measurable
+\item
+  Definition of image measure and some notions of Theorem 4.1
+\item
+  Definition of almost everywhere convergence
+\item
+  Definition of convergence in measure
+  -Quasiequivalence of convergence (Theorem 4.2) + proof
+\item
+  Egoroff's Theorem + proof
+\item
+  Lusin's Theorem + proof
+\end{itemize}
+
+\hypertarget{integration-2}{%
+\section{Integration}\label{integration-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of a simple function
+\item
+  Definition of the integral of a simple function
+\item
+  Definition of the integral of a non-negative function
+\item
+  Definition of the integral of an integrable function
+\item
+  Monotone convergence theorem + the main ideas of the proof (Its too long to get you to repeat it in full but you should be familiar with it)
+\item
+  Working with non-negative functions by approximating by simple functions
+\item
+  Beppo-Levi + proof
+\item
+  Fatou's lemma + proof
+\item
+  Dominated convergence + proof
+\item
+  Some knowledge of how to differentiate under the integral sign
+\item
+  Some knowledge of how to prove the change of variables formula
+\item
+  Main ideas to show that Riemann integrable imples Lebesgue measurable and the integrals agree (again its too long to repeat in full but you should be familiar with the steps)
+\end{itemize}
+
+\hypertarget{norms-and-inequalities-1}{%
+\section{Norms and Inequalities}\label{norms-and-inequalities-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of \(L^p(E)\) and \(\|\cdot\|_p\) norm
+\item
+  Holder's inequality +proof
+\item
+  Minkowski's inequality + proof
+\item
+  Markov's inequality +proof
+\item
+  Jensen's inequality (+idea of the proof)
+\item
+  Completeness of \(L^p(E)\) + proof
+\item
+  Density of step functions and continuous functions in \(L^p(E)\)
+\end{itemize}
+
+\hypertarget{product-measure}{%
+\section{Product Measure}\label{product-measure}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of the product sigma-algebra and knowlege of associated small lemmas
+\item
+  Characterisation, existence and uniqueness of product measure in sigma-finite spaces (Theorem 7.1)+ proof
+\item
+  Fubini-Tonelli for positive functions + proof
+\item
+  Fubini-Tonelli for integrable functions + proof
+\item
+  Ideas from the applications of product measure section.
+\end{itemize}
+
+\hypertarget{radon-nikodym-theorem-1}{%
+\section{Radon-Nikodym Theorem}\label{radon-nikodym-theorem-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Definition of finite signed measure
+\item
+  Definition of positive and negative sets
+\item
+  Hahn Decomposition theorem + proof
+\item
+  Jordan Decompositino theorem + proof
+\item
+  Definition of absolute continuity
+\item
+  Radon-Nikodym theorem + main ideas of the proof
+\end{itemize}
 
   \bibliography{book.bib,packages.bib}
 

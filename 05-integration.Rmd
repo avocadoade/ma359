@@ -505,7 +505,7 @@ Linearity of the integral allows us to extend this result to any simple function
 
 The proof method for this last theorem can be generalised using something called the monotone class theorem.
 
-::: {. theorem name="Monotone class theorem - nonexaminable"}
+::: {.theorem name="Monotone class theorem - NONEXAMINABLE"}
 
 Let $(E, \mathcal{E})$ be a measurable space and let $\mathcal{A}$ be a $\pi$-system generating $\mathcal{E}$. Then let $\mathcal{V}$ be a vector space (closed under linear operations) of functions such that
 - For every $A \in \mathcal{A}$ we have $1_A \in \mathcal{V}$.

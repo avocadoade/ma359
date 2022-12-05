@@ -243,7 +243,7 @@ The construction of Lebesgue measure via the outer measure can be generalised vi
 
 We briefly give the defintion of a ring of subsets. This is different (though a bit similar) to the definition you may have seen in group theory.
 
-::: {.definition name="Ring"}
+::: {.definition name="Ring - NONEXAMINABLE"}
 
 A collection of subsets, $\mathcal{A}$, of a space $E$ is called a ring if for every $A,B \in \mathcal{A}$ we have $A \setminus B \in \mathcal{A}$ and $A \cup B \in \mathcal{A}$.
 
@@ -252,7 +252,7 @@ A collection of subsets, $\mathcal{A}$, of a space $E$ is called a ring if for e
 Now we introduce Carathéodory's Extension theorem. We can see that the proof is in many ways very similar to the construction of Lebesgue measure. 
 
 
-::: {.theorem name="Carathéodory's Extension Theorem"}
+::: {.theorem name="Carathéodory's Extension Theorem - NONEXAMINABLE"}
 
 Let $\mathcal{A}$ be a ring of subsets of $E$, and let $\mu: \mathcal{A} \rightarrow [0, \infty]$ be a countably additive set function. Then $\mu$ extends to a measure on $\sigma(\mathcal{A})$.
 

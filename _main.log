@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.3)  7 NOV 2022 16:16
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.3)  5 DEC 2022 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -878,22 +878,22 @@ Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:sc
 ]
 Chapter 6.
 [49]
-Overfull \hbox (24.93398pt too wide) detected at line 1859
+Overfull \hbox (24.93398pt too wide) detected at line 1857
 [] [][][][][] [] [][][][][][][][][][][] [] [] [][] [][][][][] [] [] [][] [] [][][][][] [] [][] [] [] [][]
  []
 
 [50] [51] [52] [53]
-Underfull \hbox (badness 1270) in paragraph at lines 2042--2043
+Underfull \hbox (badness 1270) in paragraph at lines 2040--2041
 []\TU/lmr/m/it/10 Remark \TU/lmr/m/n/10 (Tchernoff bounds)\TU/lmr/m/it/10 . []\TU/lmr/m/n/10 Another common use of Markov’s inequality is when we know how
  []
 
 [54]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 2128.
+(Font)              scaled to size 14.4pt on input line 2126.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 2128.
+(Font)              scaled to size 14.4013pt on input line 2126.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 2128.
+(Font)              scaled to size 14.39845pt on input line 2126.
 [55]
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 [56] [57] [58
@@ -914,19 +914,23 @@ Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:sc
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-[66] [67] [68]
+[66] [67] [68] [69] [70
+
+]
+Chapter 9.
+[71] [72]
 No file _main.bbl.
-[69] (./_main.aux)
+[73] (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 45A855680EA9E88E46B49F3699975B8C;4511.
+(rerunfilecheck)             Checksum: B559189B181929DA5C78BEEF5A67368B;5997.
  ) 
 Here is how much of TeX's memory you used:
- 17719 strings out of 477743
- 328613 string characters out of 5841944
- 856510 words of memory out of 5000000
- 38509 multiletter control sequences out of 15000+600000
+ 17728 strings out of 477743
+ 328851 string characters out of 5841944
+ 855951 words of memory out of 5000000
+ 38518 multiletter control sequences out of 15000+600000
  481211 words of font info for 116 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,9n,121p,1531b,488s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (69 pages).
+Output written on _main.pdf (73 pages).

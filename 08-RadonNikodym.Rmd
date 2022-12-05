@@ -184,7 +184,7 @@ Now we turn to uniqueness suppose that we have two positive functions $g,h$ such
 :::
 
 
-## Duality in $L^p$ spaces
+## Duality in $L^p$ spaces - NONEXAMINABLE
 
 The goal of this section is to prove that if $1/p+1/q =1$ then the dual space of $L^p(E)$ is isomorphic to the space $L^q(E)$. First let us define a dual space.
 
