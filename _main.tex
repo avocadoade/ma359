@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2022-12-05}
+\date{2023-09-26}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -157,7 +157,7 @@ For use in later courses:
 \item
   Equivalences between ways things converge.
 \item
-  Convergence theorems: i.e.~when convergence of functions implies convergence of their integrals.
+  Convergence theorems: i.e.~when convergence of functions implies convergence of their integrals (dominated convergence and monotone convergence).
 \item
   Important inequalities: Hölder/Cauchy-Schwartz, Minkowski, Jensen.
 \item
@@ -2437,7 +2437,7 @@ then since \(\emptyset \subseteq A\) we have that \(\delta_1 \geq 0\). If \(\del
 
 \[ \delta_n = \sup\{ \nu(C) \,:\, C \subseteq (A \setminus \bigcup_{i=1}^{n-1}C_i)\} \]
 
-and \(C_n\) a set so that
+and \(C_n \subseteq A\) a set so that \(C_n \cap \left( \bigcup_{i=1}^{n-1}C)i\right) = \emptyset\) and
 
 \[ \nu(C_n) \geq \min\{ \delta_n /2 ,1\}. \]
 
@@ -2575,19 +2575,21 @@ Remark: This result is similar in spirit to the Riesz representation result that
 
 First we note that the map \(g \mapsto K_g\) is linear and \(\|K_g\|_{(L^p)'} \leq \|g\|_q\). Therefore the map is injective we want to show that \(\|K_g\| = \|g\|\) and that it is surjective.
 
-First for the fact that \(\|K_g\| = \|g\|\) we look at the function \(f(x) = sgn(g)|g(x)|^{q-1}\) then \(\mu(|f|^p) = \mu(|g|^q) < \infty\). Therfore we can look at the action of \(K_g\) on \(f\) and we have \(K_g(f) = \mu(|g|^q)\) so we know that \(\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q\). Therefore \(g \mapsto K_g\) preserves norms.
+First for the fact that \(\|K_g\| = \|g\|\) we look at the function \(f(x) = sgn(g)|g(x)|^{q-1}\) then \(\mu(|f|^p) = \mu(|g|^q) < \infty\). Therefore we can look at the action of \(K_g\) on \(f\) and we have \(K_g(f) = \mu(|g|^q)\) so we know that \(\|K_g\| \geq K_g(f)/\|f\|_p = \mu(|g|^q)/\mu(|g|^q)^{1/p} = \mu(|g|^q)^{1-1/p} = \|g\|_q\). Therefore \(g \mapsto K_g\) preserves norms.
 
-Now we want to show that this map is surgective, let us begin with the case where \(\mu(E)<\infty\). Let us take \(K\) an arbirary element of \((L^p(E))'\). In this case \(1_A \in L^p(E)\) for every \(A \in \mathcal{E}\) so we can define a function on \(\mathcal{E}\) by \(k(A)=K(1_A)\). We want to show that \(k\) is a signed measure. \(k(\emptyset)=K(0)=0\) and let \(A_1,A_2,\dots\) be a sequece of disjoint measurable sets. Then \(1_{\bigcup_{j=1}^n A_j} = \sum_{j=1}^n 1_{A_j}\) then \(k(\bigcup_{j=1}^n A_j) = K(1_{\bigcup_{j=1}^n A_j}) = K( \sum_{j=1}^n 1_{A_j}) = \sum_{j=1}^n K(1_{A_j}) = \sum_{j=1}^n k(A_j)\). We also have that \(\| 1_{\bigcup_j A_j} - 1_{\bigcup_{j=1}^n A_j} \|_p \rightarrow 0\) as \(n \rightarrow 0\). Therefore, as \(K\) is a continous map on \(L^p\) we have \(K(1_{\bigcup_n A_n}) = \sum_n K(1_{A_n})\), so \(k(\bigcup_n A_n) = \sum_n k(A_n)\) Therefore \(k\) is indeed a signed measure. By the Hahn decomposition and the Jordan decomposition we can write \(k = k_+ - k_-\) and there exists \(P \cup N\) a Hahn decomposition with \(k\) being positive on \(P\) and negative on \(N\).
+Now we want to show that this map is surjective. Let us take \(K\) an arbitrary element of \((L^p(E))'\). Since \(\mu(E) < \infty\), \(1_A \in L^p(E)\) for every \(A \in \mathcal{E}\) so we can define a function on \(\mathcal{E}\) by \(k(A)=K(1_A)\). We want to show that \(k\) is a signed measure. \(k(\emptyset)=K(0)=0\) and let \(A_1,A_2,\dots\) be a sequence of disjoint measurable sets. Then \(1_{\bigcup_{j=1}^n A_j} = \sum_{j=1}^n 1_{A_j}\) then \(k(\bigcup_{j=1}^n A_j) = K(1_{\bigcup_{j=1}^n A_j}) = K( \sum_{j=1}^n 1_{A_j}) = \sum_{j=1}^n K(1_{A_j}) = \sum_{j=1}^n k(A_j)\). We also have that \(\| 1_{\bigcup_j A_j} - 1_{\bigcup_{j=1}^n A_j} \|_p \rightarrow 0\) as \(n \rightarrow 0\). Therefore, as \(K\) is a continuous map on \(L^p\) we have \(K(1_{\bigcup_n A_n}) = \sum_n K(1_{A_n})\), so \(k(\bigcup_n A_n) = \sum_n k(A_n)\) Therefore \(k\) is indeed a signed measure. By the Hahn decomposition and the Jordan decomposition we can write \(k = k_+ - k_-\) and there exists \(P \cup N\) a Hahn decomposition with \(k\) being positive on \(P\) and negative on \(N\).
 
-Next we want to show that \(k_+ \ll \mu\) and \(k_- \ll \mu\). If \(A \in \mathcal{E}\) is such that \(\mu(A) = 0\) then \(\mu(A \cap P)=0\) and \(\mu(A \cap N) = 0\) and \(K(1_{A \cap P}) = K(0) = 0\) and \(K(1_{A \cap N}) = K(0) = 0\). Therefore \(k_+(A) = 0\) and \(k_-(A) = 0\).
+Next we want to show that \(k_+ \ll \mu\) and \(k_- \ll \mu\). If \(A \in \mathcal{E}\) is such that \(\mu(A) = 0\) then \(\mu(A \cap P)=0\) and \(\mu(A \cap N) = 0\) and as \(1_{A \cap P}= 0 \mu\)-a.e. we have \(K(1_{A \cap P}) = K(0) = 0\) and \(K(1_{A \cap N}) = K(0) = 0\). Therefore \(k_+(A) = 0\) and \(k_-(A) = 0\).
 
-Then by the Radon-Nikodym theorem there exists functions \(g_+\) and \(g_-\) such that \(k_+(A) = \mu(g_+1_A)\) and \(k_-(A) = - \mu(g_- 1_A)\). Now let \(g = g_+ - g_-\) we want to show that \(g \in L^q\) and that \(K = K_g\). This is complicated.
+Then by the Radon-Nikodym theorem there exists functions \(g_+\) and \(g_-\) such that \(k_+(A) = \mu(g_+1_A)\) and \(k_-(A) = - \mu(g_- 1_A)\). Now let \(g = g_+ - g_-\) we want to show that \(g \in L^q\) and that \(K = K_g\). This is complicated!
 
 Let us define \(E_n\) by \(E_n = \{ x \,:\, |g(x)| \leq n\}\) then \(g1_{E_n}\) is bounded and so in \(L^q\) as \(\mu\) is finite. Then define a linear functional on \(L^p\) by \(K_n(f) = \mu(fg1_{E_n})\) and another by \(\tilde{K}_n (f) = K(f1_{E_n})\). Then if \(A\) is a measurable set we have \(K_n (1_A) = \tilde{K}_n (1_A)\), by linearity if \(h\) is a simple function then \(K_n(h) = \tilde{K}_n(h)\).
 
 We showed in Assignment 4 that given a function \(f \in L^p, \epsilon >0\) there exists a simple function \(h\) with \(\|f-h\|_p \leq \epsilon\). Then we have that
 \[ |K_n(f) - \tilde{K}_n(f)| \leq |K_n(f) - K_n(h)| + |\tilde{K}_n(f) - \tilde{K}_n (h)| \leq \|K\| \|f-h\|_p + \|g1_{E_n}\|_q \|f-h\|_p \leq (\|K\| + \|g\|_q) \epsilon.\] Since \(\epsilon\) is arbitrary this shows that \(K_n(f) = \tilde{K}_n(f)\). \(\tilde{K}_n(f) = K_{g1_{E_n}}(f)\) so by our isometry we have \(\|\tilde{K}_n\| = \|g1_{E_n}\|_q\). We also have that \(\|\tilde{K}_n\| \leq \|K\|\) as
-\(\| \tilde{K}_n\| = \sup_{\|f\|_p =1} K_n(f) = \sup_{\|f\|_p = 1} K(f1_{E_n}) \leq \sup_{\|f\|_p=1} K(f) = \|K\|\). Therefore \(\|g1_{E_n}\|_q \leq \|K\|\) therefore \(\|g1_{E_n}\|_p^p = \int |g|^p 1_{E_n} \mu(\mathrm{d}x)\) and then by monotone convergence we get that \(\|g\|_q = \lim_n \|g 1_{E_n}\|_q \leq \|K\|\). Therefore, \(g \in L^q\). Then by exactly the same argument with which we showed \(K_n = \tilde{K}_n\) we have that \(K = K_g\). This concludes the proof int he finite case.
+\(\| \tilde{K}_n\| = \sup_{\|f\|_p =1} K_n(f) = \sup_{\|f\|_p = 1} K(f1_{E_n}) \leq \sup_{\|f\|_p=1} K(f) = \|K\|\). Therefore \(\|g1_{E_n}\|_q \leq \|K\|\) therefore \(\|g1_{E_n}\|_p^p = \int |g|^p 1_{E_n} \mu(\mathrm{d}x)\) and then by monotone convergence we get that \(\|g\|_q = \lim_n \|g 1_{E_n}\|_q \leq \|K\|\). Therefore, \(g \in L^q\). Then by exactly the same argument with which we showed \(K_n = \tilde{K}_n\) we have that \(K = K_g\). This concludes the proof in the finite case.
+
+Extending to the sigma finite case works very similarly to previous results.
 \end{proof}
 
 \hypertarget{summary-of-the-course-and-list-of-important-theorems}{%
