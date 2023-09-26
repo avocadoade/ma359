@@ -26,7 +26,7 @@ For use in later courses:
 - Why you can work with measures just by looking at how they behave on a $\pi$-system (find out what that is soon!).
 - The different ways in which functions can converge.
 - Equivalences between ways things converge.
-- Convergence theorems: i.e. when convergence of functions implies convergence of their integrals.
+- Convergence theorems: i.e. when convergence of functions implies convergence of their integrals (dominated convergence and monotone convergence).
 - Important inequalities: Hölder/Cauchy-Schwartz, Minkowski, Jensen.
 - When you can switch the order of integration.
 
