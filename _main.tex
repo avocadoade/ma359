@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2023-09-26}
+\date{2023-10-04}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -243,7 +243,7 @@ However, in order to better understand the definition we give a few examples of 
 \item
   The set of all intervals in \(\mathbb{R}\) is not a \(\sigma\)-algebra as it is not closed under taking unions.
 \item
-  The set of all finite unions of half open intervals of the form\((a,b], a \in \mathbb{R}\cup\{-\infty\}, b \in \mathbb{R}\) or \((a, \infty), a \in \mathbb{R}\cup\{-\infty\}\) is an algebra but not a \(\sigma\)-algebra as it is closed under finite unions but not countable unions (work out why!).
+  The set of all finite unions of half open intervals of the form\((a,b], a,b \in \mathbb{R}, (-\infty, b]\) or \((a, \infty), a \in \mathbb{R}\cup\{-\infty\}\) is an algebra but not a \(\sigma\)-algebra as it is closed under finite unions but not countable unions (work out why!).
 \item
   If \(A, B \neq \phi, E\) and \(A \neq B, B^c\) then any \(\sigma\)-algebra containing \(A\) and \(B\) must contain \(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c\). This is the smallest \(\sigma\)-algebra that contains \(A\) and \(B\).
 \end{itemize}
