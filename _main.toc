@@ -2,12 +2,12 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Integration}{7}{section.1.1}%
 \contentsline {section}{\numberline {1.2}The most important things you will learn in this course}{7}{section.1.2}%
-\contentsline {chapter}{\numberline {2}\(\mitsigma \)-algebras, definition of a measure}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {2}\(\sigma \)-algebras, definition of a measure}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Collections of subsets}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Set functions}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Set functions}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Measure spaces}{13}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Outer measures and Lebesgue Measure}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Properties of Lebesgue measure}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Properties of Lebesgue measure}{22}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Mesurable funtions}{27}{chapter.4}%
 \contentsline {subsection}{\numberline {4.0.1}Random variables and the measure theoretic formulation of probability - NONEXAMINABLE}{29}{subsection.4.0.1}%
 \contentsline {section}{\numberline {4.1}Convergence of measurable functions}{30}{section.4.1}%
