@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Integration}{7}{section.1.1}%
 \contentsline {section}{\numberline {1.2}The most important things you will learn in this course}{7}{section.1.2}%
-\contentsline {chapter}{\numberline {2}\(\sigma \)-algebras, definition of a measure}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {2}sigma-algebras, definition of a measure}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Collections of subsets}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Set functions}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Measure spaces}{13}{section.2.3}%
@@ -14,7 +14,7 @@
 \contentsline {section}{\numberline {4.2}Egoroff's Theorem and Lusin's Theorem}{32}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Integration}{35}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Convergence theorems for integrals of functions}{38}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Agreement with Riemann Integral}{45}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Agreement with Riemann Integral}{46}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Norms and inequalities}{49}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Inequalities}{50}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Back to \(L^p\) spaces}{56}{section.6.2}%

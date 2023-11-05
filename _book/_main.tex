@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2023-10-09}
+\date{2023-11-05}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -165,7 +165,7 @@ For use in later courses:
 \end{itemize}
 
 \hypertarget{sigma-algebras-definition-of-a-measure}{%
-\chapter{\texorpdfstring{\(\sigma\)-algebras, definition of a measure}{\textbackslash sigma-algebras, definition of a measure}}\label{sigma-algebras-definition-of-a-measure}}
+\chapter{sigma-algebras, definition of a measure}\label{sigma-algebras-definition-of-a-measure}}
 
 We are going to begin by learning the basic definitions of measure and the different types of collections of subsets that are important in the theory. While this is fairly dry and unmotivated it is relatively straightforward and provides a good foundation for the rest of the course. You should think about this section like you would think about learning the group axioms before learning any specific use group theory would be put to.
 
@@ -245,7 +245,7 @@ However, in order to better understand the definition we give a few examples of 
 \item
   The set of all finite unions of half open intervals of the form\((a,b], a,b \in \mathbb{R}, (-\infty, b]\) or \((a, \infty), a \in \mathbb{R}\cup\{-\infty\}\) is an algebra but not a \(\sigma\)-algebra as it is closed under finite unions but not countable unions (work out why!).
 \item
-  If \(A, B \neq \phi, E\) and \(A \neq B, B^c\) then any \(\sigma\)-algebra containing \(A\) and \(B\) must contain \(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c\). This is the smallest \(\sigma\)-algebra that contains \(A\) and \(B\).
+  If \(A, B \neq \phi, E\) and \(A \neq B, B^c\) then any \(\sigma\)-algebra containing \(A\) and \(B\) must contain \(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c, ((A \cap B) \cup (A^c \cap B^c)), ((A \cup B) \setminus (A \cap B))\). This is the smallest \(\sigma\)-algebra that contains \(A\) and \(B\).
 \end{itemize}
 
 \end{example}
@@ -385,7 +385,7 @@ We call this last property \emph{countable additivity}. Note that the domain of 
 \begin{example}[Delta (function)]
 You've probably seen \(\delta_{x_0}(x)\) used before; it is similar to the Kroeneker delta which appears in discrete spaces \(\delta_{x,y} = 1\) if and only if \(x=y\). This is the `function' defined by \(\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)\). We can define a measure on \(\mathbb{R}^d\) which will have this property by
 
-\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.\]
+\[\delta_{x_0}(A) = \left\{ \begin{array}{ll} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.\]
 \end{example}
 
 \begin{example}[Countable spaces]
@@ -1286,7 +1286,7 @@ The integral of a simple function is well defined (it doesn't depend on the choi
 \end{lemma}
 
 \begin{proof}
-Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are \(a_1, \dots, a_n\) and we can write it as \(f(x) = \sum_{k=1}^n a_k f^{-1}(\{a_k\})\). Any other representation will just split up the sets \(f^{-1}(\{a_k\})\), overlap them or add \(0*1_{B}\) for some set \(B\). We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
+Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are \(a_1, \dots, a_n\) and we can write it as \(f(x) = \sum_{k=1}^n a_k 1_{f^{-1}(\{a_k\})}\). Any other representation will just split up the sets \(f^{-1}(\{a_k\})\), overlap them or add \(0*1_{B}\) for some set \(B\). We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
 
 without loss of generality lets assume the \(a_k, b_j\) are strictly positive and the sets \(A_k\) are disjoint and similar for the \(B_j\). Let us suppose that \(f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}\) which are both simple function representations. Then we can see that \(\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k\) and that \(a_i =b_j\) if \(A_i \cap B_j \neq \emptyset\). Using this we can write
 
@@ -1449,6 +1449,10 @@ Now \(\mu(f) = 0\) if and only if
 
 which is if and only if \(\mu(h) = 0\) for every \(h \leq f\) and \(h\) simple. Now we know that if \(h\) is simple \(\mu(h) = 0\) if and only if \(h\) is zero almost everywhere. This tells us that \(\mu(f) = 0\) if and only if \(h \leq f\) and \(h\) simple, implies \(h = 0\) almost everywhere. If we look at the set on which \(f\) is positive we have \(\{x\,:\, f(x)>0\} = \bigcup_n \{ x \,:\, f(x) > 1/n\}\) so by continuity of measure if \(\mu( f>0)>0\) then there exists some \(n\) such that \(\mu(f >1/n)>0\) therefore \(f\) is zero almost everywhere if and only if we can't fit any simple function underneath \(f\) which is not zero almost everywhere.
 \end{proof}
+
+\begin{remark}
+Starting from Beppo-Levi below there are a few theorems in the notes which are not completely correct because I have chosen not to spend time discussing functions taking values in the extended reals \([0,\infty]\). You can see in the theorem below that it is possible that \(\sum_n f_n\) will attain the value \(\infty\) so our previous work may not hold. In fact we could have (and maybe should have) worked with measurable functions taking values in \([0, \infty]\) then in our definition of simple function we can allow \(a_k = \infty\) and take the convention \(0 \times \infty = 0\). Then we can build up the theory of integration for non-negative functions in exactly the same way. The only slightly complicated thing is putting a \(\sigma\)-algebra on \([0,\infty]\) but this is also straightforward. If you are curious more details can be found in Cohn's book. This subtlety is definitely not examinable and you will probably not need to think about it to follow the course but I am mentioning it to avoid confusion.
+\end{remark}
 
 Using this we can give another writing of the monotone convergence theorem.
 

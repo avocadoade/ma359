@@ -48,7 +48,7 @@ The integral of a simple function is well defined (it doesn't depend on the choi
 
 ::: {.proof}
 
-Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are $a_1, \dots, a_n$ and we can write it as $f(x) = \sum_{k=1}^n a_k f^{-1}(\{a_k\})$. Any other representation will just split up the sets $f^{-1}(\{a_k\})$, overlap them or add $0*1_{B}$ for some set $B$. We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
+Let us first look at the well definedness. The most important thing to notice is that a simple function can only take finitely many values, suppose they are $a_1, \dots, a_n$ and we can write it as $f(x) = \sum_{k=1}^n a_k 1_{f^{-1}(\{a_k\})}$. Any other representation will just split up the sets $f^{-1}(\{a_k\})$, overlap them or add $0*1_{B}$ for some set $B$. We can prove it slowly as in the next paragraph but you don't need to be able to repeat this.
 
 without loss of generality lets assume the $a_k, b_j$ are strictly positive and the sets $A_k$ are disjoint and similar for the $B_j$. Let us suppose that $f = \sum_{k=1}^n a_k 1_{A_k} = \sum_{k=1}^m b_k 1_{B_k}$ which are both simple function representations. Then we can see that $\bigcup_{k=1}^nA_k = \bigcup_{k=1}^m B_k$ and that $a_i =b_j$ if $A_i \cap B_j \neq \emptyset$. Using this we can write
 
@@ -233,6 +233,11 @@ which is if and only if $\mu(h) = 0$ for every $h \leq f$ and $h$ simple. Now we
 
 :::
 
+::: {.remark}
+
+Starting from Beppo-Levi below there are a few theorems in the notes which are not completely correct because I have chosen not to spend time discussing functions taking values in the extended reals $[0,\infty]$. You can see in the theorem below that it is possible that $\sum_n f_n$ will attain the value $\infty$ so our previous work may not hold. In fact we could have (and maybe should have) worked with measurable functions taking values in $[0, \infty]$ then in our definition of simple function we can allow $a_k = \infty$ and take the convention $0 \times \infty = 0$. Then we can build up the theory of integration for non-negative functions in exactly the same way. The only slightly complicated thing is putting a $\sigma$-algebra on $[0,\infty]$ but this is also straightforward. If you are curious more details can be found in Cohn's book. This subtlety is definitely not examinable and you will probably not need to think about it to follow the course but I am mentioning it to avoid confusion.
+
+:::
 
 Using this we can give another writing of the monotone convergence theorem.
 

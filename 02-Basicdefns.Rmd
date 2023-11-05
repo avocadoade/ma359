@@ -1,4 +1,4 @@
-# $\sigma$-algebras, definition of a measure
+# sigma-algebras, definition of a measure
 
 We are going to begin by learning the basic definitions of measure and the different types of collections of subsets that are important in the theory. While this is fairly dry and unmotivated it is relatively straightforward and provides a good foundation for the rest of the course. You should think about this section like you would think about learning the group axioms before learning any specific use group theory would be put to.
 
@@ -60,7 +60,7 @@ However, in order to better understand the definition we give a few examples of 
 - If $A \subset E$ then $\{\emptyset, A, A^c, E\}$ is a $\sigma$-algebra.
 - The set of all intervals in $\mathbb{R}$ is not a $\sigma$-algebra as it is not closed under taking unions.
 - The set of all finite unions of half open intervals of the form$(a,b], a,b \in \mathbb{R}, (-\infty, b]$ or $(a, \infty), a \in \mathbb{R}\cup\{-\infty\}$ is an algebra but not a $\sigma$-algebra as it is closed under finite unions but not countable unions (work out why!).
-- If  $A, B \neq \phi, E$ and $A \neq B, B^c$ then any $\sigma$-algebra containing $A$ and $B$ must contain $\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c$. This is the smallest $\sigma$-algebra that contains $A$ and $B$.
+- If  $A, B \neq \phi, E$ and $A \neq B, B^c$ then any $\sigma$-algebra containing $A$ and $B$ must contain $\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c, ((A \cap B) \cup (A^c \cap B^c)), ((A \cup B) \setminus (A \cap B))$. This is the smallest $\sigma$-algebra that contains $A$ and $B$.
 
 :::
 
@@ -196,7 +196,7 @@ We call this last property *countable additivity*. Note that the domain of a mea
 
 You've probably seen $\delta_{x_0}(x)$ used before; it is similar to the Kroeneker delta which appears in discrete spaces $\delta_{x,y} = 1$ if and only if $x=y$. This is the `function' defined by $\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)$.  We can define a measure on $\mathbb{R}^d$ which will have this property by 
 
-$$\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.$$
+$$\delta_{x_0}(A) = \left\{ \begin{array}{ll} 1 & x_0 \in A \\ 0 & x_0 \notin A \end{array} \right.$$
 
 :::
 

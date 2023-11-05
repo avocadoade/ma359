@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes</title>
-  <meta name="description" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  <title>Chapter 2 sigma-algebras, definition of a measure | Measure theory lecture notes</title>
+  <meta name="description" content="Chapter 2 sigma-algebras, definition of a measure | Measure theory lecture notes" />
   <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  <meta property="og:title" content="Chapter 2 sigma-algebras, definition of a measure | Measure theory lecture notes" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="https://github.com/avocadoade/ma359" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 \(\sigma\)-algebras, definition of a measure | Measure theory lecture notes" />
+  <meta name="twitter:title" content="Chapter 2 sigma-algebras, definition of a measure | Measure theory lecture notes" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2023-10-09" />
+<meta name="date" content="2023-11-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,7 @@
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#integration"><i class="fa fa-check"></i><b>1.1</b> Integration</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#the-most-important-things-you-will-learn-in-this-course"><i class="fa fa-check"></i><b>1.2</b> The most important things you will learn in this course</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure</a>
+<li class="chapter" data-level="2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html"><i class="fa fa-check"></i><b>2</b> sigma-algebras, definition of a measure</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets"><i class="fa fa-check"></i><b>2.1</b> Collections of subsets</a></li>
 <li class="chapter" data-level="2.2" data-path="sigma-algebras-definition-of-a-measure.html"><a href="sigma-algebras-definition-of-a-measure.html#set-functions"><i class="fa fa-check"></i><b>2.2</b> Set functions</a></li>
@@ -145,7 +145,7 @@
 
             <section class="normal" id="section-">
 <div id="sigma-algebras-definition-of-a-measure" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> <span class="math inline">\(\sigma\)</span>-algebras, definition of a measure<a href="sigma-algebras-definition-of-a-measure.html#sigma-algebras-definition-of-a-measure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 2</span> sigma-algebras, definition of a measure<a href="sigma-algebras-definition-of-a-measure.html#sigma-algebras-definition-of-a-measure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>We are going to begin by learning the basic definitions of measure and the different types of collections of subsets that are important in the theory. While this is fairly dry and unmotivated it is relatively straightforward and provides a good foundation for the rest of the course. You should think about this section like you would think about learning the group axioms before learning any specific use group theory would be put to.</p>
 <div id="collections-of-subsets" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Collections of subsets<a href="sigma-algebras-definition-of-a-measure.html#collections-of-subsets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -187,7 +187,7 @@
 <li>If <span class="math inline">\(A \subset E\)</span> then <span class="math inline">\(\{\emptyset, A, A^c, E\}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra.</li>
 <li>The set of all intervals in <span class="math inline">\(\mathbb{R}\)</span> is not a <span class="math inline">\(\sigma\)</span>-algebra as it is not closed under taking unions.</li>
 <li>The set of all finite unions of half open intervals of the form<span class="math inline">\((a,b], a,b \in \mathbb{R}, (-\infty, b]\)</span> or <span class="math inline">\((a, \infty), a \in \mathbb{R}\cup\{-\infty\}\)</span> is an algebra but not a <span class="math inline">\(\sigma\)</span>-algebra as it is closed under finite unions but not countable unions (work out why!).</li>
-<li>If <span class="math inline">\(A, B \neq \phi, E\)</span> and <span class="math inline">\(A \neq B, B^c\)</span> then any <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> must contain <span class="math inline">\(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c\)</span>. This is the smallest <span class="math inline">\(\sigma\)</span>-algebra that contains <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</li>
+<li>If <span class="math inline">\(A, B \neq \phi, E\)</span> and <span class="math inline">\(A \neq B, B^c\)</span> then any <span class="math inline">\(\sigma\)</span>-algebra containing <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> must contain <span class="math inline">\(\phi, E, A, B, A^c, B^c, A\cup B, A\cap B, A^c \cup B^c, A^c \cap B^c, A^c \cup B, A^c \cap B, A \cup B^c, A \cap B^c, ((A \cap B) \cup (A^c \cap B^c)), ((A \cup B) \setminus (A \cap B))\)</span>. This is the smallest <span class="math inline">\(\sigma\)</span>-algebra that contains <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</li>
 </ul>
 </div>
 <p>We now collect some results and further definitions about <span class="math inline">\(\sigma\)</span>-algebras. The most important is the idea of a <span class="math inline">\(\sigma\)</span>-algebra being generated by a smaller set.</p>
@@ -271,7 +271,7 @@
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.3  (Delta (function)) </strong></span>You’ve probably seen <span class="math inline">\(\delta_{x_0}(x)\)</span> used before; it is similar to the Kroeneker delta which appears in discrete spaces <span class="math inline">\(\delta_{x,y} = 1\)</span> if and only if <span class="math inline">\(x=y\)</span>. This is the `function’ defined by <span class="math inline">\(\int \delta_{x_0}(x)f(x) \mathrm{d}x = f(x_0)\)</span>. We can define a measure on <span class="math inline">\(\mathbb{R}^d\)</span> which will have this property by</p>
-<p><span class="math display">\[\delta_{x_0}(A) = \left\{ \begin{array}{l l} 1 &amp; x_0 \in A \\ 0 &amp; x_0 \notin A \end{array} \right.\]</span></p>
+<p><span class="math display">\[\delta_{x_0}(A) = \left\{ \begin{array}{ll} 1 &amp; x_0 \in A \\ 0 &amp; x_0 \notin A \end{array} \right.\]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-21" class="example"><strong>Example 2.4  (Countable spaces) </strong></span>If <span class="math inline">\(E = \{ x_1, x_2, \dots\}\)</span> is a countable space and <span class="math inline">\(F: E \rightarrow \mathbb{R}_{\geq 0}\)</span> is a non-negative function then we can define a measure by <span class="math inline">\(\mu(A) = \sum_n F(x_n)1_{x_n \in A}\)</span>. In fact any measure on a countable set can be written this way by choosing <span class="math inline">\(F(x_n) = \mu(\{x_n\})\)</span>.</p>

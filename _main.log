@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.11)  9 OCT 2023 09:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.11)  5 NOV 2023 09:23
 entering extended mode
 **./_main.tex
 (_main.tex
@@ -499,8 +499,7 @@ ex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count299
 \l__pdf_internal_box=\box58
-)
-No file _main.aux.
+) (_main.aux)
 \openout1 = `_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
@@ -536,6 +535,7 @@ LaTeX Info: Redefining \showhyphens on input line 105.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
+
 (C:\Users\user\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
@@ -637,23 +637,20 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {C:/Users/user/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
 
-]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+] (_main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+[3])
 \tf@toc=\write3
 \openout3 = `_main.toc'.
 
-[3] [4
+ [4] [5
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 116.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 116.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 116.
- [5] [6
+] [6
 
 ]
 Chapter 1.
@@ -664,12 +661,6 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [7]
 [8]
 Chapter 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 168.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 168.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 168.
 [9
 
 ]
@@ -694,12 +685,12 @@ Chapter 4.
 
 ]
 Chapter 5.
-[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48
+[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48]
+Chapter 6.
+[49
 
 ]
-Chapter 6.
-[49]
-Overfull \hbox (30.1916pt too wide) detected at line 1857
+Overfull \hbox (30.1916pt too wide) detected at line 1861
 [] \OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x\OT1/
 lmr/m/n/10 ) + \OML/lmm/m/it/10 g\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x\OT1/lmr/m/
 n/10 )\OMS/lmsy/m/n/10 j[]\OML/lmm/m/it/10 \OT1/lmr/m/n/10 (d\OML/lmm/m/it/10 
@@ -712,7 +703,7 @@ ML/lmm/m/it/10 :
 
 [50] [51] [52] [53] [54]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 2126.
+(Font)              <14.4> on input line 2130.
  [55] [56] [57] [58
 
 ]
@@ -727,47 +718,44 @@ Chapter 8.
 Chapter 9.
 [71] [72]
 No file _main.bbl.
-[73] (_main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[73] (_main.aux) ) 
 Here is how much of TeX's memory you used:
- 14644 strings out of 479799
- 217464 string characters out of 2870197
- 538039 words of memory out of 3000000
- 30750 multiletter control sequences out of 15000+200000
- 631916 words of font info for 284 fonts, out of 3000000 for 9000
+ 14596 strings out of 479799
+ 216560 string characters out of 2870197
+ 540174 words of memory out of 3000000
+ 30709 multiletter control sequences out of 15000+200000
+ 618816 words of font info for 261 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,13n,85p,1522b,479s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc
-}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}
-{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
-sers/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
-ers/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/u
-ser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users/user/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/user/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/user/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/user/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/user/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/user/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/user/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/user/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/user/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/user/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/user/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/user/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/user/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/user/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/user/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/user/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/user/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/user/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/user/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on _main.pdf (73 pages, 606452 bytes).
+ 79i,13n,85p,1522b,449s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+lm/lm-mathit.enc}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/l
+m/lm-mathsy.enc}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
+/lm-rm.enc}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
+athex.enc}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec
+.enc}{C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc
+}<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb>
+<C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><
+C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C
+:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:
+/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/
+Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Us
+ers/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/User
+s/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/
+user/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/us
+er/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/user
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/user/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/user/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/user/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/user/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/user/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/user/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
+C:/Users/user/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
+
+Output written on _main.pdf (73 pages, 618195 bytes).
 PDF statistics:
- 766 PDF objects out of 1000 (max. 8388607)
+ 799 PDF objects out of 1000 (max. 8388607)
  281 named destinations out of 1000 (max. 500000)
- 47369 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 41225 words of extra memory for PDF output out of 42996 (max. 10000000)
 
