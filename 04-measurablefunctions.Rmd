@@ -332,7 +332,7 @@ Define sets $A_k = \{ x\,:\, g_{n_k}(x) \leq 1/k\}$ and let $A= \bigcap_k A_k$. 
 
 $$ \mu(A^c) = \mu \left( \bigcup_k A_k^c \right) \leq \sum_k \mu(A_k^c) \leq \sum_k \epsilon 2^{-k} = \epsilon. $$
 
-We want to show that $f_n$ converges uniformly to $f$ on $A$. For each $\delta$ there exists a $k$ such athat $1/k < \delta$, then as $A \subseteq A_k$, we have that for every $n \geq n_k$,
+We want to show that $f_n$ converges uniformly to $f$ on $A$. For each $\delta$ there exists a $k$ such that $1/k < \delta$, then as $A \subseteq A_k$, we have that for every $n \geq n_k$,
 
 $$ |f_n - f| \leq g_{n_k} \leq 1/k < \delta, $$
 
@@ -381,6 +381,6 @@ $$ \lambda(A \setminus K) \leq \lambda(A\setminus \bigcup_{k=1}^n A_k) + \lambda
 
 Now $f$ restricted to $K$ is continuous since the $K_i$ are disjoint and $f$ is constant on each $K_i$.
 
-Now we have proved the special case where $f$ takes countably many values we can use this to prove the theorem for general $f$. Let $f_n = 2^{-n} \lfloor 2^n f \rfloor$ then $2^{-n} \geq f(x)-f_n(x) \geq 0$ so $f_n(x) \rightarrow f(x)$, uniformly.  Now, $f_n$ can only take countably many values, so by our special case of Lusin's theorem there exists a $K_n \subseteq K$, compact, such that $\lambda(A \setminus K_n) \leq \epsilon 2^{-n}$, and $f_n$ is continuous on $K_n$. Now let $K_\infty = \bigcap_n K_n$, then $K_\infty$ is compact and $\lambda(A \setminus K_\infty) =    \lambda (\bigcup_n(A \setminus K_n)) \leq  \sum_n \epsilon 2^{-n} = \epsilon$. Now we have that $f_n$ converges uniformly to $f$ on $K_\infty$ and $f_n$ is continuous on $K_\infty$ for each $n$. As the uniform limit of continuous functions is continuous this shows that $f$ is continuous on $K$. 
+Now we have proved the special case where $f$ takes countably many values we can use this to prove the theorem for general $f$. Let $f_n = 2^{-n} \lfloor 2^n f \rfloor$ then $2^{-n} \geq f(x)-f_n(x) \geq 0$ so $f_n(x) \rightarrow f(x)$, uniformly.  Now, $f_n$ can only take countably many values, so by our special case of Lusin's theorem there exists a $K_n \subseteq A$, compact, such that $\lambda(A \setminus K_n) \leq \epsilon 2^{-n}$, and $f_n$ is continuous on $K_n$. Now let $K_\infty = \bigcap_n K_n$, then $K_\infty$ is compact and $\lambda(A \setminus K_\infty) =    \lambda (\bigcup_n(A \setminus K_n)) \leq  \sum_n \epsilon 2^{-n} = \epsilon$. Now we have that $f_n$ converges uniformly to $f$ on $K_\infty$ and $f_n$ is continuous on $K_\infty$ for each $n$. As the uniform limit of continuous functions is continuous this shows that $f$ is continuous on $K_\infty$. 
 
 :::

@@ -613,7 +613,7 @@ We need a final Lemma before we prove our theorem
 
 ::: {.lemma}
 
-Suppose that $f: \mathbb{R} \rightarrow \mathbb{R}$ is Lebesgue measurable and $g = f$ Lebesgue almost everywhere then $g$ is also Lebesgue measurable. 
+Suppose that $f: (\mathbb{R}, \mathscr{M}) \rightarrow (\mathbb{R}, \mathcal{B}(\mathbb{R}))$ is measurable with respect to the given $\sigma$-algebras and $g = f$ Lebesgue almost everywhere then $g$ is also measurable as a function from $(\mathbb{R}, \mathscr{M}) \rightarrow (\mathbb{R}, \mathcal{B}(\mathbb{R}))$. 
 
 :::
 

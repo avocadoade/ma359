@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2023-11-05}
+\date{2023-11-12}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -217,7 +217,7 @@ A collection of subsets of a space \(E\), \(\mathcal{A}\) is a \(\sigma\)-algebr
 \end{definition}
 
 \begin{lemma}
-We can equivalently define a \(\sigma\)-algebra as a collection of sets which is contains \(\emptyset\) and is closed under taking complements and countable unions.
+We can equivalently define a \(\sigma\)-algebra as a collection of sets which contains \(\emptyset\) and is closed under taking complements and countable unions.
 
 We can think of this as a kind of \emph{motto} for what a \(\sigma\)-algebra is.
 \end{lemma}
@@ -306,7 +306,7 @@ As \(\mathcal{B}_2\) contains \((-\infty, b]\) and \((-\infty, a]\) and is close
 Now we can see that \(\mathcal{B}_3\) contains \(\bigcup_n (a,b-1/n] = (a,b)\) for every \((a,b)\) therefore \(\mathcal{B}_3\) contains \(\mathcal{B}_4\).
 
 Now we want to show that \(\mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}_4\). This will conclude the proof. We need to show that any open set in \(\mathbb{R}\) is a countable union of open intervals. Let \(U\) be such an open set then let
-\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \] Then since \(O\) is a union of subsets of \(U\) then \(O \subseteq U\). Suppose that \(x \in U\) then there exists some \(\rho\) such that \((x-\rho, x+\rho) \subseteq U\). There is some rationals \(q,r\) such that \(x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)\) therefore \(x \in O\). Consequently \(U= O\).
+\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \] Then since \(O\) is a union of subsets of \(U\) then \(O \subseteq U\). Suppose that \(x \in U\) then there exists some \(\rho\) such that \((x-\rho, x+\rho) \subseteq U\). There are some rationals \(q,r\) such that \(x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)\) therefore \(x \in O\). Consequently \(U= O\).
 \end{proof}
 
 \begin{remark}
@@ -553,7 +553,7 @@ Note: When we are working in \(\mathbb{R}^d\) as in the assignment the terms inv
 We want to turn this outer measure into a true measure. In order to do this we need to restrict \(\lambda^*\) to some subset of \(\mathscr{P}(\mathbb{R})\).
 
 \begin{definition}[Lebesgue Measurable sets]
-We call a set \(A \in \mathscr{P}(\mathbb{R})\) is \emph{Lebesgue Measureable} if for any \(B \in \mathscr{P}(\mathbb{R})\) we have
+We call a set \(A \in \mathscr{P}(\mathbb{R})\) \emph{Lebesgue Measureable} if for any \(B \in \mathscr{P}(\mathbb{R})\) we have
 
 \[ \lambda^*(B) = \lambda^*(A \cap B) + \lambda^*(A^c \cap B). \]
 \end{definition}
@@ -638,7 +638,7 @@ We need to show that \(\lambda^*\) is countably additive on \(\mathscr{M}\) so l
 \[ \lambda^*(B) \geq \sum_{i=1}^\infty \lambda^*(B \cap A_i) + \lambda^* \left( B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right). \]
 Now let us take the particular case where \(B = \bigcup_{i=1}^\infty A_i\) this gives
 
-\[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \geq \sum_{i=1}^n \lambda^*(A_i) + \lambda^* \left(\left( \bigcup_{i=1}^\infty A_i \right) \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right) = \sum_{i=1}^\infty \lambda^* (A_i). \]
+\[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \geq \sum_{i=1}^\infty \lambda^*(A_i) + \lambda^* \left(\left( \bigcup_{i=1}^\infty A_i \right) \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right) = \sum_{i=1}^\infty \lambda^* (A_i). \]
 Countable subadditivity gives
 
 \[ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^n \lambda^*(A_i),  \]
@@ -831,13 +831,13 @@ Furthermore we can find a sequence of half open rectangles \(R_k\) such that \(A
 
 Monotonicity shows that \[\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}.\] First let us assume that \(A\) is contained in some ball, \(B\) around 0. Now use the first part to find some open set \(U\) such that \(B \setminus A \subseteq U\) and \(\lambda(U) \leq \lambda(B \setminus A) + \epsilon\). Now let \(K = B \setminus U\) then we have \(K \subseteq A \subseteq B\) and \(\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon\) (here we use the fact that \(B, A, U, K\) will all have finite measure as they are inside \(B\)). As \(\epsilon\) is arbitrary this concludes the proof when \(A\) is contained in a ball.
 
-Now suppose that \(A\) is unbounded. Then let \(A_n = A \cap B_n\) where \(B_n\) is the closed ball of radius \(n\). We have that \(\lambda(A_n) \rightarrow \lambda(A)\). If \(\lambda(A) = \infty\) then we can find \(K_n \subseteq A_n\) with \(\lambda(K_n)\) arbitrarily close to \(\lambda(A_n)\) therefore we can find such a sequence with \(\lambda(K_n) \rightarrow \infty\). If \(\lambda(A) \neq \infty\) then, given \(\epsilon\), there exists \(N\) such that \(\lambda(A_n) \geq \lambda(A)-\epsilon\) for \(n \geq N\). Then we can find \(K_N \subseteq A_N\) such that \(\lambda(K_n) \geq \lambda(A_N) - \epsilon\) therefore \(\lambda(K_N) \geq \lambda(A)- 2 \epsilon\). This shows we can a compact set which is contained in \(A\), with measure arbitrarily close to that of \(A\).
+Now suppose that \(A\) is unbounded. Then let \(A_n = A \cap B_n\) where \(B_n\) is the closed ball of radius \(n\). We have that \(\lambda(A_n) \rightarrow \lambda(A)\). If \(\lambda(A) = \infty\) then we can find \(K_n \subseteq A_n\) with \(\lambda(K_n)\) arbitrarily close to \(\lambda(A_n)\) therefore we can find such a sequence with \(\lambda(K_n) \rightarrow \infty\). If \(\lambda(A) \neq \infty\) then, given \(\epsilon\), there exists \(N\) such that \(\lambda(A_n) \geq \lambda(A)-\epsilon\) for \(n \geq N\). Then we can find \(K_N \subseteq A_N\) such that \(\lambda(K_n) \geq \lambda(A_N) - \epsilon\) therefore \(\lambda(K_N) \geq \lambda(A)- 2 \epsilon\). This shows we can find a compact set which is contained in \(A\), with measure arbitrarily close to that of \(A\).
 \end{proof}
 
 We now want to recall that Lebesgue measure is the unique measure which assigns half open intervals (rectangles\ldots) the correct length.
 
 \begin{corollary}
-Lebesgue measure is translation invariant on \(\mathbb{R}\). That is to say if we define the set \(x+A = \{ x+y, y \in A\}\) then \(\lambda(x+A) = \lambda(A)\)
+Lebesgue measure is translation invariant on \(\mathcal{B}(\mathbb{R})\). That is to say if we define the set \(x+A = \{ x+y, y \in A\}\) then \(\lambda(x+A) = \lambda(A)\)
 \end{corollary}
 
 \begin{proof}
@@ -1189,7 +1189,7 @@ Define sets \(A_k = \{ x\,:\, g_{n_k}(x) \leq 1/k\}\) and let \(A= \bigcap_k A_k
 
 \[ \mu(A^c) = \mu \left( \bigcup_k A_k^c \right) \leq \sum_k \mu(A_k^c) \leq \sum_k \epsilon 2^{-k} = \epsilon. \]
 
-We want to show that \(f_n\) converges uniformly to \(f\) on \(A\). For each \(\delta\) there exists a \(k\) such athat \(1/k < \delta\), then as \(A \subseteq A_k\), we have that for every \(n \geq n_k\),
+We want to show that \(f_n\) converges uniformly to \(f\) on \(A\). For each \(\delta\) there exists a \(k\) such that \(1/k < \delta\), then as \(A \subseteq A_k\), we have that for every \(n \geq n_k\),
 
 \[ |f_n - f| \leq g_{n_k} \leq 1/k < \delta, \]
 
@@ -1233,7 +1233,7 @@ Suppose first that \(f\) only takes countably many values, \(a_1, a_2, a_3, \dot
 
 Now \(f\) restricted to \(K\) is continuous since the \(K_i\) are disjoint and \(f\) is constant on each \(K_i\).
 
-Now we have proved the special case where \(f\) takes countably many values we can use this to prove the theorem for general \(f\). Let \(f_n = 2^{-n} \lfloor 2^n f \rfloor\) then \(2^{-n} \geq f(x)-f_n(x) \geq 0\) so \(f_n(x) \rightarrow f(x)\), uniformly. Now, \(f_n\) can only take countably many values, so by our special case of Lusin's theorem there exists a \(K_n \subseteq K\), compact, such that \(\lambda(A \setminus K_n) \leq \epsilon 2^{-n}\), and \(f_n\) is continuous on \(K_n\). Now let \(K_\infty = \bigcap_n K_n\), then \(K_\infty\) is compact and \(\lambda(A \setminus K_\infty) = \lambda (\bigcup_n(A \setminus K_n)) \leq \sum_n \epsilon 2^{-n} = \epsilon\). Now we have that \(f_n\) converges uniformly to \(f\) on \(K_\infty\) and \(f_n\) is continuous on \(K_\infty\) for each \(n\). As the uniform limit of continuous functions is continuous this shows that \(f\) is continuous on \(K\).
+Now we have proved the special case where \(f\) takes countably many values we can use this to prove the theorem for general \(f\). Let \(f_n = 2^{-n} \lfloor 2^n f \rfloor\) then \(2^{-n} \geq f(x)-f_n(x) \geq 0\) so \(f_n(x) \rightarrow f(x)\), uniformly. Now, \(f_n\) can only take countably many values, so by our special case of Lusin's theorem there exists a \(K_n \subseteq A\), compact, such that \(\lambda(A \setminus K_n) \leq \epsilon 2^{-n}\), and \(f_n\) is continuous on \(K_n\). Now let \(K_\infty = \bigcap_n K_n\), then \(K_\infty\) is compact and \(\lambda(A \setminus K_\infty) = \lambda (\bigcup_n(A \setminus K_n)) \leq \sum_n \epsilon 2^{-n} = \epsilon\). Now we have that \(f_n\) converges uniformly to \(f\) on \(K_\infty\) and \(f_n\) is continuous on \(K_\infty\) for each \(n\). As the uniform limit of continuous functions is continuous this shows that \(f\) is continuous on \(K_\infty\).
 \end{proof}
 
 \hypertarget{integration-1}{%
@@ -1766,7 +1766,7 @@ so
 We need a final Lemma before we prove our theorem
 
 \begin{lemma}
-Suppose that \(f: \mathbb{R} \rightarrow \mathbb{R}\) is Lebesgue measurable and \(g = f\) Lebesgue almost everywhere then \(g\) is also Lebesgue measurable.
+Suppose that \(f: (\mathbb{R}, \mathscr{M}) \rightarrow (\mathbb{R}, \mathcal{B}(\mathbb{R}))\) is measurable with respect to the given \(\sigma\)-algebras and \(g = f\) Lebesgue almost everywhere then \(g\) is also measurable as a function from \((\mathbb{R}, \mathscr{M}) \rightarrow (\mathbb{R}, \mathcal{B}(\mathbb{R}))\).
 \end{lemma}
 
 \begin{proof}

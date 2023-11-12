@@ -36,7 +36,7 @@ A collection of subsets of a space $E$, $\mathcal{A}$ is a $\sigma$-algebra if
 
 ::: {.lemma}
 
-We can equivalently define a $\sigma$-algebra as a collection of sets which is contains $\emptyset$ and is closed under taking complements and countable unions.
+We can equivalently define a $\sigma$-algebra as a collection of sets which contains $\emptyset$ and is closed under taking complements and countable unions.
 
 We can think of this as a kind of *motto* for what a $\sigma$-algebra is.
 
@@ -124,7 +124,7 @@ As $\mathcal{B}_2$ contains $(-\infty, b]$ and $(-\infty, a]$ and is closed unde
 Now we can see that $\mathcal{B}_3$ contains $\bigcup_n (a,b-1/n] = (a,b)$ for every $(a,b)$ therefore $\mathcal{B}_3$ contains $\mathcal{B}_4$.
 
 Now we want to show that $\mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}_4$. This will conclude the proof. We need to show that any open set in $\mathbb{R}$ is a countable union of open intervals. Let $U$ be such an open set then let 
-\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \] Then since $O$ is a union of subsets of $U$ then $O \subseteq U$. Suppose that $x \in U$ then there exists some $\rho$ such that $(x-\rho, x+\rho) \subseteq U$. There is some rationals $q,r$ such that $x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)$ therefore $x \in O$. Consequently $U= O$. 
+\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \] Then since $O$ is a union of subsets of $U$ then $O \subseteq U$. Suppose that $x \in U$ then there exists some $\rho$ such that $(x-\rho, x+\rho) \subseteq U$. There are some rationals $q,r$ such that $x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)$ therefore $x \in O$. Consequently $U= O$. 
 
 :::
 

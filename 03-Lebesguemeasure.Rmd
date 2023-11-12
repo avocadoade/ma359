@@ -82,7 +82,7 @@ We want to turn this outer measure into a true measure. In order to do this we n
 
 ::: {.definition name="Lebesgue Measurable sets"}
 
-We call a set $A \in \mathscr{P}(\mathbb{R})$ is *Lebesgue Measureable* if for any $B \in \mathscr{P}(\mathbb{R})$ we have 
+We call a set $A \in \mathscr{P}(\mathbb{R})$ *Lebesgue Measureable* if for any $B \in \mathscr{P}(\mathbb{R})$ we have 
 
 $$ \lambda^*(B) = \lambda^*(A \cap B) + \lambda^*(A^c \cap B). $$
 :::
@@ -177,7 +177,7 @@ We need to show that $\lambda^*$ is countably additive on $\mathscr{M}$ so let $
 $$ \lambda^*(B) \geq \sum_{i=1}^\infty \lambda^*(B \cap A_i) + \lambda^* \left( B \cap \left( \bigcap_{i=1}^\infty A_i^c \right) \right). $$
 Now let us take the particular case where $B = \bigcup_{i=1}^\infty A_i$ this gives
 
-$$ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \geq \sum_{i=1}^n \lambda^*(A_i) + \lambda^* \left(\left( \bigcup_{i=1}^\infty A_i \right) \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right) = \sum_{i=1}^\infty \lambda^* (A_i). $$
+$$ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \geq \sum_{i=1}^\infty \lambda^*(A_i) + \lambda^* \left(\left( \bigcup_{i=1}^\infty A_i \right) \cap \left( \bigcup_{i=1}^\infty A_i \right)^c \right) = \sum_{i=1}^\infty \lambda^* (A_i). $$
 Countable subadditivity gives
 
 $$ \lambda^* \left( \bigcup_{i=1}^\infty A_i \right) \leq \sum_{i=1}^n \lambda^*(A_i),  $$
@@ -401,7 +401,7 @@ Furthermore we can find a sequence of half open rectangles $R_k$ such that $A \s
 
 Monotonicity shows that $$\lambda(A) \geq \sup \{ \lambda(K)\,:\, \mbox{K is compact}, K \subseteq A\}.$$ First let us assume that $A$ is contained in some ball, $B$ around 0. Now use the first part to find some open set $U$ such that $B \setminus A \subseteq U$ and $\lambda(U) \leq \lambda(B \setminus A) + \epsilon$. Now let $K = B \setminus U$ then we have $K \subseteq A \subseteq B$ and $\lambda(K) \geq \lambda(B) - \lambda(U) \geq \lambda(B) - \lambda(B \setminus A) - \epsilon = \lambda(A) - \epsilon$ (here we use the fact that $B, A, U, K$ will all have finite measure as they are inside $B$). As $\epsilon$ is arbitrary this concludes the proof when $A$ is contained in a ball. 
 
-Now suppose that $A$ is unbounded. Then let $A_n = A \cap B_n$ where $B_n$ is the closed ball of radius $n$. We have that $\lambda(A_n) \rightarrow \lambda(A)$. If $\lambda(A) = \infty$ then we can find $K_n \subseteq A_n$ with $\lambda(K_n)$ arbitrarily close to $\lambda(A_n)$ therefore we can find such a sequence with $\lambda(K_n) \rightarrow \infty$. If $\lambda(A) \neq \infty$ then, given $\epsilon$, there exists $N$ such that $\lambda(A_n) \geq \lambda(A)-\epsilon$ for $n \geq N$. Then we can find $K_N \subseteq A_N$ such that $\lambda(K_n) \geq \lambda(A_N) - \epsilon$ therefore $\lambda(K_N) \geq \lambda(A)- 2 \epsilon$. This shows we can a compact set which is contained in $A$, with measure arbitrarily close to that of $A$. 
+Now suppose that $A$ is unbounded. Then let $A_n = A \cap B_n$ where $B_n$ is the closed ball of radius $n$. We have that $\lambda(A_n) \rightarrow \lambda(A)$. If $\lambda(A) = \infty$ then we can find $K_n \subseteq A_n$ with $\lambda(K_n)$ arbitrarily close to $\lambda(A_n)$ therefore we can find such a sequence with $\lambda(K_n) \rightarrow \infty$. If $\lambda(A) \neq \infty$ then, given $\epsilon$, there exists $N$ such that $\lambda(A_n) \geq \lambda(A)-\epsilon$ for $n \geq N$. Then we can find $K_N \subseteq A_N$ such that $\lambda(K_n) \geq \lambda(A_N) - \epsilon$ therefore $\lambda(K_N) \geq \lambda(A)- 2 \epsilon$. This shows we can find a compact set which is contained in $A$, with measure arbitrarily close to that of $A$. 
 
 :::
 
@@ -409,7 +409,7 @@ We now want to recall that Lebesgue measure is the unique measure which assigns 
 
 ::: {.corollary}
 
-Lebesgue measure is translation invariant on $\mathbb{R}$. That is to say if we define the set $x+A = \{ x+y, y \in A\}$ then $\lambda(x+A) = \lambda(A)$
+Lebesgue measure is translation invariant on $\mathcal{B}(\mathbb{R})$. That is to say if we define the set $x+A = \{ x+y, y \in A\}$ then $\lambda(x+A) = \lambda(A)$
 
 :::
 

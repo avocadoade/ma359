@@ -23,7 +23,7 @@
 <meta name="author" content="Jo Evans" />
 
 
-<meta name="date" content="2023-11-05" />
+<meta name="date" content="2023-11-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -172,7 +172,7 @@
 </ul>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-3" class="lemma"><strong>Lemma 2.1  </strong></span>We can equivalently define a <span class="math inline">\(\sigma\)</span>-algebra as a collection of sets which is contains <span class="math inline">\(\emptyset\)</span> and is closed under taking complements and countable unions.</p>
+<p><span id="lem:unlabeled-div-3" class="lemma"><strong>Lemma 2.1  </strong></span>We can equivalently define a <span class="math inline">\(\sigma\)</span>-algebra as a collection of sets which contains <span class="math inline">\(\emptyset\)</span> and is closed under taking complements and countable unions.</p>
 <p>We can think of this as a kind of <em>motto</em> for what a <span class="math inline">\(\sigma\)</span>-algebra is.</p>
 </div>
 <div class="proof">
@@ -224,7 +224,7 @@
 <p>As <span class="math inline">\(\mathcal{B}_2\)</span> contains <span class="math inline">\((-\infty, b]\)</span> and <span class="math inline">\((-\infty, a]\)</span> and is closed under complements it also contains, <span class="math inline">\((-\infty, b]\)</span> and <span class="math inline">\((a, \infty)\)</span>. As <span class="math inline">\(\mathcal{B}_2\)</span> is closed under intersection, this means it also contains <span class="math inline">\((a,b]\)</span>. This is true for all <span class="math inline">\(a&lt;b\)</span> so <span class="math inline">\(\mathcal{B}_2\)</span> contains all sets of this form. Consequently, it contains <span class="math inline">\(\mathcal{B}_3\)</span>.</p>
 <p>Now we can see that <span class="math inline">\(\mathcal{B}_3\)</span> contains <span class="math inline">\(\bigcup_n (a,b-1/n] = (a,b)\)</span> for every <span class="math inline">\((a,b)\)</span> therefore <span class="math inline">\(\mathcal{B}_3\)</span> contains <span class="math inline">\(\mathcal{B}_4\)</span>.</p>
 <p>Now we want to show that <span class="math inline">\(\mathcal{B}(\mathbb{R}) \subseteq \mathcal{B}_4\)</span>. This will conclude the proof. We need to show that any open set in <span class="math inline">\(\mathbb{R}\)</span> is a countable union of open intervals. Let <span class="math inline">\(U\)</span> be such an open set then let
-<span class="math display">\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \]</span> Then since <span class="math inline">\(O\)</span> is a union of subsets of <span class="math inline">\(U\)</span> then <span class="math inline">\(O \subseteq U\)</span>. Suppose that <span class="math inline">\(x \in U\)</span> then there exists some <span class="math inline">\(\rho\)</span> such that <span class="math inline">\((x-\rho, x+\rho) \subseteq U\)</span>. There is some rationals <span class="math inline">\(q,r\)</span> such that <span class="math inline">\(x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)\)</span> therefore <span class="math inline">\(x \in O\)</span>. Consequently <span class="math inline">\(U= O\)</span>.</p>
+<span class="math display">\[ O = \bigcup_{q \in \mathbb{Q} \cap U} \bigcup_{r \in \mathbb{Q} \, \mbox{s.t} \, (q-r,q+r) \subseteq U} (q-r,q+r). \]</span> Then since <span class="math inline">\(O\)</span> is a union of subsets of <span class="math inline">\(U\)</span> then <span class="math inline">\(O \subseteq U\)</span>. Suppose that <span class="math inline">\(x \in U\)</span> then there exists some <span class="math inline">\(\rho\)</span> such that <span class="math inline">\((x-\rho, x+\rho) \subseteq U\)</span>. There are some rationals <span class="math inline">\(q,r\)</span> such that <span class="math inline">\(x \in (q-r,q+r) \subseteq (x-\rho,x+\rho)\)</span> therefore <span class="math inline">\(x \in O\)</span>. Consequently <span class="math inline">\(U= O\)</span>.</p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-13" class="remark"><em>Remark</em>. </span>It is worth noting that <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> is very big and contains many more sets than just open sets and closed sets. It is in fact very difficult to come up with a set which isn’t a Borel set. We can think of all the sets in the Borel <span class="math inline">\(\sigma\)</span>-algebra in a hierarhcy: open sets, countable intersections of open sets, countable unions of countable intersections of open sets, countable intersections of countable unions of open sets … and so on. It is never the case that you can’t generate more new sets by finding countable intersection or countable unions of sets from the previous set in the hierarchy.</p>
