@@ -83,7 +83,7 @@
 
 \title{Measure theory lecture notes}
 \author{Jo Evans}
-\date{2023-11-27}
+\date{2023-11-28}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1227,7 +1227,7 @@ This theorem can be generalised to locally compact Hausdorff spaces, see Cohn's 
 \end{remark}
 
 \begin{proof}
-Suppose first that \(f\) only takes countably many values, \(a_1, a_2, a_3, \dots\) on \(A\) the let \(A_k = \{ x \in A \,:\, f(x) = a_k\}\), by measurablility of \(f\) we can see that \(A_k = f^{-1}(\{a_k\})\) is measurable. We know that \(A = \bigcup_n A_n\) so by continuity of measure \(\lambda(\bigcup_{k=1}^n A_k) \uparrow \lambda(A)\). Since \(\lambda(A) < \infty\) we have that for any \(\epsilon >0\) there exists \(n\) such that \(\lambda(A \setminus \bigcup_{k=1}^n A_k) < \epsilon/2\). By the regularity of Lebesgue measure we can find compact subsets \(K_1, \dots, K_n\) such that \(\lambda(A_n \setminus K_n) \leq \epsilon/2n\). Then let \(K = \bigcup_{k=1}^n K_k\). This is a compact subset of \(A\) and
+Suppose first that \(f\) only takes countably many values, \(a_1, a_2, a_3, \dots\) on \(A\) the let \(A_k = \{ x \in A \,:\, f(x) = a_k\}\), by measurablility of \(f\) we can see that \(A_k = f^{-1}(\{a_k\})\) is measurable. We know that \(A = \bigcup_n A_n\) so by continuity of measure \(\lambda(\bigcup_{k=1}^n A_k) \uparrow \lambda(A)\). Since \(\lambda(A) < \infty\) we have that for any \(\epsilon >0\) there exists \(n\) such that \(\lambda(A \setminus \bigcup_{k=1}^n A_k) < \epsilon/2\). By the regularity of Lebesgue measure we can find compact subsets \(K_1, \dots, K_n\) such that \(\lambda(A_k \setminus K_k) \leq \epsilon/2n\) for \(k=1,\dots,n\). Then let \(K = \bigcup_{k=1}^n K_k\). This is a compact subset of \(A\) and
 
 \[ \lambda(A \setminus K) \leq \lambda(A\setminus \bigcup_{k=1}^n A_k) + \lambda(\bigcup_{k=1}^n A_k \setminus \bigcup_{k=1}^n K_k ) < \epsilon/2 + \epsilon/2. \]
 
